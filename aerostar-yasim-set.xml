@@ -1,0 +1,134 @@
+<PropertyList >
+  <sim>
+    <description>Piper PA-60 Aerostar  - 3d cockpit (YASim) </description>
+    <author>Syd Adams</author>
+    <status>development</status>
+    <flight-model>yasim</flight-model>
+    <aero>aerostar-yasim</aero>
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <model>
+   <path>Aircraft/Aerostar-700/Models/aerostar.xml</path>
+ </model>
+    <startup>
+      <splash-texture>Aircraft/Aerostar-700/splash.rgb</splash-texture>
+    </startup>
+
+    <systems>
+      <electrical>
+        <path></path>
+      </electrical>
+    </systems>
+    
+    <sound>
+      <path>Aircraft/Aerostar-700/aerostar-sound.xml</path>
+    </sound>
+    
+    <hud>
+      <enable3d>false</enable3d>
+    </hud>
+
+    <view n="0">
+      <name>Cockpit</name>
+      <type>lookfrom</type>
+      <internal type="bool">true</internal>
+      <config>
+        <x-offset-m type="double">-0.251</x-offset-m>
+        <y-offset-m type="double">0.55</y-offset-m>
+        <z-offset-m type="double">-0.35</z-offset-m>
+        <pitch-offset-deg>-10</pitch-offset-deg>
+        <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
+      </config>
+    </view>
+    
+    <current-view>
+      <field-of-view>60.0</field-of-view>
+    </current-view>
+    
+    <help>
+      <title>Aerostar /Superstar 700</title>
+      <line>Maximum cruise speed: 261 KTAS at 25,000 ft</line>
+      <line>Econo-cruise speed: 217 KTAS at 23,000 ft</line>
+      <line>Approach speed (Vref): 90 KIAS</line>
+      <line>Landing speed: 90 KIAS</line>
+      <line>Stall speed, full flaps (Vso): 71 KIAS</line>
+      <line></line>
+      <line></line>
+    </help>
+    
+    <input>
+      <selected>
+        <engine n="0">true</engine>
+        <engine n="1">true</engine>
+      </selected>
+    </input>
+  
+   <turbulence-effect type = "bool">true</turbulence-effect>
+
+
+  </sim>
+  
+  <controls>
+    <engines>
+      <engine n="0">
+        <magnetos>3</magnetos>
+      </engine>
+      <engine n="1">
+        <magnetos>3</magnetos>
+      </engine>
+    </engines>
+    <gear>
+      <brake-parking>1.0</brake-parking>
+    </gear>
+  </controls>
+
+
+  <engines>
+    <engine n="0">
+      <running>true</running>
+    </engine>
+    <engine n="1">
+      <running>true</running>
+    </engine>
+  </engines>
+  
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <level-gal_us archive="y">40</level-gal_us>
+      </tank>
+      <tank n="1">
+        <level-gal_us archive="y">40</level-gal_us>
+      </tank>
+      <tank n="2">
+        <level-gal_us archive="y">50</level-gal_us>
+      </tank>
+    </fuel>
+  </consumables>
+  
+  <nasal>
+    <PA-60>
+      <file>Aircraft/Aerostar-700/Nasal/systems.nas</file>
+      <file>Aircraft/Aerostar-700/Nasal/electrical.nas</file>
+      <file>Aircraft/Aerostar-700/Nasal/kfc-200.nas</file>
+     </PA-60>
+ </nasal>
+
+  
+  <autopilot>
+    <config>
+      <min-climb-speed-kt type="float">81.0</min-climb-speed-kt>
+      <best-climb-speed-kt type="float">107.0</best-climb-speed-kt>
+      <target-climb-rate-fpm type="float">1000.0</target-climb-rate-fpm>
+      <target-descent-rate-fpm type="float">1000.0</target-descent-rate-fpm>
+      <elevator-adj-factor type="float">3000.0</elevator-adj-factor>
+      <integral-contribution type="float">0.004</integral-contribution>
+      <zero-pitch-throttle type="float">0.45</zero-pitch-throttle>
+      <zero-pitch-trim-full-throttle type="float">0.11</zero-pitch-trim-full-throttle>
+    </config>
+  </autopilot>
+  
+  
+  
+  
+</PropertyList>

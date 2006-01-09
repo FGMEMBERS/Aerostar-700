@@ -1,0 +1,650 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <name>Aerostar Panel</name>
+ <background>Aircraft/Aerostar-700/Panels/transparent-bg.rgb</background>
+ <w>1024</w>
+ <h>768</h>
+
+<instruments>
+
+<instrument>
+  <name>panel hotspots</name>
+  <x>512</x>
+  <y>384</y>
+  <w>1024</w>
+  <h>768</h>
+  <w-base>1024</w-base>
+  <h-base>768</h-base>
+
+ <actions> 
+   
+   <!---            MAGNETOS          -->
+
+   <action>
+     <name>left magneto increase</name>
+     <button>0</button>
+     <x>-140</x>
+     <y>-350</y>
+     <w>20</w>
+     <h>30</h>
+     <condition>
+       <less-than>
+         <property>controls/engines/engine[0]/magnetos</property>
+         <value>3</value>
+       </less-than>
+     </condition>
+     <binding>
+       <command>property-adjust</command>
+       <property>controls/engines/engine[0]/magnetos</property>
+       <step>1</step>
+       <min>0</min>
+       <max>4</max>
+       <wrap>false</wrap>
+    </binding>
+   </action>
+
+   <action>
+     <name>left starter</name>
+     <button>0</button>
+     <x>-140</x>
+     <y>-350</y>
+     <w>20</w>
+     <h>30</h>
+     <condition>
+       <equals>
+         <property>controls/engines/engine[0]/magnetos</property>
+         <value>3</value>
+       </equals>
+     </condition>
+     <binding>
+       <command>property-assign</command>
+       <property>controls/engines/engine[0]/starter</property>
+       <value>1</value>
+     </binding>
+     <mod-up>
+       <binding>
+         <command>property-assign</command>
+         <property>controls/engines/engine[0]/starter</property>
+         <value>0</value>
+       </binding>
+     </mod-up>
+   </action>
+
+   
+   <action>
+     <name>left magneto decrease</name>
+     <button>0</button>
+     <x>-160</x>
+     <y>-350</y>
+     <w>20</w>
+     <h>30</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>controls/engines/engine[0]/magnetos</property>
+       <step>-1</step>
+       <min>0</min>
+       <max>4</max>
+       <wrap>false</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>right magneto increase</name>
+     <button>0</button>
+     <x>100</x>
+     <y>-350</y>
+     <w>20</w>
+     <h>30</h>
+     <condition>
+       <less-than>
+         <property>controls/engines/engine[1]/magnetos</property>
+         <value>3</value>
+       </less-than>
+     </condition>
+     <binding>
+       <command>property-adjust</command>
+       <property>controls/engines/engine[1]/magnetos</property>
+       <step>1</step>
+       <min>0</min>
+       <max>4</max>
+       <wrap>false</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>right starter</name>
+     <button>0</button>
+     <x>100</x>
+     <y>-350</y>
+     <w>20</w>
+     <h>30</h>
+     <condition>
+       <equals>
+         <property>controls/engines/engine[1]/magnetos</property>
+         <value>3</value>
+       </equals>
+     </condition>
+     <binding>
+       <command>property-assign</command>
+       <property>controls/engines/engine[1]/starter</property>
+       <value>1</value>
+     </binding>
+     <mod-up>
+       <binding>
+         <command>property-assign</command>
+         <property>controls/engines/engine[1]/starter</property>
+         <value>0</value>
+       </binding>
+     </mod-up>
+   </action>
+
+
+   <action>
+     <name>right magneto decrease</name>
+     <button>0</button>
+     <x>80</x>
+     <y>-350</y>
+     <w>20</w>
+     <h>30</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>controls/engines/engine[1]/magnetos</property>
+       <step>-1</step>
+       <min>0</min>
+       <max>4</max>
+       <wrap>false</wrap>
+     </binding>
+   </action>
+
+    <action>
+     <name>battery switch</name>
+     <button>0</button>
+     <x>-496</x>
+     <y>-348</y>
+     <w>13</w>
+     <h>20</h>
+     <binding>
+       <command>property-toggle</command>
+   <property>controls/electric/battery-switch</property>
+     </binding>
+   </action>
+
+   <action>
+     <name>left generator</name>
+     <button>0</button>
+     <x>-481</x>
+     <y>-348</y>
+     <w>13</w>
+     <h>20</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/electric/engine[0]/generator</property>
+     </binding>
+   </action>
+ 
+   <action>
+     <name>right generator</name>
+     <button>0</button>
+     <x>-466</x>
+     <y>-348</y>
+     <w>13</w>
+     <h>20</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/electric/engine[1]/generator</property>
+     </binding>
+   </action>
+
+   <action>
+     <name>prop deice</name>
+     <button>0</button>
+     <button>0</button>
+     <x>-445</x>
+     <y>-348</y>
+     <w>13</w>
+     <h>20</h>
+     <binding>
+    </binding>
+   </action>
+
+   <action>
+     <name>pitot heat</name>
+     <button>0</button>
+     <button>0</button>
+     <x>-430</x>
+     <y>-348</y>
+     <w>13</w>
+     <h>20</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/anti-ice/pitot-heat</property>
+     </binding>
+   </action>
+
+   <action>
+     <name>cabin heat</name>
+     <button>0</button>
+     <button>0</button>
+     <x>-415</x>
+     <y>-348</y>
+     <w>13</w>
+     <h>20</h>
+     <binding>
+     </binding>
+   </action>
+
+   <action>
+     <name>strobe lights</name>
+     <button>0</button>
+     <button>0</button>
+     <x>-394</x>
+     <y>-348</y>
+     <w>13</w>
+     <h>20</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/switches/strobe</property>
+     </binding>
+   </action>
+
+   <action>
+     <name>nav lights</name>
+     <button>0</button>
+     <button>0</button>
+     <x>-379</x>
+     <y>-348</y>
+     <w>13</w>
+     <h>20</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/switches/nav-lights</property>
+     </binding>
+   </action>
+   
+   <action>
+     <name>cabin lights</name>
+     <button>0</button>
+     <button>0</button>
+     <x>-364</x>
+     <y>-348</y>
+     <w>13</w>
+     <h>20</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/switches/cabin-lights</property>
+     </binding>
+   </action>
+   
+   <action>
+     <name>left landing light</name>
+     <button>0</button>
+     <button>0</button>
+     <x>-349</x>
+     <y>-348</y>
+     <w>13</w>
+     <h>20</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/switches/landing-lights[0]</property>
+     </binding>
+   </action>
+   
+   <action>
+     <name>right landing light</name>
+     <button>0</button>
+     <button>0</button>
+     <x>-334</x>
+     <y>-348</y>
+     <w>13</w>
+     <h>20</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/switches/landing-lights[1]</property>
+     </binding>
+   </action>
+   
+   <action>
+     <name>wing lights</name>
+     <button>0</button>
+     <button>0</button>
+     <x>-319</x>
+     <y>-348</y>
+     <w>13</w>
+     <h>20</h>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/switches/beacon</property>
+     </binding>
+   </action>
+
+
+
+
+   <!--
+   <action>
+     <name>starter</name>
+     <button>0</button>
+     <x>-328</x>
+     <y>-374</y>
+     <w>16</w>
+     <h>16</h>
+     <binding>
+       <command>nasal</command>
+       <script>controls.startEngine()</script>
+     </binding>
+     <mod-up>
+       <binding>
+         <command>nasal</command>
+         <script>props.setAll("/controls/engines/engine", "starter", 0)</script>
+       </binding>
+  </mod-up>
+   </action>
+
+
+   <action>
+     <name>fuel pump</name>
+     <button>0</button>
+     <x>-260</x>
+     <y>-374</y>
+     <w>16</w>
+     <h>16</h>
+     <binding>
+   <command>nasal</command>
+   <script>dhc2.f_pump_switch()</script>
+     </binding>
+   </action>
+-->
+
+
+   <!--    #####################          Course Set    #########################          -->
+   
+   <action>
+     <name>small decrease</name>
+     <button>0</button>
+     <x>-347</x>
+     <y>-208</y>
+     <w>10</w>
+     <h>14</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/nav/radials/selected-deg</property>
+       <step>-1</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>large decrease</name>
+     <button>1</button>
+     <x>-347</x>
+     <y>-208</y>
+     <w>10</w>
+     <h>14</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/nav/radials/selected-deg</property>
+       <step>-5</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>small increase</name>
+     <button>0</button>
+     <x>-337</x>
+     <y>-208</y>
+     <w>10</w>
+     <h>14</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/nav/radials/selected-deg</property>
+       <step>1</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>large increase</name>
+     <button>1</button>
+     <x>-337</x>
+     <y>-208</y>
+     <w>10</w>
+     <h>14</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/nav/radials/selected-deg</property>
+       <step>5</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+
+   <!--    #####################         Heading Bug    #########################          -->
+   
+   <action>
+     <name>small decrease</name>
+     <button>0</button>
+     <x>-269</x>
+     <y>-208</y>
+     <w>10</w>
+     <h>14</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/autopilot/settings/heading-bug-deg</property>
+       <step>-1</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>large decrease</name>
+     <button>1</button>
+     <x>-269</x>
+     <y>-208</y>
+     <w>10</w>
+     <h>14</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/autopilot/settings/heading-bug-deg</property>
+       <step>-5</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>small increase</name>
+     <button>0</button>
+     <x>-259</x>
+     <y>-208</y>
+     <w>10</w>
+     <h>14</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/autopilot/settings/heading-bug-deg</property>
+       <step>1</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>large increase</name>
+     <button>1</button>
+     <x>-259</x>
+     <y>-208</y>
+     <w>10</w>
+     <h>14</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/autopilot/settings/heading-bug-deg</property>
+       <step>5</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+
+   
+   
+  <!--             Altimeter              -->  
+  
+<action>
+  <name>calibrate fine</name>
+  <button>0</button>
+  <x>-249</x>
+  <y>-110</y>
+  <w>10</w>
+  <h>14</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>-0.01</step>
+    <min>26.0</min>
+    <max>33.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>calibrate coarse</name>
+  <button>1</button>
+  <x>-249</x>
+  <y>-110</y>
+  <w>10</w>
+  <h>14</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>-0.1</step>
+    <min>26.0</min>
+    <max>33.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>calibrate fine</name>
+  <button>0</button>
+  <x>-239</x>
+  <y>-110</y>
+  <w>10</w>
+  <h>14</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>0.01</step>
+    <min>26.0</min>
+    <max>33.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>calibrate coarse</name>
+  <button>1</button>
+  <x>-239</x>
+  <y>-110</y>
+  <w>10</w>
+  <h>14</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>0.1</step>
+    <min>26.0</min>
+    <max>33.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+  
+<!--                     Altitude Select                          -->
+
+<action>
+  <name>alt decrease  fine</name>
+  <button>0</button>
+  <x>-170</x>
+  <y>-7</y>
+  <w>10</w>
+  <h>14</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/autopilot/settings/target-altitude-ft</property>
+    <step>-100</step>
+    <min>0.0</min>
+    <max>99999.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>alt decrease course</name>
+  <button>1</button>
+  <x>-170</x>
+  <y>-7</y>
+  <w>10</w>
+  <h>14</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/autopilot/settings/target-altitude-ft</property>
+    <step>-1000</step>
+    <min>0.0</min>
+    <max>99999.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>alt increase  fine</name>
+  <button>0</button>
+  <x>-160</x>
+  <y>-7</y>
+  <w>10</w>
+  <h>14</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/autopilot/settings/target-altitude-ft</property>
+    <step>100</step>
+    <min>0.0</min>
+    <max>99999.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>alt increase course</name>
+  <button>1</button>
+  <x>-160</x>
+  <y>-7</y>
+  <w>10</w>
+  <h>14</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/autopilot/settings/target-altitude-ft</property>
+    <step>1000</step>
+    <min>0.0</min>
+    <max>99999.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+
+</actions>
+
+</instrument>
+
+</instruments>
+
+</PropertyList>

@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <name>Center Panel</name>
+ <background>Aircraft/Aerostar-700/Panels/transparent-bg.rgb</background>
+ <w>256</w>
+ <h>512</h>
+
+<instruments>
+
+<instrument>
+  <name>centerpanel hotspots</name>
+  <x>128</x>
+  <y>256</y>
+  <w>256</w>
+  <h>512</h>
+  <w-base>256</w-base>
+  <h-base>512</h-base>
+
+ <actions> 
+   <!---            FD Controller -->
+   
+    <action>
+     <name>HDG mode</name>
+     <button>0</button>
+     <x>-15</x>
+     <y>3</y>
+     <w>9</w>
+     <h>7</h>
+     <binding>
+       <command>nasal</command>
+       <script> kfcmode = getprop ("instrumentation/kfc200/fdmode");
+         if ( kfcmode  != "hdg"){setprop("instrumentation/kfc200/fdmode","hdg");
+         }else{
+         setprop("instrumentation/kfc200/fdmode","off");
+         }</script>
+     </binding>
+   </action>
+   
+   <action>
+     <name>FD mode</name>
+     <button>0</button>
+     <x>-3</x>
+     <y>3</y>
+     <w>9</w>
+     <h>7</h>
+     <binding>
+       <command>nasal</command>
+       <script>
+         kfcmode = getprop ("instrumentation/kfc200/fdmode");
+         if ( kfcmode != "fd"){setprop("instrumentation/kfc200/fdmode","fd");
+         }else{
+         setprop("instrumentation/kfc200/fdmode","off");
+         }
+       </script>
+     </binding>
+   </action>
+   
+   <action>
+     <name>ALT mode</name>
+     <button>0</button>
+     <x>9</x>
+     <y>3</y>
+     <w>9</w>
+     <h>7</h>
+     <binding>
+       <command>nasal</command>
+       <script>kfcmode = getprop ("instrumentation/kfc200/fdmode");
+         if ( kfcmode  != "alt"){setprop("instrumentation/kfc200/fdmode","alt");
+         }else{
+         setprop("instrumentation/kfc200/fdmode","off");
+         }</script>
+     </binding>
+   </action>
+   
+
+   
+   <action>
+     <name>NAV mode</name>
+     <button>0</button>
+     <x>-15</x>
+     <y>-13</y>
+     <w>9</w>
+     <h>7</h>
+     <binding>
+       <command>nasal</command>
+       <script>kfcmode = getprop ("instrumentation/kfc200/fdmode");
+         if ( kfcmode  != "nav-arm"){setprop("instrumentation/kfc200/fdmode","nav-arm");
+         }else{if(kfcmode == "nav-cpld"){setprop("instrumentation/kfc200/fdmode","off");}
+         }</script>
+     </binding>
+   </action>
+   
+   <action>
+     <name>BC mode</name>
+     <button>0</button>
+     <x>-4</x>
+     <y>-13</y>
+     <w>9</w>
+     <h>7</h>
+     <binding>
+       <command>nasal</command>
+       <script> kfcmode = getprop ("instrumentation/kfc200/fdmode");
+         if ( kfcmode  != "bc"){setprop("instrumentation/kfc200/fdmode","bc");
+         }else{
+         setprop("instrumentation/kfc200/fdmode","off");
+         }</script>
+     </binding>
+   </action>
+   
+   <action>
+     <name>APPR mode</name>
+     <button>0</button>
+     <x>8</x>
+     <y>-13</y>
+     <w>9</w>
+     <h>7</h>
+     <binding>
+       <command>nasal</command>
+       <script> kfcmode = getprop ("instrumentation/kfc200/fdmode");
+         if ( kfcmode  != "appr"){setprop("instrumentation/kfc200/fdmode","appr");
+         }else{
+         setprop("instrumentation/kfc200/fdmode","off");
+         }</script>
+     </binding>
+   </action>
+
+   <action>
+     <name>AP-ON mode</name>
+     <button>0</button>
+     <x>22</x>
+     <y>-4</y>
+     <w>10</w>
+     <h>10</h>
+     <binding>
+       <command>nasal</command>
+       <script>
+         mode = getprop("/instrumentation/kfc200/autopilot-on");
+         setprop("/instrumentation/kfc200/autopilot-on",1 - mode);
+         if(mode == 0.0){
+         setprop("/autopilot/locks/heading","");
+         setprop("/autopilot/locks/altitude","");
+         setprop("/autopilot/locks/speed","");
+         }
+         kfcmode = getprop("/instrumentation/kfc200/fdmode");
+         if(kfcmode != "off"){
+         if(kfcmode=="hdg"){setprop("/autopilot/locks/heading","dg-heading-hold");}
+         if(kfcmode=="alt"){setprop("/autopilot/locks/altitude","altitude-hold");}
+}
+       </script>
+     </binding>
+   </action>
+
+</actions>
+
+</instrument>
+</instruments>
+</PropertyList>
