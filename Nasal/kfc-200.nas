@@ -34,6 +34,7 @@
 #                  oppose yaw.
 
 fdmode = "off";
+setprop("/instrumentation/kfc200/fdmode", fdmode);
 fdmode_last = "off";
 vbar_roll = 0.0;
 vbar_pitch = 0.0;
@@ -63,8 +64,10 @@ INIT = func {
     setprop("/instrumentation/kfc200/vbar-pitch", 0.0);
     setprop("/instrumentation/kfc200/vbar-roll", 0.0);
     setprop("/instrumentation/kfc200/alt-offset", 0.0);
-    setprop("/instrumentation/kfc200/autopilot-on",ap_on);
+    setprop("/instrumentation/kfc200/autopilot-on",0.0);
     setprop("/instrumentation/kfc200/alt-alert", alt_alert);
+    setprop("/autopilot/settings/heading-bug-deg",0);
+    setprop("/autopilot/settings/target-altitude-ft",0);
 current_alt = getprop("/instrumentation/altimer/indicated-altitude-ft");
 alt_select = getprop("/autopilot/settings/target-altitude-ft");
 
@@ -77,7 +80,22 @@ settimer(INIT, 0);
 #############################################################################
 
 handle_inputs = func {
+# Autopilot  activate
+    fdmode = getprop("/instrumentation/kfc200/fdmode");
+   ap_on = getprop("/instrumentation/kfc200/autopilot-on");
+
+if(ap_on==1){
+if(fdmode == "fd" or fdmode == "off"){setprop("autopilot/locks/heading","wing-leveler");}
+if(fdmode == "hdg"){setprop("autopilot/locks/heading","dg-heading-hold");}
+if(fdmode == "alt"){setprop("autopilot/locks/altitude","altitude-hold");}
 }
+if(ap_on == 0){
+setprop("autopilot/locks/heading","");
+setprop("autopilot/locks/altitude","");
+setprop("autopilot/locks/speed","");
+  }
+}
+
 
 #############################################################################
 # track and update mode
@@ -103,7 +121,7 @@ update_mode = func {
         } else {
             tth = 9999.9;
         }
-        print("nav-dist = ", nav_dist, " tth = ", tth);
+      #  print("nav-dist = ", nav_dist, " tth = ", tth);
 
         tth_filter = 0.9 * tth_filter + 0.1 * tth;
         last_nav_dist = nav_dist;
@@ -125,7 +143,7 @@ update_mode = func {
         # standard rate turn is 3 dec/sec
         roll_out_time_sec = abs(diff) / 3.0;
 
-        print("tth = ", tth_filter, " hdgdiff = ", diff, " rollout = ", roll_out_time_sec );
+      #  print("tth = ", tth_filter, " hdgdiff = ", diff, " rollout = ", roll_out_time_sec );
         if ( roll_out_time_sec >= abs(tth_filter) ) {
             # switch from arm to cpld
             fdmode = "nav-cpld";
@@ -218,7 +236,7 @@ vbar_pitch =  get_altpitch();
         } elsif ( diff > 180.0 ) {
             diff -= 180.0;
         }
-        print("* offset = ", offset, " tgthdg = ", tgthdg, " diff = ", diff);
+       # print("* offset = ", offset, " tgthdg = ", tgthdg, " diff = ", diff);
 
         # max bank = 30, so this means roll out begins at 15 dgs off target hdg
         bank = 2 * diff;

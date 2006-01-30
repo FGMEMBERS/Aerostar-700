@@ -1,6 +1,6 @@
 <PropertyList >
   <sim>
-    <description>Piper PA-60 Aerostar  - 3d cockpit (YASim) </description>
+    <description>Super 700 Aerostar - 3d cockpit (YASim) </description>
     <author>Syd Adams</author>
     <status>development</status>
     <flight-model>yasim</flight-model>

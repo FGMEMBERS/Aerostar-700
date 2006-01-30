@@ -54,29 +54,67 @@
   </crank>
 
   <engine>
-   <name>engine1</name>
-   <mode>looped</mode>
-   <path>Sounds/wasp.wav</path>
-   <property>/engines/engine[0]/running</property>
-   <position>
-    <x>-2.0</x>
-    <y>0.0</y>
-    <z>-2.0</z>
-   </position>
-   <volume>
-    <property>/engines/engine[0]/mp-osi</property>
-    <factor>0.009</factor>
-    <min>0.15</min>
-    <max>0.6</max>
-    <offset>0.15</offset>
-   </volume>
-   <pitch>
-    <property>/engines/engine[0]/rpm</property>
-    <factor>0.0004</factor>
-    <min>0.1</min>
-    <max>2.0</max>
-    <offset>0.3</offset>
-   </pitch>
+    <name>engine1</name>
+    <mode>looped</mode>
+    <path>Sounds/wasp.wav</path>
+    <property>/engines/engine[0]/running</property>
+    <condition>
+      <not-equals>
+        <property>/sim/current-view/view-number</property>
+        <value>0</value>
+      </not-equals>
+    </condition>
+    <position>
+      <x>-2.0</x>
+      <y>0.0</y>
+      <z>-2.0</z>
+    </position>
+    <volume>
+      <property>/engines/engine[0]/mp-osi</property>
+      <factor>0.009</factor>
+      <min>0.15</min>
+      <max>0.6</max>
+      <offset>0.15</offset>
+    </volume>
+    <pitch>
+      <property>/engines/engine[0]/rpm</property>
+      <factor>0.0004</factor>
+      <min>0.1</min>
+      <max>2.0</max>
+      <offset>0.3</offset>
+    </pitch>
+  </engine>
+  
+  <engine>
+    <name>engine1 from cockpit</name>
+    <mode>looped</mode>
+    <path>Sounds/wasp.wav</path>
+    <property>/engines/engine[0]/running</property>
+    <condition>
+      <equals>
+        <property>/sim/current-view/view-number</property>
+        <value>0</value>
+      </equals>
+    </condition>
+    <position>
+      <x>-2.0</x>
+      <y>0.0</y>
+      <z>-2.0</z>
+    </position>
+    <volume>
+      <property>/engines/engine[0]/mp-osi</property>
+      <factor>0.004</factor>
+      <min>0.1</min>
+      <max>0.3</max>
+      <offset>0.15</offset>
+    </volume>
+    <pitch>
+      <property>/engines/engine[0]/rpm</property>
+      <factor>0.0004</factor>
+      <min>0.1</min>
+      <max>2.0</max>
+      <offset>0.3</offset>
+    </pitch>
   </engine>
 
 <!-- Engine 2 -->
@@ -134,6 +172,12 @@
    <mode>looped</mode>
    <path>Sounds/wasp.wav</path>
    <property>/engines/engine[1]/running</property>
+   <condition>
+     <not-equals>
+       <property>/sim/current-view/view-number</property>
+       <value>0</value>
+     </not-equals>
+   </condition>
    <position>
     <x>2.0</x>
     <y>0.0</y>
@@ -155,6 +199,39 @@
    </pitch>
   </engine>
 
+  <engine>
+    <name>engine2 from cockpit</name>
+    <mode>looped</mode>
+    <path>Sounds/wasp.wav</path>
+    <property>/engines/engine[1]/running</property>
+    <condition>
+      <equals>
+        <property>/sim/current-view/view-number</property>
+        <value>0</value>
+      </equals>
+    </condition>
+    <position>
+      <x>2.0</x>
+      <y>0.0</y>
+      <z>-2.0</z>
+    </position>
+    <volume>
+      <property>/engines/engine[1]/mp-osi</property>
+      <factor>0.004</factor>
+      <min>0.1</min>
+      <max>0.3</max>
+      <offset>0.15</offset>
+    </volume>
+    <pitch>
+      <property>/engines/engine[1]/rpm</property>
+      <factor>0.0004</factor>
+      <min>0.1</min>
+      <max>2.0</max>
+      <offset>0.3</offset>
+    </pitch>
+  </engine>
+
+  
   <rumble>
    <name>rumble</name>
    <mode>looped</mode>
