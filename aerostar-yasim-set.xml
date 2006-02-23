@@ -1,6 +1,6 @@
 <PropertyList >
   <sim>
-    <description>Super 700 Aerostar - 3d cockpit (YASim) </description>
+    <description>Aerostar Super 700 / 3d cockpit / (YASim) </description>
     <author>Syd Adams</author>
     <status>development</status>
     <flight-model>yasim</flight-model>
@@ -33,14 +33,33 @@
       <type>lookfrom</type>
       <internal type="bool">true</internal>
       <config>
-        <x-offset-m type="double">-0.251</x-offset-m>
+        <x-offset-m type="double">-0.30</x-offset-m>
         <y-offset-m type="double">0.55</y-offset-m>
-        <z-offset-m type="double">-0.35</z-offset-m>
+        <z-offset-m type="double">-0.32</z-offset-m>
         <pitch-offset-deg>-10</pitch-offset-deg>
         <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
       </config>
     </view>
     
+
+    <view n="1">
+      <config>
+        <x-offset-m type="double">5.0</x-offset-m>
+        <y-offset-m type="double">0.0</y-offset-m>
+        <z-offset-m type="double">-15.0</z-offset-m>
+        <pitch-offset-deg>0</pitch-offset-deg>
+      </config>
+    </view>
+
+    <view n="2">
+      <config>
+        <x-offset-m type="double">5.0</x-offset-m>
+        <y-offset-m type="double">0.0</y-offset-m>
+        <z-offset-m type="double">-15.0</z-offset-m>
+        <pitch-offset-deg>0</pitch-offset-deg>
+      </config>
+    </view>
+
     <current-view>
       <field-of-view>60.0</field-of-view>
     </current-view>
@@ -58,47 +77,55 @@
     
     <input>
       <selected>
-        <engine n="0">true</engine>
-        <engine n="1">true</engine>
+        <engine n="0">false</engine>
+        <engine n="1">false</engine>
       </selected>
     </input>
   
    <turbulence-effect type = "bool">true</turbulence-effect>
-
-
+   <allow-toggle-cockpit>true</allow-toggle-cockpit>
   </sim>
   
   <controls>
-    <engines>
-      <engine n="0">
-        <magnetos>3</magnetos>
-      </engine>
-      <engine n="1">
-        <magnetos>3</magnetos>
-      </engine>
-    </engines>
     <gear>
       <brake-parking>1.0</brake-parking>
     </gear>
   </controls>
 
-
-  <engines>
-    <engine n="0">
-      <running>true</running>
-    </engine>
-    <engine n="1">
-      <running>true</running>
-    </engine>
-  </engines>
+  <instrumentation>
+    <comm n="0">
+      <frequencies>
+        <freq-whole type="double">99999</freq-whole>
+        <stby-whole type="double">99999</stby-whole>
+      </frequencies>
+    </comm>
+    <comm n="1">
+      <frequencies>
+        <freq-whole type="double">99999</freq-whole>
+        <stby-whole type="double">99999</stby-whole>
+      </frequencies>
+    </comm>
+    <nav n = "0">
+      <frequencies>
+        <freq-whole type="double">99999</freq-whole>
+        <stby-whole type="double">99999</stby-whole>
+      </frequencies>
+    </nav>
+    <nav n="1">
+      <frequencies>
+        <freq-whole type="double">99999</freq-whole>
+        <stby-whole type="double">99999</stby-whole>
+      </frequencies>
+    </nav>
+  </instrumentation>
   
   <consumables>
     <fuel>
       <tank n="0">
-        <level-gal_us archive="y">40</level-gal_us>
+        <level-gal_us archive="y">30</level-gal_us>
       </tank>
       <tank n="1">
-        <level-gal_us archive="y">40</level-gal_us>
+        <level-gal_us archive="y">30</level-gal_us>
       </tank>
       <tank n="2">
         <level-gal_us archive="y">50</level-gal_us>
@@ -107,11 +134,11 @@
   </consumables>
   
   <nasal>
-    <PA-60>
+    <Aerostar-700>
       <file>Aircraft/Aerostar-700/Nasal/systems.nas</file>
       <file>Aircraft/Aerostar-700/Nasal/electrical.nas</file>
       <file>Aircraft/Aerostar-700/Nasal/kfc-200.nas</file>
-     </PA-60>
+     </Aerostar-700>
  </nasal>
 
   

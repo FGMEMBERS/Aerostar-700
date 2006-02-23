@@ -151,6 +151,368 @@
      </binding>
    </action>
 
+<!-- ############## THROTTLE QUADRANT ##############-->
+
+<!--           throttles           -->
+<action>
+  <name>Left throttle increase</name>
+  <button>0</button>
+  <x>-48</x>
+  <y>68</y>
+  <w>14</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[0]/throttle</property>
+    <step>0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>Right throttle increase</name>
+  <button>0</button>
+  <x>-34</x>
+  <y>68</y>
+  <w>14</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[1]/throttle</property>
+    <step>0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>Both throttles  increase</name>
+  <button>0</button>
+  <x>-48</x>
+  <y>78</y>
+  <w>28</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[0]/throttle</property>
+    <step>0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[1]/throttle</property>
+    <step>0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>Left throttle decrease</name>
+  <button>0</button>
+  <x>-48</x>
+  <y>40</y>
+  <w>14</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[0]/throttle</property>
+    <step>-0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>Right throttle decrease</name>
+  <button>0</button>
+  <x>-34</x>
+  <y>40</y>
+  <w>14</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[1]/throttle</property>
+    <step>-0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>Both throttles decrease</name>
+  <button>0</button>
+  <x>-48</x>
+  <y>30</y>
+  <w>28</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[0]/throttle</property>
+    <step>-0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[1]/throttle</property>
+    <step>-0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+
+<!--           prop pitch           -->
+<action>
+  <name>Left prop increase</name>
+  <button>0</button>
+  <x>-14</x>
+  <y>68</y>
+  <w>14</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[0]/propeller-pitch</property>
+    <step>0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>Right prop increase</name>
+  <button>0</button>
+  <x>0</x>
+  <y>68</y>
+  <w>14</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[1]/propeller-pitch</property>
+    <step>0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>Both props  increase</name>
+  <button>0</button>
+  <x>-14</x>
+  <y>78</y>
+  <w>28</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[0]/propeller-pitch</property>
+    <step>0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[1]/propeller-pitch</property>
+    <step>0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>Left prop decrease</name>
+  <button>0</button>
+  <x>-14</x>
+  <y>40</y>
+  <w>14</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[0]/propeller-pitch</property>
+    <step>-0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>Right prop decrease</name>
+  <button>0</button>
+  <x>0</x>
+  <y>40</y>
+  <w>14</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[1]/propeller-pitch</property>
+    <step>-0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>Both props decrease</name>
+  <button>0</button>
+  <x>-14</x>
+  <y>30</y>
+  <w>28</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[0]/propeller-pitch</property>
+    <step>-0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[1]/propeller-pitch</property>
+    <step>-0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+
+<!--           mixture           -->
+<action>
+  <name>Left mixture increase</name>
+  <button>0</button>
+  <x>20</x>
+  <y>68</y>
+  <w>14</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[0]/mixture</property>
+    <step>0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>Right mixture increase</name>
+  <button>0</button>
+  <x>34</x>
+  <y>68</y>
+  <w>14</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[1]/mixture</property>
+    <step>0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>Both mixture  increase</name>
+  <button>0</button>
+  <x>20</x>
+  <y>78</y>
+  <w>28</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[0]/mixture</property>
+    <step>0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[1]/mixture</property>
+    <step>0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>Left mixture decrease</name>
+  <button>0</button>
+  <x>20</x>
+  <y>40</y>
+  <w>14</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[0]/mixture</property>
+    <step>-0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>Right mixture decrease</name>
+  <button>0</button>
+  <x>34</x>
+  <y>40</y>
+  <w>14</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[1]/mixture</property>
+    <step>-0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>Both mixture decrease</name>
+  <button>0</button>
+  <x>20</x>
+  <y>30</y>
+  <w>28</w>
+  <h>10</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[0]/mixture</property>
+    <step>-0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+  <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[1]/mixture</property>
+    <step>-0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+  </binding>
+</action>
+
+   
 </actions>
 
 </instrument>
