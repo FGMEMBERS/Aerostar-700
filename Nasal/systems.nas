@@ -80,10 +80,14 @@ if(getprop("/instrumentation/nav[1]/frequencies/stby-whole") != test){update_rad
 
  force = getprop("/accelerations/pilot-g");
 if(force == nil) {force = 1.0;}
-eyepoint = (0.56 - (force * 0.01));
-if(getprop("/sim/current-view/view-number") < 1){
-setprop("/sim/current-view/y-offset-m",eyepoint);
-}
+   eyepoint = getprop("sim/view/config/y-offset-m") +0.01;
+   eyepoint -= (force * 0.01);
+   if(getprop("/sim/current-view/view-number") < 1){
+      setprop("/sim/current-view/y-offset-m",eyepoint);
+      }
+ 
+
+
 
 
  settimer(update_systems, 0);

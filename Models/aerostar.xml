@@ -7,7 +7,14 @@
  <!--                 LOD              -->
 
  <animation>
+   <name>Chrome</name>
+   <object-name>glass</object-name>
+   <object-name>Spinners</object-name>
+ </animation>
+
+ <animation>
    <name>Exterior</name>
+   <object-name>Chrome</object-name>
    <object-name>Fuselage</object-name>
    <object-name>Wings</object-name>
    <object-name>Rudder</object-name>
@@ -94,10 +101,7 @@
    <object-name>RightTire</object-name>
  </animation>
 
-
-
- 
-   <animation>
+<animation>
 <type>range</type>
 <object-name>Exterior</object-name>
 <min-m>0</min-m>
@@ -307,6 +311,16 @@
    </offsets>
  </model>
 
+ <model>
+    <name>Pilot</name>
+    <path>Aircraft/Aerostar-700/Models/testpilot.xml</path>
+    <offsets>
+      <x-m>-0.389</x-m>
+      <y-m>-0.34</y-m>
+      <z-m>-0.2</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
 
  <animation>
    <type>noshadow</type>
@@ -317,16 +331,76 @@
  </animation>
 
  <animation>
+	<type>shader</type>
+        <shader>chrome</shader>
+	<texture>Aircraft/Aerostar-700/Models/chrome1.rgb</texture>
+	<object-name>Chrome</object-name>
+</animation>
+
+<animation>
+    <type>select</type>
+    <object-name>pilot</object-name>
+    <condition>
+    <not-equals>
+    <property>sim/current-view/view-number</property>
+    <value>0</value>
+    </not-equals>
+    </condition>
+</animation> 
+
+ <animation>
    <type>select</type>
-   <object-name>Cockpit</object-name>
+   <object-name>shadowplane</object-name>
    <condition>
-     <equals>
-       <property>sim/current-view/view-number</property>
-       <value>0</value>
-     </equals>
+   <and>
+   <not>
+   <property>sim/rendering/shadows-ac</property>   
+   </not>
+   <less-than>
+   <property>position/gear-agl-m</property>
+   <value>1000</value>
+   </less-than>
+   <equals>
+   <property>sim/multiplay/txhost</property>
+   <value>0</value>
+   </equals>
+   </and>
    </condition>
  </animation>
+
+ <animation>
+	<type>rotate</type>
+	<object-name>shadowplane</object-name>
+	<property>orientation/roll-deg</property>
+	<axis>
+	<x>1</x>
+	<y>0</y>
+	<z>0</z>
+	</axis>
+</animation>
+
+ <animation>
+	<type>rotate</type>
+	<object-name>shadowplane</object-name>
+	<property>orientation/pitch-deg</property>
+	<axis>
+	<x>0</x>
+	<y>-1</y>
+	<z>0</z>
+	</axis>
+</animation>
  
+ <animation>
+	<type>translate</type>
+	<object-name>shadowplane</object-name>
+	<property>position/gear-agl-m</property>
+	<axis>
+	<x>0</x>
+	<y>0</y>
+	<z>-1</z>
+	</axis>
+</animation>
+
 
  <animation>
    <type>select</type>

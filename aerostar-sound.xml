@@ -80,10 +80,10 @@
       <offset>0.15</offset>
     </volume>
     <pitch>
-      <property>engines/engine[0]/rpm</property>
-      <factor>0.00045</factor>
+      <property>engines/engine[0]/mp-osi</property>
+      <factor>0.028</factor>
       <min>0.2</min>
-      <max>1.2</max>
+      <max>1.0</max>
       <offset> 0.2</offset>
     </pitch>
   </engine>
@@ -115,10 +115,10 @@
       <offset>0.1</offset>
     </volume>
     <pitch>
-      <property>engines/engine[0]/rpm</property>
-      <factor>0.00045</factor>
+      <property>engines/engine[0]/mp-osi</property>
+      <factor>0.028</factor>
       <min>0.2</min>
-      <max>1.2</max>
+      <max>1.0</max>
       <offset> 0.2</offset>
     </pitch>
     </engine>
@@ -200,10 +200,10 @@
     <offset>0.15</offset>
    </volume>
    <pitch>
-    <property>engines/engine[1]/rpm</property>
-    <factor>0.00045</factor>
+      <property>engines/engine[1]/mp-osi</property>
+      <factor>0.028</factor>
     <min>0.2</min>
-    <max>1.2</max>
+    <max>1.0</max>
     <offset>0.2</offset>
    </pitch>
   </engine>
@@ -235,10 +235,10 @@
       <offset>0.1</offset>
     </volume>
     <pitch>
-      <property>engines/engine[1]/rpm</property>
-      <factor>0.00045</factor>
+      <property>engines/engine[1]/mp-osi</property>
+      <factor>0.028</factor>
       <min>0.2</min>
-      <max>1.2</max>
+      <max>1.0</max>
       <offset> 0.2</offset>
     </pitch>
   </engine>
