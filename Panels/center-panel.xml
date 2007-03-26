@@ -45,14 +45,8 @@
      <w>9</w>
      <h>7</h>
      <binding>
-       <command>nasal</command>
-       <script>
-         kfcmode = getprop ("instrumentation/kfc200/fdmode");
-         if ( kfcmode != "fd"){setprop("instrumentation/kfc200/fdmode","fd");
-         }else{
-         setprop("instrumentation/kfc200/fdmode","off");
-         }
-       </script>
+       <command>property-toggle</command>
+       <property>/instrumentation/kfc200/fd_on</property>
      </binding>
    </action>
    
@@ -65,10 +59,10 @@
      <h>7</h>
      <binding>
        <command>nasal</command>
-       <script>kfcmode = getprop ("instrumentation/kfc200/fdmode");
-         if ( kfcmode  != "alt"){setprop("instrumentation/kfc200/fdmode","alt");
+       <script>kfcmode = getprop ("instrumentation/kfc200/fdmodeV");
+         if ( kfcmode  != "alt"){setprop("instrumentation/kfc200/fdmodeV","alt");
          }else{
-         setprop("instrumentation/kfc200/fdmode","off");
+         setprop("instrumentation/kfc200/fdmodeV","off");
          }</script>
      </binding>
    </action>
@@ -133,21 +127,8 @@
      <w>10</w>
      <h>10</h>
      <binding>
-       <command>nasal</command>
-       <script>
-         mode = getprop("/instrumentation/kfc200/autopilot-on");
-         setprop("/instrumentation/kfc200/autopilot-on",1 - mode);
-         if(mode == 0.0){
-         setprop("/autopilot/locks/heading","");
-         setprop("/autopilot/locks/altitude","");
-         setprop("/autopilot/locks/speed","");
-         }
-         kfcmode = getprop("/instrumentation/kfc200/fdmode");
-         if(kfcmode != "off"){
-         if(kfcmode=="hdg"){setprop("/autopilot/locks/heading","dg-heading-hold");}
-         if(kfcmode=="alt"){setprop("/autopilot/locks/altitude","altitude-hold");}
-}
-       </script>
+       <command>property-toggle</command>
+       <property>/autopilot/locks/passive-mode</property>
      </binding>
    </action>
 

@@ -342,52 +342,13 @@
      </binding>
    </action>
 
-
-
-
-   <!--
-   <action>
-     <name>starter</name>
-     <button>0</button>
-     <x>-328</x>
-     <y>-374</y>
-     <w>16</w>
-     <h>16</h>
-     <binding>
-       <command>nasal</command>
-       <script>controls.startEngine()</script>
-     </binding>
-     <mod-up>
-       <binding>
-         <command>nasal</command>
-         <script>props.setAll("/controls/engines/engine", "starter", 0)</script>
-       </binding>
-  </mod-up>
-   </action>
-
-
-   <action>
-     <name>fuel pump</name>
-     <button>0</button>
-     <x>-260</x>
-     <y>-374</y>
-     <w>16</w>
-     <h>16</h>
-     <binding>
-   <command>nasal</command>
-   <script>dhc2.f_pump_switch()</script>
-     </binding>
-   </action>
--->
-
-
    <!--    #####################          Course Set    #########################          -->
    
    <action>
      <name>small decrease</name>
      <button>0</button>
-     <x>-347</x>
-     <y>-208</y>
+     <x>-360</x>
+     <y>-210</y>
      <w>10</w>
      <h>14</h>
      <binding>
@@ -403,8 +364,8 @@
    <action>
      <name>large decrease</name>
      <button>1</button>
-     <x>-347</x>
-     <y>-208</y>
+     <x>-360</x>
+     <y>-210</y>
      <w>10</w>
      <h>14</h>
      <binding>
@@ -420,8 +381,8 @@
    <action>
      <name>small increase</name>
      <button>0</button>
-     <x>-337</x>
-     <y>-208</y>
+     <x>-350</x>
+     <y>-210</y>
      <w>10</w>
      <h>14</h>
      <binding>
@@ -437,8 +398,8 @@
    <action>
      <name>large increase</name>
      <button>1</button>
-     <x>-337</x>
-     <y>-208</y>
+     <x>-350</x>
+     <y>-210</y>
      <w>10</w>
      <h>14</h>
      <binding>
@@ -456,8 +417,8 @@
    <action>
      <name>small decrease</name>
      <button>0</button>
-     <x>-269</x>
-     <y>-208</y>
+     <x>-284</x>
+     <y>-210</y>
      <w>10</w>
      <h>14</h>
      <binding>
@@ -473,8 +434,8 @@
    <action>
      <name>large decrease</name>
      <button>1</button>
-     <x>-269</x>
-     <y>-208</y>
+     <x>-284</x>
+     <y>-210</y>
      <w>10</w>
      <h>14</h>
      <binding>
@@ -490,8 +451,8 @@
    <action>
      <name>small increase</name>
      <button>0</button>
-     <x>-259</x>
-     <y>-208</y>
+     <x>-274</x>
+     <y>-210</y>
      <w>10</w>
      <h>14</h>
      <binding>
@@ -507,8 +468,8 @@
    <action>
      <name>large increase</name>
      <button>1</button>
-     <x>-259</x>
-     <y>-208</y>
+     <x>-274</x>
+     <y>-210</y>
      <w>10</w>
      <h>14</h>
      <binding>
@@ -528,8 +489,8 @@
 <action>
   <name>calibrate fine</name>
   <button>0</button>
-  <x>-249</x>
-  <y>-110</y>
+  <x>-258</x>
+  <y>-122</y>
   <w>10</w>
   <h>14</h>
   <binding>
@@ -545,8 +506,8 @@
 <action>
   <name>calibrate coarse</name>
   <button>1</button>
-  <x>-249</x>
-  <y>-110</y>
+  <x>-258</x>
+  <y>-122</y>
   <w>10</w>
   <h>14</h>
   <binding>
@@ -562,8 +523,8 @@
 <action>
   <name>calibrate fine</name>
   <button>0</button>
-  <x>-239</x>
-  <y>-110</y>
+  <x>-248</x>
+  <y>-122</y>
   <w>10</w>
   <h>14</h>
   <binding>
@@ -579,8 +540,8 @@
 <action>
   <name>calibrate coarse</name>
   <button>1</button>
-  <x>-239</x>
-  <y>-110</y>
+  <x>-248</x>
+  <y>-122</y>
   <w>10</w>
   <h>14</h>
   <binding>
@@ -598,8 +559,8 @@
 <action>
   <name>alt decrease  fine</name>
   <button>0</button>
-  <x>-170</x>
-  <y>-7</y>
+  <x>-175</x>
+  <y>-18</y>
   <w>10</w>
   <h>14</h>
   <binding>
@@ -615,8 +576,8 @@
 <action>
   <name>alt decrease course</name>
   <button>1</button>
-  <x>-170</x>
-  <y>-7</y>
+  <x>-175</x>
+  <y>-18</y>
   <w>10</w>
   <h>14</h>
   <binding>
@@ -632,8 +593,8 @@
 <action>
   <name>alt increase  fine</name>
   <button>0</button>
-  <x>-160</x>
-  <y>-7</y>
+  <x>-165</x>
+  <y>-18</y>
   <w>10</w>
   <h>14</h>
   <binding>
@@ -649,8 +610,8 @@
 <action>
   <name>alt increase course</name>
   <button>1</button>
-  <x>-160</x>
-  <y>-7</y>
+  <x>-165</x>
+  <y>-18</y>
   <w>10</w>
   <h>14</h>
   <binding>
