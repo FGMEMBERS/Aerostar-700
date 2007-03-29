@@ -114,6 +114,9 @@
     	<gear>
       		<brake-parking>1.0</brake-parking>
     	</gear>
+    	<lighting>
+    		<instruments-norm>0.6</instruments-norm>
+    	</lighting>
   	</controls>
 
   	<instrumentation>
@@ -168,6 +171,7 @@
       		<file>Aircraft/Aerostar-700/Nasal/systems.nas</file>
       		<file>Aircraft/Aerostar-700/Nasal/A700-electrical.nas</file>
       		<file>Aircraft/Instruments-3d/kfc200/kfc-200.nas</file>
+      		<file>Aircraft/Instruments-3d/kns80/KNS80.nas</file>
      	</Aerostar-700>
  	</nasal>
   

@@ -282,7 +282,7 @@
 
 
  <model>
-   <path>Aircraft/Instruments-3d/kns80/kns80-nav1.xml</path>
+   <path>Aircraft/Instruments-3d/kns80/kns80.xml</path>
    <offsets>
      <x-m>-0.924</x-m>
      <y-m>-0.021</y-m>
@@ -308,6 +308,16 @@
      <y-m>-0.021</y-m>
      <z-m>0.214</z-m>
      <pitch-deg>-10.0</pitch-deg>
+   </offsets>
+ </model>
+
+ <model>
+   <path>Aircraft/Aerostar-700/Models/fuelgauge.xml</path>
+   <offsets>
+     <x-m>-0.891</x-m>
+     <y-m>-0.022</y-m>
+     <z-m>0.469</z-m>
+     <pitch-deg>0.0</pitch-deg>
    </offsets>
  </model>
 
@@ -1632,100 +1642,5 @@
     <z>0.0</z>
   </axis>
 </animation>
-
-<animation>
-  <type>rotate</type>
-  <object-name>Fuelneedle.1</object-name>
-  <property>consumables/fuel/tank[0]/level-gal_us</property>
-  <interpolation>
-    <entry>
-      <ind>0</ind>
-      <dep>0</dep>
-    </entry>
-    <entry>
-      <ind>25</ind>
-      <dep>40</dep>
-    </entry>
-    <entry>
-      <ind>50</ind>
-      <dep>79</dep>
-    </entry>
-  </interpolation>
-  <center>
-    <x-m>-0.890</x-m>
-    <y-m>-0.036</y-m>
-    <z-m>0.469</z-m>
-  </center>
-  <axis>
-    <x>-1.0</x>
-    <y>0.0</y>
-    <z>0.0</z>
-  </axis>
-</animation>
-
-
-<animation>
-  <type>rotate</type>
-  <object-name>Fuelneedle.2</object-name>
-  <property>consumables/fuel/tank[2]/level-gal_us</property>
-  <interpolation>
-    <entry>
-      <ind>0</ind>
-      <dep>0</dep>
-    </entry>
-    <entry>
-      <ind>20</ind>
-      <dep>39.5</dep>
-    </entry>
-    <entry>
-      <ind>40</ind>
-      <dep>79</dep>
-    </entry>
-  </interpolation>
-  <center>
-    <x-m>-0.890</x-m>
-    <y-m>-0.015</y-m>
-    <z-m>0.469</z-m>
-  </center>
-  <axis>
-    <x>-1.0</x>
-    <y>0.0</y>
-    <z>0.0</z>
-  </axis>
-</animation>
-
-
-<animation>
-  <type>rotate</type>
-  <object-name>Fuelneedle.3</object-name>
-  <property>consumables/fuel/tank[1]/level-gal_us</property>
-  <interpolation>
-    <entry>
-      <ind>0</ind>
-      <dep>0</dep>
-    </entry>
-    <entry>
-      <ind>25</ind>
-      <dep>40</dep>
-    </entry>
-    <entry>
-      <ind>50</ind>
-      <dep>79</dep>
-    </entry>
-  </interpolation>
-  <center>
-    <x-m>-0.890</x-m>
-    <y-m>0.006</y-m>
-    <z-m>0.469</z-m>
-  </center>
-  <axis>
-    <x>-1.0</x>
-    <y>0.0</y>
-    <z>0.0</z>
-  </axis>
-</animation>
-
-
-
 
 </PropertyList>

@@ -24,7 +24,7 @@
     <h>35</h>
   </instrument>
 
-  <instrument include="../../Instruments-3d/kns80/kns80-nav1-hotspots.xml">
+  <instrument include="../../Instruments-3d/kns80/kns80-hotspots.xml">
     <name>Nav1 hotspots</name>
     <x>492</x>
     <y>235</y>
