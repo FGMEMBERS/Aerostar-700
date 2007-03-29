@@ -1510,7 +1510,7 @@
 <animation>
   <type>rotate</type>
   <object-name>Deice.toggle</object-name>
-  <property>controls/electric/engine[0]/generator</property>
+  <property>controls/anti-ice/prop-heat</property>
   <factor>30</factor>
   <center>
     <x-m>-0.886</x-m>

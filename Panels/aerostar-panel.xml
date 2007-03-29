@@ -237,6 +237,8 @@
      <w>14</w>
      <h>20</h>
      <binding>
+       <command>property-toggle</command>
+       <property>controls/anti-ice/prop-heat</property>
     </binding>
    </action>
 
