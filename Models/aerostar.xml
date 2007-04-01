@@ -163,10 +163,10 @@
 <model>
   <path>Aircraft/Instruments-3d/kfc200/fd-control.xml</path>
   <offsets>
-   <x-m>-0.708</x-m>
+   <x-m>-0.668</x-m>
    <y-m>-0.021</y-m>
-   <z-m>-0.038</z-m>
-   <pitch-deg>-60.0</pitch-deg>
+   <z-m>-0.075</z-m>
+   <pitch-deg>-55.0</pitch-deg>
   </offsets>
  </model>
 
@@ -346,6 +346,51 @@
 	<texture>Aircraft/Aerostar-700/Models/chrome1.rgb</texture>
 	<object-name>Chrome</object-name>
 </animation>
+
+	<animation>
+  		<type>material</type>
+  		<object-name>gearon.1</object-name>
+  		<emission>
+    		<red>0.1</red>
+    		<green>0.9</green>
+    		<blue>0.4</blue>
+    		<factor-prop>/gear/gear[0]/gear-down-locked</factor-prop>
+    	</emission>
+	</animation>
+
+	<animation>
+  		<type>material</type>
+  		<object-name>gearon.2</object-name>
+  		<emission>
+    		<red>0.1</red>
+    		<green>0.9</green>
+    		<blue>0.4</blue>
+			<factor-prop>/gear/gear[1]/gear-down-locked</factor-prop>
+    	</emission>
+	</animation>
+
+	<animation>
+  		<type>material</type>
+  		<object-name>gearon.3</object-name>
+  		<emission>
+    		<red>0.1</red>
+    		<green>0.9</green>
+    		<blue>0.4</blue>
+    		<factor-prop>/gear/gear[2]/gear-down-locked</factor-prop>
+    	</emission>
+	</animation>
+
+	<animation>
+  		<type>material</type>
+  		<object-name>gearon</object-name>
+  		<emission>
+    		<red>0.8</red>
+    		<green>0.5</green>
+    		<blue>0.1</blue>
+    		<factor-prop>/gear/gear[0]/gear-up-locked</factor-prop>
+    	</emission>
+	</animation>
+
 
 <animation>
     <type>select</type>

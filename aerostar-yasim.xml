@@ -10,14 +10,14 @@ flap up      81
 Vr 89 kt
 Vy 117
 
-usable fuel 165.5 gal
+
     -->
 
 
 
 <airplane mass="4220">
 
-<approach speed="80" aoa="6" fuel="0.8">
+<approach speed="83" aoa="6" fuel="0.8">
   <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
   <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
   <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
@@ -48,8 +48,8 @@ usable fuel 165.5 gal
 <fuselage ax="3.26"  ay="0" az="0" bx="-7.0" by="0" bz="0.75"
           width="1.5" taper="0" midpoint="0.35"/>
 
-<wing x="-1.8" y="0.65" z="0.05" length ="4.68" chord ="1.9"
-      sweep="0" dihedral="2" taper="0.4" camber="0.0">
+<wing x="-1.8" y="0.65" z="0.05" length="4.68" chord="1.9"
+      sweep="0" dihedral="2" taper="0.4" camber="0.1">
   <stall aoa="16" width="4" peak="1.5"/>
   <flap0 start="0.1" end=".5" lift="1.7" drag="1.9"/>
   <flap1 start=".5" end=".9" lift="1.3" drag="1.1"/>
@@ -64,36 +64,42 @@ usable fuel 165.5 gal
 		  prop="/surface-positions/right-aileron-pos-norm"/>
 </wing>
 
-<hstab x="-5.85" y="0.237" z="0.61" length ="1.8" chord ="1.2"
-       sweep="27" dihedral="0" taper="0.6" effectiveness="2.5">
+<hstab x="-5.85" y="0.237" z="0.61" length="1.8" chord="1.2"
+       sweep="27" dihedral="0" taper="0.6" effectiveness="1.5">
   <stall aoa="16" width="4" peak="1.5"/>
-  <flap0 start="0" end="1" lift="1.6" drag="1.2"/>
+  <flap0 start="0" end="1" lift="1.5" drag="1.1"/>
   <control-input axis="/controls/flight/elevator" control="FLAP0"/>
   <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
   <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
 </hstab>
 
-<vstab x="-5.12" y="0.00" z="0.83" length ="1.85" chord ="2.4"
+<vstab x="-5.12" y="0.00" z="0.83" length="1.85" chord="2.4"
        sweep="30" taper="0.25">
   <stall aoa="16" width="4" peak="1.5"/>
-  <flap0 start="0" end="1" lift="1.4" drag="1.1"/>
+  <flap0 start="0" end="1" lift="1.2" drag="1.1"/>
   <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true" square="true"/>
   <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
   <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
 </vstab>
 
 <!--   wing   and fuselage tanks
+total usable fuel 165.5 us-gal
+total fuselage fuel 41.5 us gal
+each wing tank 62 us gal
+
 fuel flow:
-250 KTAS  46 gph
-217 KTAS 32 gph
+250 KTAS @23000 46 gph
+217 KTAS @23000 32 gph
 
        -->
-<tank x="-1.6" y="1.3" z="0.1" capacity="200"/>
-<tank x="-1.6" y="-1.3" z="0.1" capacity="200"/>
-<tank x="-1.6" y="0" z="-0.5" capacity="307"/>
+<tank x="-1.6" y="1.3" z="0.1" capacity="372"/>
+<tank x="-1.6" y="-1.3" z="0.1" capacity="372"/>
+<tank x="-1.6" y="0" z="-0.5" capacity="249"/>
 
 <gear x="1.668" y="0.00" z="-1.245" compression=".3" retract-time="5">
-  <control-input axis="/controls/flight/rudder" control="STEER" square="true"/>
+  <control-input axis="/controls/flight/rudder" control="STEER" square="true" 
+  src0="-1.0" src1="1.0"
+		 dst0="-0.5" dst1="0.5"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
   <control-speed control="EXTEND" transition-time="5"/>
   <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
@@ -120,9 +126,9 @@ t urbocharged  350-hp Lycoming TIO 540 U2A ,  counter rotating props
 man. pressure  42.0
 speed to crank ratio  0.947 (wide deck )
 -->
-<propeller moment="-50" x="-1.2" y="1.8" z="0.20" mass="500" radius="0.99"
-           cruise-power="320" cruise-alt="25000" min-rpm="1700" max-rpm="2500" cruise-speed="280" cruise-rpm="2500" fine-stop="0.5" coarse-stop="3.5">
-  <piston-engine eng-rpm="2500" alt="18000" eng-power="350" turbo-mul="1.5" displacement="541.5" compression="7.30" wastegate-mp="42.0"/>
+<propeller moment="-15" x="-1.2" y="1.8" z="0.20" mass="500" radius="0.99" gear-ratio="0.947"
+           cruise-power="350" cruise-alt="25000" min-rpm="1700" max-rpm="2500" cruise-speed="280" cruise-rpm="2500" fine-stop="0.5" coarse-stop="3.5">
+  <piston-engine eng-rpm="2500" alt="18000" eng-power="350" turbo-mul="1.5" wastegate-mp="42.0"/>
   <actionpt x="-0.135" y="1.8" z="0.2" />
   <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle" />
   <control-input control="STARTER" axis="/controls/engines/engine[0]/starter" />
@@ -131,9 +137,9 @@ speed to crank ratio  0.947 (wide deck )
   <control-input control="ADVANCE" axis="/controls/engines/engine[0]/propeller-pitch"/>
 </propeller>
 
-<propeller moment="50" x="-1.2" y="-1.8" z="0.20" mass="500" radius="0.99"
-           cruise-power="320" cruise-alt="25000" min-rpm="1700" max-rpm="2500" cruise-speed="280" cruise-rpm="2500" fine-stop="0.5" coarse-stop="3.5">
-  <piston-engine eng-rpm="2500" alt="18000" eng-power="350" turbo-mul="1.5" displacement="541.5" compression="7.30" wastegate-mp="42.0"/>
+<propeller moment="15" x="-1.2" y="-1.8" z="0.20" mass="500" radius="0.99" gear-ratio="0.947"
+           cruise-power="350" cruise-alt="25000" min-rpm="1700" max-rpm="2500" cruise-speed="280" cruise-rpm="2500" fine-stop="0.5" coarse-stop="3.5">
+  <piston-engine eng-rpm="2500" alt="18000" eng-power="350" turbo-mul="1.5" wastegate-mp="42.0"/>
   <actionpt x="-0.135" y="-1.8" z="0.2" />
   <control-input control="THROTTLE" axis="/controls/engines/engine[1]/throttle" />
   <control-input control="STARTER" axis="/controls/engines/engine[1]/starter" />
@@ -143,8 +149,7 @@ speed to crank ratio  0.947 (wide deck )
 </propeller>
 
 
-<ballast x="1.5" y="0.0" z="-1.0" mass="1200"/>
-<ballast x="-4.0" y="0.0" z="0.0" mass="-500"/>
+<ballast x="1.5" y="0.0" z="-1.0" mass="800"/>
 
  <weight x="0.5" y="0" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
  <weight x="-1.8" y="0" z="0" mass-prop="/sim/weight[1]/weight-lb"/>

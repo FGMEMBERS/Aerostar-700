@@ -28,8 +28,38 @@ setlistener("/sim/signals/fdm-initialized", func {
 	setprop("/instrumentation/gps/wp/wp/ID",getprop("/sim/tower/airport-id"));
 	setprop("/instrumentation/gps/wp/wp/waypoint-type","airport");
 	setprop("/instrumentation/gps/serviceable","true");
+	setprop("/gear/gear[0]/gear-down-locked",1);
+	setprop("/gear/gear[0]/gear-up-locked",0);
+	setprop("/gear/gear[1]/gear-down-locked",1);
+	setprop("/gear/gear[1]/gear-up-locked",0);
+	setprop("/gear/gear[2]/gear-down-locked",1);
+	setprop("/gear/gear[2]/gear-up-locked",0);
 	print("GPS Systems ... OK");
 	});
+
+setlistener("/gear/gear[0]/position-norm", func {
+	var lock = cmdarg().getValue();
+	setprop("/gear/gear[0]/gear-down-locked",0);
+	setprop("/gear/gear[0]/gear-up-locked",0);
+	if(lock == 0.0){setprop("/gear/gear[0]/gear-up-locked",1);}
+	if(lock == 1.0){setprop("/gear/gear[0]/gear-down-locked",1);}
+	},1);	
+
+setlistener("/gear/gear[1]/position-norm", func {
+	var lock = cmdarg().getValue();
+	setprop("/gear/gear[1]/gear-down-locked",0);
+	setprop("/gear/gear[1]/gear-up-locked",0);
+	if(lock == 0.0){setprop("/gear/gear[1]/gear-up-locked",1);}
+	if(lock == 1.0){setprop("/gear/gear[1]/gear-down-locked",1);}
+	},1);	
+
+setlistener("/gear/gear[2]/position-norm", func {
+	var lock = cmdarg().getValue();
+	setprop("/gear/gear[2]/gear-down-locked",0);
+	setprop("/gear/gear[2]/gear-up-locked",0);
+	if(lock == 0.0){setprop("/gear/gear[2]/gear-up-locked",1);}
+	if(lock == 1.0){setprop("/gear/gear[2]/gear-down-locked",1);}
+	},1);	
 
 setlistener("/instrumentation/comm/frequencies/selected-mhz", func {
 	setprop("/instrumentation/comm/frequencies/freq-whole",cmdarg().getValue()*100);
@@ -66,10 +96,10 @@ setlistener("/instrumentation/nav[1]/frequencies/standby-mhz", func {
 update_sound = func{
 if(getprop("/sim/current-view/view-number")== 0){
 	Cvolume.setValue(0.6);
-	Ovolume.setValue(0.3);	
+	Ovolume.setValue(0.2);	
 	}else{
 	Cvolume.setValue(0.1);
-	Ovolume.setValue(0.9);	
+	Ovolume.setValue(1.0);	
 	}
 }
 

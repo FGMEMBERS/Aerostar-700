@@ -23,8 +23,8 @@
     <action>
      <name>HDG mode</name>
      <button>0</button>
-     <x>-15</x>
-     <y>3</y>
+     <x>-20</x>
+     <y>-27</y>
      <w>9</w>
      <h>7</h>
      <binding>
@@ -40,8 +40,8 @@
    <action>
      <name>FD mode</name>
      <button>0</button>
-     <x>-3</x>
-     <y>3</y>
+     <x>-8</x>
+     <y>-27</y>
      <w>9</w>
      <h>7</h>
      <binding>
@@ -53,14 +53,14 @@
    <action>
      <name>ALT mode</name>
      <button>0</button>
-     <x>9</x>
-     <y>3</y>
+     <x>4</x>
+     <y>-27</y>
      <w>9</w>
      <h>7</h>
      <binding>
        <command>nasal</command>
        <script>kfcmode = getprop ("instrumentation/kfc200/fdmodeV");
-         if ( kfcmode  != "alt"){setprop("instrumentation/kfc200/fdmodeV","alt");
+         if ( kfcmode != "alt-arm"){setprop("instrumentation/kfc200/fdmodeV","alt-arm");
          }else{
          setprop("instrumentation/kfc200/fdmodeV","off");
          }</script>
@@ -72,8 +72,8 @@
    <action>
      <name>NAV mode</name>
      <button>0</button>
-     <x>-15</x>
-     <y>-13</y>
+     <x>-20</x>
+     <y>-43</y>
      <w>9</w>
      <h>7</h>
      <binding>
@@ -88,8 +88,8 @@
    <action>
      <name>BC mode</name>
      <button>0</button>
-     <x>-4</x>
-     <y>-13</y>
+     <x>-9</x>
+     <y>-43</y>
      <w>9</w>
      <h>7</h>
      <binding>
@@ -105,8 +105,8 @@
    <action>
      <name>APPR mode</name>
      <button>0</button>
-     <x>8</x>
-     <y>-13</y>
+     <x>3</x>
+     <y>-43</y>
      <w>9</w>
      <h>7</h>
      <binding>
@@ -122,14 +122,60 @@
    <action>
      <name>AP-ON mode</name>
      <button>0</button>
-     <x>22</x>
-     <y>-4</y>
+     <x>18</x>
+     <y>-35</y>
      <w>10</w>
      <h>10</h>
      <binding>
        <command>property-toggle</command>
        <property>/autopilot/locks/passive-mode</property>
      </binding>
+   </action>
+
+   	<action>
+    	<name>Trim-Down</name>
+     	<button>0</button>
+     	<x>-35</x>
+     	<y>-30</y>
+     	<w>10</w>
+     	<h>10</h>
+   			<condition>
+				<not-equals>
+					<property>/autopilot/locks/altitude</property>
+					<value></value>
+				</not-equals>
+			</condition>
+     	<binding>
+       			<command>property-adjust</command>
+       			<property>/autopilot/settings/target-pitch-deg</property>
+       			<step>-0.05</step>
+       			<min>-15.0</min>
+       			<max>15.0</max>
+       			<wrap>false</wrap>
+     	</binding>
+   	</action>
+
+   <action>
+     <name>Trim-Up</name>
+     <button>0</button>
+     <x>-35</x>
+     <y>-40</y>
+     <w>10</w>
+     <h>10</h>
+		<condition>
+			<not-equals>
+				<property>/autopilot/locks/altitude</property>
+				<value></value>
+			</not-equals>
+		</condition>
+		<binding>
+   			<command>property-adjust</command>
+       			<property>/autopilot/settings/target-pitch-deg</property>
+       			<step>0.05</step>
+       			<min>-15.0</min>
+       			<max>15.0</max>
+       			<wrap>false</wrap>
+     	</binding>
    </action>
 
 <!-- ############## THROTTLE QUADRANT ##############-->

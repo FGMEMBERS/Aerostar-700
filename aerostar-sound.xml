@@ -64,8 +64,8 @@
     		<property>sim/sound/A700/Ovolume</property>
    		</volume>
     	<pitch>
-      		<property>engines/engine[0]/mp-osi</property>
-      		<factor>0.028</factor>
+      		<property>engines/engine[0]/rpm</property>
+      		<factor>0.0004</factor>
       		<min>0.2</min>
       		<max>0.9</max>
       		<offset> 0.2</offset>
@@ -136,8 +136,8 @@
     		<property>sim/sound/A700/Ovolume</property>
    		</volume>
     	<pitch>
-      		<property>engines/engine[1]/mp-osi</property>
-      		<factor>0.028</factor>
+      		<property>engines/engine[1]/rpm</property>
+      		<factor>0.0004</factor>
       		<min>0.2</min>
       		<max>0.9</max>
       		<offset> 0.2</offset>
