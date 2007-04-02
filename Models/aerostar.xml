@@ -189,7 +189,7 @@
      <pitch-deg>-10.0</pitch-deg>
    </offsets>
  </model>
-  
+<!--
  <model>
    <path>Aircraft/Instruments-3d/kfc200/kfc200-3d.xml</path>
    <offsets>
@@ -209,7 +209,7 @@
      <pitch-deg>-10.0</pitch-deg>
    </offsets>
  </model>
-
+ -->
  <model>
    <path>Aircraft/Instruments-3d/asi300/asi300-3d.xml</path>
    <offsets>
@@ -320,6 +320,26 @@
      <pitch-deg>0.0</pitch-deg>
    </offsets>
  </model>
+ 
+ <model>
+   <path>Aircraft/Aerostar-700/Models/RPM.xml</path>
+   <offsets>
+     <x-m>-0.937</x-m>
+     <y-m>0.213</y-m>
+     <z-m>0.342</z-m>
+     <pitch-deg>-10.0</pitch-deg>
+   </offsets>
+ </model>
+ 
+ <model>
+   <path>Aircraft/Aerostar-700/Models/Manifold.xml</path>
+   <offsets>
+     <x-m>-0.937</x-m>
+     <y-m>0.123</y-m>
+     <z-m>0.342</z-m>
+     <pitch-deg>-10.0</pitch-deg>
+   </offsets>
+ </model>
 
  <model>
     <name>Pilot</name>
@@ -400,6 +420,18 @@
     <property>sim/current-view/view-number</property>
     <value>0</value>
     </not-equals>
+    </condition>
+</animation> 
+
+<animation>
+    <type>select</type>
+    <object-name>Yoke1</object-name>
+    <object-name>Yoke2</object-name>
+    <object-name>YokeBase</object-name>
+    <object-name>RHpedal</object-name>
+    <object-name>LHpedal</object-name>
+    <condition>
+        <property>sim/yokes-visible</property>
     </condition>
 </animation> 
 
@@ -579,12 +611,109 @@
    </axis>
  </animation>
  
+<!-- Yokes / Pedals -->
 
+ <animation>
+   <type>rotate</type>
+   <object-name>Yoke1</object-name>
+   <property>controls/flight/aileron</property>
+   <factor>-50</factor>
+   <center>
+     <x-m>-0.905</x-m>
+     <y-m>-0.286</y-m>
+     <z-m>0.154</z-m>
+   </center>
+   <axis>
+     <x>0.985</x>
+     <y>0</y>
+     <z>0.174</z>
+   </axis>
+ </animation>
 
+ <animation>
+   <type>translate</type>
+   <object-name>Yoke1</object-name>
+   <property>controls/flight/elevator</property>
+   <factor>-0.05</factor>
+   <center>
+     <x-m>-0.905</x-m>
+     <y-m>-0.286</y-m>
+     <z-m>0.154</z-m>
+   </center>
+   <axis>
+     <x>0.985</x>
+     <y>0</y>
+     <z>0.174</z>
+   </axis>
+ </animation>
 
+ <animation>
+   <type>rotate</type>
+   <object-name>Yoke2</object-name>
+   <property>controls/flight/aileron</property>
+   <factor>-50</factor>
+   <center>
+     <x-m>-0.905</x-m>
+     <y-m>0.245</y-m>
+     <z-m>0.154</z-m>
+   </center>
+   <axis>
+     <x>0.985</x>
+     <y>0</y>
+     <z>0.174</z>
+   </axis>
+ </animation>
 
+ <animation>
+   <type>translate</type>
+   <object-name>Yoke2</object-name>
+   <property>controls/flight/elevator</property>
+   <factor>-0.05</factor>
+   <center>
+     <x-m>-0.905</x-m>
+     <y-m>0.245</y-m>
+     <z-m>0.154</z-m>
+   </center>
+   <axis>
+     <x>0.985</x>
+     <y>0</y>
+     <z>0.174</z>
+   </axis>
+ </animation>
 
+ <animation>
+   <type>translate</type>
+   <object-name>LHpedal</object-name>
+   <property>controls/flight/rudder</property>
+   <factor>0.02</factor>
+   <center>
+     <x-m>5.873</x-m>
+     <y-m>0</y-m>
+     <z-m>0.876</z-m>
+   </center>
+   <axis>
+     <x>1.0</x>
+     <y>0</y>
+     <z>0.0</z>
+   </axis>
+ </animation>
 
+ <animation>
+   <type>translate</type>
+   <object-name>RHpedal</object-name>
+   <property>controls/flight/rudder</property>
+   <factor>-0.02</factor>
+   <center>
+     <x-m>5.873</x-m>
+     <y-m>0</y-m>
+     <z-m>0.876</z-m>
+   </center>
+   <axis>
+     <x>1.0</x>
+     <y>0</y>
+     <z>0.0</z>
+   </axis>
+ </animation>
  
  <animation>
    <type>rotate</type>
