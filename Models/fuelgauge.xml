@@ -49,8 +49,8 @@
   		<property>consumables/fuel/tank[0]/level-gal_us</property>
   		<interpolation>
     		<entry><ind>0</ind><dep>0</dep></entry>
-    		<entry><ind>25</ind><dep>40</dep></entry>
-    		<entry><ind>50</ind><dep>79</dep></entry>
+    		<entry><ind>30</ind><dep>47.5</dep></entry>
+    		<entry><ind>62</ind><dep>98</dep></entry>
   		</interpolation>
   		<center>
     		<x-m>0</x-m>
@@ -70,9 +70,8 @@
   		<property>consumables/fuel/tank[2]/level-gal_us</property>
   		<interpolation>
     		<entry><ind>0</ind><dep>0</dep></entry>
-    		<entry><ind>20</ind><dep>39.5</dep></entry>
-    		<entry><ind>40</ind><dep>79</dep></entry>
-  		</interpolation>
+    		<entry><ind>41.5</ind><dep>82</dep></entry>
+    	</interpolation>
   		<center>
     		<x-m>0</x-m>
     		<y-m>0.007</y-m>
@@ -91,8 +90,8 @@
   		<property>consumables/fuel/tank[1]/level-gal_us</property>
   		<interpolation>
     		<entry><ind>0</ind><dep>0</dep></entry>
-    		<entry><ind>25</ind><dep>40</dep></entry>
-    		<entry><ind>50</ind><dep>79</dep></entry>
+    		<entry><ind>30</ind><dep>47.5</dep></entry>
+    		<entry><ind>62</ind><dep>98</dep></entry>
   		</interpolation>
   		<center>
     		<x-m>0</x-m>
