@@ -13,11 +13,11 @@ mag2 = nil;
 Cvolume=props.globals.getNode("/sim/sound/A700/Cvolume",1);
 Ovolume=props.globals.getNode("/sim/sound/A700/Ovolume",1);
 
-strobe_switch = props.globals.getNode("controls/switches/strobe", 1);
-aircraft.light.new("sim/model/Aerostar/lighting/strobe", [0.05, 1.30], strobe_switch);
+strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
+aircraft.light.new("/controls/lighting/strobe-state", [0.05, 1.30], strobe_switch);
 
-beacon_switch = props.globals.getNode("controls/switches/beacon", 1);
-aircraft.light.new("sim/model/Aerostar/lighting/beacon", [1.0, 1.0], beacon_switch);
+beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
+aircraft.light.new("/controls/lighting/beacon-state", [1.0, 1.0], beacon_switch);
 
 setlistener("/sim/signals/fdm-initialized", func {
 	Cvolume.setValue(0);

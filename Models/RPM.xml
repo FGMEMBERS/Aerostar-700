@@ -8,12 +8,37 @@
   		<object-name>RPM.face</object-name>
 		<object-name>RPM.RHneedle</object-name>
     	<object-name>RPM.LHneedle</object-name>
+    	<condition>
+    		<greater-than>
+    			<property>/systems/electrical/outputs/instrument-lights</property>
+    			<value>1</value>
+    		</greater-than>
+    	</condition>
     	<emission>
     		<red>0.8</red>
     		<green>0.4</green>
     		<blue>0.2</blue>
     		<factor-prop>/controls/lighting/instruments-norm</factor-prop>
   		</emission>
+	</animation>
+	
+	<animation>
+  		<type>material</type>
+  		<object-name>RPM.face</object-name>
+		<object-name>RPM.RHneedle</object-name>
+    	<object-name>RPM.LHneedle</object-name>
+    	<condition>
+    		<less-than>
+    			<property>/systems/electrical/outputs/instrument-lights</property>
+    			<value>1</value>
+    		</less-than>
+    	</condition>
+    	<emission>
+    		<red>0.0</red>
+    		<green>0.0</green>
+    		<blue>0.0</blue>
+    		<factor-prop>/controls/lighting/instruments-norm</factor-prop>
+    	</emission>
 	</animation>
 
 	<animation>

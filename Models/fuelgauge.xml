@@ -9,6 +9,12 @@
 		<object-name>LHfuel.needle</object-name>
     	<object-name>CTRfuel.needle</object-name>
     	<object-name>RHfuel.needle</object-name>
+    	<condition>
+    		<greater-than>
+    			<property>/systems/electrical/outputs/instrument-lights</property>
+    			<value>1</value>
+    		</greater-than>
+    	</condition>
   		<emission>
     		<red>0.8</red>
     		<green>0.4</green>
@@ -16,7 +22,27 @@
     		<factor-prop>/controls/lighting/instruments-norm</factor-prop>
   		</emission>
 	</animation>
-
+	
+	<animation>
+  		<type>material</type>
+  		<object-name>FuelGauge.face</object-name>
+		<object-name>LHfuel.needle</object-name>
+    	<object-name>CTRfuel.needle</object-name>
+    	<object-name>RHfuel.needle</object-name>
+    	<condition>
+    		<less-than>
+    			<property>/systems/electrical/outputs/instrument-lights</property>
+    			<value>1</value>
+    		</less-than>
+    	</condition>
+    	<emission>
+    		<red>0.0</red>
+    		<green>0.0</green>
+    		<blue>0.0</blue>
+    		<factor-prop>/controls/lighting/instruments-norm</factor-prop>
+    	</emission>
+	</animation>
+	
 	<animation>
   		<type>rotate</type>
   		<object-name>LHfuel.needle</object-name>

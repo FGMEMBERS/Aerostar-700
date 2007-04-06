@@ -41,9 +41,9 @@
       		<config>
         		<x-offset-m type="double">-0.30</x-offset-m>
         		<y-offset-m type="double">0.6</y-offset-m>
-        		<z-offset-m type="double">-0.35</z-offset-m>
+        		<z-offset-m type="double">-0.28</z-offset-m>
         		<pitch-offset-deg>-15</pitch-offset-deg>
-        		<default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
+        		<default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
       		</config>
     	</view>
     

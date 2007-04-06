@@ -312,6 +312,16 @@
  </model>
 
  <model>
+   <path>Aircraft/Instruments-3d/kt70/kt70.xml</path>
+   <offsets>
+     <x-m>-0.906</x-m>
+     <y-m>-0.425</y-m>
+     <z-m>0.160</z-m>
+     <pitch-deg>-10.0</pitch-deg>
+   </offsets>
+ </model>
+
+ <model>
    <path>Aircraft/Aerostar-700/Models/fuelgauge.xml</path>
    <offsets>
      <x-m>-0.891</x-m>
@@ -336,6 +346,16 @@
    <offsets>
      <x-m>-0.937</x-m>
      <y-m>0.123</y-m>
+     <z-m>0.342</z-m>
+     <pitch-deg>-10.0</pitch-deg>
+   </offsets>
+ </model>
+ 
+  <model>
+   <path>Aircraft/Aerostar-700/Models/EGT.xml</path>
+   <offsets>
+     <x-m>-0.937</x-m>
+     <y-m>0.303</y-m>
      <z-m>0.342</z-m>
      <pitch-deg>-10.0</pitch-deg>
    </offsets>
@@ -370,6 +390,12 @@
 	<animation>
   		<type>material</type>
   		<object-name>gearon.1</object-name>
+  		<condition>
+  			<greater-than>
+  				<property>systems/electrical/volts</property>
+  				<value>1.0</value>
+  			</greater-than>
+  		</condition>
   		<emission>
     		<red>0.1</red>
     		<green>0.9</green>
@@ -377,10 +403,33 @@
     		<factor-prop>/gear/gear[0]/gear-down-locked</factor-prop>
     	</emission>
 	</animation>
+	
+	<animation>
+  		<type>material</type>
+  		<object-name>gearon.1</object-name>
+  		<condition>
+  			<less-than>
+  				<property>systems/electrical/volts</property>
+  				<value>1.0</value>
+  			</less-than>
+  		</condition>
+  		<emission>
+    		<red>0.0</red>
+    		<green>0.0</green>
+    		<blue>0.0</blue>
+    		<factor-prop>/gear/gear[0]/gear-down-locked</factor-prop>
+    	</emission>
+	</animation>
 
 	<animation>
   		<type>material</type>
   		<object-name>gearon.2</object-name>
+  		<condition>
+  			<greater-than>
+  				<property>systems/electrical/volts</property>
+  				<value>1.0</value>
+  			</greater-than>
+  		</condition>
   		<emission>
     		<red>0.1</red>
     		<green>0.9</green>
@@ -388,10 +437,33 @@
 			<factor-prop>/gear/gear[1]/gear-down-locked</factor-prop>
     	</emission>
 	</animation>
+	
+	<animation>
+  		<type>material</type>
+  		<object-name>gearon.2</object-name>
+  		<condition>
+  			<less-than>
+  				<property>systems/electrical/volts</property>
+  				<value>1.0</value>
+  			</less-than>
+  		</condition>
+  		<emission>
+    		<red>0.0</red>
+    		<green>0.0</green>
+    		<blue>0.0</blue>
+    		<factor-prop>/gear/gear[1]/gear-down-locked</factor-prop>
+    	</emission>
+	</animation>
 
 	<animation>
   		<type>material</type>
   		<object-name>gearon.3</object-name>
+  		<condition>
+  			<greater-than>
+  				<property>systems/electrical/volts</property>
+  				<value>1.0</value>
+  			</greater-than>
+  		</condition>
   		<emission>
     		<red>0.1</red>
     		<green>0.9</green>
@@ -399,10 +471,33 @@
     		<factor-prop>/gear/gear[2]/gear-down-locked</factor-prop>
     	</emission>
 	</animation>
+	
+	<animation>
+  		<type>material</type>
+  		<object-name>gearon.3</object-name>
+  		<condition>
+  			<less-than>
+  				<property>systems/electrical/volts</property>
+  				<value>1.0</value>
+  			</less-than>
+  		</condition>
+  		<emission>
+    		<red>0.0</red>
+    		<green>0.0</green>
+    		<blue>0.0</blue>
+    		<factor-prop>/gear/gear[3]/gear-down-locked</factor-prop>
+    	</emission>
+	</animation>
 
 	<animation>
   		<type>material</type>
   		<object-name>gearon</object-name>
+  		<condition>
+  			<greater-than>
+  				<property>systems/electrical/volts</property>
+  				<value>1.0</value>
+  			</greater-than>
+  		</condition>
   		<emission>
     		<red>0.8</red>
     		<green>0.5</green>
@@ -410,16 +505,56 @@
     		<factor-prop>/gear/gear[0]/gear-up-locked</factor-prop>
     	</emission>
 	</animation>
+	
+	<animation>
+  		<type>material</type>
+  		<object-name>gearon</object-name>
+  		<condition>
+  			<less-than>
+  				<property>systems/electrical/volts</property>
+  				<value>1.0</value>
+  			</less-than>
+  		</condition>
+  		<emission>
+    		<red>0.0</red>
+    		<green>0.0</green>
+    		<blue>0.0</blue>
+    		<factor-prop>/gear/gear[0]/gear-down-locked</factor-prop>
+    	</emission>
+	</animation>
 
+	<animation>
+  		<type>material</type>
+  		<object-name>greennav</object-name>
+  		<emission>
+    		<red>0.1</red>
+    		<green>0.8</green>
+    		<blue>0.5</blue>
+    		<factor-prop>controls/lighting/nav-lights</factor-prop>
+    		<factor>0.036</factor>
+    	</emission>
+	</animation>
+
+	<animation>
+  		<type>material</type>
+  		<object-name>rednav</object-name>
+  		<emission>
+    		<red>0.8</red>
+    		<green>0.1</green>
+    		<blue>0.1</blue>
+    		<factor-prop>systems/electrical/outputs/nav-lights</factor-prop>
+    		</emission>
+	</animation>
 
 <animation>
     <type>select</type>
     <object-name>pilot</object-name>
+    <object-name>glass</object-name>
     <condition>
-    <not-equals>
-    <property>sim/current-view/view-number</property>
-    <value>0</value>
-    </not-equals>
+    	<not-equals>
+    		<property>sim/current-view/view-number</property>
+    		<value>0</value>
+    	</not-equals>
     </condition>
 </animation> 
 
