@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <PropertyList>
 
-	<path>RPMGauge.ac</path>
+	<path>ManifoldGauge.ac</path>
 
 	<animation>
   		<type>material</type>
-  		<object-name>RPM.face</object-name>
-		<object-name>RPM.RHneedle</object-name>
-    	<object-name>RPM.LHneedle</object-name>
+  		<object-name>MP.face</object-name>
+		<object-name>MP.RHneedle</object-name>
+    	<object-name>MP.LHneedle</object-name>
     	<emission>
     		<red>0.8</red>
     		<green>0.4</green>
@@ -18,12 +18,13 @@
 
 	<animation>
   		<type>rotate</type>
-  		<object-name>RPM.LHneedle</object-name>
-  		<property>engines/engine/rpm</property>
+  		<object-name>MP.LHneedle</object-name>
+  		<property>engines/engine/mp-inhg</property>
   		<interpolation>
     		<entry><ind>0</ind><dep>0</dep></entry>
-    		<entry><ind>3500</ind><dep>252</dep></entry>
-    	</interpolation>
+    		<entry><ind>10</ind><dep>72</dep></entry>
+    		<entry><ind>35</ind><dep>252</dep></entry>
+  		</interpolation>
   		<center>
     		<x-m>0</x-m>
     		<y-m>-0.0</y-m>
@@ -38,12 +39,13 @@
 	
 	<animation>
   		<type>rotate</type>
-  		<object-name>RPM.RHneedle</object-name>
-  		<property>engines/engine[1]/rpm</property>
+  		<object-name>MP.RHneedle</object-name>
+  		<property>engines/engine[1]/mp-inhg</property>
   		<interpolation>
     		<entry><ind>0</ind><dep>0</dep></entry>
-    		<entry><ind>3500</ind><dep>252</dep></entry>
-    	</interpolation>
+    		<entry><ind>10</ind><dep>72</dep></entry>
+    		<entry><ind>35</ind><dep>252</dep></entry>
+  		</interpolation>
   		<center>
     		<x-m>0</x-m>
     		<y-m>-0.0</y-m>
