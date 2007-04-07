@@ -361,6 +361,16 @@
    </offsets>
  </model>
 
+  <model>
+   <path>Aircraft/Aerostar-700/Models/FuelGPH.xml</path>
+   <offsets>
+     <x-m>-0.937</x-m>
+     <y-m>0.393</y-m>
+     <z-m>0.342</z-m>
+     <pitch-deg>-10.0</pitch-deg>
+   </offsets>
+ </model>
+
  <model>
     <name>Pilot</name>
     <path>Aircraft/Aerostar-700/Models/testpilot.xml</path>
