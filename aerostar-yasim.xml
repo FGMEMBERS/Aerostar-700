@@ -49,7 +49,7 @@ Vy 117
           width="1.5" taper="0" midpoint="0.35"/>
 
 <wing x="-1.8" y="0.65" z="0.05" length="4.68" chord="1.9"
-      sweep="0" dihedral="2" taper="0.4" camber="0.0330" incidence="1.0">
+      sweep="0" dihedral="2" taper="0.4" camber="0.0325" incidence="1.0">
   <stall aoa="16" width="4" peak="1.5"/>
   <flap0 start="0.1" end=".5" lift="1.7" drag="1.9"/>
   <flap1 start=".5" end=".9" lift="1.3" drag="1.1"/>
@@ -65,7 +65,7 @@ Vy 117
 </wing>
 
 <hstab x="-5.85" y="0.237" z="0.61" length="1.8" chord="1.2"
-       sweep="27" dihedral="0" taper="0.6" effectiveness="2.0">
+       sweep="27" dihedral="0" taper="0.6" effectiveness="1.0">
   <stall aoa="16" width="4" peak="1.5"/>
   <flap0 start="0" end="1" lift="1.55" drag="1.1"/>
   <control-input axis="/controls/flight/elevator" control="FLAP0"/>
@@ -151,7 +151,7 @@ speed to crank ratio  0.947 (wide deck )
 </propeller>
 
 
-<ballast x="-5.0" y="0.0" z="0" mass="-1200"/>
+<ballast x="-5.0" y="0.0" z="0" mass="-1000"/>
 
  <weight x="0.5" y="0" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
  <weight x="-1.8" y="0" z="0" mass-prop="/sim/weight[1]/weight-lb"/>

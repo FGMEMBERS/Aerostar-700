@@ -116,29 +116,32 @@
    <max-m>5000</max-m>
  </animation>
 
-<!-- 3D Panel-->
+<!-- 3D Panel Hotspots
+for PLIB version
+comment out for OSG
+-->
+<!--
  <panel>
   <name>Panel3D</name>
   <path>Aircraft/Aerostar-700/Panels/aerostar-panel.xml</path>
   <bottom-left>
    <x-m>-0.878</x-m>
-   <y-m>-0.553</y-m>
-   <z-m> 0.023</z-m>
+   <y-m>-0.552</y-m>
+   <z-m> 0.022</z-m>
   </bottom-left>
   <bottom-right>
    <x-m>-0.878</x-m>
-   <y-m> 0.553</y-m>
-   <z-m> 0.023</z-m>
+   <y-m> 0.552</y-m>
+   <z-m> 0.022</z-m>
   </bottom-right>
   <top-left>
-   <x-m>-1.023</x-m>
-   <y-m>-0.553</y-m>
-   <z-m> 0.840</z-m>
+   <x-m>-0.950</x-m>
+   <y-m>-0.552</y-m>
+   <z-m> 0.430</z-m>
   </top-left>
   <depth-test type="bool">true</depth-test>
  </panel>
 
- <!-- Pedestal-->
  <panel>
    <name>Pedestal</name>
    <path>Aircraft/Aerostar-700/Panels/center-panel.xml</path>
@@ -159,6 +162,8 @@
    </top-left>
    <depth-test type="bool">true</depth-test>
  </panel>
+
+-->
 
 <model>
   <path>Aircraft/Instruments-3d/kfc200/fd-control.xml</path>
@@ -189,27 +194,7 @@
      <pitch-deg>-10.0</pitch-deg>
    </offsets>
  </model>
-<!--
- <model>
-   <path>Aircraft/Instruments-3d/kfc200/kfc200-3d.xml</path>
-   <offsets>
-     <x-m>-0.937</x-m>
-     <y-m>0.315</y-m>
-     <z-m>0.343</z-m>
-     <pitch-deg>-10.0</pitch-deg>
-   </offsets>
- </model>
- 
- <model>
-   <path>Aircraft/Instruments-3d/kfc200/fd-annun.xml</path>
-   <offsets>
-     <x-m>-0.949</x-m>
-     <y-m>0.315</y-m>
-     <z-m>0.407</z-m>
-     <pitch-deg>-10.0</pitch-deg>
-   </offsets>
- </model>
- -->
+
  <model>
    <path>Aircraft/Instruments-3d/asi300/asi300-3d.xml</path>
    <offsets>
@@ -540,9 +525,8 @@
     		<red>0.1</red>
     		<green>0.8</green>
     		<blue>0.5</blue>
-    		<factor-prop>controls/lighting/nav-lights</factor-prop>
-    		<factor>0.036</factor>
-    	</emission>
+		<factor-prop>systems/electrical/outputs/nav-lights</factor-prop>
+    		</emission>
 	</animation>
 
 	<animation>
@@ -552,7 +536,7 @@
     		<red>0.8</red>
     		<green>0.1</green>
     		<blue>0.1</blue>
-    		<factor-prop>systems/electrical/outputs/nav-lights</factor-prop>
+		<factor-prop>systems/electrical/outputs/nav-lights</factor-prop>
     		</emission>
 	</animation>
 
@@ -1792,174 +1776,435 @@
   </axis>
 </animation>
 
-<animation>
-  <type>rotate</type>
-  <object-name>LAlt.toggle</object-name>
-  <property>controls/electric/engine[0]/generator</property>
-  <factor>30</factor>
-  <center>
-    <x-m>-0.886</x-m>
-    <y-m>-0.339</y-m>
-    <z-m>0.048</z-m>
-  </center>
-  <axis>
-    <x>0.0</x>
-    <y>-1.0</y>
-    <z>0.0</z>
-  </axis>
-</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>LAlt.toggle</object-name>
+		<property>controls/electric/engine[0]/generator</property>
+		<factor>30</factor>
+		<center>
+			<x-m>-0.886</x-m>
+			<y-m>-0.339</y-m>
+			<z-m>0.048</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>RAlt.toggle</object-name>
+		<property>controls/electric/engine[1]/generator</property>
+		<factor>30</factor>
+		<center>
+			<x-m>-0.886</x-m>
+			<y-m>-0.339</y-m>
+			<z-m>0.048</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Deice.toggle</object-name>
+		<property>controls/anti-ice/prop-heat</property>
+		<factor>30</factor>
+		<center>
+			<x-m>-0.886</x-m>
+			<y-m>-0.339</y-m>
+			<z-m>0.048</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pitot.toggle</object-name>
+		<property>controls/anti-ice/pitot-heat</property>
+		<factor>30</factor>
+		<center>
+			<x-m>-0.886</x-m>
+			<y-m>-0.339</y-m>
+			<z-m>0.048</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Strobe.toggle</object-name>
+		<property>controls/lighting/strobe</property>
+		<factor>30</factor>
+		<center>
+			<x-m>-0.886</x-m>
+			<y-m>-0.339</y-m>
+			<z-m>0.048</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>FAn.toggle</object-name>
+		<property>controls/cabin/fan</property>
+		<factor>30</factor>
+		<center>
+			<x-m>-0.886</x-m>
+			<y-m>-0.339</y-m>
+			<z-m>0.048</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>C-heat.toggle</object-name>
+		<property>controls/cabin/heat</property>
+		<factor>30</factor>
+		<center>
+			<x-m>-0.886</x-m>
+			<y-m>-0.339</y-m>
+			<z-m>0.048</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Nav.toggle</object-name>
+		<property>controls/lighting/nav-lights</property>
+		<factor>30</factor>
+		<center>
+			<x-m>-0.886</x-m>
+			<y-m>-0.339</y-m>
+			<z-m>0.048</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Cabin.toggle</object-name>
+		<property>controls/lighting/cabin-lights</property>
+		<factor>30</factor>
+		<center>
+			<x-m>-0.886</x-m>
+			<y-m>-0.339</y-m>
+			<z-m>0.048</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Llanding.toggle</object-name>
+		<property>controls/lighting/landing-lights[0]</property>
+		<factor>30</factor>
+		<center>
+			<x-m>-0.886</x-m>
+			<y-m>-0.339</y-m>
+			<z-m>0.048</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Rlanding.toggle</object-name>
+		<property>controls/lighting/landing-lights[1]</property>
+		<factor>30</factor>
+		<center>
+			<x-m>-0.886</x-m>
+			<y-m>-0.339</y-m>
+			<z-m>0.048</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Wing.toggle</object-name>
+		<property>controls/lighting/wing-lights</property>
+		<factor>30</factor>
+		<center>
+			<x-m>-0.886</x-m>
+			<y-m>-0.339</y-m>
+			<z-m>0.048</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Instr-light.knob</object-name>
+		<property>controls/lighting/instruments-norm</property>
+		<factor>-180</factor>
+		<center>
+			<x-m>-0.886</x-m>
+			<y-m>-0.281</y-m>
+			<z-m>0.053</z-m>
+		</center>
+		<axis>
+			<x>0.985</x>
+			<y>0</y>
+			<z>0.174</z>
+		</axis>
+	</animation>
+
+<!-- 
+####    OSG hotspots    ####
+-->
+	<animation>
+  		<type>pick</type>
+  		<object-name>Batt.toggle</object-name>
+  		<action>
+  			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/battery-switch</property>
+			</binding>
+  		</action>
+	</animation>
+
+	<animation>
+  		<type>pick</type>
+  		<object-name>LAlt.toggle</object-name>
+  		<action>
+  			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/engine[0]/generator</property>
+			</binding>
+  		</action>
+	</animation>
+	
+	<animation>
+  		<type>pick</type>
+  		<object-name>RAlt.toggle</object-name>
+  		<action>
+  			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/engine[1]/generator</property>
+			</binding>
+  		</action>
+	</animation>
+
+	<animation>
+  		<type>pick</type>
+  		<object-name>Deice.toggle</object-name>
+  		<action>
+  			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/anti-ice/prop-heat</property>
+			</binding>
+  		</action>
+	</animation>
+
+	<animation>
+  		<type>pick</type>
+  		<object-name>Pitot.toggle</object-name>
+  		<action>
+  			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/anti-ice/pitot-heat</property>
+			</binding>
+  		</action>
+	</animation>
+	
+	<animation>
+  		<type>pick</type>
+  		<object-name>FAn.toggle</object-name>
+  		<action>
+  			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/cabin/fan</property>
+			</binding>
+  		</action>
+	</animation>
+	
+	<animation>
+  		<type>pick</type>
+  		<object-name>C-heat.toggle</object-name>
+  		<action>
+  			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/cabin/heat</property>
+			</binding>
+  		</action>
+	</animation>
+	
+	<animation>
+  		<type>pick</type>
+  		<object-name>Strobe.toggle</object-name>
+  		<action>
+  			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/lighting/strobe</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/lighting/beacon</property>
+     		</binding>
+  		</action>
+	</animation>
+	
+	<animation>
+  		<type>pick</type>
+  		<object-name>Nav.toggle</object-name>
+  		<action>
+  			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/lighting/nav-lights</property>
+			</binding>
+		</action>
+	</animation>
 
 <animation>
-  <type>rotate</type>
-  <object-name>RAlt.toggle</object-name>
-  <property>controls/electric/engine[1]/generator</property>
-  <factor>30</factor>
-  <center>
-    <x-m>-0.886</x-m>
-    <y-m>-0.339</y-m>
-    <z-m>0.048</z-m>
-  </center>
-  <axis>
-    <x>0.0</x>
-    <y>-1.0</y>
-    <z>0.0</z>
-  </axis>
-</animation>
+  		<type>pick</type>
+  		<object-name>Cabin.toggle</object-name>
+  		<action>
+  			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/lighting/cabin-lights</property>
+			</binding>
+		</action>
+	</animation>
 
-<animation>
-  <type>rotate</type>
-  <object-name>Deice.toggle</object-name>
-  <property>controls/anti-ice/prop-heat</property>
-  <factor>30</factor>
-  <center>
-    <x-m>-0.886</x-m>
-    <y-m>-0.339</y-m>
-    <z-m>0.048</z-m>
-  </center>
-  <axis>
-    <x>0.0</x>
-    <y>-1.0</y>
-    <z>0.0</z>
-  </axis>
-</animation>
-
-<animation>
-  <type>rotate</type>
-  <object-name>Pitot.toggle</object-name>
-  <property>controls/anti-ice/pitot-heat</property>
-  <factor>30</factor>
-  <center>
-    <x-m>-0.886</x-m>
-    <y-m>-0.339</y-m>
-    <z-m>0.048</z-m>
-  </center>
-  <axis>
-    <x>0.0</x>
-    <y>-1.0</y>
-    <z>0.0</z>
-  </axis>
-</animation>
-
-<animation>
-  <type>rotate</type>
-  <object-name>Strobe.toggle</object-name>
-  <property>controls/switches/strobe</property>
-  <factor>30</factor>
-  <center>
-    <x-m>-0.886</x-m>
-    <y-m>-0.339</y-m>
-    <z-m>0.048</z-m>
-  </center>
-  <axis>
-    <x>0.0</x>
-    <y>-1.0</y>
-    <z>0.0</z>
-  </axis>
-</animation>
-
-<animation>
-  <type>rotate</type>
-  <object-name>Nav.toggle</object-name>
-  <property>controls/switches/nav-lights</property>
-  <factor>30</factor>
-  <center>
-    <x-m>-0.886</x-m>
-    <y-m>-0.339</y-m>
-    <z-m>0.048</z-m>
-  </center>
-  <axis>
-    <x>0.0</x>
-    <y>-1.0</y>
-    <z>0.0</z>
-  </axis>
-</animation>
-
-<animation>
-  <type>rotate</type>
-  <object-name>Cabin.toggle</object-name>
-  <property>controls/switches/cabin-lights</property>
-  <factor>30</factor>
-  <center>
-    <x-m>-0.886</x-m>
-    <y-m>-0.339</y-m>
-    <z-m>0.048</z-m>
-  </center>
-  <axis>
-    <x>0.0</x>
-    <y>-1.0</y>
-    <z>0.0</z>
-  </axis>
-</animation>
-
-<animation>
-  <type>rotate</type>
-  <object-name>Llanding.toggle</object-name>
-  <property>controls/switches/landing-lights[0]</property>
-  <factor>30</factor>
-  <center>
-    <x-m>-0.886</x-m>
-    <y-m>-0.339</y-m>
-    <z-m>0.048</z-m>
-  </center>
-  <axis>
-    <x>0.0</x>
-    <y>-1.0</y>
-    <z>0.0</z>
-  </axis>
-</animation>
-
-<animation>
-  <type>rotate</type>
-  <object-name>Rlanding.toggle</object-name>
-  <property>controls/switches/landing-lights[1]</property>
-  <factor>30</factor>
-  <center>
-    <x-m>-0.886</x-m>
-    <y-m>-0.339</y-m>
-    <z-m>0.048</z-m>
-  </center>
-  <axis>
-    <x>0.0</x>
-    <y>-1.0</y>
-    <z>0.0</z>
-  </axis>
-</animation>
-
-<animation>
-  <type>rotate</type>
-  <object-name>Wing.toggle</object-name>
-  <property>controls/switches/beacon</property>
-  <factor>30</factor>
-  <center>
-    <x-m>-0.886</x-m>
-    <y-m>-0.339</y-m>
-    <z-m>0.048</z-m>
-  </center>
-  <axis>
-    <x>0.0</x>
-    <y>-1.0</y>
-    <z>0.0</z>
-  </axis>
-</animation>
+	<animation>
+  		<type>pick</type>
+  		<object-name>Llanding.toggle</object-name>
+  		<action>
+  			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/lighting/landing-lights[0]</property>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+  		<type>pick</type>
+  		<object-name>Rlanding.toggle</object-name>
+  		<action>
+  			<button>0</button>
+    		<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/lighting/landing-lights[1]</property>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+  		<type>pick</type>
+  		<object-name>Wing.toggle</object-name>
+  		<action>
+  			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/lighting/wing-lights</property>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+  		<type>pick</type>
+  		<object-name>instr.increase</object-name>
+  		<action>
+  			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/lighting/instruments-norm</property>
+				<step>0.05</step>
+				<min>0</min>
+				<max>1.0</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+  		<type>pick</type>
+  		<object-name>instr.decrease</object-name>
+  		<action>
+  			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/lighting/instruments-norm</property>
+				<step>-0.05</step>
+				<min>0</min>
+				<max>1.0</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>
 
 </PropertyList>

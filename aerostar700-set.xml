@@ -1,154 +1,159 @@
 <PropertyList >
 
 	<sim>
-    	<description>Aerostar Super 700 / 3d cockpit / (YASim) </description>
-    	<author>Syd Adams</author>
-    	<status>development</status>
-    	<flight-model>yasim</flight-model>
-    	<aero>aerostar-yasim</aero>
-    	<fuel-fraction>1.0</fuel-fraction>
+		<description>Aerostar Super 700 / 3d cockpit / (YASim) </description>
+		<author>Syd Adams</author>
+		<status>development</status>
+		<flight-model>yasim</flight-model>
+		<aero>aerostar-yasim</aero>
+		<fuel-fraction>1.0</fuel-fraction>
 
-    	<model>
+		<model>
    			<path>Aircraft/Aerostar-700/Models/aerostar.xml</path>
  		</model>
-    	<startup>
-      		<splash-texture>Aircraft/Aerostar-700/splash.rgb</splash-texture>
-    	</startup>
+		<startup>
+			<splash-texture>Aircraft/Aerostar-700/splash.rgb</splash-texture>
+		</startup>
 
-    	<systems>
-      		<electrical>
-        		<path></path>
-      		</electrical>
-      		<autopilot>
-        		<path>Aircraft/Aerostar-700/aerostar-autopilot.xml</path>
-        	</autopilot>
-    	</systems>
+		<systems>
+			<electrical>
+				<path></path>
+			</electrical>
+			<autopilot>
+				<path>Aircraft/Aerostar-700/aerostar-autopilot.xml</path>
+			</autopilot>
+		</systems>
     
-    	<sound>
-      		<path>Aircraft/Aerostar-700/aerostar-sound.xml</path>
-    	</sound>
+		<sound>
+			<path>Aircraft/Aerostar-700/aerostar-sound.xml</path>
+		</sound>
     
-    	<hud>
-      		<enable3d>false</enable3d>
-    	</hud>
+		<hud>
+			<enable3d>false</enable3d>
+		</hud>
 
 		<chase-distance-m>-20</chase-distance-m>		
 		
-    	<view n="0">
-      		<name>Cockpit</name>
-      		<type>lookfrom</type>
-      		<internal type="bool">true</internal>
-      		<config>
-        		<x-offset-m type="double">-0.30</x-offset-m>
-        		<y-offset-m type="double">0.6</y-offset-m>
-        		<z-offset-m type="double">-0.28</z-offset-m>
-        		<pitch-offset-deg>-15</pitch-offset-deg>
-        		<default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
-      		</config>
-    	</view>
+		<view n="0">
+			<name>Cockpit</name>
+			<type>lookfrom</type>
+			<internal type="bool">true</internal>
+			<config>
+				<x-offset-m type="double">-0.30</x-offset-m>
+				<y-offset-m type="double">0.6</y-offset-m>
+				<z-offset-m type="double">-0.28</z-offset-m>
+				<pitch-offset-deg>-15</pitch-offset-deg>
+				<default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+			</config>
+		</view>
     
-    	<current-view>
-      		<field-of-view>60.0</field-of-view>
-    	</current-view>
+		<current-view>
+			<field-of-view>60.0</field-of-view>
+		</current-view>
     
-    	<help>
-      		<title>Aerostar /Superstar 700</title>
-			<line></line>      		
-      		<line>Maximum cruise speed: 261 KTAS at 25,000 ft</line>
-      		<line>Econo-cruise speed: 217 KTAS at 23,000 ft</line>
-      		<line>Approach speed (Vref): 90 KIAS</line>
-      		<line>Landing speed: 90 KIAS</line>
-      		<line>Stall speed, full flaps (Vso): 71 KIAS</line>
-      		<line></line>
-    	</help>
+		<help>
+			<title>Aerostar /Superstar 700</title>
+				<line></line>      		
+			<line>Maximum cruise speed: 261 KTAS at 25,000 ft</line>
+			<line>Econo-cruise speed: 217 KTAS at 23,000 ft</line>
+			<line>Approach speed (Vref): 90 KIAS</line>
+			<line>Landing speed: 90 KIAS</line>
+			<line>Stall speed, full flaps (Vso): 71 KIAS</line>
+			<line></line>
+		</help>
     
-    	<input>
-      		<selected>
-        		<engine n="0">true</engine>
-        		<engine n="1">true</engine>
-      		</selected>
-    	</input>
+		<input>
+			<selected>
+				<engine n="0">true</engine>
+				<engine n="1">true</engine>
+			</selected>
+		</input>
   
    		<turbulence-effect type = "bool">true</turbulence-effect>
    		<allow-toggle-cockpit>true</allow-toggle-cockpit>
+		
+		<flaps>
+			<setting>0.00</setting> <!-- UP -->
+			<setting>0.25</setting> <!-- 10 -->
+			<setting>0.50</setting> <!-- 20 -->
+			<setting>0.75</setting> <!-- 30 -->
+			<setting>1.0</setting> <!-- FULL -->
+		</flaps>
    
-    	<weight n="0">
-        	<name>Crew</name>
-        	<weight-lb>180</weight-lb> 
-        	<max-lb>400</max-lb>
-       		<min-lb>180</min-lb>
-    	</weight>
+		<weight n="0">
+			<name>Crew</name>
+			<weight-lb>180</weight-lb> 
+			<max-lb>400</max-lb>
+			<min-lb>180</min-lb>
+		</weight>
 
-    	<weight n="1">
-        	<name>Pax/Baggage</name>
-        	<weight-lb>800</weight-lb> 
-        	<max-lb>1700</max-lb>
-        	<min-lb>0</min-lb>      
-    	</weight>
+		<weight n="1">
+			<name>Pax/Baggage</name>
+			<weight-lb>800</weight-lb> 
+			<max-lb>1700</max-lb>
+			<min-lb>0</min-lb>      
+		</weight>
 
-        <replay>
-            <disable>1</disable>
-        </replay>
+		<replay>
+			<disable>1</disable>
+		</replay>
 
-        <multiplay>
-            <chat_display>1</chat_display>
-        </multiplay>
+		<multiplay>
+			<chat_display>1</chat_display>
+		</multiplay>
 	
 		<yokes-visible type="bool">1</yokes-visible>
    	
 	</sim>
   
   	<controls>
-    	<gear>
-      		<brake-parking>1.0</brake-parking>
-    	</gear>
-    	<lighting>
-    		<instruments-norm>0.6</instruments-norm>
-    	</lighting>
+		<gear>
+			<brake-parking>1.0</brake-parking>
+		</gear>
+		<lighting>
+			<instruments-norm>0.5</instruments-norm>
+		</lighting>
   	</controls>
 
   	<instrumentation>
-    	<comm n="0">
-      		<frequencies>
-        		<freq-whole type="double">99999</freq-whole>
-        		<stby-whole type="double">99999</stby-whole>
-      		</frequencies>
-    	</comm>
-    	<comm n="1">
-      		<frequencies>
-        		<freq-whole type="double">99999</freq-whole>
-        		<stby-whole type="double">99999</stby-whole>
-      		</frequencies>
-    	</comm>
-    	<nav n = "0">
-      		<frequencies>
-        		<freq-whole type="double">99999</freq-whole>
-        		<stby-whole type="double">99999</stby-whole>
-      		</frequencies>
-    	</nav>
-    	<nav n="1">
-      		<frequencies>
-        		<freq-whole type="double">99999</freq-whole>
-        		<stby-whole type="double">99999</stby-whole>
-      		</frequencies>
-    	</nav>
+		<comm n="0">
+			<frequencies>
+				<freq-whole type="double">99999</freq-whole>
+				<stby-whole type="double">99999</stby-whole>
+			</frequencies>
+		</comm>
+		<comm n="1">
+			<frequencies>
+				<freq-whole type="double">99999</freq-whole>
+				<stby-whole type="double">99999</stby-whole>
+			</frequencies>
+		</comm>
+		<nav n = "0">
+			<frequencies>
+				<freq-whole type="double">99999</freq-whole>
+				<stby-whole type="double">99999</stby-whole>
+			</frequencies>
+		</nav>
+		<nav n="1">
+			<frequencies>
+				<freq-whole type="double">99999</freq-whole>
+				<stby-whole type="double">99999</stby-whole>
+			</frequencies>
+		</nav>
   	</instrumentation>
   
   	<consumables>
-    	<fuel>
-      		<tank n="0">
-      			<!-- Max 62 US gallons-->
-        		<level-gal_us archive="y">50</level-gal_us>
-      		</tank>
-      		<tank n="1">
-      			<!-- Max 62 US gallons-->
-        		<level-gal_us archive="y">50</level-gal_us>
-      		</tank>
-      		<tank n="2">
-      			<!-- Max 41.5 US gallons-->
-        		<level-gal_us archive="y">40</level-gal_us>
-      		</tank>
-    	</fuel>
+		<fuel>
+			<tank n="0">	<!-- Max 62 US gallons-->
+				<level-gal_us archive="y">50</level-gal_us>
+			</tank>
+			<tank n="1">	<!-- Max 62 US gallons-->
+				<level-gal_us archive="y">50</level-gal_us>
+			</tank>
+			<tank n="2">	<!-- Max 41.5 US gallons-->
+				<level-gal_us archive="y">40</level-gal_us>
+			</tank>
+		</fuel>
   	</consumables>
   	
   	<autopilot>
@@ -158,12 +163,13 @@
   	</autopilot>
   
   	<nasal>
-    	<Aerostar-700>
-      		<file>Aircraft/Aerostar-700/Nasal/systems.nas</file>
-      		<file>Aircraft/Aerostar-700/Nasal/Electrical.nas</file>
-      		<file>Aircraft/Instruments-3d/kfc200/kfc-200.nas</file>
-      		<file>Aircraft/Instruments-3d/kns80/KNS80.nas</file>
-     	</Aerostar-700>
+		<Aerostar-700>
+			<file>Aircraft/Aerostar-700/Nasal/systems.nas</file>
+			<file>Aircraft/Aerostar-700/Nasal/Electrical.nas</file>
+			<file>Aircraft/Instruments-3d/kfc200/kfc-200.nas</file>
+			<file>Aircraft/Instruments-3d/kns80/KNS80.nas</file>
+			<file>Aircraft/Instruments-3d/ky196/KY196.nas</file>
+		</Aerostar-700>
  	</nasal>
   
 </PropertyList>

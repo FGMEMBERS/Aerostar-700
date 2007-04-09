@@ -14,7 +14,8 @@ BATT = props.globals.getNode("/controls/electric/battery-switch",1);
 L_ALT = props.globals.getNode("/controls/electric/engine[0]/generator",1);
 R_ALT = props.globals.getNode("/controls/electric/engine[1]/generator",1);
 EXT  = props.globals.getNode("/controls/electric/external-power",1); 
-
+NORM = 0.0357;
+DIMMER = props.globals.getNode("/controls/lighting/instruments-norm",1);
 #var battery = Battery.new(volts,amps,amp_hours,charge_percent,charge_amps);
 
 Battery = {
@@ -97,20 +98,23 @@ alternator2 = Alternator.new("/engines/engine[1]/rpm",500.0,28.0,60.0);
 
 #####################################
 setlistener("/sim/signals/fdm-initialized", func {
-	props.globals.getNode("/controls/electric/battery-switch",1).setBoolValue(0); 
 	props.globals.getNode("/controls/electric/external-power",1).setBoolValue(0);
-	props.globals.getNode("/controls/electric/battery-switch",1).setBoolValue(0); 
-    props.globals.getNode("/controls/electric/engine[0]/generator",1).setBoolValue(0);
-	props.globals.getNode("/controls/electric/engine[1]/generator",1).setBoolValue(0);
+	props.globals.getNode("/controls/electric/battery-switch",1).setBoolValue(1); 
+	props.globals.getNode("/controls/electric/engine[0]/generator",1).setBoolValue(1);
+	props.globals.getNode("/controls/electric/engine[1]/generator",1).setBoolValue(1);
 	props.globals.getNode("/controls/anti-ice/prop-heat",1).setBoolValue(0);
 	props.globals.getNode("/controls/anti-ice/pitot-heat",1).setBoolValue(0);
-	props.globals.getNode("/controls/lighting/landing-lights",1).setBoolValue(0);
+	props.globals.getNode("/controls/lighting/landing-lights[0]",1).setBoolValue(0);
+	props.globals.getNode("/controls/lighting/landing-lights[1]",1).setBoolValue(0);
 	props.globals.getNode("/controls/lighting/beacon",1).setBoolValue(0);
 	props.globals.getNode("/controls/lighting/nav-lights",1).setBoolValue(0);
-	props.globals.getNode("/controls/lighting/logo-lights",1).setBoolValue(0);
+	props.globals.getNode("/controls/lighting/cabin-lights",1).setBoolValue(0);
+	props.globals.getNode("/controls/lighting/wing-lights",1).setBoolValue(0);
 	props.globals.getNode("/controls/lighting/strobe",1).setBoolValue(0);
 	props.globals.getNode("/controls/lighting/taxi-light",1).setBoolValue(0);
-	props.globals.getNode("/controls/lighting/instrument-lights",1).setBoolValue(0);
+	props.globals.getNode("/controls/cabin/fan",1).setBoolValue(0);
+	props.globals.getNode("/controls/cabin/heat",1).setBoolValue(0);
+	props.globals.getNode("/controls/lighting/instrument-lights",1).setBoolValue(1);
     FDM = 1;
 	print("Electrical System ... ok");
     });
@@ -203,31 +207,46 @@ electrical_bus = func() {
         OutPuts.getNode("fuel-pump",1).setValue(0.0);
 		}
 
-		
-       
- 
-    if ( props.globals.getNode("/controls/anti-ice/pitot-heat").getBoolValue()){
-      OutPuts.getNode("pitot-heat",1).setValue(bus_volts);  
+	if ( props.globals.getNode("/controls/anti-ice/pitot-heat").getBoolValue()){
+	OutPuts.getNode("pitot-heat",1).setValue(bus_volts);  
 		} else {
-       OutPuts.getNode("pitot-heat",1).setValue(0.0); 
+	OutPuts.getNode("pitot-heat",1).setValue(0.0); 
 		}
 
-	    if ( props.globals.getNode("/controls/lighting/landing-lights").getBoolValue()){
-      OutPuts.getNode("landing-lights",1).setValue(bus_volts);  
+	if ( props.globals.getNode("/controls/lighting/landing-lights[0]").getBoolValue()){
+	OutPuts.getNode("landing-lights[0]",1).setValue(bus_volts * NORM);  
 		} else {
-       OutPuts.getNode("landing-lights",1).setValue(0.0); 
+	OutPuts.getNode("landing-lights[0]",1).setValue(0.0); 
+		}
+
+	if ( props.globals.getNode("/controls/lighting/landing-lights[1]").getBoolValue()){
+	OutPuts.getNode("landing-lights[1]",1).setValue(bus_volts * NORM);  
+		} else {
+	OutPuts.getNode("landing-lights[1]",1).setValue(0.0); 
+		}
+		
+	if ( props.globals.getNode("/controls/lighting/cabin-lights").getBoolValue()){
+	OutPuts.getNode("cabin-lights",1).setValue(bus_volts);  
+		} else {
+	OutPuts.getNode("cabin-lights",1).setValue(0.0); 
+		}
+
+	if ( props.globals.getNode("/controls/lighting/wing-lights").getBoolValue()){
+	OutPuts.getNode("wing-lights",1).setValue(bus_volts * NORM);  
+		} else {
+	OutPuts.getNode("wing-lights",1).setValue(0.0); 
 		}
 
 	    if ( props.globals.getNode("/controls/lighting/nav-lights").getBoolValue()){
-      OutPuts.getNode("nav-lights",1).setValue(bus_volts);  
+	OutPuts.getNode("nav-lights",1).setValue(bus_volts * NORM);  
 		} else {
-       OutPuts.getNode("nav-lights",1).setValue(0.0); 
+	OutPuts.getNode("nav-lights",1).setValue(0.0); 
 		}
 
-    if ( props.globals.getNode("/controls/lighting/beacon").getBoolValue()){
-      OutPuts.getNode("beacon",1).setValue(bus_volts);  
+	if ( props.globals.getNode("/controls/lighting/beacon").getBoolValue()){
+	OutPuts.getNode("beacon",1).setValue(bus_volts);  
 		} else {
-       OutPuts.getNode("beacon",1).setValue(0.0); 
+	OutPuts.getNode("beacon",1).setValue(0.0); 
 		}
 
     OutPuts.getNode("flaps",1).setValue(bus_volts); 
@@ -248,9 +267,9 @@ avionics_bus = func() {
 	var INSTR = props.globals.getNode("/intrumentation");
 
 	if ( props.globals.getNode("/controls/lighting/instrument-lights").getBoolValue()){
-    	OutPuts.getNode("instrument-lights",1).setValue(bus_volts);  
+    	OutPuts.getNode("instrument-lights",1).setValue((bus_volts * NORM) *DIMMER.getValue() );  
 		} else {
-       	OutPuts.getNode("instrument-lights",1).setValue(bus_volts); 
+       	OutPuts.getNode("instrument-lights",1).setValue(0.0); 
 		}
 		
 		OutPuts.getNode("adf",1).setValue(bus_volts);

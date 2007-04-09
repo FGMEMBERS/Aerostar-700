@@ -4,14 +4,14 @@
  <name>Aerostar Panel</name>
  <background>Aircraft/Aerostar-700/Panels/transparent-bg.rgb</background>
  <w>1024</w>
- <h>768</h>
+ <h>384</h>
 
 <instruments>
 
   <instrument include="../../Instruments-3d/ky196/ky196-comm1-hotspots.xml">
     <name>Comm1 hotspots</name>
     <x>492</x>
-    <y>319</y>
+    <y>159</y>
     <w>155</w>
     <h>35</h>
   </instrument>
@@ -19,7 +19,7 @@
   <instrument include="../../Instruments-3d/ky196/ky196-comm2-hotspots.xml">
     <name>Comm2 hotspots</name>
     <x>492</x>
-    <y>286</y>
+    <y>143</y>
     <w>155</w>
     <h>35</h>
   </instrument>
@@ -27,7 +27,7 @@
   <instrument include="../../Instruments-3d/kns80/kns80-hotspots.xml">
     <name>Nav1 hotspots</name>
     <x>492</x>
-    <y>235</y>
+    <y>117</y>
     <w>155</w>
     <h>69</h>
   </instrument>
@@ -35,7 +35,7 @@
   <instrument include="../../Instruments-3d/kr87-adf/kr87-adf-hotspots.xml">
     <name>ADF hotspots</name>
     <x>492</x>
-    <y>178</y>
+    <y>89</y>
     <w>155</w>
     <h>35</h>
   </instrument>
@@ -43,12 +43,12 @@
 
 <instrument>
   <name>panel hotspots</name>
-  <x>512</x>
+  <x>1024</x>
   <y>384</y>
   <w>1024</w>
-  <h>768</h>
+  <h>386</h>
   <w-base>1024</w-base>
-  <h-base>768</h-base>
+  <h-base>384</h-base>
 
  <actions>
 
