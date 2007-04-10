@@ -10,43 +10,43 @@
 
   <instrument include="../../Instruments-3d/ky196/ky196-comm1-hotspots.xml">
     <name>Comm1 hotspots</name>
-    <x>492</x>
-    <y>159</y>
-    <w>155</w>
+    <x>491</x>
+    <y>320</y>
+    <w>154</w>
     <h>35</h>
   </instrument>
 
   <instrument include="../../Instruments-3d/ky196/ky196-comm2-hotspots.xml">
     <name>Comm2 hotspots</name>
-    <x>492</x>
-    <y>143</y>
-    <w>155</w>
+    <x>491</x>
+    <y>288</y>
+    <w>154</w>
     <h>35</h>
   </instrument>
 
   <instrument include="../../Instruments-3d/kns80/kns80-hotspots.xml">
     <name>Nav1 hotspots</name>
-    <x>492</x>
-    <y>117</y>
-    <w>155</w>
-    <h>69</h>
+    <x>491</x>
+    <y>237</y>
+    <w>154</w>
+    <h>70</h>
   </instrument>
   
   <instrument include="../../Instruments-3d/kr87-adf/kr87-adf-hotspots.xml">
     <name>ADF hotspots</name>
-    <x>492</x>
-    <y>89</y>
-    <w>155</w>
+    <x>491</x>
+    <y>178</y>
+    <w>154</w>
     <h>35</h>
   </instrument>
   
 
 <instrument>
   <name>panel hotspots</name>
-  <x>1024</x>
-  <y>384</y>
+  <x>512</x>
+  <y>192</y>
   <w>1024</w>
-  <h>386</h>
+  <h>384</h>
   <w-base>1024</w-base>
   <h-base>384</h-base>
 
@@ -58,7 +58,7 @@
      <name>left magneto increase</name>
      <button>0</button>
      <x>-140</x>
-     <y>-370</y>
+     <y>-178</y>
      <w>20</w>
      <h>30</h>
      <condition>
@@ -81,7 +81,7 @@
      <name>left starter</name>
      <button>0</button>
      <x>-140</x>
-     <y>-370</y>
+     <y>-178</y>
      <w>20</w>
      <h>30</h>
      <condition>
@@ -109,7 +109,7 @@
      <name>left magneto decrease</name>
      <button>0</button>
      <x>-160</x>
-     <y>-370</y>
+     <y>-178</y>
      <w>20</w>
      <h>30</h>
      <binding>
@@ -126,7 +126,7 @@
      <name>right magneto increase</name>
      <button>0</button>
      <x>100</x>
-     <y>-370</y>
+     <y>-178</y>
      <w>20</w>
      <h>30</h>
      <condition>
@@ -149,7 +149,7 @@
      <name>right starter</name>
      <button>0</button>
      <x>100</x>
-     <y>-370</y>
+     <y>-178</y>
      <w>20</w>
      <h>30</h>
      <condition>
@@ -177,7 +177,7 @@
      <name>right magneto decrease</name>
      <button>0</button>
      <x>80</x>
-     <y>-370</y>
+     <y>-178</y>
      <w>20</w>
      <h>30</h>
      <binding>
@@ -193,8 +193,8 @@
     <action>
      <name>battery switch</name>
      <button>0</button>
-     <x>-497</x>
-     <y>-365</y>
+     <x>-505</x>
+     <y>-175</y>
      <w>14</w>
      <h>20</h>
      <binding>
@@ -206,8 +206,8 @@
    <action>
      <name>left generator</name>
      <button>0</button>
-     <x>-482</x>
-     <y>-365</y>
+     <x>-490</x>
+     <y>-175</y>
      <w>14</w>
      <h>20</h>
      <binding>
@@ -219,8 +219,8 @@
    <action>
      <name>right generator</name>
      <button>0</button>
-     <x>-467</x>
-     <y>-365</y>
+     <x>-475</x>
+     <y>-175</y>
      <w>14</w>
      <h>20</h>
      <binding>
@@ -232,8 +232,8 @@
    <action>
      <name>prop deice</name>
      <button>0</button>
-     <x>-446</x>
-     <y>-365</y>
+     <x>-450</x>
+     <y>-175</y>
      <w>14</w>
      <h>20</h>
      <binding>
@@ -245,8 +245,8 @@
    <action>
      <name>pitot heat</name>
      <button>0</button>
-     <x>-431</x>
-     <y>-365</y>
+     <x>-435</x>
+     <y>-175</y>
      <w>14</w>
      <h>20</h>
      <binding>
@@ -256,91 +256,110 @@
    </action>
 
    <action>
-     <name>cabin heat</name>
+     <name>cabin fan</name>
      <button>0</button>
-     <x>-416</x>
-     <y>-365</y>
+     <x>-420</x>
+     <y>-175</y>
      <w>14</w>
      <h>20</h>
      <binding>
+     <command>property-toggle</command>
+       <property>controls/cabin/fan</property>
+     </binding>
+   </action>
+   
+   <action>
+     <name>cabin fan</name>
+     <button>0</button>
+     <x>-405</x>
+     <y>-175</y>
+     <w>14</w>
+     <h>20</h>
+     <binding>
+     <command>property-toggle</command>
+       <property>controls/cabin/heat</property>
      </binding>
    </action>
 
    <action>
      <name>strobe lights</name>
      <button>0</button>
-     <x>-395</x>
-     <y>-365</y>
+     <x>-385</x>
+     <y>-175</y>
      <w>14</w>
      <h>20</h>
      <binding>
        <command>property-toggle</command>
-       <property>controls/switches/strobe</property>
+       <property>controls/lighting/strobe</property>
+     </binding>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/lighting/beacon</property>
      </binding>
    </action>
 
    <action>
      <name>nav lights</name>
      <button>0</button>
-     <x>-380</x>
-     <y>-365</y>
+     <x>-370</x>
+     <y>-175</y>
      <w>14</w>
      <h>20</h>
      <binding>
        <command>property-toggle</command>
-       <property>controls/switches/nav-lights</property>
+       <property>controls/lighting/nav-lights</property>
      </binding>
    </action>
    
    <action>
      <name>cabin lights</name>
      <button>0</button>
-     <x>-365</x>
-     <y>-365</y>
+     <x>-355</x>
+     <y>-175</y>
      <w>14</w>
      <h>20</h>
      <binding>
        <command>property-toggle</command>
-       <property>controls/switches/cabin-lights</property>
+       <property>controls/lighting/cabin-lights</property>
      </binding>
    </action>
    
    <action>
      <name>left landing light</name>
      <button>0</button>
-     <x>-350</x>
-     <y>-365</y>
+     <x>-335</x>
+     <y>-175</y>
      <w>14</w>
      <h>20</h>
      <binding>
        <command>property-toggle</command>
-       <property>controls/switches/landing-lights[0]</property>
+       <property>controls/lighting/landing-lights[0]</property>
      </binding>
    </action>
    
    <action>
      <name>right landing light</name>
      <button>0</button>
-     <x>-335</x>
-     <y>-365</y>
+     <x>-320</x>
+     <y>-175</y>
      <w>14</w>
      <h>20</h>
      <binding>
        <command>property-toggle</command>
-       <property>controls/switches/landing-lights[1]</property>
+       <property>controls/lighting/landing-lights[1]</property>
      </binding>
    </action>
    
    <action>
      <name>wing lights</name>
      <button>0</button>
-     <x>-320</x>
-     <y>-365</y>
+     <x>-305</x>
+     <y>-175</y>
      <w>14</w>
      <h>20</h>
      <binding>
        <command>property-toggle</command>
-       <property>controls/switches/beacon</property>
+       <property>controls/lighting/wing-lights</property>
      </binding>
    </action>
 
@@ -350,7 +369,7 @@
      <name>small decrease</name>
      <button>0</button>
      <x>-360</x>
-     <y>-210</y>
+     <y>-15</y>
      <w>10</w>
      <h>14</h>
      <binding>
@@ -367,7 +386,7 @@
      <name>large decrease</name>
      <button>1</button>
      <x>-360</x>
-     <y>-210</y>
+     <y>-15</y>
      <w>10</w>
      <h>14</h>
      <binding>
@@ -384,7 +403,7 @@
      <name>small increase</name>
      <button>0</button>
      <x>-350</x>
-     <y>-210</y>
+     <y>-15</y>
      <w>10</w>
      <h>14</h>
      <binding>
@@ -401,7 +420,7 @@
      <name>large increase</name>
      <button>1</button>
      <x>-350</x>
-     <y>-210</y>
+     <y>-15</y>
      <w>10</w>
      <h>14</h>
      <binding>
@@ -420,7 +439,7 @@
      <name>small decrease</name>
      <button>0</button>
      <x>-284</x>
-     <y>-210</y>
+     <y>-15</y>
      <w>10</w>
      <h>14</h>
      <binding>
@@ -437,7 +456,7 @@
      <name>large decrease</name>
      <button>1</button>
      <x>-284</x>
-     <y>-210</y>
+     <y>-15</y>
      <w>10</w>
      <h>14</h>
      <binding>
@@ -454,7 +473,7 @@
      <name>small increase</name>
      <button>0</button>
      <x>-274</x>
-     <y>-210</y>
+     <y>-15</y>
      <w>10</w>
      <h>14</h>
      <binding>
@@ -471,7 +490,7 @@
      <name>large increase</name>
      <button>1</button>
      <x>-274</x>
-     <y>-210</y>
+     <y>-15</y>
      <w>10</w>
      <h>14</h>
      <binding>
@@ -492,7 +511,7 @@
   <name>calibrate fine</name>
   <button>0</button>
   <x>-258</x>
-  <y>-122</y>
+  <y>70</y>
   <w>10</w>
   <h>14</h>
   <binding>
@@ -509,7 +528,7 @@
   <name>calibrate coarse</name>
   <button>1</button>
   <x>-258</x>
-  <y>-122</y>
+  <y>70</y>
   <w>10</w>
   <h>14</h>
   <binding>
@@ -526,7 +545,7 @@
   <name>calibrate fine</name>
   <button>0</button>
   <x>-248</x>
-  <y>-122</y>
+  <y>70</y>
   <w>10</w>
   <h>14</h>
   <binding>
@@ -543,7 +562,7 @@
   <name>calibrate coarse</name>
   <button>1</button>
   <x>-248</x>
-  <y>-122</y>
+  <y>70</y>
   <w>10</w>
   <h>14</h>
   <binding>
@@ -562,7 +581,7 @@
   <name>alt decrease  fine</name>
   <button>0</button>
   <x>-175</x>
-  <y>-18</y>
+  <y>175</y>
   <w>10</w>
   <h>14</h>
   <binding>
@@ -579,7 +598,7 @@
   <name>alt decrease course</name>
   <button>1</button>
   <x>-175</x>
-  <y>-18</y>
+  <y>175</y>
   <w>10</w>
   <h>14</h>
   <binding>
@@ -596,7 +615,7 @@
   <name>alt increase  fine</name>
   <button>0</button>
   <x>-165</x>
-  <y>-18</y>
+  <y>175</y>
   <w>10</w>
   <h>14</h>
   <binding>
@@ -613,7 +632,7 @@
   <name>alt increase course</name>
   <button>1</button>
   <x>-165</x>
-  <y>-18</y>
+  <y>175</y>
   <w>10</w>
   <h>14</h>
   <binding>

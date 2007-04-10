@@ -4,75 +4,6 @@
 
  <path>aerostar700.ac</path>
 
- <!--                 LOD              -->
-
- <animation>
-   <name>Chrome</name>
-   <object-name>glass</object-name>
-   <object-name>Spinners</object-name>
- </animation>
-
- <animation>
-   <name>Exterior</name>
-   <object-name>Chrome</object-name>
-   <object-name>Fuselage</object-name>
-   <object-name>Wings</object-name>
-   <object-name>Rudder</object-name>
-   <object-name>LeftElevator</object-name>
-   <object-name>RightElevator</object-name>
-   <object-name>NoseWheel</object-name>
-   <object-name>NoseStrut</object-name>
-   <object-name>FUdamper</object-name>
-   <object-name>FLdamper</object-name>
-   <object-name>RightStrut</object-name>
-   <object-name>RightWheel</object-name>
-   <object-name>Rram</object-name>
-   <object-name>RUdamper</object-name>
-   <object-name>RLdamper</object-name>
-   <object-name>LeftStrut</object-name>
-   <object-name>LeftWheel</object-name>
-   <object-name>Lram</object-name>
-   <object-name>LUdamper</object-name>
-   <object-name>LLdamper</object-name>
-   <object-name>LRdoor</object-name>
-   <object-name>RRdoor</object-name>
-   <object-name>LeftAileron</object-name>
-   <object-name>LeftFlap</object-name>
-   <object-name>RightAileron</object-name>
-   <object-name>RightFlap</object-name>
- </animation>
- 
- <animation>
-   <name>Cockpit</name>
-   <object-name>Cabin</object-name>
-   <object-name>Seats</object-name>
-   <object-name>Glaresheild</object-name>
-   <object-name>Panel</object-name>
-   <object-name>LwrPanel</object-name>
-   <object-name>GearLever</object-name>
-   <object-name>FlapLever</object-name>
-   <object-name>L-magneto</object-name>
-   <object-name>R-magneto</object-name>
-   <object-name>Throttle0</object-name>
-   <object-name>Throttle1</object-name>
-   <object-name>Prop0</object-name>
-   <object-name>Prop1</object-name>
-   <object-name>Mix0</object-name>
-   <object-name>Mix1</object-name>
-   <object-name>Batt.toggle</object-name>
-   <object-name>LAlt.toggle</object-name>
-   <object-name>RAlt.toggle</object-name>
-   <object-name>Deice.toggle</object-name>
-   <object-name>Pitot.toggle</object-name>
-   <object-name>FAn.toggle</object-name>
-   <object-name>Strobe.toggle</object-name>
-   <object-name>Nav.toggle</object-name>
-   <object-name>Cabin.toggle</object-name>
-   <object-name>Llanding.toggle</object-name>
-   <object-name>Rlanding.toggle</object-name>
-   <object-name>Wing.toggle</object-name>
- </animation>
- 
  <animation>
    <name>FrontGearGroup</name>
    <object-name>NoseStrut</object-name>
@@ -101,26 +32,11 @@
    <object-name>RightTire</object-name>
  </animation>
 
-<animation>
-<type>range</type>
-<object-name>Exterior</object-name>
-<min-m>0</min-m>
-   <max-m>100</max-m>
- </animation>
- 
- 
- <animation>
-   <type>range</type>
-   <object-name>fuselage-lowres</object-name>
-   <min-m>100</min-m>
-   <max-m>5000</max-m>
- </animation>
-
 <!-- 3D Panel Hotspots
 for PLIB version
 comment out for OSG
 -->
-<!--
+
  <panel>
   <name>Panel3D</name>
   <path>Aircraft/Aerostar-700/Panels/aerostar-panel.xml</path>
@@ -163,7 +79,7 @@ comment out for OSG
    <depth-test type="bool">true</depth-test>
  </panel>
 
--->
+
 
 <model>
   <path>Aircraft/Instruments-3d/kfc200/fd-control.xml</path>
@@ -297,16 +213,6 @@ comment out for OSG
  </model>
 
  <model>
-   <path>Aircraft/Instruments-3d/kt70/kt70.xml</path>
-   <offsets>
-     <x-m>-0.906</x-m>
-     <y-m>-0.425</y-m>
-     <z-m>0.160</z-m>
-     <pitch-deg>-10.0</pitch-deg>
-   </offsets>
- </model>
-
- <model>
    <path>Aircraft/Aerostar-700/Models/fuelgauge.xml</path>
    <offsets>
      <x-m>-0.891</x-m>
@@ -357,6 +263,16 @@ comment out for OSG
  </model>
 
  <model>
+   <path>Aircraft/Instruments-3d/kt70/kt70.xml</path>
+   <offsets>
+     <x-m>-0.906</x-m>
+     <y-m>-0.425</y-m>
+     <z-m>0.160</z-m>
+     <pitch-deg>-10.0</pitch-deg>
+   </offsets>
+ </model>
+
+<model>
     <name>Pilot</name>
     <path>Aircraft/Aerostar-700/Models/testpilot.xml</path>
     <offsets>
@@ -366,21 +282,6 @@ comment out for OSG
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
-
- <animation>
-   <type>noshadow</type>
-   <object-name>LHpropblur</object-name>
-   <object-name>LHpropdisc</object-name>
-   <object-name>RHpropblur</object-name>
-   <object-name>RHpropdisc</object-name>
- </animation>
-
- <animation>
-	<type>shader</type>
-        <shader>chrome</shader>
-	<texture>Aircraft/Aerostar-700/Models/chrome1.rgb</texture>
-	<object-name>Chrome</object-name>
-</animation>
 
 	<animation>
   		<type>material</type>
@@ -539,11 +440,37 @@ comment out for OSG
 		<factor-prop>systems/electrical/outputs/nav-lights</factor-prop>
     		</emission>
 	</animation>
+	
+	<animation>
+   <type>noshadow</type>
+   <object-name>LHpropblur</object-name>
+   <object-name>LHpropdisc</object-name>
+   <object-name>RHpropblur</object-name>
+   <object-name>RHpropdisc</object-name>
+ </animation>
+
+ <animation>
+	<type>shader</type>
+	<shader>chrome</shader>
+	<texture>Aircraft/Aerostar-700/Models/chrome1.rgb</texture>
+	<object-name>glass</object-name>
+	<object-name>Spinners</object-name>
+</animation>
+
+<animation>
+    <type>select</type>
+    <object-name>glass</object-name>
+    <condition>
+    	<not-equals>
+    		<property>sim/current-view/view-number</property>
+    		<value>0</value>
+    	</not-equals>
+    </condition>
+</animation> 
 
 <animation>
     <type>select</type>
     <object-name>pilot</object-name>
-    <object-name>glass</object-name>
     <condition>
     	<not-equals>
     		<property>sim/current-view/view-number</property>
