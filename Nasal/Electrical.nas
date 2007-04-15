@@ -298,5 +298,5 @@ update_electrical = func {
     }
 settimer(update_electrical, 0);
 }
-settimer(update_electrical, 0);
+settimer(update_electrical,0);
 

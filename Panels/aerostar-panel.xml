@@ -645,6 +645,42 @@
   </binding>
 </action>
 
+<!-- DIMMER SWITCH -->
+
+  <action>
+     <name>dimmer down</name>
+     <button>0</button>
+     <x>-275</x>
+     <y>-175</y>
+     <w>14</w>
+     <h>20</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>controls/lighting/instruments-norm</property>
+       <step>-0.05</step>
+       <min>0.0</min>
+       <max>1.0</max>
+       <wrap>false</wrap>
+     </binding>
+   </action>
+
+  <action>
+     <name>dimmer up</name>
+     <button>0</button>
+     <x>-261</x>
+     <y>-175</y>
+     <w>14</w>
+     <h>20</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>controls/lighting/instruments-norm</property>
+       <step>0.05</step>
+       <min>0.0</min>
+       <max>1.0</max>
+       <wrap>false</wrap>
+     </binding>
+   </action>
+
 </actions>
 </instrument>
 

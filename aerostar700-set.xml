@@ -51,17 +51,6 @@
 			<field-of-view>60.0</field-of-view>
 		</current-view>
     
-		<help>
-			<title>Aerostar /Superstar 700</title>
-				<line></line>      		
-			<line>Maximum cruise speed: 261 KTAS at 25,000 ft</line>
-			<line>Econo-cruise speed: 217 KTAS at 23,000 ft</line>
-			<line>Approach speed (Vref): 90 KIAS</line>
-			<line>Landing speed: 90 KIAS</line>
-			<line>Stall speed, full flaps (Vso): 71 KIAS</line>
-			<line></line>
-		</help>
-    
 		<input>
 			<selected>
 				<engine n="0">true</engine>
@@ -103,6 +92,37 @@
 		</multiplay>
 	
 		<yokes-visible type="bool">1</yokes-visible>
+		
+		<help>
+			<title>Aerostar Super 700</title>
+			<line>Systems Operation</line>
+			<text>
+			KING KNS-80 Nav System 
+			________________________________
+			VOR: Select VOR modes , non functional.
+			RNAV: Select RNAV modes , non functional.
+			HLD : DME hold
+			USE : Select channel NAV system uses
+			DSP : View / edit channel information
+			DATA: Select frequency / radial / distance data
+			Note : Modify data with large knob
+			Power and volume with small knob
+			
+			KFC-200 Flightdirector / Autopilot 
+			________________________________
+			HDG : Select Heading  Bug hold
+			FD : Activate Flight Director (command bars visible on AI)
+			ALT: Select Altitude Arm 
+			NAV: Select VOR /RNAV course arm
+			BC : Select Back Course hold (reverse nav course)
+			APPR: Select approach mode (Localizer and Glideslope
+			armed)
+			AP: Engage Autopilot (If no FD modes are selected , 
+			autopilot defaults to Wing Level and Pitch Hold)
+			UP/DWN Toggle: Change pitch while in Pitch Hold modes...
+			(ALT-arm, GS arm)
+			</text>
+		</help>
    	
 	</sim>
   

@@ -4,34 +4,6 @@
 
  <path>aerostar700.ac</path>
 
- <animation>
-   <name>FrontGearGroup</name>
-   <object-name>NoseStrut</object-name>
-   <object-name>FUdamper</object-name>
-   <object-name>FLdamper</object-name>
-   <object-name>NoseWheel</object-name>
- </animation>
-
- <animation>
-   <name>LeftGearGroup</name>
-   <object-name>Lram</object-name>
-   <object-name>LeftStrut</object-name>
-   <object-name>LUdamper</object-name>
-   <object-name>LLdamper</object-name>
-   <object-name>LeftWheel</object-name>
-   <object-name>LeftTire</object-name>
-  </animation>
-
- <animation>
-   <name>RightGearGroup</name>
-   <object-name>Rram</object-name>
-   <object-name>RightStrut</object-name>
-   <object-name>RUdamper</object-name>
-   <object-name>RLdamper</object-name>
-   <object-name>RightWheel</object-name>
-   <object-name>RightTire</object-name>
- </animation>
-
 <!-- 3D Panel Hotspots
 for PLIB version
 comment out for OSG
@@ -79,7 +51,15 @@ comment out for OSG
    <depth-test type="bool">true</depth-test>
  </panel>
 
-
+ <model>
+   <path>Aircraft/Instruments-3d/kt70/kt70.xml</path>
+   <offsets>
+     <x-m>-0.906</x-m>
+     <y-m>-0.425</y-m>
+     <z-m>0.160</z-m>
+     <pitch-deg>-10.0</pitch-deg>
+   </offsets>
+ </model>
 
 <model>
   <path>Aircraft/Instruments-3d/kfc200/fd-control.xml</path>
@@ -262,16 +242,6 @@ comment out for OSG
    </offsets>
  </model>
 
- <model>
-   <path>Aircraft/Instruments-3d/kt70/kt70.xml</path>
-   <offsets>
-     <x-m>-0.906</x-m>
-     <y-m>-0.425</y-m>
-     <z-m>0.160</z-m>
-     <pitch-deg>-10.0</pitch-deg>
-   </offsets>
- </model>
-
 <model>
     <name>Pilot</name>
     <path>Aircraft/Aerostar-700/Models/testpilot.xml</path>
@@ -282,6 +252,34 @@ comment out for OSG
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
+
+ <animation>
+   <name>FrontGearGroup</name>
+   <object-name>NoseStrut</object-name>
+   <object-name>FUdamper</object-name>
+   <object-name>FLdamper</object-name>
+   <object-name>NoseWheel</object-name>
+ </animation>
+
+ <animation>
+   <name>LeftGearGroup</name>
+   <object-name>Lram</object-name>
+   <object-name>LeftStrut</object-name>
+   <object-name>LUdamper</object-name>
+   <object-name>LLdamper</object-name>
+   <object-name>LeftWheel</object-name>
+   <object-name>LeftTire</object-name>
+  </animation>
+
+ <animation>
+   <name>RightGearGroup</name>
+   <object-name>Rram</object-name>
+   <object-name>RightStrut</object-name>
+   <object-name>RUdamper</object-name>
+   <object-name>RLdamper</object-name>
+   <object-name>RightWheel</object-name>
+   <object-name>RightTire</object-name>
+ </animation>
 
 	<animation>
   		<type>material</type>
