@@ -192,6 +192,16 @@ comment out for OSG
    </offsets>
  </model>
 
+<model>
+   <path>Aircraft/Instruments-3d/RDR-160/RDR-160.xml</path>
+   <offsets>
+     <x-m>-0.900</x-m>
+     <y-m>-0.021</y-m>
+     <z-m>0.120</z-m>
+     <pitch-deg>-10.0</pitch-deg>
+   </offsets>
+ </model>
+
  <model>
    <path>Aircraft/Aerostar-700/Models/fuelgauge.xml</path>
    <offsets>

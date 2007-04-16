@@ -160,7 +160,7 @@
 				<stby-whole type="double">99999</stby-whole>
 			</frequencies>
 		</nav>
-  	</instrumentation>
+	 </instrumentation>
   
   	<consumables>
 		<fuel>
@@ -189,6 +189,7 @@
 			<file>Aircraft/Instruments-3d/kfc200/kfc-200.nas</file>
 			<file>Aircraft/Instruments-3d/kns80/KNS80.nas</file>
 			<file>Aircraft/Instruments-3d/ky196/KY196.nas</file>
+			<file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file>
 		</Aerostar-700>
  	</nasal>
   
