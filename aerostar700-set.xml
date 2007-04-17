@@ -135,33 +135,6 @@
 		</lighting>
   	</controls>
 
-  	<instrumentation>
-		<comm n="0">
-			<frequencies>
-				<freq-whole type="double">99999</freq-whole>
-				<stby-whole type="double">99999</stby-whole>
-			</frequencies>
-		</comm>
-		<comm n="1">
-			<frequencies>
-				<freq-whole type="double">99999</freq-whole>
-				<stby-whole type="double">99999</stby-whole>
-			</frequencies>
-		</comm>
-		<nav n = "0">
-			<frequencies>
-				<freq-whole type="double">99999</freq-whole>
-				<stby-whole type="double">99999</stby-whole>
-			</frequencies>
-		</nav>
-		<nav n="1">
-			<frequencies>
-				<freq-whole type="double">99999</freq-whole>
-				<stby-whole type="double">99999</stby-whole>
-			</frequencies>
-		</nav>
-	 </instrumentation>
-  
   	<consumables>
 		<fuel>
 			<tank n="0">	<!-- Max 62 US gallons-->

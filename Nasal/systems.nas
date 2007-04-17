@@ -55,38 +55,6 @@ setlistener("/gear/gear[2]/position-norm", func {
 	if(lock == 1.0){setprop("/gear/gear[2]/gear-down-locked",1);}
 	},1);	
 
-setlistener("/instrumentation/comm/frequencies/selected-mhz", func {
-	setprop("/instrumentation/comm/frequencies/freq-whole",cmdarg().getValue()*100);
-	},1);
-
-setlistener("/instrumentation/comm/frequencies/standby-mhz", func {
-	setprop("/instrumentation/comm/frequencies/stby-whole",cmdarg().getValue()*100);
-	},1);
-
-setlistener("/instrumentation/comm[1]/frequencies/selected-mhz", func {
-	setprop("/instrumentation/comm[1]/frequencies/freq-whole",cmdarg().getValue()*100);
-	},1);
-
-setlistener("/instrumentation/comm[1]/frequencies/standby-mhz", func {
-	setprop("/instrumentation/comm[1]/frequencies/stby-whole",cmdarg().getValue()*100);
-	},1);
-
-setlistener("/instrumentation/nav/frequencies/selected-mhz", func {
-	setprop("/instrumentation/nav/frequencies/freq-whole",cmdarg().getValue()*100);
-	},1);
-
-setlistener("/instrumentation/nav/frequencies/standby-mhz", func {
-	setprop("/instrumentation/nav/frequencies/stby-whole",cmdarg().getValue()*100);
-	},1);
-
-setlistener("/instrumentation/nav[1]/frequencies/selected-mhz", func {
-	setprop("/instrumentation/nav[1]/frequencies/freq-whole",cmdarg().getValue()*100);
-	},1);
-
-setlistener("/instrumentation/nav[1]/frequencies/standby-mhz", func {
-	setprop("/instrumentation/nav[1]/frequencies/stby-whole",cmdarg().getValue()*100);
-	},1);
-
 setlistener("/sim/current-view/view-number", func {
 	ViewNum = cmdarg().getValue();
 	if(ViewNum == 0){
