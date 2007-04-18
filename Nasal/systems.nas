@@ -15,8 +15,8 @@ beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
 aircraft.light.new("/controls/lighting/beacon-state", [1.0, 1.0], beacon_switch);
 
 setlistener("/sim/signals/fdm-initialized", func {
-	Cvolume.setValue(0);
-	Ovolume.setValue(0);	
+	Cvolume.setValue(0.6);
+	Ovolume.setValue(0.2);	
 	setprop("/instrumentation/gps/wp/wp/ID",getprop("/sim/tower/airport-id"));
 	setprop("/instrumentation/gps/wp/wp/waypoint-type","airport");
 	setprop("/instrumentation/gps/serviceable","true");
