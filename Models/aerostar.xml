@@ -72,11 +72,21 @@ comment out for OSG
  </model>
 
  <model>
-   <path>Aircraft/Instruments-3d/kfc200/kfc200-3d.xml</path>
+   <path>Aircraft/Instruments-3d/kfc200/ki256.xml</path>
    <offsets>
      <x-m>-0.937</x-m>
      <y-m>-0.336</y-m>
      <z-m>0.343</z-m>
+     <pitch-deg>-10.0</pitch-deg>
+   </offsets>
+ </model>
+ 
+ <model>
+   <path>Aircraft/Instruments-3d/kfc200/ki252a.xml</path>
+   <offsets>
+     <x-m>-0.920</x-m>
+     <y-m>-0.336</y-m>
+     <z-m>0.244</z-m>
      <pitch-deg>-10.0</pitch-deg>
    </offsets>
  </model>

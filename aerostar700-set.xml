@@ -134,6 +134,15 @@
 			<instruments-norm>0.5</instruments-norm>
 		</lighting>
   	</controls>
+	
+	<instrumentation>
+		<rnav>
+			<rho>0</rho>
+			<theta>0</theta>
+			<indicated-distance-nm>0</indicated-distance-nm>
+			<reciprocal-radial-deg>0</reciprocal-radial-deg>
+		</rnav>
+	</instrumentation>	
 
   	<consumables>
 		<fuel>
