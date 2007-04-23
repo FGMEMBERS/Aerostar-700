@@ -22,8 +22,7 @@
   		<property>engines/engine/mp-inhg</property>
   		<interpolation>
     		<entry><ind>0</ind><dep>0</dep></entry>
-    		<entry><ind>10</ind><dep>72</dep></entry>
-    		<entry><ind>45</ind><dep>324</dep></entry>
+    		<entry><ind>50</ind><dep>275</dep></entry>
   		</interpolation>
   		<center>
     		<x-m>0</x-m>
@@ -43,8 +42,7 @@
   		<property>engines/engine[1]/mp-inhg</property>
   		<interpolation>
     		<entry><ind>0</ind><dep>0</dep></entry>
-    		<entry><ind>10</ind><dep>72</dep></entry>
-    		<entry><ind>45</ind><dep>324</dep></entry>
+    		<entry><ind>50</ind><dep>275</dep></entry>
   		</interpolation>
   		<center>
     		<x-m>0</x-m>
