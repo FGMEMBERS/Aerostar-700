@@ -3,7 +3,6 @@
 
 Cvolume=props.globals.getNode("/sim/sound/A700/Cvolume",1);
 Ovolume=props.globals.getNode("/sim/sound/A700/Ovolume",1);
-EyePoint = 0.0;
 ViewNum = 0;
 FDM_ON = 0;
 GForce = props.globals.getNode("/accelerations/pilot-g",1);
@@ -21,7 +20,6 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("/instrumentation/gps/wp/wp/ID",getprop("/sim/tower/airport-id"));
     setprop("/instrumentation/gps/wp/wp/waypoint-type","airport");
     setprop("/instrumentation/gps/serviceable","true");
-    EyePoint = props.globals.getNode("sim/view/config/y-offset-m").getValue();
     Gear = props.globals.getNode("/gear").getChildren("gear");
     update_systems();
     print("Aircraft Systems ... OK");
@@ -45,13 +43,6 @@ update_systems = func {
         g.getNode("gear-up-locked", 1).setBoolValue(pos == 0.0);
         g.getNode("gear-down-locked", 1).setBoolValue(pos == 1.0);
     }
-    var force = GForce.getValue();
-    if(force == nil) {force = 1.0;}
-    var eyepoint = EyePoint +0.01;
-    eyepoint -= (force * 0.01);
-    if(ViewNum == 0){
-        props.globals.getNode("/sim/current-view/y-offset-m").setValue(eyepoint);
-        }
     settimer(update_systems, 0);
     }
 
