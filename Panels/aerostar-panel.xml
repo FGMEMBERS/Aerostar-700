@@ -39,7 +39,15 @@
     <w>154</w>
     <h>35</h>
   </instrument>
-  
+
+  <instrument include="../../Instruments-3d/RDR-160/wxradar-hotspots.xml">
+    <name>wxradar hotspots</name>
+        <x>493</x>
+        <y>93</y>
+        <w>161</w>
+        <h>123</h>
+  </instrument>
+
 
 <instrument>
   <name>panel hotspots</name>
@@ -680,105 +688,6 @@
        <wrap>false</wrap>
      </binding>
    </action>
-
-<!--    WXRADAR    -->
-
-	<action>
-		<name>powerdown</name>
-		<button>0</button>
-		<x>-95</x>
-		<y>-150</y>
-		<w>15</w>
-		<h>20</h>
-		<binding>
-			<command>property-adjust</command>
-			<property>instrumentation/wxradar/switch-pos</property>
-			<step>-1</step>
-			<min>0</min>
-			<max>3</max>
-			<wrap>false</wrap>
-		</binding>
-	</action>
-
-	<action>
-		<name>powerup</name>
-		<button>0</button>
-		<x>-80</x>
-		<y>-150</y>
-		<w>15</w>
-		<h>20</h>
-		<binding>
-			<command>property-adjust</command>
-			<property>instrumentation/wxradar/switch-pos</property>
-			<step>1</step>
-			<min>0</min>
-			<max>3</max>
-			<wrap>false</wrap>
-		</binding>
-	</action>
-	
-	<action>
-		<name>tiltdown</name>
-		<button>0</button>
-		<x>30</x>
-		<y>-150</y>
-		<w>15</w>
-		<h>20</h>
-		<binding>
-			<command>property-adjust</command>
-			<property>instrumentation/wxradar/tilt</property>
-			<step>-5.0</step>
-			<min>-15.0</min>
-			<max>15.0</max>
-			<wrap>false</wrap>
-		</binding>
-	</action>
-
-	<action>
-		<name>tiltup</name>
-		<button>0</button>
-		<x>45</x>
-		<y>-150</y>
-		<w>15</w>
-		<h>20</h>
-		<binding>
-			<command>property-adjust</command>
-			<property>instrumentation/wxradar/tilt</property>
-			<step>5.0</step>
-			<min>-15.0</min>
-			<max>15.0</max>
-			<wrap>false</wrap>
-		</binding>
-	</action>
-
-	<action>
-		<name>rangeup</name>
-		<button>0</button>
-		<x>41</x>
-		<y>-100</y>
-		<w>10</w>
-		<h>5</h>
-		<binding>
-			<command>property-assign</command>
-			<property>instrumentation/wxradar/set-range</property>
-			<value>1</value>
-		</binding>
-	</action>
-
-	<action>
-		<name>rangedown</name>
-		<button>0</button>
-		<x>41</x>
-		<y>-116</y>
-		<w>10</w>
-		<h>5</h>
-		<binding>
-			<command>property-assign</command>
-			<property>instrumentation/wxradar/set-range</property>
-			<value>-1</value>
-		</binding>
-	</action>
-
 
 </actions>
 </instrument>
