@@ -8,6 +8,30 @@
 for PLIB version
 comment out for OSG
 -->
+    <animation>
+      <type>material</type>
+      <object-name>Fuselage</object-name>
+      <object-name>RFdoor</object-name>
+      <object-name>LFdoor</object-name>
+      <object-name>Frtdoor</object-name>
+      <object-name>Wings</object-name>
+      <object-name>RightAileron</object-name>
+      <object-name>RightFlap</object-name>
+      <object-name>LeftFlap</object-name>
+      <object-name>LeftAileron</object-name>
+      <object-name>HStab</object-name>
+      <object-name>Rudder</object-name>
+      <object-name>LeftElevator</object-name>
+      <object-name>RightElevator</object-name>
+      <object-name>Engines</object-name>
+      <object-name>LRdoor</object-name>
+      <object-name>RRdoor</object-name>
+      <object-name>LHwheeldoor</object-name>
+      <object-name>RHwheeldoor</object-name>
+      <property-base>/sim/model</property-base>
+      <texture-prop>texture</texture-prop>
+      <texture>paint1.rgb</texture>
+    </animation>
 
     <panel>
         <name>Panel3D</name>
@@ -48,6 +72,21 @@ comment out for OSG
             <z-m> 0.149</z-m>
         </top-left>
     </panel>
+
+   <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>Aircraft/Aerostar-700/Models/chrome1.rgb</texture>
+        <object-name>glass</object-name>
+    </animation>
+
+    <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>Aircraft/Aerostar-700/Models/chrome2.rgb</texture>
+        <object-name>Spinners</object-name>
+    </animation>
+
 
     <model>
         <path>Aircraft/Instruments-3d/kt70/kt70.xml</path>
@@ -464,15 +503,7 @@ comment out for OSG
         <object-name>RHpropdisc</object-name>
     </animation>
 
-    <animation>
-        <type>shader</type>
-        <shader>chrome</shader>
-        <texture>Aircraft/Aerostar-700/Models/chrome1.rgb</texture>
-        <object-name>glass</object-name>
-        <object-name>Spinners</object-name>
-    </animation>
-
-    <animation>
+     <animation>
         <type>select</type>
         <object-name>glass</object-name>
         <condition>

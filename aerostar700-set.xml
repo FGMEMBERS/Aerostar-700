@@ -7,9 +7,10 @@
         <flight-model>yasim</flight-model>
         <aero>aerostar-yasim</aero>
         <fuel-fraction>1.0</fuel-fraction>
-
         <model>
             <path>Aircraft/Aerostar-700/Models/aerostar.xml</path>
+            <variant type="int">0</variant>
+            <texture>Paint1.rgb</texture>
         </model>
         <startup>
             <splash-texture>Aircraft/Aerostar-700/splash.rgb</splash-texture>
