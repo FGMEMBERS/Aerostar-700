@@ -28,7 +28,7 @@ comment out for OSG
       <object-name>RRdoor</object-name>
       <object-name>LHwheeldoor</object-name>
       <object-name>RHwheeldoor</object-name>
-      <property-base>/sim/model</property-base>
+      <property-base>sim/model/aerostar700</property-base>
       <texture-prop>texture</texture-prop>
       <texture>paint1.rgb</texture>
     </animation>

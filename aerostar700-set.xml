@@ -10,7 +10,9 @@
         <model>
             <path>Aircraft/Aerostar-700/Models/aerostar.xml</path>
             <variant type="int">0</variant>
-            <texture>Paint1.rgb</texture>
+            <aerostar700>
+                <texture>Paint1.rgb</texture>
+            </aerostar700>
         </model>
         <startup>
             <splash-texture>Aircraft/Aerostar-700/splash.rgb</splash-texture>
