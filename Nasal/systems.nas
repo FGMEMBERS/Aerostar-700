@@ -28,7 +28,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     VR=0;
     setprop("sim/model/variant",0);
     }
-    setprop("/sim/model/texture",TX_list[VR]);
+    setprop("sim/model/aerostar700/texture",TX_list[VR]);
     setprop("/instrumentation/gps/wp/wp/ID",getprop("/sim/tower/airport-id"));
     setprop("/instrumentation/gps/wp/wp/waypoint-type","airport");
     setprop("/instrumentation/gps/serviceable","true");
@@ -57,7 +57,7 @@ setlistener("/sim/model/variant", func {
     VR=0;
     setprop("sim/model/variant",0);
     }
-setprop("/sim/model/texture",TX_list[VR]);
+setprop("sim/model/aerostar700/texture",TX_list[VR]);
 });
 
 setlistener("/gear/gear[1]/wow", func {
