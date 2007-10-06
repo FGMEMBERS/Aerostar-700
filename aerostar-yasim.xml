@@ -47,10 +47,10 @@ Vy 117
 width="1.5" taper="0" midpoint="0.35"/>
 
 <wing x="-1.8" y="0.65" z="0.05" length="4.68" chord="1.9" 
-sweep="0" dihedral="2" taper="0.4" camber="0.0310" incidence="1.0">
+sweep="0" dihedral="2" taper="0.4" camber="0.0276" incidence="1.0">
     <stall aoa="16" width="4" peak="1.5"/>
-    <flap0 start="0.1" end=".5" lift="1.5" drag="1.7"/>
-    <flap1 start=".5" end=".9" lift="1.2" drag="1.1"/>
+    <flap0 start="0.1" end=".5" lift="1.6" drag="1.9"/>
+    <flap1 start=".5" end=".9" lift="1.2" drag="1.2"/>
     <control-input axis="/controls/flight/flaps" control="FLAP0"/>
     <control-speed control="FLAP0" transition-time="5"/>
     <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
@@ -89,7 +89,7 @@ fuel flow:
 <tank x="-1.8" y="-1.3" z="0.1" capacity="372"/>
 <tank x="-1.8" y="0" z="-0.5" capacity="249"/>
 
-<gear x="1.668" y="0.00" z="-1.245" compression=".3" retract-time="5">
+<gear x="1.668" y="0.00" z="-1.245" compression=".3" retract-time="5" sfric="1.2" dfric="1.0">
 <control-input axis="/controls/flight/rudder" control="STEER" square="true" 
  src0="-1.0" src1="1.0"
  dst0="-0.5" dst1="0.5"/>
@@ -98,7 +98,7 @@ fuel flow:
   <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
 </gear>
 
-<gear x="-1.8" y="1.55" z="-1.188" compression=".3" retract-time="4.9">
+<gear x="-1.8" y="1.55" z="-1.188" compression=".3" retract-time="4.9" sfric="1.2" dfric="1.0">
   <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -106,7 +106,7 @@ fuel flow:
   <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
 </gear>
 
-<gear x="-1.8" y="-1.55" z="-1.188" compression=".3" retract-time="5.1">
+<gear x="-1.8" y="-1.55" z="-1.188" compression=".3" retract-time="5.1" sfric="1.2" dfric="1.0">
   <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -119,9 +119,9 @@ t urbocharged  350-hp Lycoming TIO 540 U2A ,  counter rotating props
 man. pressure  42.0
 speed to crank ratio  0.947 (wide deck )
 -->
-<propeller moment="-15" x="-1.2" y="1.8" z="0.20" mass="500" radius="0.99" gear-ratio="0.947"
-           cruise-power="350" cruise-alt="25000" min-rpm="1700" max-rpm="2500" cruise-speed="280"
-            cruise-rpm="2500" fine-stop="0.55" coarse-stop="4.0">
+<propeller moment="-12" x="-1.2" y="1.8" z="0.20" mass="500" radius="0.99" gear-ratio="0.947"
+           cruise-power="350" cruise-alt="25000" min-rpm="1700" max-rpm="2700" cruise-speed="290"
+            cruise-rpm="2500" fine-stop="0.5" coarse-stop="4.0">
   <piston-engine eng-rpm="2500" alt="18000" eng-power="350" turbo-mul="1.5" wastegate-mp="42.0"/>
   <actionpt x="-0.135" y="1.8" z="0.2" />
   <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle" />
@@ -131,9 +131,9 @@ speed to crank ratio  0.947 (wide deck )
   <control-input control="ADVANCE" axis="/controls/engines/engine[0]/propeller-pitch"/>
 </propeller>
 
-<propeller moment="15" x="-1.2" y="-1.8" z="0.20" mass="500" radius="0.99" gear-ratio="0.947"
- cruise-power="350" cruise-alt="25000" min-rpm="1700" max-rpm="2500" cruise-speed="280"
- cruise-rpm="2500" fine-stop="0.55" coarse-stop="4.0">
+<propeller moment="12" x="-1.2" y="-1.8" z="0.20" mass="500" radius="0.99" gear-ratio="0.947"
+ cruise-power="350" cruise-alt="25000" min-rpm="1700" max-rpm="2700" cruise-speed="290"
+ cruise-rpm="2500" fine-stop="0.5" coarse-stop="4.0">
   <piston-engine eng-rpm="2500" alt="18000" eng-power="350" turbo-mul="1.5" wastegate-mp="42.0"/>
   <actionpt x="-0.135" y="-1.8" z="0.2" />
   <control-input control="THROTTLE" axis="/controls/engines/engine[1]/throttle" />
@@ -143,8 +143,7 @@ speed to crank ratio  0.947 (wide deck )
   <control-input control="ADVANCE" axis="/controls/engines/engine[1]/propeller-pitch"/>
 </propeller>
 
-
-<ballast x="-5.0" y="0.0" z="0" mass="-1100"/>
+<ballast x="1.5" y="0.0" z="0" mass="700"/>
 
  <weight x="0.5" y="0" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
  <weight x="-1.8" y="0" z="0" mass-prop="/sim/weight[1]/weight-lb"/>

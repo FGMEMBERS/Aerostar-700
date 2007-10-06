@@ -11,7 +11,9 @@
             <path>Aircraft/Aerostar-700/Models/aerostar.xml</path>
             <variant type="int">0</variant>
             <aerostar700>
-                <texture>Paint1.rgb</texture>
+                <texture type="string" n="0">paint1.rgb</texture>
+                <texture type="string" n="1">paint2.rgb</texture>
+                <texture type="string" n="2">paint3.rgb</texture>
             </aerostar700>
         </model>
         <startup>
@@ -132,6 +134,7 @@
     <controls>
         <gear>
             <brake-parking>1.0</brake-parking>
+            <gear-down>true</gear-down>
         </gear>
         <lighting>
             <instruments-norm>0.5</instruments-norm>
@@ -157,6 +160,18 @@
             <passive-mode type="bool">true</passive-mode>
         </locks>
     </autopilot>
+
+    <gear>
+        <gear n="0">
+            <position-norm>1</position-norm>
+        </gear>
+        <gear n="1">
+            <position-norm>1</position-norm>
+        </gear>
+        <gear n="2">
+            <position-norm>1</position-norm>
+        </gear>
+    </gear>
 
     <nasal>
         <Aerostar-700>

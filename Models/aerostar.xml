@@ -8,8 +8,9 @@
 for PLIB version
 comment out for OSG
 -->
+
     <animation>
-      <type>material</type>
+        <name>Exterior</name>
       <object-name>Fuselage</object-name>
       <object-name>RFdoor</object-name>
       <object-name>LFdoor</object-name>
@@ -28,9 +29,52 @@ comment out for OSG
       <object-name>RRdoor</object-name>
       <object-name>LHwheeldoor</object-name>
       <object-name>RHwheeldoor</object-name>
+    </animation>
+
+<!--
+    <animation>
+      <type>material</type>
+      <object-name>Exterior</object-name>
       <property-base>sim/model/aerostar700</property-base>
       <texture-prop>texture</texture-prop>
       <texture>paint1.rgb</texture>
+    </animation>
+-->
+
+    <animation>
+        <type>material</type>
+         <object-name>Exterior</object-name>
+        <condition>
+            <equals>
+                <property>sim/model/variant</property>
+                <value>0</value>
+            </equals>
+        </condition>
+        <texture-prop>sim/model/aerostar700/texture[0]</texture-prop>
+    </animation>
+
+    <animation>
+        <type>material</type>
+         <object-name>Exterior</object-name>
+        <condition>
+            <equals>
+                <property>sim/model/variant</property>
+                <value>1</value>
+            </equals>
+        </condition>
+        <texture-prop>sim/model/aerostar700/texture[1]</texture-prop>
+    </animation>
+
+    <animation>
+        <type>material</type>
+         <object-name>Exterior</object-name>
+        <condition>
+            <equals>
+                <property>sim/model/variant</property>
+                <value>2</value>
+            </equals>
+        </condition>
+        <texture-prop>sim/model/aerostar700/texture[2]</texture-prop>
     </animation>
 
     <panel>

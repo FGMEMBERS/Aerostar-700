@@ -6,12 +6,15 @@
 <!-- Engine 1 -->
 	<crank>
    		<name>engstart1</name>
-   		<path>Sounds/engstart.wav</path>
-   		<property>engines/engine[0]/cranking</property>
+   		<mode>once</mode>
+   		<path>Sounds/coughing.wav</path>
+   		<property>engines/engine[0]/running</property>
+   		<reference-dist>5.0</reference-dist>
+   		<max-dist>10.0</max-dist>
    		<position>
-    		<x>-2.0</x>
-    		<y>0.0</y>
-    		<z>2.0</z>
+    		<x>0.5</x>
+    		<y>1.8</y>
+    		<z>0.2</z>
    		</position>
    		<volume>
     		<property>sim/sound/A700/Ovolume</property>
@@ -28,10 +31,12 @@
      			<property>engines/engine[0]/running</property>
     		</not>
    		</condition>
+   		<reference-dist>5.0</reference-dist>
+   		<max-dist>10.0</max-dist>
    		<position>
-    		<x>-2.0</x>
-    		<y>0.0</y>
-    		<z>2.0</z>
+    		<x>0.5</x>
+    		<y>1.8</y>
+    		<z>0.2</z>
    		</position>
    		<volume>
     		<property>sim/sound/A700/Ovolume</property>
@@ -48,27 +53,28 @@
         		<value>1</value>
       		</equals>
     	</condition>
+   		<reference-dist>100.0</reference-dist>
+   		<max-dist>500.0</max-dist>
     	<position>
-      		<x>-2.0</x>
-      		<y>0.0</y>
-      		<z>2.0</z>
-    	</position>
+    		<x>0.5</x>
+    		<y>1.8</y>
+    		<z>0.2</z>
+   		</position>
     	<volume>
-      		<property>engines/engine[0]/mp-osi</property>
-      		<factor>0.01</factor>
-      		<min>0.15</min>
+      		<property>engines/engine[0]/thrust-lbs</property>
+      		<factor>0.0015</factor>
+      		<min>0.2</min>
       		<max>1.0</max>
-      		<offset>0.2</offset>
     	</volume>
    		<volume>
     		<property>sim/sound/A700/Ovolume</property>
    		</volume>
     	<pitch>
-      		<property>engines/engine[0]/rpm</property>
-      		<factor>0.0004</factor>
-      		<min>0.2</min>
-      		<max>0.9</max>
-      		<offset> 0.2</offset>
+      		<property>engines/engine[0]/thrust-lbs</property>
+      		<factor>0.0015</factor>
+      		<min>0.4</min>
+      		<max>1.0</max>
+      		<offset> 0.0</offset>
     	</pitch>
   	</engine>
 
@@ -76,16 +82,17 @@
 
 	<crank>
    		<name>engstart2</name>
-   		<path>Sounds/engstart.wav</path>
-   		<property>engines/engine[1]/cranking</property>
+   		<path>Sounds/coughing.wav</path>
+   		<property>engines/engine[1]/running</property>
+   		<reference-dist>5.0</reference-dist>
+   		<max-dist>10.0</max-dist>
    		<position>
-    		<x>2.0</x>
-    		<y>0.0</y>
-    		<z>2.0</z>
+    		<x>0.5</x>
+    		<y>-1.8</y>
+    		<z>0.2</z>
    		</position>
    		<volume>
     		<property>sim/sound/A700/Ovolume</property>
-    		<factor>0.5</factor>
    		</volume>
   	</crank>
 
@@ -99,14 +106,15 @@
      			<property>engines/engine[1]/running</property>
     		</not>
    		</condition>
+   		<reference-dist>5.0</reference-dist>
+   		<max-dist>10.0</max-dist>
    		<position>
-    		<x>2.0</x>
-    		<y>0.0</y>
-    		<z>2.0</z>
+    		<x>0.5</x>
+    		<y>-1.8</y>
+    		<z>0.2</z>
    		</position>
    		<volume>
     		<property>sim/sound/A700/Ovolume</property>
-    		<factor>0.5</factor>
    		</volume>
   	</crank>
 
@@ -120,27 +128,28 @@
         		<value>1</value>
       		</equals>
     	</condition>
+   		<reference-dist>100.0</reference-dist>
+   		<max-dist>500.0</max-dist>
     	<position>
-      		<x>2.0</x>
-      		<y>0.0</y>
-      		<z>2.0</z>
-    	</position>
+    		<x>0.5</x>
+    		<y>-1.8</y>
+    		<z>0.2</z>
+   		</position>
     	<volume>
-      		<property>engines/engine[1]/mp-osi</property>
-      		<factor>0.01</factor>
-      		<min>0.15</min>
+      		<property>engines/engine[1]/thrust-lbs</property>
+      		<factor>0.0015</factor>
+      		<min>0.2</min>
       		<max>1.0</max>
-      		<offset>0.2</offset>
     	</volume>
    		<volume>
     		<property>sim/sound/A700/Ovolume</property>
    		</volume>
     	<pitch>
-      		<property>engines/engine[1]/rpm</property>
-      		<factor>0.0004</factor>
-      		<min>0.2</min>
-      		<max>0.9</max>
-      		<offset> 0.2</offset>
+      		<property>engines/engine[1]/thrust-lbs</property>
+      		<factor>0.0015</factor>
+      		<min>0.4</min>
+      		<max>1.0</max>
+      		<offset> 0.0</offset>
     	</pitch>
   	</engine>
 
@@ -149,6 +158,11 @@
    		<name>rumble</name>
    		<mode>looped</mode>
    		<path>Sounds/rumble.wav</path>
+        <position>
+    		<x>0.0</x>
+    		<y>0.0</y>
+    		<z>-0.5</z>
+   		</position>
    		<condition>
     		<or>
      			<property>gear/gear[0]/wow</property>
@@ -156,13 +170,14 @@
      			<property>gear/gear[2]/wow</property>
     		</or>
    		</condition>
+   		<reference-dist>1.0</reference-dist>
+   		<max-dist>5.0</max-dist>
    		<volume>
     		<property>sim/sound/A700/Cvolume</property>
    		</volume>
    		<volume>
-    		<property>velocities/airspeed-kt</property>
-    		<type>log</type>
-    		<factor>0.5</factor>
+    		<property>velocities/groundspeed-kt</property>
+    		<factor>0.05</factor>
    		</volume>
   	</rumble>
 
@@ -171,6 +186,11 @@
    		<mode>in-transit</mode>
    		<path>Sounds/gear.wav</path>
    		<property>gear/gear[0]/position-norm</property>
+        <position>
+    		<x>0.0</x>
+    		<y>0.0</y>
+    		<z>-0.5</z>
+   		</position>
    		<volume>
     		<property>sim/sound/A700/Cvolume</property>
     	</volume>
@@ -192,6 +212,11 @@
      			<value>0</value>
     		</equals>
    		</condition>
+        <position>
+    		<x>0.0</x>
+    		<y>0.0</y>
+    		<z>-0.5</z>
+   		</position>
    		<volume>
     		<property>sim/sound/A700/Cvolume</property>
     	</volume>
@@ -202,6 +227,8 @@
 	<squeal>
    		<name>squeal</name>
    		<path>Sounds/squeal.wav</path>
+   		<reference-dist>20.0</reference-dist>
+   		<max-dist>50</max-dist>
    		<condition>
     		<or>
      			<property>gear/gear[0]/wow</property>
@@ -209,6 +236,11 @@
      			<property>gear/gear[2]/wow</property>
     		</or>
    		</condition>
+        <position>
+    		<x>0.0</x>
+    		<y>0.0</y>
+    		<z>-0.5</z>
+   		</position>
    		<volume>
     		<property>sim/sound/A700/Ovolume</property>
    		</volume>
@@ -233,11 +265,16 @@
    		<mode>in-transit</mode>
    		<path>Sounds/flaps.wav</path>
    		<property>surface-positions/flap-pos-norm</property>
+        <position>
+    		<x>-0.3</x>
+    		<y>0.0</y>
+    		<z>-0.0</z>
+   		</position>
    		<volume>
     		<factor>0.45</factor>
    		</volume>
-   		<reference-dist>5.0</reference-dist>
-   		<max-dist>10.0</max-dist>
+   		<reference-dist>1.5</reference-dist>
+   		<max-dist>4.0</max-dist>
   	</flap>
 
 
@@ -249,15 +286,22 @@
     		<property>velocities/airspeed-kt</property>
     		<min>30.0</min>
    		</volume>
-   		<reference-dist>5.0</reference-dist>
-   		<max-dist>10.0</max-dist>
+   		<reference-dist>2.0</reference-dist>
+   		<max-dist>4.0</max-dist>
   	</stall>
  
 	<wind>
    		<name>wind</name>
    		<mode>looped</mode>
    		<path>Sounds/wind.wav</path>
+   		<reference-dist>2.0</reference-dist>
+   		<max-dist>5.0</max-dist>
    		<property>/velocities/airspeed-kt</property>
+        <position>
+    		<x>-0.8</x>
+    		<y>0.0</y>
+    		<z>0.5</z>
+   		</position>
    		<volume>
     		<property>/position/altitude-ft</property>
     		<factor>-0.000015</factor>
