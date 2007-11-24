@@ -9,11 +9,12 @@
         <fuel-fraction>1.0</fuel-fraction>
         <model>
             <path>Aircraft/Aerostar-700/Models/aerostar.xml</path>
-            <variant type="int">0</variant>
+            <variant type="int">3</variant><!-- change this to start with the following textures-->
             <aerostar700>
                 <texture type="string" n="0">paint1.rgb</texture>
                 <texture type="string" n="1">paint2.rgb</texture>
                 <texture type="string" n="2">paint3.rgb</texture>
+                <texture type="string" n="3">paint4.rgb</texture>
             </aerostar700>
         </model>
         <startup>
@@ -92,9 +93,6 @@
             <disable>1</disable>
         </replay>
 
-        <multiplay>
-            <chat_display>1</chat_display>
-        </multiplay>
 
         <yokes-visible type="bool">1</yokes-visible>
 
@@ -132,13 +130,40 @@
     </sim>
 
     <controls>
+        <electric>
+            <external-power>0</external-power>
+            <battery-switch>0</battery-switch>
+            <engine n="0">
+                <generator>0</generator>
+            </engine>
+            <engine n="1">
+                <generator>0</generator>
+            </engine>
+        </electric>
         <gear>
             <brake-parking>1.0</brake-parking>
             <gear-down>true</gear-down>
         </gear>
         <lighting>
             <instruments-norm>0.5</instruments-norm>
+            <landing-lights n="0" type="bool">0</landing-lights>
+            <landing-lights n="1" type="bool">0</landing-lights>
+            <beacon type="bool">0</beacon>
+            <strobe type="bool">0</strobe>
+            <nav-lights type="bool">0</nav-lights>
+            <cabin-lights type="bool">0</cabin-lights>
+            <wing-lights type="bool">0</wing-lights>
+            <taxi-light type="bool">0</taxi-light>
+            <instrument-lights type="bool">0</instrument-lights>
         </lighting>
+        <anti-ice>
+            <prop-heat>0</prop-heat>
+            <pitot-heat>0</pitot-heat>
+        </anti-ice>
+        <cabin>
+            <fan type="bool">0</fan>
+            <heat type="bool">0</heat>
+        </cabin>
     </controls>
 
     <consumables>

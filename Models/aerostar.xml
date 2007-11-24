@@ -77,6 +77,18 @@ comment out for OSG
         <texture-prop>sim/model/aerostar700/texture[2]</texture-prop>
     </animation>
 
+    <animation>
+        <type>material</type>
+         <object-name>Exterior</object-name>
+        <condition>
+            <equals>
+                <property>sim/model/variant</property>
+                <value>3</value>
+            </equals>
+        </condition>
+        <texture-prop>sim/model/aerostar700/texture[3]</texture-prop>
+    </animation>
+
     <panel>
         <name>Panel3D</name>
         <path>Aircraft/Aerostar-700/Panels/aerostar-panel.xml</path>
