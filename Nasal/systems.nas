@@ -1,6 +1,7 @@
 ####    Aerostar 700   ####
 ####    Syd Adams    ####
 
+aircraft.livery.init("Aircraft/Aerostar-700/Models/Liveries", "sim/model/livery/name", "sim/model/livery/index");
 Cvolume=props.globals.getNode("/sim/sound/A700/Cvolume",1);
 Ovolume=props.globals.getNode("/sim/sound/A700/Ovolume",1);
 Gear = [];
@@ -38,6 +39,54 @@ setlistener("/gear/gear[1]/wow", func(gw){
         FHmeter.start();
         }
 },0,0);
+
+setlistener("/sim/model/start-idling", func(idle){
+    var run= idle.getBoolValue();
+    if(run){
+    Startup();
+    }else{
+    Shutdown();
+    }
+},0,0);
+
+var Startup = func{
+setprop("controls/electric/engine[0]/generator",1);
+setprop("controls/electric/engine[1]/generator",1);
+setprop("controls/electric/battery-switch",1);
+setprop("controls/lighting/instrument-lights",1);
+setprop("controls/lighting/nav-lights",1);
+setprop("controls/lighting/beacon",1);
+setprop("controls/lighting/strobe",1);
+setprop("controls/engines/engine[0]/magnetos",3);
+setprop("controls/engines/engine[1]/magnetos",3);
+setprop("controls/engines/engine[0]/propeller-pitch",1);
+setprop("controls/engines/engine[1]/propeller-pitch",1);
+setprop("controls/engines/engine[0]/mixture",1);
+setprop("controls/engines/engine[1]/mixture",1);
+setprop("engines/engine[0]/rpm",500);
+setprop("engines/engine[1]/rpm",500);
+setprop("engines/engine[0]/running",1);
+setprop("engines/engine[1]/running",1);
+}
+
+var Shutdown = func{
+setprop("controls/electric/engine[0]/generator",0);
+setprop("controls/electric/engine[1]/generator",0);
+setprop("controls/electric/avionics-switch",0);
+setprop("controls/electric/battery-switch",0);
+setprop("controls/electric/inverter-switch",0);
+setprop("controls/lighting/instrument-lights",0);
+setprop("controls/lighting/nav-lights",0);
+setprop("controls/lighting/beacon",0);
+setprop("controls/engines/engine[0]/magnetos",0);
+setprop("controls/engines/engine[1]/magnetos",0);
+setprop("controls/engines/engine[0]/propeller-pitch",0);
+setprop("controls/engines/engine[1]/propeller-pitch",0);
+setprop("controls/engines/engine[0]/mixture",0);
+setprop("controls/engines/engine[1]/mixture",0);
+setprop("engines/engine[0]/running",0);
+setprop("engines/engine[1]/running",0);
+}
 
 var flight_meter = func{
 var fmeter = getprop("/instrumentation/clock/flight-meter-sec");

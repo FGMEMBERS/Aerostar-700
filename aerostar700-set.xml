@@ -9,13 +9,8 @@
         <fuel-fraction>1.0</fuel-fraction>
         <model>
             <path>Aircraft/Aerostar-700/Models/aerostar.xml</path>
+            <start-idling type="bool">0</start-idling>
             <variant type="int">3</variant><!-- change this to start with the following textures-->
-            <aerostar700>
-                <texture type="string" n="0">paint1.rgb</texture>
-                <texture type="string" n="1">paint2.rgb</texture>
-                <texture type="string" n="2">paint3.rgb</texture>
-                <texture type="string" n="3">paint4.rgb</texture>
-            </aerostar700>
         </model>
         <startup>
             <splash-texture>Aircraft/Aerostar-700/splash.rgb</splash-texture>
@@ -89,11 +84,6 @@
             <min-lb>0</min-lb>
         </weight>
 
-        <replay>
-            <disable>1</disable>
-        </replay>
-
-
         <yokes-visible type="bool">1</yokes-visible>
 
         <help>
@@ -126,6 +116,36 @@
             (ALT-arm, GS arm)
             </text>
         </help>
+
+    <menubar>
+        <default>
+            <menu n="10">
+                <label>Aerostar-700</label>
+                <enabled type="bool">true</enabled>
+                <item>
+                    <label>Start Idling</label>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>sim/model/start-idling</property>
+                    </binding>
+                </item>
+                <item>
+                    <label>Yokes On/Off</label>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>sim/yokes-visible</property>
+                    </binding>
+                </item>
+                <item>
+                    <label>Select Livery</label>
+                    <binding>
+                        <command>nasal</command>
+                        <script>aircraft.livery.dialog.toggle()</script>
+                    </binding>
+                </item>
+            </menu>
+        </default>
+    </menubar>
 
     </sim>
 
@@ -164,6 +184,14 @@
             <fan type="bool">0</fan>
             <heat type="bool">0</heat>
         </cabin>
+        <engines>
+            <engine n="0">
+                <magnetos>0</magnetos>
+            </engine>
+            <engine n="1">
+                <magnetos>0</magnetos>
+            </engine>
+        </engines>
     </controls>
 
     <consumables>
@@ -197,6 +225,15 @@
             <position-norm>1</position-norm>
         </gear>
     </gear>
+
+        <engines>
+            <engine n="0">
+                <running>0</running>
+            </engine>
+            <engine n="1">
+                <running>0</running>
+            </engine>
+        </engines>
 
     <nasal>
         <Aerostar-700>
