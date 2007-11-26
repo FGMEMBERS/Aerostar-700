@@ -1,7 +1,7 @@
 <PropertyList >
 
     <sim>
-        <description>Aerostar Super 700 / 3d cockpit / (YASim) </description>
+        <description>Aerostar Super 700</description>
         <author>Syd Adams</author>
         <status>development</status>
         <flight-model>yasim</flight-model>
