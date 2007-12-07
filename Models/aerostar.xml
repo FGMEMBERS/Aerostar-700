@@ -306,7 +306,7 @@ comment out for OSG
 
     <model>
         <name>Pilot</name>
-        <path>Aircraft/Aerostar-700/Models/testpilot.xml</path>
+        <path>Models/Aircraft/testpilot.xml</path>
         <offsets>
             <x-m>-0.389</x-m>
             <y-m>-0.34</y-m>
