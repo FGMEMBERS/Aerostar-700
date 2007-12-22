@@ -29,11 +29,13 @@
      <h>7</h>
      <binding>
        <command>nasal</command>
-       <script> kfcmode = getprop ("instrumentation/kfc200/fdmode");
-         if ( kfcmode  != "hdg"){setprop("instrumentation/kfc200/fdmode","hdg");
-         }else{
-         setprop("instrumentation/kfc200/fdmode","off");
-         }</script>
+       <script> 
+        if(getprop("instrumentation/kfc200/lnav")!= 1){
+            setprop("instrumentation/kfc200/lnav",1);
+            }else{
+            setprop("instrumentation/kfc200/lnav",0);
+            }
+        </script>
      </binding>
    </action>
    
@@ -59,11 +61,14 @@
      <h>7</h>
      <binding>
        <command>nasal</command>
-       <script>kfcmode = getprop ("instrumentation/kfc200/fdmodeV");
-         if ( kfcmode != "alt-arm"){setprop("instrumentation/kfc200/fdmodeV","alt-arm");
-         }else{
-         setprop("instrumentation/kfc200/fdmodeV","off");
-         }</script>
+       <script>
+        if(getprop("instrumentation/kfc200/vnav")!= 2){
+            setprop("instrumentation/kfc200/vnav",2);
+            setprop("autopilot/settings/target-altitude-ft",getprop("instrumentation/altimeter/pressure-alt-ft"));
+            }else{
+            setprop("instrumentation/kfc200/vnav",0);
+            }
+         </script>
      </binding>
    </action>
    
@@ -78,10 +83,13 @@
      <h>7</h>
      <binding>
        <command>nasal</command>
-       <script>kfcmode = getprop ("instrumentation/kfc200/fdmode");
-         if ( kfcmode  != "nav-arm"){setprop("instrumentation/kfc200/fdmode","nav-arm");
-         }else{if(kfcmode == "nav-cpld"){setprop("instrumentation/kfc200/fdmode","off");}
-         }</script>
+       <script>
+        if(getprop("instrumentation/kfc200/lnav")!= 2){
+            setprop("instrumentation/kfc200/lnav",2);
+            }else{
+            setprop("instrumentation/kfc200/lnav",0);
+            }
+         </script>
      </binding>
    </action>
    
@@ -94,11 +102,13 @@
      <h>7</h>
      <binding>
        <command>nasal</command>
-       <script> kfcmode = getprop ("instrumentation/kfc200/fdmode");
-         if ( kfcmode  != "bc"){setprop("instrumentation/kfc200/fdmode","bc");
-         }else{
-         setprop("instrumentation/kfc200/fdmode","off");
-         }</script>
+       <script>
+        if(getprop("instrumentation/kfc200/lnav")== 4){
+            setprop("instrumentation/nav/back-course-btn",1);
+            }else{
+            setprop("instrumentation/nav/back-course-btn",0);
+            }
+         </script>
      </binding>
    </action>
    
@@ -111,11 +121,13 @@
      <h>7</h>
      <binding>
        <command>nasal</command>
-       <script> kfcmode = getprop ("instrumentation/kfc200/fdmode");
-         if ( kfcmode  != "appr"){setprop("instrumentation/kfc200/fdmode","appr");
-         }else{
-         setprop("instrumentation/kfc200/fdmode","off");
-         }</script>
+       <script>
+        if(getprop("instrumentation/kfc200/lnav")!= 4){
+            setprop("instrumentation/kfc200/lnav",4);
+            }else{
+            setprop("instrumentation/kfc200/lnav",0);
+            }
+         </script>
      </binding>
    </action>
 
@@ -128,54 +140,116 @@
      <h>10</h>
      <binding>
        <command>property-toggle</command>
-       <property>/autopilot/locks/passive-mode</property>
+       <property>autopilot/locks/passive-mode</property>
      </binding>
    </action>
 
-   	<action>
-    	<name>Trim-Down</name>
-     	<button>0</button>
-     	<x>-35</x>
-     	<y>-30</y>
-     	<w>10</w>
-     	<h>10</h>
-   			<condition>
-				<not-equals>
-					<property>/autopilot/locks/altitude</property>
-					<value></value>
-				</not-equals>
-			</condition>
-     	<binding>
-       			<command>property-adjust</command>
-       			<property>/autopilot/settings/target-pitch-deg</property>
-       			<step>-0.05</step>
-       			<min>-15.0</min>
-       			<max>15.0</max>
-       			<wrap>false</wrap>
-     	</binding>
-   	</action>
+    <action>
+        <name>Pitch Trim-Down</name>
+        <button>0</button>
+        <x>-35</x>
+        <y>-30</y>
+        <w>10</w>
+        <h>10</h>
+            <condition>
+                <equals>
+                    <property>/autopilot/locks/altitude</property>
+                    <value>pitch-hold</value>
+                </equals>
+            </condition>
+        <binding>
+            <command>property-assign</command>
+            <property>instrumentation/kfc200/pitch-trim</property>
+            <value>-1</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/kfc200/pitch-trim</property>
+                <value>0</value>
+            </binding>
+        </mod-up>
+    </action>
+
+    <action>
+        <name>Pitch Trim-Up</name>
+        <button>0</button>
+        <x>-35</x>
+        <y>-40</y>
+        <w>10</w>
+        <h>10</h>
+            <condition>
+                <equals>
+                    <property>/autopilot/locks/altitude</property>
+                    <value>pitch-hold</value>
+                </equals>
+            </condition>
+        <binding>
+            <command>property-assign</command>
+            <property>instrumentation/kfc200/pitch-trim</property>
+            <value>1</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/kfc200/pitch-trim</property>
+                <value>0</value>
+            </binding>
+        </mod-up>
+    </action>
+
+    <action>
+        <name>Alt Trim-Down</name>
+        <button>0</button>
+        <x>-35</x>
+        <y>-30</y>
+        <w>10</w>
+        <h>10</h>
+            <condition>
+                <equals>
+                    <property>/autopilot/locks/altitude</property>
+                    <value>altitude-hold</value>
+                </equals>
+            </condition>
+        <binding>
+            <command>property-assign</command>
+            <property>instrumentation/kfc200/alt-trim</property>
+            <value>-1</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/kfc200/alt-trim</property>
+                <value>0</value>
+            </binding>
+        </mod-up>
+    </action>
 
    <action>
-     <name>Trim-Up</name>
+     <name>Alt Trim-Up</name>
      <button>0</button>
      <x>-35</x>
      <y>-40</y>
      <w>10</w>
      <h>10</h>
-		<condition>
-			<not-equals>
-				<property>/autopilot/locks/altitude</property>
-				<value></value>
-			</not-equals>
-		</condition>
-		<binding>
-   			<command>property-adjust</command>
-       			<property>/autopilot/settings/target-pitch-deg</property>
-       			<step>0.05</step>
-       			<min>-15.0</min>
-       			<max>15.0</max>
-       			<wrap>false</wrap>
-     	</binding>
+            <condition>
+                <equals>
+                    <property>/autopilot/locks/altitude</property>
+                    <value>altitude-hold</value>
+                </equals>
+            </condition>
+        <binding>
+            <command>property-assign</command>
+            <property>instrumentation/kfc200/alt-trim</property>
+            <value>1</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/kfc200/alt-trim</property>
+                <value>0</value>
+            </binding>
+        </mod-up>
    </action>
 
 <!-- ############## THROTTLE QUADRANT ##############-->

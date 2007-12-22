@@ -34,10 +34,10 @@
   
   <instrument include="../../Instruments-3d/kr87-adf/kr87-adf-hotspots.xml">
     <name>ADF hotspots</name>
-    <x>491</x>
-    <y>178</y>
-    <w>154</w>
-    <h>35</h>
+    <x>494</x>
+    <y>181</y>
+    <w>152</w>
+    <h>36</h>
   </instrument>
 
   <instrument include="../../Instruments-3d/RDR-160/wxradar-hotspots.xml">
@@ -382,7 +382,7 @@
      <h>14</h>
      <binding>
        <command>property-adjust</command>
-       <property>/instrumentation/nav/radials/selected-deg</property>
+       <property>instrumentation/nav/radials/selected-deg</property>
        <step>-1</step>
        <min>0</min>
        <max>360</max>
@@ -399,7 +399,7 @@
      <h>14</h>
      <binding>
        <command>property-adjust</command>
-       <property>/instrumentation/nav/radials/selected-deg</property>
+       <property>instrumentation/nav/radials/selected-deg</property>
        <step>-5</step>
        <min>0</min>
        <max>360</max>
@@ -416,7 +416,7 @@
      <h>14</h>
      <binding>
        <command>property-adjust</command>
-       <property>/instrumentation/nav/radials/selected-deg</property>
+       <property>instrumentation/nav/radials/selected-deg</property>
        <step>1</step>
        <min>0</min>
        <max>360</max>
@@ -433,7 +433,7 @@
      <h>14</h>
      <binding>
        <command>property-adjust</command>
-       <property>/instrumentation/nav/radials/selected-deg</property>
+       <property>instrumentation/nav/radials/selected-deg</property>
        <step>5</step>
        <min>0</min>
        <max>360</max>
@@ -452,7 +452,7 @@
      <h>14</h>
      <binding>
        <command>property-adjust</command>
-       <property>/autopilot/settings/heading-bug-deg</property>
+       <property>autopilot/settings/heading-bug-deg</property>
        <step>-1</step>
        <min>0</min>
        <max>360</max>
@@ -469,7 +469,7 @@
      <h>14</h>
      <binding>
        <command>property-adjust</command>
-       <property>/autopilot/settings/heading-bug-deg</property>
+       <property>autopilot/settings/heading-bug-deg</property>
        <step>-5</step>
        <min>0</min>
        <max>360</max>
@@ -486,7 +486,7 @@
      <h>14</h>
      <binding>
        <command>property-adjust</command>
-       <property>/autopilot/settings/heading-bug-deg</property>
+       <property>autopilot/settings/heading-bug-deg</property>
        <step>1</step>
        <min>0</min>
        <max>360</max>
@@ -503,7 +503,7 @@
      <h>14</h>
      <binding>
        <command>property-adjust</command>
-       <property>/autopilot/settings/heading-bug-deg</property>
+       <property>autopilot/settings/heading-bug-deg</property>
        <step>5</step>
        <min>0</min>
        <max>360</max>
@@ -524,7 +524,7 @@
   <h>14</h>
   <binding>
     <command>property-adjust</command>
-    <property>/instrumentation/altimeter/setting-inhg</property>
+    <property>instrumentation/altimeter/setting-inhg</property>
     <step>-0.01</step>
     <min>26.0</min>
     <max>33.0</max>
@@ -541,7 +541,7 @@
   <h>14</h>
   <binding>
     <command>property-adjust</command>
-    <property>/instrumentation/altimeter/setting-inhg</property>
+    <property>instrumentation/altimeter/setting-inhg</property>
     <step>-0.1</step>
     <min>26.0</min>
     <max>33.0</max>
@@ -558,7 +558,7 @@
   <h>14</h>
   <binding>
     <command>property-adjust</command>
-    <property>/instrumentation/altimeter/setting-inhg</property>
+    <property>instrumentation/altimeter/setting-inhg</property>
     <step>0.01</step>
     <min>26.0</min>
     <max>33.0</max>
@@ -575,7 +575,7 @@
   <h>14</h>
   <binding>
     <command>property-adjust</command>
-    <property>/instrumentation/altimeter/setting-inhg</property>
+    <property>instrumentation/altimeter/setting-inhg</property>
     <step>0.1</step>
     <min>26.0</min>
     <max>33.0</max>
@@ -594,7 +594,7 @@
   <h>14</h>
   <binding>
     <command>property-adjust</command>
-    <property>/autopilot/settings/target-altitude-ft</property>
+    <property>instrumentation/kfc200/alt-preset</property>
     <step>-100</step>
     <min>0.0</min>
     <max>99999.0</max>
@@ -611,7 +611,7 @@
   <h>14</h>
   <binding>
     <command>property-adjust</command>
-    <property>/autopilot/settings/target-altitude-ft</property>
+    <property>instrumentation/kfc200/alt-preset</property>
     <step>-1000</step>
     <min>0.0</min>
     <max>99999.0</max>
@@ -628,7 +628,7 @@
   <h>14</h>
   <binding>
     <command>property-adjust</command>
-    <property>/autopilot/settings/target-altitude-ft</property>
+    <property>instrumentation/kfc200/alt-preset</property>
     <step>100</step>
     <min>0.0</min>
     <max>99999.0</max>
@@ -645,12 +645,32 @@
   <h>14</h>
   <binding>
     <command>property-adjust</command>
-    <property>/autopilot/settings/target-altitude-ft</property>
+    <property>instrumentation/kfc200/alt-preset</property>
     <step>1000</step>
     <min>0.0</min>
     <max>99999.0</max>
     <wrap>false</wrap>
   </binding>
+</action>
+
+<action>
+  <name>alt set</name>
+  <button>0</button>
+  <x>-212</x>
+  <y>180</y>
+  <w>8</w>
+  <h>5</h>
+        <binding>
+            <command>nasal</command>
+            <script>
+                if(getprop("instrumentation/kfc200/vnav")!= 1){
+                setprop("instrumentation/kfc200/vnav",1);
+                setprop("autopilot/settings/target-altitude-ft",getprop("instrumentation/kfc200/alt-preset"));
+                }else{
+                setprop("instrumentation/kfc200/vnav",0);
+                }
+            </script>
+        </binding>
 </action>
 
 <!-- DIMMER SWITCH -->

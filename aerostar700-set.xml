@@ -6,7 +6,7 @@
         <status>development</status>
         <flight-model>yasim</flight-model>
         <aero>aerostar-yasim</aero>
-        <fuel-fraction>1.0</fuel-fraction>
+        <fuel-fraction>0.5</fuel-fraction>
         <model>
             <path>Aircraft/Aerostar-700/Models/aerostar.xml</path>
             <start-idling type="bool">0</start-idling>
@@ -24,6 +24,10 @@
                 <path>Aircraft/Aerostar-700/aerostar-autopilot.xml</path>
             </autopilot>
         </systems>
+
+        <instrumentation>
+            <path>Aircraft/Aerostar-700/instrumentation.xml</path>
+        </instrumentation>
 
         <sound>
             <path>Aircraft/Aerostar-700/aerostar-sound.xml</path>
@@ -88,33 +92,6 @@
 
         <help>
             <title>Aerostar Super 700</title>
-            <line>Systems Operation</line>
-            <text>
-            KING KNS-80 Nav System 
-            ________________________________
-            VOR: Select VOR modes , non functional.
-            RNAV: Select RNAV modes , non functional.
-            HLD : DME hold
-            USE : Select channel NAV system uses
-            DSP : View / edit channel information
-            DATA: Select frequency / radial / distance data
-            Note : Modify data with large knob
-            Power and volume with small knob
-            
-            KFC-200 Flightdirector / Autopilot 
-            ________________________________
-            HDG : Select Heading  Bug hold
-            FD : Activate Flight Director (command bars visible on AI)
-            ALT: Select Altitude Arm 
-            NAV: Select VOR /RNAV course arm
-            BC : Select Back Course hold (reverse nav course)
-            APPR: Select approach mode (Localizer and Glideslope
-            armed)
-            AP: Engage Autopilot (If no FD modes are selected , 
-            autopilot defaults to Wing Level and Pitch Hold)
-            UP/DWN Toggle: Change pitch while in Pitch Hold modes...
-            (ALT-arm, GS arm)
-            </text>
         </help>
 
     <menubar>
@@ -165,9 +142,8 @@
             <gear-down>true</gear-down>
         </gear>
         <lighting>
-            <instruments-norm>0.5</instruments-norm>
-            <landing-lights n="0" type="bool">0</landing-lights>
-            <landing-lights n="1" type="bool">0</landing-lights>
+            <instruments-norm>0.8</instruments-norm>
+            <landing-lights type="bool">0</landing-lights>
             <beacon type="bool">0</beacon>
             <strobe type="bool">0</strobe>
             <nav-lights type="bool">0</nav-lights>
@@ -234,6 +210,29 @@
                 <running>0</running>
             </engine>
         </engines>
+
+    <instrumentation>
+        <radar>
+            <serviceable type="bool" archive="y">true</serviceable>
+            <switch type="string" archive="y">off</switch>
+            <mode-control type="int" archive="y">3</mode-control>
+            <range type="int" archive="y">20</range>
+            <mode type="string"	archive="y">WX</mode>
+            <heading-marker type="bool"	archive="y">false</heading-marker>
+            <lightning type="bool" archive="y">false</lightning>
+            <display-mode type="string">arc</display-mode>
+            <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/RDR-160/od_wxradar.rgb</radar-texture-path>
+            <echo-texture-path type="string" archive="y">Aircraft/Instruments/Textures/wxecho.rgb</echo-texture-path>
+            <display-controls>
+                <WX type="bool" archive="y">false</WX>
+                <data type="bool" archive="y">false</data>
+                <pos type="bool" archive="y">true</pos>
+            </display-controls>
+        </radar>
+        <inst-vertical-speed-indicator>
+            <serviceable>true</serviceable>
+        </inst-vertical-speed-indicator>
+    </instrumentation>
 
     <nasal>
         <Aerostar-700>
