@@ -9,7 +9,14 @@ Gear = [];
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 FHmeter.stop();
 
-setlistener("/sim/signals/fdm-initialized", func {
+var view_list =[];
+var view = props.globals.getNode("/sim").getChildren("view");
+    for(var i=0; i<size(view); i+=1){
+        append(view_list,"sim/view["~i~"]/config/default-field-of-view-deg");
+        }
+aircraft.data.add(view_list);
+
+setlistener("/sim/signals/fdm-initialized", func{
     Cvolume.setValue(0.5);
     Ovolume.setValue(0.2);
     setprop("/instrumentation/gps/wp/wp/ID",getprop("/sim/tower/airport-id"));
@@ -19,10 +26,12 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("/instrumentation/clock/flight-meter-hour",0);
     settimer(update_systems,2);
     print("Aircraft Systems ... OK");
+    setprop("sim/current-view/field-of-view",getprop("sim/view/config/default-field-of-view-deg"));
 });
 
 setlistener("/sim/current-view/view-number", func(vw){
     ViewNum = vw.getValue();
+    setprop("sim/current-view/field-of-view",getprop("sim/view["~ViewNum~"]/config/default-field-of-view-deg"));
     if(ViewNum == 0){
         Cvolume.setValue(0.5);
         Ovolume.setValue(0.5);

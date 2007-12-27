@@ -416,25 +416,152 @@ comment out for OSG
     </animation>
 
     <animation>
-        <type>material</type>
-        <object-name>greennav</object-name>
-        <emission>
-            <red>0.1</red>
-            <green>0.8</green>
-            <blue>0.5</blue>
-            <factor-prop>systems/electrical/outputs/nav-lights</factor-prop>
-        </emission>
+        <type>select</type>
+        <object-name>navlights</object-name>
+        <condition>
+            <greater-than>
+            <property>systems/electrical/outputs/nav-lights</property>
+            <value>1</value> 
+            </greater-than>
+        </condition>
     </animation>
 
     <animation>
-        <type>material</type>
-        <object-name>rednav</object-name>
-        <emission>
-            <red>0.8</red>
-            <green>0.1</green>
-            <blue>0.1</blue>
-            <factor-prop>systems/electrical/outputs/nav-lights</factor-prop>
-        </emission>
+        <type>select</type>
+        <object-name>redglow</object-name>
+        <object-name>greenglow</object-name>
+        <condition>
+            <and>
+                <greater-than>
+                    <property>systems/electrical/outputs/nav-lights</property>
+                    <value>0.2</value>
+                </greater-than>
+                <greater-than>
+                    <property>sim/time/sun-angle-rad</property>
+                    <value>1.6</value>
+                </greater-than>
+                <equals>
+                    <property>systems/electrical/outputs/strobe</property>
+                    <value>0</value>
+                </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>flash</type>
+        <object-name>greenglow</object-name>
+        <center>
+            <x-m>1.096</x-m>
+            <y-m>5.320</y-m>
+            <z-m>0.259</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+        <power>5</power>
+        <factor>2</factor>
+        <offset>0</offset>
+        <two-sides type="bool">false</two-sides>
+        <min>0.8</min>
+        <max>2</max>
+    </animation>
+
+    <animation>
+        <type>flash</type>
+        <object-name>redglow</object-name>
+        <center>
+            <x-m>1.096</x-m>
+            <y-m>-5.320</y-m>
+            <z-m>0.259</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+        <power>5</power>
+        <factor>2</factor>
+        <offset>0</offset>
+        <two-sides type="bool">false</two-sides>
+        <min>0.8</min>
+        <max>2</max>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>strobe1</object-name>
+        <condition>
+            <greater-than>
+            <property>systems/electrical/outputs/strobe</property>
+            <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>strobe1</object-name>
+        <offset-m>5.52</offset-m>
+        <axis>
+            <x>0.237</x>
+            <y>0.970</y>
+            <z>0.046</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>billboard</type>
+        <object-name>strobe1</object-name>
+    </animation>
+
+    <animation>
+        <type>dist-scale</type>
+        <object-name>strobe1</object-name>
+        <interpolation>
+        <entry><ind>0</ind><dep>1</dep></entry>
+        <entry><ind>500</ind><dep>2.5</dep></entry>
+        <entry><ind>16000</ind><dep>10</dep></entry>
+        </interpolation>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>strobe2</object-name>
+        <condition>
+            <greater-than>
+            <property>systems/electrical/outputs/strobe</property>
+            <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>strobe2</object-name>
+        <offset-m>5.52</offset-m>
+        <axis>
+            <x>0.237</x>
+            <y>-0.970</y>
+            <z>0.046</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>billboard</type>
+        <object-name>strobe2</object-name>
+    </animation>
+
+    <animation>
+        <type>dist-scale</type>
+        <object-name>strobe2</object-name>
+        <interpolation>
+        <entry><ind>0</ind><dep>1</dep></entry>
+        <entry><ind>500</ind><dep>2.5</dep></entry>
+        <entry><ind>16000</ind><dep>10</dep></entry>
+        </interpolation>
     </animation>
 
     <animation>

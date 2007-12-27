@@ -48,15 +48,10 @@
                 <y-offset-m type="double">0.6</y-offset-m>
                 <z-offset-m type="double">-0.28</z-offset-m>
                 <pitch-offset-deg>-15</pitch-offset-deg>
-                <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
             </config>
         </view>
 
-        <current-view>
-            <field-of-view>60.0</field-of-view>
-        </current-view>
-
-        <input>
+    <input>
             <selected>
                 <engine n="0">true</engine>
                 <engine n="1">true</engine>
