@@ -42,10 +42,10 @@
 
   <instrument include="../../Instruments-3d/RDR-160/wxradar-hotspots.xml">
     <name>wxradar hotspots</name>
-        <x>493</x>
+        <x>491</x>
         <y>93</y>
-        <w>161</w>
-        <h>123</h>
+        <w>148</w>
+        <h>110</h>
   </instrument>
 
 
