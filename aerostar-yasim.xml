@@ -97,27 +97,32 @@ fuel flow:
   <control-input axis="/gear/gear[0]/position-norm" control="FLAP0"/>
 </mstab>
 
-<gear x="1.668" y="0.00" z="-1.245" compression=".3" retract-time="5">
+<gear x="1.668" y="0.00" z="-1.245" compression=".3">
 <control-input axis="/controls/flight/rudder" control="STEER" square="true"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-  <control-speed control="EXTEND" transition-time="5"/>
+  <control-speed control="EXTEND" transition-time="4"/>
   <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
 </gear>
 
-<gear x="-1.8" y="1.55" z="-1.188" compression=".20" retract-time="4.9">
+<gear x="-1.8" y="1.55" z="-1.188" compression=".20">
   <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-  <control-speed control="EXTEND" transition-time="4.9"/>
-  <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+  <control-speed control="EXTEND"  transition-time="4.2"/>
+  <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"
+   src0="0.5" dst0="0"
+  src1="1.0" dst1="1"
+  />
 </gear>
 
 <gear x="-1.8" y="-1.55" z="-1.188" compression=".20" retract-time="5.1">
   <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-  <control-speed control="EXTEND" transition-time="5.1"/>
-  <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+  <control-speed control="EXTEND" transition-time="4.1"/>
+  <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"
+  src0="0" dst0="0"
+  src1="0.5" dst1="1"/>
 </gear>
 <!--
      ...............ENGINES ...

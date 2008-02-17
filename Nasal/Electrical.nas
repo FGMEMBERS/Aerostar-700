@@ -216,8 +216,9 @@ var avionics_bus = func(){
     setprop(OutPuts~"turn-coordinator",bus_volts); 
     setprop(OutPuts~"nav[0]",bus_volts); 
     setprop(OutPuts~"nav[1]",bus_volts); 
-    setprop(OutPuts~"comm[0]",bus_volts); 
-    setprop(OutPuts~"comm[1]",bus_volts); 
+    setprop(OutPuts~"comm[0]",bus_volts);
+    setprop(OutPuts~"comm[1]",bus_volts);
+    setprop(OutPuts~"KNS80",bus_volts);
     load +=15;
     return load;
 }
