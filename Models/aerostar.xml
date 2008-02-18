@@ -155,7 +155,7 @@ comment out for OSG
     </model>
 
     <model>
-        <path>Aircraft/Instruments-3d/vsi-6/vsi-3d.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/vsi-3d.xml</path>
         <offsets>
             <x-m>-0.920</x-m>
             <y-m>-0.237</y-m>
