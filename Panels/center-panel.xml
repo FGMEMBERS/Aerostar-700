@@ -1,256 +1,139 @@
 <?xml version="1.0"?>
+
 <PropertyList>
 
- <name>Center Panel</name>
- <background>Aircraft/Aerostar-700/Panels/transparent-bg.rgb</background>
- <w>256</w>
- <h>512</h>
+<name>Center Panel</name>
+<background>Aircraft/Aerostar-700/Panels/transparent-bg.rgb</background>
+<w>256</w>
+<h>512</h>
 
-<instruments>
+    <instruments>
 
-<instrument>
-  <name>centerpanel hotspots</name>
-  <x>128</x>
-  <y>256</y>
-  <w>256</w>
-  <h>512</h>
-  <w-base>256</w-base>
-  <h-base>512</h-base>
+        <instrument>
+            <name>centerpanel hotspots</name>
+            <x>128</x>
+            <y>256</y>
+            <w>256</w>
+            <h>512</h>
+            <w-base>256</w-base>
+            <h-base>512</h-base>
 
- <actions> 
-   <!---            FD Controller -->
-   
-    <action>
-     <name>HDG mode</name>
-     <button>0</button>
-     <x>-20</x>
-     <y>-27</y>
-     <w>9</w>
-     <h>7</h>
-     <binding>
-       <command>nasal</command>
-       <script> 
-        if(getprop("instrumentation/kfc200/lnav")!= 1){
-            setprop("instrumentation/kfc200/lnav",1);
-            }else{
-            setprop("instrumentation/kfc200/lnav",0);
-            }
-        </script>
-     </binding>
-   </action>
-   
-   <action>
-     <name>FD mode</name>
-     <button>0</button>
-     <x>-8</x>
-     <y>-27</y>
-     <w>9</w>
-     <h>7</h>
-     <binding>
-       <command>property-toggle</command>
-       <property>/instrumentation/kfc200/fd-on</property>
-     </binding>
-   </action>
-   
-   <action>
-     <name>ALT mode</name>
-     <button>0</button>
-     <x>4</x>
-     <y>-27</y>
-     <w>9</w>
-     <h>7</h>
-     <binding>
-       <command>nasal</command>
-       <script>
-        if(getprop("instrumentation/kfc200/vnav")!= 2){
-            setprop("instrumentation/kfc200/vnav",2);
-            setprop("autopilot/settings/target-altitude-ft",getprop("instrumentation/altimeter/pressure-alt-ft"));
-            }else{
-            setprop("instrumentation/kfc200/vnav",0);
-            }
-         </script>
-     </binding>
-   </action>
-   
+            <actions>
 
-   
-   <action>
-     <name>NAV mode</name>
-     <button>0</button>
-     <x>-20</x>
-     <y>-43</y>
-     <w>9</w>
-     <h>7</h>
-     <binding>
-       <command>nasal</command>
-       <script>
-        if(getprop("instrumentation/kfc200/lnav")!= 2){
-            setprop("instrumentation/kfc200/lnav",2);
-            }else{
-            setprop("instrumentation/kfc200/lnav",0);
-            }
-         </script>
-     </binding>
-   </action>
-   
-   <action>
-     <name>BC mode</name>
-     <button>0</button>
-     <x>-9</x>
-     <y>-43</y>
-     <w>9</w>
-     <h>7</h>
-     <binding>
-       <command>nasal</command>
-       <script>
-        if(getprop("instrumentation/kfc200/lnav")== 4){
-            setprop("instrumentation/nav/back-course-btn",1);
-            }else{
-            setprop("instrumentation/nav/back-course-btn",0);
-            }
-         </script>
-     </binding>
-   </action>
-   
-   <action>
-     <name>APPR mode</name>
-     <button>0</button>
-     <x>3</x>
-     <y>-43</y>
-     <w>9</w>
-     <h>7</h>
-     <binding>
-       <command>nasal</command>
-       <script>
-        if(getprop("instrumentation/kfc200/lnav")!= 4){
-            setprop("instrumentation/kfc200/lnav",4);
-            }else{
-            setprop("instrumentation/kfc200/lnav",0);
-            }
-         </script>
-     </binding>
-   </action>
+            <action>
+                <name>HDG mode</name>
+                <button>0</button>
+                <x>-20</x>
+                <y>-27</y>
+                <w>9</w>
+                <h>7</h>
+                <binding>
+                    <command>nasal</command>
+                    <script>aerostar.FD.set_mode("HDG");</script>
+                </binding>
+            </action>
 
-   <action>
-     <name>AP-ON mode</name>
-     <button>0</button>
-     <x>18</x>
-     <y>-35</y>
-     <w>10</w>
-     <h>10</h>
-     <binding>
-       <command>property-toggle</command>
-       <property>autopilot/locks/passive-mode</property>
-     </binding>
-   </action>
+            <action>
+                <name>FD mode</name>
+                <button>0</button>
+                <x>-8</x>
+                <y>-27</y>
+                <w>9</w>
+                <h>7</h>
+                <binding>
+                    <command>nasal</command>
+                    <script>aerostar.FD.set_mode("FD");</script>
+                </binding>
+            </action>
 
-    <action>
-        <name>Pitch Trim-Down</name>
-        <button>0</button>
-        <x>-35</x>
-        <y>-30</y>
-        <w>10</w>
-        <h>10</h>
-            <condition>
-                <equals>
-                    <property>/autopilot/locks/altitude</property>
-                    <value>pitch-hold</value>
-                </equals>
-            </condition>
-        <binding>
-            <command>property-assign</command>
-            <property>instrumentation/kfc200/pitch-trim</property>
-            <value>-1</value>
-        </binding>
-        <mod-up>
-            <binding>
-                <command>property-assign</command>
-                <property>instrumentation/kfc200/pitch-trim</property>
-                <value>0</value>
-            </binding>
-        </mod-up>
-    </action>
+            <action>
+                <name>ALT mode</name>
+                <button>0</button>
+                <x>4</x>
+                <y>-27</y>
+                <w>9</w>
+                <h>7</h>
+                <binding>
+                    <command>nasal</command>
+                    <script>aerostar.FD.set_mode("ALT");</script>
+                </binding>
+            </action>
 
-    <action>
-        <name>Pitch Trim-Up</name>
-        <button>0</button>
-        <x>-35</x>
-        <y>-40</y>
-        <w>10</w>
-        <h>10</h>
-            <condition>
-                <equals>
-                    <property>/autopilot/locks/altitude</property>
-                    <value>pitch-hold</value>
-                </equals>
-            </condition>
-        <binding>
-            <command>property-assign</command>
-            <property>instrumentation/kfc200/pitch-trim</property>
-            <value>1</value>
-        </binding>
-        <mod-up>
-            <binding>
-                <command>property-assign</command>
-                <property>instrumentation/kfc200/pitch-trim</property>
-                <value>0</value>
-            </binding>
-        </mod-up>
-    </action>
+            <action>
+                <name>NAV mode</name>
+                <button>0</button>
+                <x>-20</x>
+                <y>-43</y>
+                <w>9</w>
+                <h>7</h>
+                <binding>
+                    <command>nasal</command>
+                    <script>aerostar.FD.set_mode("NAV");</script>
+                </binding>
+            </action>
 
-    <action>
-        <name>Alt Trim-Down</name>
-        <button>0</button>
-        <x>-35</x>
-        <y>-30</y>
-        <w>10</w>
-        <h>10</h>
-            <condition>
-                <equals>
-                    <property>/autopilot/locks/altitude</property>
-                    <value>altitude-hold</value>
-                </equals>
-            </condition>
-        <binding>
-            <command>property-assign</command>
-            <property>instrumentation/kfc200/alt-trim</property>
-            <value>-1</value>
-        </binding>
-        <mod-up>
-            <binding>
-                <command>property-assign</command>
-                <property>instrumentation/kfc200/alt-trim</property>
-                <value>0</value>
-            </binding>
-        </mod-up>
-    </action>
+            <action>
+                <name>BC mode</name>
+                <button>0</button>
+                <x>-9</x>
+                <y>-43</y>
+                <w>9</w>
+                <h>7</h>
+                <binding>
+                    <command>nasal</command>
+                    <script>aerostar.FD.set_mode("BC");</script>
+                </binding>
+            </action>
 
-   <action>
-     <name>Alt Trim-Up</name>
-     <button>0</button>
-     <x>-35</x>
-     <y>-40</y>
-     <w>10</w>
-     <h>10</h>
-            <condition>
-                <equals>
-                    <property>/autopilot/locks/altitude</property>
-                    <value>altitude-hold</value>
-                </equals>
-            </condition>
-        <binding>
-            <command>property-assign</command>
-            <property>instrumentation/kfc200/alt-trim</property>
-            <value>1</value>
-        </binding>
-        <mod-up>
-            <binding>
-                <command>property-assign</command>
-                <property>instrumentation/kfc200/alt-trim</property>
-                <value>0</value>
-            </binding>
-        </mod-up>
-   </action>
+            <action>
+                <name>APPR mode</name>
+                <button>0</button>
+                <x>3</x>
+                <y>-43</y>
+                <w>9</w>
+                <h>7</h>
+                <binding>
+                    <command>nasal</command>
+                    <script>aerostar.FD.set_mode("APPR");</script>
+                </binding>
+            </action>
+
+            <action>
+                <name>AP-ON mode</name>
+                <button>0</button>
+                <x>18</x>
+                <y>-35</y>
+                <w>10</w>
+                <h>10</h>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>autopilot/locks/passive-mode</property>
+                </binding>
+            </action>
+
+            <action>
+                <name>Pitch Trim-Down</name>
+                <button>0</button>
+                <x>-35</x>
+                <y>-30</y>
+                <w>10</w>
+                <h>10</h>
+                <binding>
+                    <script>aerostar.FD.pitch_wheel(-1);</script>
+                </binding>
+            </action>
+
+            <action>
+                <name>Pitch Trim-Up</name>
+                <button>0</button>
+                <x>-35</x>
+                <y>-40</y>
+                <w>10</w>
+                <h>10</h>
+                <binding>
+                    <script>aerostar.FD.pitch_wheel(1);</script>
+                </binding>
+            </action>
 
 <!-- ############## THROTTLE QUADRANT ##############-->
 

@@ -9,9 +9,9 @@
         <object-name>VSIface</object-name>
         <object-name>VSIneedle</object-name>
         <emission>
-            <red>0.028</red>
-            <green>0.014</green>
-            <blue>0.007</blue>
+            <red>0.8</red>
+            <green>0.4</green>
+            <blue>0.2</blue>
             <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
         </emission>
     </animation>

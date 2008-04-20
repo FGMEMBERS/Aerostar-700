@@ -10,10 +10,13 @@
         <model>
             <path>Aircraft/Aerostar-700/Models/aerostar.xml</path>
             <start-idling type="bool">0</start-idling>
-            <variant type="int">3</variant><!-- change this to start with the following textures-->
+            <variant type="int">3</variant>
+            <livery>
+                <file type="string">Black-Gold</file>
+            </livery>
         </model>
         <startup>
-            <splash-texture>Aircraft/Aerostar-700/splash.rgb</splash-texture>
+            <splash-texture>Aircraft/Aerostar-700/splash.png</splash-texture>
         </startup>
 
         <systems>
@@ -48,6 +51,19 @@
                 <y-offset-m type="double">0.6</y-offset-m>
                 <z-offset-m type="double">-0.28</z-offset-m>
                 <pitch-offset-deg>-15</pitch-offset-deg>
+                <limits>
+                    <enabled type="bool">true</enabled>
+                    <left>
+                    <heading-max-deg type="double">140</heading-max-deg>
+                    <x-offset-max-m type="double">0.15</x-offset-max-m>
+                    <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+                    </left>
+                    <right>
+                        <heading-max-deg type="double">160</heading-max-deg>
+                        <x-offset-max-m type="double">0.15</x-offset-max-m>
+                        <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+                    </right>
+                </limits>
             </config>
         </view>
 
@@ -136,25 +152,6 @@
             <brake-parking>1.0</brake-parking>
             <gear-down>true</gear-down>
         </gear>
-        <lighting>
-            <instruments-norm>0.8</instruments-norm>
-            <landing-lights type="bool">0</landing-lights>
-            <beacon type="bool">0</beacon>
-            <strobe type="bool">0</strobe>
-            <nav-lights type="bool">0</nav-lights>
-            <cabin-lights type="bool">0</cabin-lights>
-            <wing-lights type="bool">0</wing-lights>
-            <taxi-light type="bool">0</taxi-light>
-            <instrument-lights type="bool">0</instrument-lights>
-        </lighting>
-        <anti-ice>
-            <prop-heat>0</prop-heat>
-            <pitot-heat>0</pitot-heat>
-        </anti-ice>
-        <cabin>
-            <fan type="bool">0</fan>
-            <heat type="bool">0</heat>
-        </cabin>
         <engines>
             <engine n="0">
                 <magnetos>0</magnetos>
@@ -216,8 +213,8 @@
             <heading-marker type="bool"	archive="y">false</heading-marker>
             <lightning type="bool" archive="y">false</lightning>
             <display-mode type="string">arc</display-mode>
-            <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/RDR-160/od_wxradar.rgb</radar-texture-path>
-            <echo-texture-path type="string" archive="y">Aircraft/Instruments/Textures/wxecho.rgb</echo-texture-path>
+            <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/RDR-160/od_wxradar.png</radar-texture-path>
+            <echo-texture-path type="string" archive="y">Aircraft/Instruments/Textures/wxecho.png</echo-texture-path>
             <display-controls>
                 <WX type="bool" archive="y">false</WX>
                 <data type="bool" archive="y">false</data>
@@ -230,14 +227,14 @@
     </instrumentation>
 
     <nasal>
-        <Aerostar-700>
+        <aerostar>
             <file>Aircraft/Aerostar-700/Nasal/systems.nas</file>
             <file>Aircraft/Aerostar-700/Nasal/Electrical.nas</file>
-            <file>Aircraft/Instruments-3d/kfc200/kfc-200.nas</file>
+            <file>Aircraft/Aerostar-700/Models/Instruments/kfc200/kfc-200.nas</file>
             <file>Aircraft/Instruments-3d/kns80/KNS80.nas</file>
             <file>Aircraft/Instruments-3d/ky196/KY196.nas</file>
             <file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file>
-        </Aerostar-700>
+        </aerostar>
     </nasal>
 
 </PropertyList>

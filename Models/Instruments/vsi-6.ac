@@ -6,7 +6,7 @@ OBJECT world
 kids 4
 OBJECT poly
 name "VSIneedle"
-texture "vsi-6.rgb"
+texture "vsi-6.png"
 texrep 1 1
 crease 30.000000
 numvert 5
@@ -32,7 +32,7 @@ refs 3
 kids 0
 OBJECT poly
 name "VSIface"
-texture "vsi-6.rgb"
+texture "vsi-6.png"
 texrep 1 1
 crease 30.000000
 numvert 16
@@ -105,7 +105,7 @@ refs 4
 kids 0
 OBJECT poly
 name "VSIKnob"
-texture "vsi-6.rgb"
+texture "vsi-6.png"
 texrep 1 1
 crease 30.000000
 numvert 25

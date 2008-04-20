@@ -4,10 +4,15 @@
 
     <path>aerostar700.ac</path>
 
-<!-- 3D Panel Hotspots
-for PLIB version
-comment out for OSG
--->
+    <nasal>
+        <load>
+            var livery_update = aircraft.livery_update.new("Aircraft/Aerostar-700/Models/Liveries", 10);
+        </load>
+
+        <unload>
+            livery_update.stop();
+        </unload>
+    </nasal>
 
     <animation>
         <name>Exterior</name>
@@ -34,9 +39,9 @@ comment out for OSG
     <animation>
         <type>material</type>
          <object-name>Exterior</object-name>
-      <property-base>/sim/model/livery</property-base>
+      <property-base>sim/model/livery</property-base>
       <texture-prop>texture</texture-prop>
-        <texture>paint1.rgb</texture>
+        <texture>paint1.png</texture>
     </animation>
 
     <panel>
@@ -82,14 +87,14 @@ comment out for OSG
    <animation>
         <type>shader</type>
         <shader>chrome</shader>
-        <texture>Aircraft/Aerostar-700/Models/chrome1.rgb</texture>
+        <texture>Aircraft/Aerostar-700/Models/chrome1.png</texture>
         <object-name>glass</object-name>
     </animation>
 
     <animation>
         <type>shader</type>
         <shader>chrome</shader>
-        <texture>Aircraft/Aerostar-700/Models/chrome2.rgb</texture>
+        <texture>Aircraft/Aerostar-700/Models/chrome2.png</texture>
         <object-name>Spinners</object-name>
     </animation>
 
@@ -105,7 +110,7 @@ comment out for OSG
     </model>
 
     <model>
-        <path>Aircraft/Instruments-3d/kfc200/fd-control.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/fd-control.xml</path>
         <offsets>
             <x-m>-0.668</x-m>
             <y-m>-0.021</y-m>
@@ -115,7 +120,7 @@ comment out for OSG
     </model>
 
     <model>
-        <path>Aircraft/Instruments-3d/kfc200/ki256.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/ki256.xml</path>
         <offsets>
             <x-m>-0.937</x-m>
             <y-m>-0.336</y-m>
@@ -125,7 +130,7 @@ comment out for OSG
     </model>
 
     <model>
-        <path>Aircraft/Instruments-3d/kfc200/ki252a.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/ki252a.xml</path>
         <offsets>
             <x-m>-0.920</x-m>
             <y-m>-0.336</y-m>
@@ -135,7 +140,7 @@ comment out for OSG
     </model>
 
     <model>
-        <path>Aircraft/Instruments-3d/kfc200/fd-annun.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/fd-annun.xml</path>
         <offsets>
             <x-m>-0.949</x-m>
             <y-m>-0.336</y-m>
@@ -145,7 +150,7 @@ comment out for OSG
     </model>
 
     <model>
-        <path>Aircraft/Instruments-3d/asi300/asi300-3d.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/asi300-3d.xml</path>
         <offsets>
             <x-m>-0.937</x-m>
             <y-m>-0.434</y-m>
@@ -165,7 +170,7 @@ comment out for OSG
     </model>
 
     <model>
-        <path>Aircraft/Instruments-3d/alt-2/alt2-3d.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/alt2-3d.xml</path>
         <offsets>
             <x-m>-0.937</x-m>
             <y-m>-0.237</y-m>
@@ -175,7 +180,7 @@ comment out for OSG
     </model>
 
     <model>
-        <path>Aircraft/Instruments-3d/kfc200/kas297.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/kas297.xml</path>
         <offsets>
             <x-m>-0.952</x-m>
             <y-m>-0.20</y-m>
@@ -255,7 +260,7 @@ comment out for OSG
     </model>
 
     <model>
-        <path>Aircraft/Aerostar-700/Models/fuelgauge.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/fuelgauge.xml</path>
         <offsets>
             <x-m>-0.891</x-m>
             <y-m>-0.022</y-m>
@@ -265,7 +270,7 @@ comment out for OSG
     </model>
 
     <model>
-        <path>Aircraft/Aerostar-700/Models/RPM.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/RPM.xml</path>
         <offsets>
             <x-m>-0.937</x-m>
             <y-m>0.213</y-m>
@@ -275,7 +280,7 @@ comment out for OSG
     </model>
 
     <model>
-        <path>Aircraft/Aerostar-700/Models/Manifold.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Manifold.xml</path>
         <offsets>
             <x-m>-0.937</x-m>
             <y-m>0.123</y-m>
@@ -285,7 +290,7 @@ comment out for OSG
     </model>
 
     <model>
-        <path>Aircraft/Aerostar-700/Models/EGT.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/EGT.xml</path>
         <offsets>
             <x-m>-0.937</x-m>
             <y-m>0.303</y-m>
@@ -295,7 +300,7 @@ comment out for OSG
     </model>
 
     <model>
-        <path>Aircraft/Aerostar-700/Models/FuelGPH.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/FuelGPH.xml</path>
         <offsets>
             <x-m>-0.937</x-m>
             <y-m>0.393</y-m>

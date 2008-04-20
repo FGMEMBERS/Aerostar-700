@@ -6,7 +6,7 @@
         <livery>
             <name type="string">Black-Gold</name>
             <index type="int">0</index>
-            <texture>paint1.rgb</texture>
+            <texture>paint1.png</texture>
         </livery>
     </model>
 </sim>

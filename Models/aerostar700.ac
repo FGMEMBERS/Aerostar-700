@@ -16,7 +16,7 @@ OBJECT poly
 name "Batt.toggle"
 data 8
 Mesh.066
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 10
@@ -107,7 +107,7 @@ OBJECT poly
 name "C-heat.toggle"
 data 8
 Mesh.086
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 10
@@ -198,7 +198,7 @@ OBJECT poly
 name "Cabin"
 data 8
 Mesh.003
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 306
@@ -2695,7 +2695,7 @@ OBJECT poly
 name "Cabin.toggle"
 data 8
 Mesh.046
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 10
@@ -2786,7 +2786,7 @@ OBJECT poly
 name "ColorKnob"
 data 6
 Circle
-texture "panel1.rgb"
+texture "panel1.png"
 texrep 1 1
 crease 30.000000
 numvert 24
@@ -2939,7 +2939,7 @@ OBJECT poly
 name "Deice.toggle"
 data 8
 Mesh.044
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 10
@@ -3106,7 +3106,7 @@ OBJECT poly
 name "Engines"
 data 8
 Mesh.060
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 50.000000
 numvert 621
@@ -8383,7 +8383,7 @@ OBJECT poly
 name "FAn.toggle"
 data 8
 Mesh.043
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 10
@@ -8474,7 +8474,7 @@ OBJECT poly
 name "FLdamper"
 data 8
 Mesh.023
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 12
@@ -8566,7 +8566,7 @@ OBJECT poly
 name "FUdamper"
 data 8
 Mesh.011
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 12
@@ -8658,7 +8658,7 @@ OBJECT poly
 name "FlapLever"
 data 8
 Mesh.035
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 20
@@ -8800,7 +8800,7 @@ OBJECT poly
 name "Frtdoor"
 data 8
 Mesh.076
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 50.000000
 numvert 8
@@ -8860,7 +8860,7 @@ OBJECT poly
 name "Fuselage"
 data 8
 Mesh.082
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 50.000000
 numvert 454
@@ -12445,7 +12445,7 @@ OBJECT poly
 name "GearLever"
 data 8
 Mesh.036
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 94
@@ -13239,7 +13239,7 @@ OBJECT poly
 name "Glaresheild"
 data 8
 Mesh.034
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 184
@@ -14603,7 +14603,7 @@ OBJECT poly
 name "HStab"
 data 8
 Mesh.097
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 50.000000
 numvert 102
@@ -15491,7 +15491,7 @@ OBJECT poly
 name "Instr-light.knob"
 data 10
 Circle.001
-texture "panel1.rgb"
+texture "panel1.png"
 texrep 1 1
 crease 30.000000
 numvert 24
@@ -15644,7 +15644,7 @@ OBJECT poly
 name "L-magneto"
 data 8
 Mesh.038
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 45.000000
 numvert 105
@@ -16475,7 +16475,7 @@ OBJECT poly
 name "LAlt.toggle"
 data 8
 Mesh.047
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 10
@@ -16566,7 +16566,7 @@ OBJECT poly
 name "LFdoor"
 data 8
 Mesh.071
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 50.000000
 numvert 16
@@ -16947,7 +16947,7 @@ OBJECT poly
 name "LHpedal"
 data 8
 Cube.003
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 32
@@ -17143,7 +17143,7 @@ OBJECT poly
 name "LHprop"
 data 8
 Mesh.055
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 120
@@ -18029,7 +18029,7 @@ OBJECT poly
 name "LHpropblur"
 data 8
 Mesh.075
-texture "transparent.rgb"
+texture "transparent.png"
 texrep 1 1
 crease 30.000000
 numvert 24
@@ -18135,7 +18135,7 @@ OBJECT poly
 name "LHpropdisc"
 data 8
 Mesh.005
-texture "transparent.rgb"
+texture "transparent.png"
 texrep 1 1
 crease 30.000000
 numvert 30
@@ -18283,7 +18283,7 @@ OBJECT poly
 name "LHwheeldoor"
 data 8
 Mesh.052
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 50.000000
 numvert 16
@@ -18407,7 +18407,7 @@ OBJECT poly
 name "LLdamper"
 data 8
 Mesh.006
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 12
@@ -18631,7 +18631,7 @@ OBJECT poly
 name "LRdoor"
 data 8
 Mesh.027
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 45.000000
 numvert 16
@@ -18785,7 +18785,7 @@ OBJECT poly
 name "LUdamper"
 data 8
 Mesh.059
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 12
@@ -18877,7 +18877,7 @@ OBJECT poly
 name "LeftAileron"
 data 8
 Mesh.022
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 45.000000
 numvert 8
@@ -18947,7 +18947,7 @@ OBJECT poly
 name "LeftElevator"
 data 8
 Mesh.020
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 50.000000
 numvert 11
@@ -19046,7 +19046,7 @@ OBJECT poly
 name "LeftFlap"
 data 8
 Mesh.054
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 45.000000
 numvert 8
@@ -19116,7 +19116,7 @@ OBJECT poly
 name "LeftStrut"
 data 8
 Mesh.037
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 45.000000
 numvert 17
@@ -19247,7 +19247,7 @@ OBJECT poly
 name "LeftTire"
 data 8
 Mesh.077
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 45.000000
 numvert 130
@@ -20363,7 +20363,7 @@ OBJECT poly
 name "LeftWheel"
 data 8
 Mesh.062
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 40
@@ -20637,7 +20637,7 @@ OBJECT poly
 name "Lens"
 data 8
 Mesh.058
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 4
@@ -20658,7 +20658,7 @@ OBJECT poly
 name "Llanding.toggle"
 data 8
 Mesh.010
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 10
@@ -20749,7 +20749,7 @@ OBJECT poly
 name "Lram"
 data 8
 Mesh.008
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 45.000000
 numvert 33
@@ -20952,7 +20952,7 @@ OBJECT poly
 name "LwrPanel"
 data 8
 Mesh.079
-texture "panel1.rgb"
+texture "panel1.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -20991,7 +20991,7 @@ OBJECT poly
 name "Mix0"
 data 8
 Mesh.041
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 94
@@ -21785,7 +21785,7 @@ OBJECT poly
 name "Mix1"
 data 8
 Mesh.040
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 94
@@ -22579,7 +22579,7 @@ OBJECT poly
 name "Nav.toggle"
 data 8
 Mesh.069
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 10
@@ -22670,7 +22670,7 @@ OBJECT poly
 name "NoseStrut"
 data 8
 Mesh.049
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 45.000000
 numvert 56
@@ -23064,7 +23064,7 @@ OBJECT poly
 name "NoseWheel"
 data 8
 Mesh.050
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 45.000000
 numvert 130
@@ -24180,7 +24180,7 @@ OBJECT poly
 name "Panel"
 data 8
 Mesh.051
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 42
@@ -24453,7 +24453,7 @@ OBJECT poly
 name "Pitot.toggle"
 data 8
 Mesh.045
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 10
@@ -24544,7 +24544,7 @@ OBJECT poly
 name "Plane.020"
 data 9
 Plane.021
-texture "panel1.rgb"
+texture "panel1.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -24565,7 +24565,7 @@ OBJECT poly
 name "Prop0"
 data 8
 Mesh.064
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 32
@@ -24833,7 +24833,7 @@ OBJECT poly
 name "Prop1"
 data 8
 Mesh.063
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 32
@@ -25101,7 +25101,7 @@ OBJECT poly
 name "R-magneto"
 data 8
 Mesh.087
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 45.000000
 numvert 105
@@ -25932,7 +25932,7 @@ OBJECT poly
 name "RAlt.toggle"
 data 8
 Mesh.012
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 10
@@ -26023,7 +26023,7 @@ OBJECT poly
 name "RFdoor"
 data 8
 Mesh.085
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 50.000000
 numvert 16
@@ -26404,7 +26404,7 @@ OBJECT poly
 name "RHpedal"
 data 8
 Cube.004
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 32
@@ -26600,7 +26600,7 @@ OBJECT poly
 name "RHprop"
 data 8
 Mesh.061
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 120
@@ -27486,7 +27486,7 @@ OBJECT poly
 name "RHpropblur"
 data 8
 Mesh.083
-texture "transparent.rgb"
+texture "transparent.png"
 texrep 1 1
 crease 30.000000
 numvert 24
@@ -27592,7 +27592,7 @@ OBJECT poly
 name "RHpropdisc"
 data 8
 Mesh.001
-texture "transparent.rgb"
+texture "transparent.png"
 texrep 1 1
 crease 30.000000
 numvert 30
@@ -27740,7 +27740,7 @@ OBJECT poly
 name "RHwheeldoor"
 data 8
 Mesh.065
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 50.000000
 numvert 16
@@ -27864,7 +27864,7 @@ OBJECT poly
 name "RLdamper"
 data 8
 Mesh.002
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 12
@@ -28088,7 +28088,7 @@ OBJECT poly
 name "RRdoor"
 data 8
 Mesh.068
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 45.000000
 numvert 16
@@ -28242,7 +28242,7 @@ OBJECT poly
 name "RUdamper"
 data 8
 Mesh.021
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 12
@@ -28334,7 +28334,7 @@ OBJECT poly
 name "RightAileron"
 data 8
 Mesh.057
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 45.000000
 numvert 8
@@ -28404,7 +28404,7 @@ OBJECT poly
 name "RightElevator"
 data 8
 Mesh.039
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 50.000000
 numvert 12
@@ -28506,7 +28506,7 @@ OBJECT poly
 name "RightFlap"
 data 8
 Mesh.004
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 45.000000
 numvert 8
@@ -28576,7 +28576,7 @@ OBJECT poly
 name "RightStrut"
 data 8
 Mesh.067
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 45.000000
 numvert 17
@@ -28707,7 +28707,7 @@ OBJECT poly
 name "RightTire"
 data 8
 Mesh.078
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 45.000000
 numvert 130
@@ -29823,7 +29823,7 @@ OBJECT poly
 name "RightWheel"
 data 8
 Mesh.073
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 40
@@ -30097,7 +30097,7 @@ OBJECT poly
 name "Rlanding.toggle"
 data 8
 Mesh.048
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 10
@@ -30188,7 +30188,7 @@ OBJECT poly
 name "Rram"
 data 8
 Mesh.042
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 45.000000
 numvert 33
@@ -30391,7 +30391,7 @@ OBJECT poly
 name "Rudder"
 data 4
 Mesh
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -30613,7 +30613,7 @@ OBJECT poly
 name "Seats"
 data 8
 Mesh.009
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 45.000000
 numvert 1728
@@ -47573,7 +47573,7 @@ OBJECT poly
 name "Strobe.toggle"
 data 8
 Mesh.074
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 10
@@ -47664,7 +47664,7 @@ OBJECT poly
 name "Throttle0"
 data 8
 Mesh.081
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 94
@@ -48458,7 +48458,7 @@ OBJECT poly
 name "Throttle1"
 data 8
 Mesh.056
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 94
@@ -49252,7 +49252,7 @@ OBJECT poly
 name "White.decrease"
 data 9
 Plane.047
-texture "panel1.rgb"
+texture "panel1.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -49273,7 +49273,7 @@ OBJECT poly
 name "White.increase"
 data 9
 Plane.046
-texture "panel1.rgb"
+texture "panel1.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -49294,7 +49294,7 @@ OBJECT poly
 name "White.knob"
 data 10
 Circle.010
-texture "panel1.rgb"
+texture "panel1.png"
 texrep 1 1
 crease 30.000000
 numvert 24
@@ -49447,7 +49447,7 @@ OBJECT poly
 name "Wing.toggle"
 data 8
 Mesh.007
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 30.000000
 numvert 10
@@ -49541,7 +49541,7 @@ OBJECT poly
 name "Wings_0"
 data 8
 Mesh.096
-texture "paint4.rgb"
+texture "paint4.png"
 texrep 1 1
 crease 50.000000
 numvert 130
@@ -50545,7 +50545,7 @@ OBJECT poly
 name "Wings_1"
 data 8
 Mesh.096
-texture "paint2.rgb"
+texture "paint2.png"
 texrep 1 1
 crease 50.000000
 numvert 149
@@ -51770,7 +51770,7 @@ OBJECT poly
 name "Yoke1"
 data 12
 Cylinder.002
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 147
@@ -52961,7 +52961,7 @@ OBJECT poly
 name "Yoke2"
 data 12
 Cylinder.006
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 147
@@ -54152,7 +54152,7 @@ OBJECT poly
 name "YokeBase"
 data 12
 Cylinder.007
-texture "exterior512.rgb"
+texture "exterior512.png"
 texrep 1 1
 crease 50.000000
 numvert 72
@@ -54578,7 +54578,7 @@ OBJECT poly
 name "annun.001"
 data 8
 Mesh.025
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -54599,7 +54599,7 @@ OBJECT poly
 name "annun.002"
 data 8
 Mesh.026
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -54620,7 +54620,7 @@ OBJECT poly
 name "annun.003"
 data 8
 Mesh.080
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -54641,7 +54641,7 @@ OBJECT poly
 name "annun.004"
 data 8
 Mesh.028
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -54662,7 +54662,7 @@ OBJECT poly
 name "annun.005"
 data 8
 Mesh.029
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -54683,7 +54683,7 @@ OBJECT poly
 name "annun.006"
 data 8
 Mesh.030
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -54704,7 +54704,7 @@ OBJECT poly
 name "annun.007"
 data 8
 Mesh.031
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -54725,7 +54725,7 @@ OBJECT poly
 name "annun.008"
 data 8
 Mesh.032
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -54746,7 +54746,7 @@ OBJECT poly
 name "annun.009"
 data 8
 Mesh.033
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -54767,7 +54767,7 @@ OBJECT poly
 name "annun.010"
 data 8
 Mesh.016
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -54788,7 +54788,7 @@ OBJECT poly
 name "annun.011"
 data 8
 Mesh.015
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -54809,7 +54809,7 @@ OBJECT poly
 name "annun.012"
 data 8
 Mesh.014
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -54830,7 +54830,7 @@ OBJECT poly
 name "annun.013"
 data 8
 Mesh.013
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -54851,7 +54851,7 @@ OBJECT poly
 name "annun.014"
 data 8
 Mesh.019
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -54872,7 +54872,7 @@ OBJECT poly
 name "annun.015"
 data 8
 Mesh.018
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -54893,7 +54893,7 @@ OBJECT poly
 name "annun.016"
 data 8
 Mesh.017
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -54914,7 +54914,7 @@ OBJECT poly
 name "control.placards"
 data 9
 Plane.020
-texture "panel1.rgb"
+texture "panel1.png"
 texrep 1 1
 crease 30.000000
 numvert 12
@@ -58778,7 +58778,7 @@ OBJECT poly
 name "greenglow"
 data 10
 Circle.003
-texture "transparent.rgb"
+texture "transparent.png"
 texrep 1 1
 crease 30.000000
 numvert 5
@@ -58817,7 +58817,7 @@ OBJECT poly
 name "instr.decrease"
 data 9
 Plane.025
-texture "panel1.rgb"
+texture "panel1.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -58838,7 +58838,7 @@ OBJECT poly
 name "instr.increase"
 data 9
 Plane.026
-texture "panel1.rgb"
+texture "panel1.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -58859,7 +58859,7 @@ OBJECT poly
 name "navlights"
 data 10
 Sphere.007
-texture "paint4.rgb"
+texture "paint4.png"
 texrep 1 1
 crease 30.000000
 numvert 130
@@ -59863,7 +59863,7 @@ OBJECT poly
 name "placard"
 data 5
 Plane
-texture "panel1.rgb"
+texture "panel1.png"
 texrep 1 1
 crease 30.000000
 numvert 12
@@ -59906,7 +59906,7 @@ OBJECT poly
 name "red.decrease"
 data 9
 Plane.024
-texture "panel1.rgb"
+texture "panel1.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -59927,7 +59927,7 @@ OBJECT poly
 name "red.increase"
 data 9
 Plane.022
-texture "panel1.rgb"
+texture "panel1.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -59948,7 +59948,7 @@ OBJECT poly
 name "redglow"
 data 10
 Circle.004
-texture "transparent.rgb"
+texture "transparent.png"
 texrep 1 1
 crease 30.000000
 numvert 5
@@ -59987,7 +59987,7 @@ OBJECT poly
 name "strobe1"
 data 9
 Plane.031
-texture "transparent.rgb"
+texture "transparent.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -60008,7 +60008,7 @@ OBJECT poly
 name "strobe2"
 data 9
 Plane.048
-texture "transparent.rgb"
+texture "transparent.png"
 texrep 1 1
 crease 30.000000
 numvert 4

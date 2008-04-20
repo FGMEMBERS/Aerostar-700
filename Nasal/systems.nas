@@ -1,7 +1,7 @@
 ####    Aerostar 700   ####
 ####    Syd Adams    ####
 
-aircraft.livery.init("Aircraft/Aerostar-700/Models/Liveries", "sim/model/livery/name", "sim/model/livery/index");
+aircraft.livery.init("Aircraft/Aerostar-700/Models/Liveries");
 Cvolume=props.globals.getNode("/sim/sound/A700/Cvolume",1);
 Ovolume=props.globals.getNode("/sim/sound/A700/Ovolume",1);
 Gear = [];
