@@ -2,7 +2,7 @@
 <PropertyList>
 
  <name>Aerostar Panel</name>
- <background>Aircraft/Aerostar-700/Panels/transparent-bg.rgb</background>
+ <background>Aircraft/Aerostar-700/Panels/transparent-bg.png</background>
  <w>1024</w>
  <h>384</h>
 
@@ -672,6 +672,77 @@
             </script>
         </binding>
 </action>
+
+  <!--             KI-227              -->
+
+<action>
+  <name>ki227 dn fine</name>
+  <button>0</button>
+  <x>-175</x>
+  <y>70</y>
+  <w>10</w>
+  <h>14</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>instrumentation/ki-227/card-heading-deg</property>
+    <step>-1</step>
+    <min>0</min>
+    <max>360</max>
+    <wrap>true</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>ki227 dn coarse</name>
+  <button>1</button>
+  <x>-175</x>
+  <y>70</y>
+  <w>10</w>
+  <h>14</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>instrumentation/ki-227/card-heading-deg</property>
+    <step>-10</step>
+    <min>0</min>
+    <max>360</max>
+    <wrap>true</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>ki227 up fine</name>
+  <button>0</button>
+  <x>-165</x>
+  <y>70</y>
+  <w>10</w>
+  <h>14</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>instrumentation/ki-227/card-heading-deg</property>
+    <step>1</step>
+    <min>0</min>
+    <max>360</max>
+    <wrap>true</wrap>
+  </binding>
+</action>
+
+<action>
+  <name>ki227 up coarse</name>
+  <button>1</button>
+  <x>-165</x>
+  <y>70</y>
+  <w>10</w>
+  <h>14</h>
+  <binding>
+    <command>property-adjust</command>
+    <property>instrumentation/ki-227/card-heading-deg</property>
+    <step>10</step>
+    <min>0</min>
+    <max>360</max>
+    <wrap>true</wrap>
+  </binding>
+</action>
+
 
 <!-- DIMMER SWITCH -->
 

@@ -190,7 +190,7 @@
     </model>
 
     <model>
-        <path>Aircraft/Instruments-3d/kr87-adf/ki227-00.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/ki227-00.xml</path>
         <offsets>
             <x-m>-0.937</x-m>
             <y-m>-0.147</y-m>
@@ -230,7 +230,7 @@
     </model>
 
     <model>
-        <path>Aircraft/Instruments-3d/ki206/ki206.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/ki206.xml</path>
         <offsets>
             <x-m>-0.920</x-m>
             <y-m>-0.147</y-m>

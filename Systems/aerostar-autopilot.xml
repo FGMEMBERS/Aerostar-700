@@ -10,12 +10,12 @@
         <name>Wing Leveler (Turn Coordinator based)</name>
         <debug>false</debug>
         <enable>
-            <prop>/autopilot/locks/heading</prop>
+            <prop>autopilot/locks/heading</prop>
             <value>wing-leveler</value>
             <honor-passive>true</honor-passive>
         </enable>
         <input>
-            <prop>/orientation/roll-deg</prop>
+            <prop>orientation/roll-deg</prop>
         </input>
         <reference>
             <value>0.0</value>
@@ -44,17 +44,17 @@
         <name>Heading Bug Hold (DG based) Stage 1</name>
         <debug>false</debug>
         <enable>
-            <prop>/autopilot/locks/heading</prop>
+            <prop>autopilot/locks/heading</prop>
             <value>dg-heading-hold</value>
         </enable>
         <input>
-            <prop>/autopilot/internal/fdm-heading-bug-error-deg</prop>
+            <prop>autopilot/internal/fdm-heading-bug-error-deg</prop>
         </input>
         <reference>
             <value>0.0</value>
         </reference>
         <output>
-            <prop>/autopilot/internal/target-roll-deg</prop>
+            <prop>autopilot/internal/target-roll-deg</prop>
         </output>
         <config>
             <Kp>-0.5</Kp>
@@ -70,18 +70,18 @@
         <name>Heading Bug Hold (DG based) Stage 2</name>
         <debug>false</debug>
         <enable>
-            <prop>/autopilot/locks/heading</prop>
+            <prop>autopilot/locks/heading</prop>
             <value>dg-heading-hold</value>
             <honor-passive>true</honor-passive>
         </enable>
         <input>
-            <prop>/orientation/roll-deg</prop>
+            <prop>orientation/roll-deg</prop>
         </input>
         <reference>
-            <prop>/autopilot/internal/target-roll-deg</prop>
+            <prop>autopilot/internal/target-roll-deg</prop>
         </reference>
         <output>
-            <prop>/controls/flight/aileron</prop>
+            <prop>controls/flight/aileron</prop>
         </output>
         <config>
             <Kp>1.5</Kp>
@@ -103,17 +103,17 @@
         <name>Nav1 Hold Stage 1</name>
         <debug>false</debug>
         <enable>
-            <prop>/autopilot/locks/heading</prop>
+            <prop>autopilot/locks/heading</prop>
             <value>nav1-hold</value>
         </enable>
         <input>
-            <prop>/autopilot/internal/nav1-heading-error-deg</prop>
+            <prop>autopilot/internal/nav1-heading-error-deg</prop>
         </input>
         <reference>
             <value>0.0</value>
         </reference>
         <output>
-            <prop>/autopilot/internal/target-roll-deg</prop>
+            <prop>autopilot/internal/target-roll-deg</prop>
         </output>
         <config>
             <Kp>-1.3</Kp>
@@ -133,15 +133,15 @@
         <name>Nav1 Hold Stage 2</name>
         <debug>false</debug>
         <enable>
-            <prop>/autopilot/locks/heading</prop>
+            <prop>autopilot/locks/heading</prop>
             <value>nav1-hold</value>
             <honor-passive>true</honor-passive>
         </enable>
         <input>
-            <prop>/orientation/roll-deg</prop>
+            <prop>orientation/roll-deg</prop>
         </input>
         <reference>
-            <prop>/autopilot/internal/target-roll-deg</prop>
+            <prop>autopilot/internal/target-roll-deg</prop>
         </reference>
         <output>
             <prop>controls/flight/aileron</prop>
@@ -168,18 +168,18 @@
         <name>Pitch hold</name>
         <debug>false</debug>
         <enable>
-            <prop>/autopilot/locks/altitude</prop>
+            <prop>autopilot/locks/altitude</prop>
             <value>pitch-hold</value>
             <honor-passive>true</honor-passive>
         </enable>
         <input>
-            <prop>/orientation/pitch-deg</prop>
+            <prop>orientation/pitch-deg</prop>
         </input>
         <reference>
-            <prop>/autopilot/settings/target-pitch-deg</prop>
+            <prop>autopilot/settings/target-pitch-deg</prop>
         </reference>
         <output>
-            <prop>/controls/flight/elevator-trim</prop>
+            <prop>controls/flight/elevator-trim</prop>
         </output>
         <config>
             <Kp>-0.15</Kp>
@@ -202,17 +202,17 @@
         <name>Altitude Hold (Altimeter based) Stage 1</name>
         <debug>false</debug>
         <enable>
-            <prop>/autopilot/locks/altitude</prop>
+            <prop>autopilot/locks/altitude</prop>
             <value>altitude-hold</value>
         </enable>
         <input>
             <prop>instrumentation/altimeter/pressure-alt-ft</prop>
         </input>
         <reference>
-            <prop>/autopilot/settings/target-altitude-ft</prop>
+            <prop>autopilot/settings/target-altitude-ft</prop>
         </reference>
         <output>
-            <prop>/autopilot/internal/target-climb-rate-fps</prop>
+            <prop>autopilot/internal/target-climb-rate-fps</prop>
         </output>
         <config>
             <Kp>0.5</Kp>
@@ -229,17 +229,17 @@
         <name>Altitude Hold (Altimeter based) Stage 2</name>
         <debug>false</debug>
         <enable>
-            <prop>/autopilot/locks/altitude</prop>
+            <prop>autopilot/locks/altitude</prop>
             <value>altitude-hold</value>
         </enable>
         <input>
-            <prop>/velocities/vertical-speed-fps</prop>
+            <prop>velocities/vertical-speed-fps</prop>
         </input>
         <reference>
-            <prop>/autopilot/internal/target-climb-rate-fps</prop>
+            <prop>autopilot/internal/target-climb-rate-fps</prop>
         </reference>
         <output>
-            <prop>/autopilot/settings/target-pitch-deg</prop>
+            <prop>autopilot/settings/target-pitch-deg</prop>
         </output>
         <config>
             <Kp>0.02</Kp>
@@ -260,18 +260,18 @@
         <name>Pitch hold</name>
         <debug>false</debug>
         <enable>
-            <prop>/autopilot/locks/altitude</prop>
+            <prop>autopilot/locks/altitude</prop>
             <value>altitude-hold</value>
             <honor-passive>true</honor-passive>
         </enable>
         <input>
-            <prop>/orientation/pitch-deg</prop>
+            <prop>orientation/pitch-deg</prop>
         </input>
         <reference>
-            <prop>/autopilot/settings/target-pitch-deg</prop>
+            <prop>autopilot/settings/target-pitch-deg</prop>
         </reference>
         <output>
-            <prop>/controls/flight/elevator-trim</prop>
+            <prop>controls/flight/elevator-trim</prop>
         </output>
         <config>
             <Kp>-0.05</Kp>
@@ -294,17 +294,17 @@
         <name>Glideslope Hold</name>
         <debug>false</debug>
         <enable>
-            <prop>/autopilot/locks/altitude</prop>
+            <prop>autopilot/locks/altitude</prop>
             <value>gs1-hold</value>
         </enable>
         <input>
-            <prop>/velocities/vertical-speed-fps</prop>
+            <prop>velocities/vertical-speed-fps</prop>
         </input>
         <reference>
-            <prop>/instrumentation/nav[0]/gs-rate-of-climb</prop>
+            <prop>instrumentation/nav[0]/gs-rate-of-climb</prop>
         </reference>
         <output>
-            <prop>/autopilot/settings/target-pitch-deg</prop>
+            <prop>autopilot/settings/target-pitch-deg</prop>
         </output>
         <config>
             <Kp>0.5</Kp>
@@ -325,18 +325,18 @@
         <name>Pitch hold</name>
         <debug>false</debug>
         <enable>
-            <prop>/autopilot/locks/altitude</prop>
+            <prop>autopilot/locks/altitude</prop>
             <value>gs1-hold</value>
             <honor-passive>true</honor-passive>
         </enable>
         <input>
-            <prop>/orientation/pitch-deg</prop>
+            <prop>orientation/pitch-deg</prop>
         </input>
         <reference>
-            <prop>/autopilot/settings/target-pitch-deg</prop>
+            <prop>autopilot/settings/target-pitch-deg</prop>
         </reference>
         <output>
-            <prop>/controls/flight/elevator-trim</prop>
+            <prop>controls/flight/elevator-trim</prop>
         </output>
         <config>
             <Kp>-0.15</Kp>

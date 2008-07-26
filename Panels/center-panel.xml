@@ -3,7 +3,7 @@
 <PropertyList>
 
 <name>Center Panel</name>
-<background>Aircraft/Aerostar-700/Panels/transparent-bg.rgb</background>
+<background>Aircraft/Aerostar-700/Panels/transparent-bg.png</background>
 <w>256</w>
 <h>512</h>
 

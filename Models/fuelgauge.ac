@@ -5,7 +5,7 @@ OBJECT world
 kids 5
 OBJECT poly
 name "CTRfuel.needle"
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 5
@@ -31,7 +31,7 @@ refs 4
 kids 0
 OBJECT poly
 name "LHfuel.needle"
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 5
@@ -57,7 +57,7 @@ refs 4
 kids 0
 OBJECT poly
 name "FuelGauge"
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 36
@@ -276,7 +276,7 @@ refs 4
 kids 0
 OBJECT poly
 name "FuelGauge.face"
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -313,7 +313,7 @@ refs 4
 kids 0
 OBJECT poly
 name "RHfuel.needle"
-texture "panel.rgb"
+texture "panel.png"
 texrep 1 1
 crease 30.000000
 numvert 5

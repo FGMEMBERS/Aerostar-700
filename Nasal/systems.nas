@@ -1,6 +1,8 @@
 ####    Aerostar 700   ####
 ####    Syd Adams    ####
 
+var ap_settings = gui.Dialog.new("/sim/gui/dialogs/kfc200/dialog",
+        "Aircraft/Aerostar-700/Systems/autopilot-dlg.xml");
 aircraft.livery.init("Aircraft/Aerostar-700/Models/Liveries");
 Cvolume=props.globals.getNode("/sim/sound/A700/Cvolume",1);
 Ovolume=props.globals.getNode("/sim/sound/A700/Ovolume",1);
@@ -17,7 +19,8 @@ setlistener("/sim/signals/fdm-initialized", func{
     setprop("/instrumentation/gps/wp/wp/waypoint-type","airport");
     setprop("/instrumentation/gps/serviceable","true");
     Gear = props.globals.getNode("/gear").getChildren("gear");
-    setprop("/instrumentation/clock/flight-meter-hour",0);
+    setprop("instrumentation/clock/flight-meter-hour",0);
+    setprop("autopilot/settings/heading-bug-deg",0);
     settimer(update_systems,2);
     print("Aircraft Systems ... OK");
 });

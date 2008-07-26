@@ -16,7 +16,7 @@
             </livery>
         </model>
         <startup>
-            <splash-texture>Aircraft/Aerostar-700/splash.png</splash-texture>
+            <splash-texture>Aircraft/Aerostar-700/splash.rgb</splash-texture>
         </startup>
 
         <systems>
@@ -24,7 +24,7 @@
                 <path></path>
             </electrical>
             <autopilot>
-                <path>Aircraft/Aerostar-700/aerostar-autopilot.xml</path>
+                <path>Aircraft/Aerostar-700/Systems/aerostar-autopilot.xml</path>
             </autopilot>
         </systems>
 
@@ -113,6 +113,15 @@
 
     <menubar>
         <default>
+            <menu n="3">
+                <item n="0">
+                <label>Autopilot Settings</label>
+                    <binding>
+                        <command>nasal</command>
+                        <script>aerostar.ap_settings.open()</script>
+                    </binding>
+                </item>
+            </menu>
             <menu n="10">
                 <label>Aerostar-700</label>
                 <enabled type="bool">true</enabled>
@@ -216,11 +225,22 @@
             <mode-control type="int" archive="y">3</mode-control>
             <range type="int" archive="y">20</range>
             <mode type="string"	archive="y">WX</mode>
+            <font>
+                <name type="string">typewriter.txf</name>
+                <size type="float">6</size>
+                <line-spacing type="float">0.4</line-spacing>
+                <color>
+                    <red type="float">0.7</red>
+                    <green type="float">0.7</green>
+                    <blue type="float">0.7</blue>
+                    <alpha type="float">1</alpha>
+                </color>
+            </font>
             <heading-marker type="bool"	archive="y">false</heading-marker>
             <lightning type="bool" archive="y">false</lightning>
             <display-mode type="string">arc</display-mode>
-            <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/RDR-160/od_wxradar.png</radar-texture-path>
-            <echo-texture-path type="string" archive="y">Aircraft/Instruments/Textures/wxecho.png</echo-texture-path>
+            <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/RDR-160/od_wxradar.rgb</radar-texture-path>
+            <echo-texture-path type="string" archive="y">Aircraft/Instruments/Textures/wxecho.rgb</echo-texture-path>
             <display-controls>
                 <WX type="bool" archive="y">false</WX>
                 <data type="bool" archive="y">false</data>
@@ -230,6 +250,10 @@
         <inst-vertical-speed-indicator>
             <serviceable>true</serviceable>
         </inst-vertical-speed-indicator>
+        <ki-227>
+            <serviceable type="bool">1</serviceable>
+            <card-heading-deg type="double">0</card-heading-deg>
+        </ki-227>
     </instrumentation>
 
     <nasal>
@@ -242,5 +266,18 @@
             <file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file>
         </aerostar>
     </nasal>
+
+    <input>
+        <keyboard>
+            <key n="267">
+                <name>F11</name>
+                <desc>Pop up autopilot dialog</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>aerostar.ap_settings.toggle()</script>
+                </binding>
+            </key>
+        </keyboard>
+    </input>
 
 </PropertyList>
