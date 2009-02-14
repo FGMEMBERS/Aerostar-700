@@ -130,10 +130,12 @@ t urbocharged  350-hp Lycoming TIO 540 U2A ,  counter rotating props
 man. pressure  42.0
 speed to crank ratio  0.947 (wide deck )
 -->
-<propeller moment="-10" x="-1.2" y="1.8" z="0.20" mass="500" radius="0.99" gear-ratio="0.947"
+<propeller moment="-30" x="-1.2" y="1.8" z="0.20" mass="600" radius="0.99" gear-ratio="0.947"
            cruise-power="350" cruise-alt="25000" min-rpm="1700" max-rpm="2700" cruise-speed="290"
             cruise-rpm="2500" fine-stop="0.5" coarse-stop="4.0">
-  <piston-engine eng-rpm="2500" alt="18000" eng-power="350" turbo-mul="1.5" wastegate-mp="37.0"/>
+  <piston-engine eng-rpm="2500" eng-power="350" 
+  displacement="540" compression="7.3"
+  turbo-mul="1.8" wastegate-mp="37.0"/>
   <actionpt x="-0.135" y="1.8" z="0.2" />
   <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle" />
   <control-input control="STARTER" axis="/controls/engines/engine[0]/starter" />
@@ -142,10 +144,12 @@ speed to crank ratio  0.947 (wide deck )
   <control-input control="ADVANCE" axis="/controls/engines/engine[0]/propeller-pitch"/>
 </propeller>
 
-<propeller moment="10" x="-1.2" y="-1.8" z="0.20" mass="500" radius="0.99" gear-ratio="0.947"
+<propeller moment="30" x="-1.2" y="-1.8" z="0.20" mass="600" radius="0.99" gear-ratio="0.947"
  cruise-power="350" cruise-alt="25000" min-rpm="1700" max-rpm="2700" cruise-speed="290"
  cruise-rpm="2500" fine-stop="0.5" coarse-stop="4.0">
-  <piston-engine eng-rpm="2500" alt="18000" eng-power="350" turbo-mul="1.5" wastegate-mp="37.0"/>
+  <piston-engine eng-rpm="2500" eng-power="350" 
+  displacement="540" compression="7.3"
+  turbo-mul="1.8" wastegate-mp="37.0"/>
   <actionpt x="-0.135" y="-1.8" z="0.2" />
   <control-input control="THROTTLE" axis="/controls/engines/engine[1]/throttle" />
   <control-input control="STARTER" axis="/controls/engines/engine[1]/starter" />

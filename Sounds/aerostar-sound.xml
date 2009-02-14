@@ -17,7 +17,7 @@
             <z>0.2</z>
         </position>
         <volume>
-            <property>sim/sound/A700/Ovolume</property>
+            <property>sim/sound/cabin-volume</property>
         </volume>
     </crank>
 
@@ -39,14 +39,14 @@
             <z>0.2</z>
         </position>
         <volume>
-            <property>sim/sound/A700/Ovolume</property>
+            <property>sim/sound/cabin-volume</property>
         </volume>
     </crank>
 
     <engine>
         <name>engine1</name>
         <mode>looped</mode>
-        <path>Sounds/wasp.wav</path>
+        <path>Aircraft/Aerostar-700/Sounds/lycoming.wav</path>
         <condition>
             <equals>
                 <property>engines/engine[0]/running</property>
@@ -61,20 +61,18 @@
             <z>0.2</z>
         </position>
         <volume>
-            <property>engines/engine[0]/thrust-lbs</property>
-            <factor>0.0015</factor>
-            <min>0.3</min>
+            <property>engines/engine[0]/mp-inhg</property>
+            <factor>0.28</factor>
+            <min>0.1</min>
             <max>1.0</max>
         </volume>
         <volume>
-            <property>sim/sound/A700/Ovolume</property>
+            <property>sim/sound/cabin-volume</property>
         </volume>
         <pitch>
-            <property>engines/engine[0]/rpm</property>
-            <factor>0.0004</factor>
-            <min>0.3</min>
-            <max>1.0</max>
-            <offset> 0.0</offset>
+            <property>engines/engine[0]/mp-inhg</property>
+            <factor>0.025</factor>
+            <offset>0.2</offset>
         </pitch>
     </engine>
 
@@ -92,7 +90,7 @@
             <z>0.2</z>
         </position>
         <volume>
-            <property>sim/sound/A700/Ovolume</property>
+            <property>sim/sound/cabin-volume</property>
         </volume>
     </crank>
 
@@ -114,14 +112,14 @@
             <z>0.2</z>
         </position>
         <volume>
-            <property>sim/sound/A700/Ovolume</property>
+            <property>sim/sound/cabin-volume</property>
         </volume>
     </crank>
 
     <engine>
         <name>engine2</name>
         <mode>looped</mode>
-        <path>Sounds/wasp.wav</path>
+        <path>Aircraft/Aerostar-700/Sounds/lycoming.wav</path>
         <condition>
             <equals>
                 <property>engines/engine[1]/running</property>
@@ -136,20 +134,18 @@
             <z>0.2</z>
         </position>
         <volume>
-            <property>engines/engine[1]/thrust-lbs</property>
-            <factor>0.0015</factor>
-            <min>0.3</min>
+            <property>engines/engine[1]/mp-inhg</property>
+            <factor>0.28</factor>
+            <min>0.1</min>
             <max>1.0</max>
         </volume>
         <volume>
-            <property>sim/sound/A700/Ovolume</property>
+            <property>sim/sound/cabin-volume</property>
         </volume>
         <pitch>
-            <property>engines/engine[1]/rpm</property>
-            <factor>0.0004</factor>
-            <min>0.3</min>
-            <max>1.0</max>
-            <offset> 0.0</offset>
+            <property>engines/engine[1]/mp-inhg</property>
+            <factor>0.025</factor>
+            <offset>0.2</offset>
         </pitch>
     </engine>
 
@@ -173,9 +169,6 @@
         <reference-dist>1.0</reference-dist>
         <max-dist>5.0</max-dist>
         <volume>
-            <property>sim/sound/A700/Cvolume</property>
-        </volume>
-        <volume>
             <property>velocities/groundspeed-kt</property>
             <factor>0.05</factor>
         </volume>
@@ -192,15 +185,15 @@
             <z>-0.5</z>
         </position>
         <volume>
-            <property>sim/sound/A700/Cvolume</property>
+            <property>sim/sound/cabin-volume</property>
         </volume>
         <pitch>
             <internal>dt_play</internal>
             <offset>0.8</offset>
             <factor>-0.001</factor>
         </pitch>
-        <reference-dist>5.0</reference-dist>
-        <max-dist>10.0</max-dist>
+        <reference-dist>1.0</reference-dist>
+        <max-dist>2.0</max-dist>
     </gear>
  
     <gear>
@@ -218,10 +211,10 @@
             <z>-0.5</z>
         </position>
         <volume>
-            <property>sim/sound/A700/Cvolume</property>
+            <property>sim/sound/cabin-volume</property>
         </volume>
-        <reference-dist>5.0</reference-dist>
-        <max-dist>10.0</max-dist>
+        <reference-dist>2.0</reference-dist>
+        <max-dist>4.0</max-dist>
     </gear>
 
     <squeal>
@@ -242,7 +235,7 @@
             <z>-0.5</z>
         </position>
         <volume>
-            <property>sim/sound/A700/Ovolume</property>
+            <property>sim/sound/cabin-volume</property>
         </volume>
         <volume>
             <property>velocities/airspeed-kt</property>
@@ -314,9 +307,6 @@
             <factor>0.0015</factor>
             <min>0.03</min>
             <max>0.5</max>
-        </volume>
-        <volume>
-            <property>sim/sound/A700/Cvolume</property>
         </volume>
         <pitch>
             <property>/velocities/airspeed-kt</property>

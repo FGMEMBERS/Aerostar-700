@@ -16,7 +16,7 @@
             </livery>
         </model>
         <startup>
-            <splash-texture>Aircraft/Aerostar-700/splash.rgb</splash-texture>
+            <splash-texture>Aircraft/Aerostar-700/splash.png</splash-texture>
         </startup>
 
         <systems>
@@ -29,11 +29,11 @@
         </systems>
 
         <instrumentation>
-            <path>Aircraft/Aerostar-700/instrumentation.xml</path>
+            <path>Aircraft/Aerostar-700/Systems/instrumentation.xml</path>
         </instrumentation>
 
         <sound>
-            <path>Aircraft/Aerostar-700/aerostar-sound.xml</path>
+            <path>Aircraft/Aerostar-700/Sounds/aerostar-sound.xml</path>
         </sound>
 
         <hud>

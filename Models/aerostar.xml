@@ -1039,10 +1039,9 @@
     </animation>
 
     <animation>
-        <type>rotate</type>
+        <type>spin</type>
         <object-name>NoseWheel</object-name>
-        <property>gear/gear[0]/rollspeed-ms</property>
-        <factor>300</factor>
+        <property>gear/gear[0]/tire-rpm</property>
         <center>
             <x-m>-1.668</x-m>
             <y-m>0.0</y-m>
@@ -1222,10 +1221,9 @@
     </animation>
 
     <animation>
-        <type>rotate</type>
+        <type>spin</type>
         <object-name>LeftTire</object-name>
-        <property>gear/gear[1]/rollspeed-ms</property>
-        <factor>300</factor>
+        <property>gear/gear[1]/tire-rpm</property>
         <center>
             <x-m>1.675</x-m>
             <y-m>0.0</y-m>
@@ -1372,10 +1370,9 @@
     </animation>
 
     <animation>
-        <type>rotate</type>
+        <type>spin</type>
         <object-name>RightTire</object-name>
-        <property>gear/gear[2]/rollspeed-ms</property>
-        <factor>300</factor>
+        <property>gear/gear[2]/tire-rpm</property>
         <center>
             <x-m>1.675</x-m>
             <y-m>0.0</y-m>

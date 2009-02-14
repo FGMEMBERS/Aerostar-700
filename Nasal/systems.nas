@@ -4,37 +4,72 @@
 var ap_settings = gui.Dialog.new("/sim/gui/dialogs/kfc200/dialog",
         "Aircraft/Aerostar-700/Systems/autopilot-dlg.xml");
 aircraft.livery.init("Aircraft/Aerostar-700/Models/Liveries");
-Cvolume=props.globals.getNode("/sim/sound/A700/Cvolume",1);
-Ovolume=props.globals.getNode("/sim/sound/A700/Ovolume",1);
-Gear = [];
+Ovolume=props.globals.getNode("/sim/sound/cabin-volume",1);
+
+#tire rotation per minute by circumference/groundspeed#
+TireSpeed = {
+    new : func(number){
+        m = { parents : [TireSpeed] };
+            m.num=number;
+            m.circumference=[];
+            m.tire=[];
+            for(var i=0; i<m.num; i+=1) {
+                var diam =arg[i];
+                var circ=diam * math.pi;
+                append(m.circumference,circ);
+                append(m.tire,props.globals.initNode("gear/gear["~i~"]/tire-rpm",0,"DOUBLE"));
+            }
+        m.count = 0;
+        return m;
+    },
+    #### calculate and write rpm ###########
+    get_rotation: func (fdm1){
+        var speed=0;
+        var rpm=0;
+        if(getprop("gear/gear["~me.count~"]/position-norm")==0){
+            return;
+        }
+        if(fdm1=="yasim"){ 
+            speed =getprop("gear/gear["~me.count~"]/rollspeed-ms") or 0;
+            speed=speed*60;
+            }elsif(fdm1=="jsb"){
+                speed =getprop("fdm/jsbsim/gear/unit["~me.count~"]/wheel-speed-fps") or 0;
+                speed=speed*18.288;
+            }
+        var wow = getprop("gear/gear["~me.count~"]/wow");
+        if(wow){
+            rpm = speed / me.circumference[me.count];
+        }else{
+            if(rpm > 0) rpm=rpm*0.95;
+        }
+        me.tire[me.count].setValue(rpm);
+        me.count+=1;
+        if(me.count>=me.num)me.count=0;
+    },
+};
+
+
+#var tire=TireSpeed.new(# of gear,diam[0],diam[1],diam[2], ...);
+var tire=TireSpeed.new(3,0.440,0.470,0.470);
 
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 FHmeter.stop();
 
 
 setlistener("/sim/signals/fdm-initialized", func{
-    Cvolume.setValue(0.5);
     Ovolume.setValue(0.2);
-    setprop("/instrumentation/gps/wp/wp/ID",getprop("/sim/tower/airport-id"));
-    setprop("/instrumentation/gps/wp/wp/waypoint-type","airport");
-    setprop("/instrumentation/gps/serviceable","true");
-    Gear = props.globals.getNode("/gear").getChildren("gear");
     setprop("instrumentation/clock/flight-meter-hour",0);
-    setprop("autopilot/settings/heading-bug-deg",0);
     settimer(update_systems,2);
     print("Aircraft Systems ... OK");
 });
 
-setlistener("/sim/current-view/view-number", func(vw){
-    ViewNum = vw.getValue();
-    if(ViewNum == 0){
-        Cvolume.setValue(0.5);
-        Ovolume.setValue(0.5);
-        }else{
-        Cvolume.setValue(0.2);
+setlistener("/sim/current-view/internal", func(vw){
+    if(vw.getValue()){
+        Ovolume.setValue(0.2);
+    }else{
         Ovolume.setValue(1.0);
-        }
-    },1,0);
+    }
+},1,0);
 
 setlistener("/gear/gear[1]/wow", func(gw){
     if(gw.getBoolValue()){
@@ -100,11 +135,7 @@ setprop("/instrumentation/clock/flight-meter-hour",fhour);
 }
 
 var update_systems = func {
-    foreach (var g; Gear) {
-        var pos = g.getNode("position-norm", 1).getValue();
-        g.getNode("gear-up-locked", 1).setBoolValue(pos == 0.0);
-        g.getNode("gear-down-locked", 1).setBoolValue(pos == 1.0);
-    }
     flight_meter();
+    tire.get_rotation("yasim");
     settimer(update_systems, 0);
 }
