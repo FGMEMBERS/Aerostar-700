@@ -18,7 +18,26 @@
             <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
         </emission>
     </animation>
-<!--
+
+    <animation>
+        <type>rotate</type>
+        <object-name>APtoggle</object-name>
+        <property>/autopilot/locks/passive-mode</property>
+        <factor>40</factor>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.002</x-m>
+            <y-m>0.046</y-m>
+            <z-m>0.002</z-m>
+        </center>
+    </animation>
+
+<!-- Hotspots -->
+
     <animation>
         <type>pick</type>
         <object-name>Pitch.down</object-name>
@@ -176,23 +195,6 @@
                 <property>/autopilot/locks/passive-mode</property>
             </binding>
         </action>
-    </animation>
--->
-    <animation>
-        <type>rotate</type>
-        <object-name>APtoggle</object-name>
-        <property>/autopilot/locks/passive-mode</property>
-        <factor>40</factor>
-        <axis>
-            <x>0.0</x>
-            <y>1.0</y>
-            <z>0.0</z>
-        </axis>
-        <center>
-            <x-m>0.002</x-m>
-            <y-m>0.046</y-m>
-            <z-m>0.002</z-m>
-        </center>
     </animation>
 
 </PropertyList>

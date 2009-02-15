@@ -44,46 +44,6 @@
         <texture>paint1.png</texture>
     </animation>
 
-    <panel>
-        <name>Panel3D</name>
-        <path>Aircraft/Aerostar-700/Panels/aerostar-panel.xml</path>
-        <bottom-left>
-            <x-m>-0.878</x-m>
-            <y-m>-0.552</y-m>
-            <z-m> 0.022</z-m>
-        </bottom-left>
-        <bottom-right>
-            <x-m>-0.878</x-m>
-            <y-m> 0.552</y-m>
-            <z-m> 0.022</z-m>
-        </bottom-right>
-        <top-left>
-            <x-m>-0.950</x-m>
-            <y-m>-0.552</y-m>
-            <z-m> 0.430</z-m>
-        </top-left>
-    </panel>
-
-    <panel>
-        <name>Pedestal</name>
-        <path>Aircraft/Aerostar-700/Panels/center-panel.xml</path>
-        <bottom-left>
-            <x-m>-0.307</x-m>
-            <y-m>-0.242</y-m>
-            <z-m>-0.225</z-m>
-        </bottom-left>
-        <bottom-right>
-            <x-m>-0.307</x-m>
-            <y-m>0.201</y-m>
-            <z-m>-0.225</z-m>
-        </bottom-right>
-        <top-left>
-            <x-m>-1.109</x-m>
-            <y-m>-0.242</y-m>
-            <z-m> 0.149</z-m>
-        </top-left>
-    </panel>
-
    <animation>
         <type>shader</type>
         <shader>chrome</shader>
@@ -97,7 +57,6 @@
         <texture>Aircraft/Aerostar-700/Models/chrome2.png</texture>
         <object-name>Spinners</object-name>
     </animation>
-
 
     <model>
         <path>Aircraft/Instruments-3d/kt70/kt70.xml</path>
@@ -1920,7 +1879,6 @@
         <object-name>Batt.toggle</object-name>
         <action>
             <button>0</button>
-            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/electric/battery-switch</property>
@@ -1933,7 +1891,6 @@
         <object-name>LAlt.toggle</object-name>
         <action>
             <button>0</button>
-            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/electric/engine[0]/generator</property>
@@ -1946,7 +1903,6 @@
         <object-name>RAlt.toggle</object-name>
         <action>
             <button>0</button>
-            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/electric/engine[1]/generator</property>
@@ -1959,7 +1915,6 @@
         <object-name>Deice.toggle</object-name>
         <action>
             <button>0</button>
-            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/anti-ice/prop-heat</property>
@@ -1972,7 +1927,6 @@
         <object-name>Pitot.toggle</object-name>
         <action>
             <button>0</button>
-            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/anti-ice/pitot-heat</property>
@@ -1985,7 +1939,6 @@
         <object-name>FAn.toggle</object-name>
         <action>
             <button>0</button>
-            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/cabin/fan</property>
@@ -1998,7 +1951,6 @@
         <object-name>C-heat.toggle</object-name>
         <action>
             <button>0</button>
-            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/cabin/heat</property>
@@ -2011,7 +1963,6 @@
         <object-name>Strobe.toggle</object-name>
         <action>
             <button>0</button>
-            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/lighting/strobe</property>
@@ -2028,7 +1979,6 @@
         <object-name>Nav.toggle</object-name>
         <action>
             <button>0</button>
-            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/lighting/nav-lights</property>
@@ -2041,7 +1991,6 @@
         <object-name>Cabin.toggle</object-name>
         <action>
             <button>0</button>
-            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/lighting/cabin-lights</property>
@@ -2054,7 +2003,6 @@
         <object-name>Llanding.toggle</object-name>
         <action>
             <button>0</button>
-            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/lighting/landing-lights[0]</property>
@@ -2067,7 +2015,6 @@
         <object-name>Rlanding.toggle</object-name>
         <action>
             <button>0</button>
-            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/lighting/landing-lights[1]</property>
@@ -2080,7 +2027,6 @@
         <object-name>Wing.toggle</object-name>
         <action>
             <button>0</button>
-            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/lighting/wing-lights</property>
@@ -2090,10 +2036,11 @@
 
     <animation>
         <type>pick</type>
-        <object-name>instr.increase</object-name>
+        <object-name>Instr-light.knob</object-name>
         <action>
             <button>0</button>
             <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
             <binding>
                 <command>property-adjust</command>
                 <property>controls/lighting/instruments-norm</property>
@@ -2107,10 +2054,11 @@
 
     <animation>
         <type>pick</type>
-        <object-name>instr.decrease</object-name>
+        <object-name>Instr-light.knob</object-name>
         <action>
-            <button>0</button>
+            <button>1</button>
             <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
             <binding>
                 <command>property-adjust</command>
                 <property>controls/lighting/instruments-norm</property>
@@ -2118,6 +2066,147 @@
                 <min>0</min>
                 <max>1.0</max>
                 <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Instr-light.knob</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/instruments-norm</property>
+                <step>0.05</step>
+                <min>0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Instr-light.knob</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/instruments-norm</property>
+                <step>-0.05</step>
+                <min>0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>L-magneto</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <condition>
+                    <less-than>
+                        <property>controls/engines/engine[0]/magnetos</property>
+                        <value>3</value>
+                    </less-than>
+                </condition>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/magnetos</property>
+                <step>1</step>
+            </binding>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>controls/engines/engine[0]/magnetos</property>
+                        <value>3</value>
+                    </equals>
+                </condition>
+                <command>property-assign</command>
+                <property>controls/engines/engine[0]/starter</property>
+                <value>1</value>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/engines/engine[0]/starter</property>
+                    <value>0</value>
+                </binding>
+            </mod-up>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>L-magneto</object-name>
+        <action>
+            <button>1</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/magnetos</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>4</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>R-magneto</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <condition>
+                    <less-than>
+                        <property>controls/engines/engine[1]/magnetos</property>
+                        <value>3</value>
+                    </less-than>
+                </condition>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[1]/magnetos</property>
+                <step>1</step>
+            </binding>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>controls/engines/engine[1]/magnetos</property>
+                        <value>3</value>
+                    </equals>
+                </condition>
+                <command>property-assign</command>
+                <property>controls/engines/engine[1]/starter</property>
+                <value>1</value>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/engines/engine[1]/starter</property>
+                    <value>0</value>
+                </binding>
+            </mod-up>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>R-magneto</object-name>
+        <action>
+            <button>1</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[1]/magnetos</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>3</max>
             </binding>
         </action>
     </animation>

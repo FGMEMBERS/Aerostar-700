@@ -84,7 +84,7 @@ Syd Adams
     <animation>
         <type>rotate</type>
         <object-name>KI206card</object-name>
-        <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+        <property>instrumentation/ki206/obs</property>
         <axis>
             <x>1</x>
             <y>0</y>
@@ -125,5 +125,75 @@ Syd Adams
             <z>1.0</z>
         </axis>
     </animation>
- 
+
+    <!-- Hotspots --> 
+
+    <animation>
+        <type>pick</type>
+        <object-name>KI206.knob</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/ki206/obs</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KI206.knob</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/ki206/obs</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KI206.knob</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/ki206/obs</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KI206.knob</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/ki206/obs</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
 </PropertyList>

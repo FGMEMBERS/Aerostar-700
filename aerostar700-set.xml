@@ -67,6 +67,33 @@
             </config>
         </view>
 
+        <view n="1">
+            <config>
+                <target-z-offset-m type="double">1</target-z-offset-m>
+            </config>
+        </view>
+        <view n="2">
+            <config>
+                <target-z-offset-m type="double">1</target-z-offset-m>
+            </config>
+        </view>
+        <view n="5">
+            <config>
+                <target-z-offset-m type="double">1</target-z-offset-m>
+            </config>
+        </view>
+        <view n="6">
+            <config>
+                <target-z-offset-m type="double">1</target-z-offset-m>
+            </config>
+        </view>
+        <view n="7">
+            <config>
+                <target-z-offset-m type="double">1</target-z-offset-m>
+            </config>
+        </view>
+
+
     <airport>
         <runways>
             <start-offset-m>20</start-offset-m>
@@ -239,7 +266,7 @@
             <heading-marker type="bool"	archive="y">false</heading-marker>
             <lightning type="bool" archive="y">false</lightning>
             <display-mode type="string">arc</display-mode>
-            <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/RDR-160/od_wxradar.rgb</radar-texture-path>
+            <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/RDR-160/od_wxradar.png</radar-texture-path>
             <echo-texture-path type="string" archive="y">Aircraft/Instruments/Textures/wxecho.rgb</echo-texture-path>
             <display-controls>
                 <WX type="bool" archive="y">false</WX>
@@ -263,8 +290,10 @@
             <file>Aircraft/Aerostar-700/Models/Instruments/kfc200/kfc-200.nas</file>
             <file>Aircraft/Instruments-3d/kns80/KNS80.nas</file>
             <file>Aircraft/Instruments-3d/ky196/KY196.nas</file>
-            <file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file>
         </aerostar>
+            <radar>
+                <file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file>
+            </radar>
     </nasal>
 
     <input>

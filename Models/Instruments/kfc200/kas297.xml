@@ -135,64 +135,13 @@ Syd Adams
         </axis>
     </animation>
 
-    <!-- OSG animations 
+    <!-- Hotspots --> 
 
     <animation>
         <type>pick</type>
-        <object-name>Alt.decrease</object-name>
+        <object-name>Set.knob</object-name>
         <action>
             <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>instrumentation/kfc200/alt-preset</property>
-                <step>-100</step>
-                <min>0.0</min>
-                <max>99999.0</max>
-                <wrap>false</wrap>
-            </binding>
-        </action>
-    </animation>
-    
-    <animation>
-        <type>pick</type>
-        <object-name>Alt.decrease</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>instrumentation/kfc200/alt-preset</property>
-                <step>-1000</step>
-                <min>0.0</min>
-                <max>99999.0</max>
-                <wrap>false</wrap>
-            </binding>
-        </action>
-    </animation>
-    
-    <animation>
-        <type>pick</type>
-        <object-name>Alt.increase</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>instrumentation/kfc200/alt-preset</property>
-                <step>100</step>
-                <min>0.0</min>
-                <max>99999.0</max>
-                <wrap>false</wrap>
-            </binding>
-        </action>
-    </animation>
-    
-    <animation>
-        <type>pick</type>
-        <object-name>Alt.increase</object-name>
-        <action>
-            <button>1</button>
             <repeatable>true</repeatable>
             <binding>
                 <command>property-adjust</command>
@@ -207,7 +156,56 @@ Syd Adams
 
     <animation>
         <type>pick</type>
-        <object-name>Alt.arm</object-name>
+        <object-name>Set.knob</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kfc200/alt-preset</property>
+                <step>-1000</step>
+                <min>0.0</min>
+                <max>99999.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Set.knob</object-name>
+        <action>
+            <button>3</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kfc200/alt-preset</property>
+                <step>100</step>
+                <min>0.0</min>
+                <max>99999.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Set.knob</object-name>
+        <action>
+            <button>4</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/kfc200/alt-preset</property>
+                <step>-100</step>
+                <min>0.0</min>
+                <max>99999.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Arm.btn</object-name>
         <action>
             <button>0</button>
             <repeatable>false</repeatable>
@@ -224,6 +222,5 @@ Syd Adams
         </binding>
         </action>
     </animation>
--->
 
 </PropertyList>

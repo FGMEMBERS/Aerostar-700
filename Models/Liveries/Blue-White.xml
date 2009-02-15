@@ -5,7 +5,6 @@
     <model>
         <livery>
             <name type="string">Blue-White</name>
-            <index type="int">3</index>
             <texture>paint4.png</texture>
         </livery>
     </model>

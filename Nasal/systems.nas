@@ -55,6 +55,13 @@ var tire=TireSpeed.new(3,0.440,0.470,0.470);
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 FHmeter.stop();
 
+controls.gearDown = func(v) {
+    if (v < 0) {
+        if(!getprop("gear/gear[1]/wow"))setprop("/controls/gear/gear-down", 0);
+    } elsif (v > 0) {
+      setprop("/controls/gear/gear-down", 1);
+    }
+}
 
 setlistener("/sim/signals/fdm-initialized", func{
     Ovolume.setValue(0.2);
