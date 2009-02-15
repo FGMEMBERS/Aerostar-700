@@ -13,11 +13,13 @@ TireSpeed = {
             m.num=number;
             m.circumference=[];
             m.tire=[];
+            m.rpm=[];
             for(var i=0; i<m.num; i+=1) {
                 var diam =arg[i];
                 var circ=diam * math.pi;
                 append(m.circumference,circ);
                 append(m.tire,props.globals.initNode("gear/gear["~i~"]/tire-rpm",0,"DOUBLE"));
+                append(m.rpm,0);
             }
         m.count = 0;
         return m;
@@ -25,7 +27,6 @@ TireSpeed = {
     #### calculate and write rpm ###########
     get_rotation: func (fdm1){
         var speed=0;
-        var rpm=0;
         if(getprop("gear/gear["~me.count~"]/position-norm")==0){
             return;
         }
@@ -38,11 +39,11 @@ TireSpeed = {
             }
         var wow = getprop("gear/gear["~me.count~"]/wow");
         if(wow){
-            rpm = speed / me.circumference[me.count];
+            me.rpm[me.count] = speed / me.circumference[me.count];
         }else{
-            if(rpm > 0) rpm=rpm*0.95;
+            if(me.rpm[me.count] > 0) me.rpm[me.count]=me.rpm[me.count]*0.95;
         }
-        me.tire[me.count].setValue(rpm);
+        me.tire[me.count].setValue(me.rpm[me.count]);
         me.count+=1;
         if(me.count>=me.num)me.count=0;
     },
