@@ -27,9 +27,6 @@ TireSpeed = {
     #### calculate and write rpm ###########
     get_rotation: func (fdm1){
         var speed=0;
-        if(getprop("gear/gear["~me.count~"]/position-norm")==0){
-            return;
-        }
         if(fdm1=="yasim"){ 
             speed =getprop("gear/gear["~me.count~"]/rollspeed-ms") or 0;
             speed=speed*60;

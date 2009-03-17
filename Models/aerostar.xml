@@ -29,7 +29,8 @@
       <object-name>Rudder</object-name>
       <object-name>LeftElevator</object-name>
       <object-name>RightElevator</object-name>
-      <object-name>Engines</object-name>
+      <object-name>Eng1</object-name>
+      <object-name>Eng2</object-name>
       <object-name>LRdoor</object-name>
       <object-name>RRdoor</object-name>
       <object-name>LHwheeldoor</object-name>
