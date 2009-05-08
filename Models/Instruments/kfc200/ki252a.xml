@@ -179,9 +179,25 @@ Syd Adams
             <repeatable>true</repeatable>
             <interval-sec>0.1</interval-sec>
             <binding>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
                 <command>property-adjust</command>
                 <property>autopilot/settings/heading-bug-deg</property>
                 <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>autopilot/settings/heading-bug-deg</property>
+                <step>10</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>1</wrap>
@@ -197,9 +213,25 @@ Syd Adams
             <repeatable>true</repeatable>
             <interval-sec>0.1</interval-sec>
             <binding>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
                 <command>property-adjust</command>
                 <property>autopilot/settings/heading-bug-deg</property>
                 <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>autopilot/settings/heading-bug-deg</property>
+                <step>-10</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>1</wrap>
@@ -213,9 +245,25 @@ Syd Adams
         <action>
             <button>3</button>
             <binding>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
                 <command>property-adjust</command>
                 <property>autopilot/settings/heading-bug-deg</property>
                 <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>autopilot/settings/heading-bug-deg</property>
+                <step>10</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>1</wrap>
@@ -229,9 +277,25 @@ Syd Adams
         <action>
             <button>4</button>
             <binding>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
                 <command>property-adjust</command>
                 <property>autopilot/settings/heading-bug-deg</property>
                 <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>autopilot/settings/heading-bug-deg</property>
+                <step>-10</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>1</wrap>
@@ -247,9 +311,25 @@ Syd Adams
             <repeatable>true</repeatable>
             <interval-sec>0.1</interval-sec>
             <binding>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
                 <command>property-adjust</command>
                 <property>instrumentation/nav/radials/selected-deg</property>
                 <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>10</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>1</wrap>
@@ -265,9 +345,25 @@ Syd Adams
             <repeatable>true</repeatable>
             <interval-sec>0.1</interval-sec>
             <binding>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
                 <command>property-adjust</command>
                 <property>instrumentation/nav/radials/selected-deg</property>
                 <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>-10</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>1</wrap>
@@ -281,9 +377,25 @@ Syd Adams
         <action>
             <button>3</button>
             <binding>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
                 <command>property-adjust</command>
                 <property>instrumentation/nav/radials/selected-deg</property>
                 <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>10</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>1</wrap>
@@ -297,9 +409,25 @@ Syd Adams
         <action>
             <button>4</button>
             <binding>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
                 <command>property-adjust</command>
                 <property>instrumentation/nav/radials/selected-deg</property>
                 <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>-10</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>1</wrap>

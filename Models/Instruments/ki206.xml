@@ -84,7 +84,7 @@ Syd Adams
     <animation>
         <type>rotate</type>
         <object-name>KI206card</object-name>
-        <property>instrumentation/ki206/obs</property>
+        <property>instrumentation/nav/radials/selected-deg</property>
         <axis>
             <x>1</x>
             <y>0</y>
@@ -134,10 +134,27 @@ Syd Adams
         <action>
             <button>0</button>
             <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
             <binding>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
                 <command>property-adjust</command>
-                <property>instrumentation/ki206/obs</property>
+                <property>instrumentation/nav/radials/selected-deg</property>
                 <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>true</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>10</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>true</wrap>
@@ -151,10 +168,27 @@ Syd Adams
         <action>
             <button>1</button>
             <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
             <binding>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
                 <command>property-adjust</command>
-                <property>instrumentation/ki206/obs</property>
+                <property>instrumentation/nav/radials/selected-deg</property>
                 <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>true</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>-10</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>true</wrap>
@@ -167,11 +201,26 @@ Syd Adams
         <object-name>KI206.knob</object-name>
         <action>
             <button>3</button>
-            <repeatable>true</repeatable>
             <binding>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
                 <command>property-adjust</command>
-                <property>instrumentation/ki206/obs</property>
+                <property>instrumentation/nav/radials/selected-deg</property>
                 <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>true</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>10</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>true</wrap>
@@ -184,11 +233,26 @@ Syd Adams
         <object-name>KI206.knob</object-name>
         <action>
             <button>4</button>
-            <repeatable>true</repeatable>
             <binding>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
                 <command>property-adjust</command>
-                <property>instrumentation/ki206/obs</property>
+                <property>instrumentation/nav/radials/selected-deg</property>
                 <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>true</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>-10</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>true</wrap>
