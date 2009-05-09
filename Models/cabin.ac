@@ -3,7 +3,7 @@ MATERIAL "Paint.001" rgb 0.478411 0.478411 0.478411 amb 0.588946 0.584437 0.5844
 MATERIAL "bare-metal.001" rgb 0.233333 0.233333 0.233333 amb 1 1 1 emis 0 0 0 spec 0.9 0.9 0.9 shi 32 trans 0
 MATERIAL "Flat.001" rgb 0.9 0.9 0.9 amb 1 1 1 emis 0 0 0 spec 0 0 0 shi 0 trans 0
 MATERIAL "flatblack.001" rgb 0 0 0 amb 1 1 1 emis 0 0 0 spec 0 0 0 shi 32 trans 0
-MATERIAL "flatblack" rgb 0 0 0 amb 1 1 1 emis 0 0 0 spec 0 0 0 shi 32 trans 0
+MATERIAL "flatblack" rgb 0 0 0 amb 0 0 0 emis 0 0 0 spec 0 0 0 shi 32 trans 0
 MATERIAL "lights.001" rgb 1 1 1 amb 1 1 1 emis 1 1 1 spec 0 0 0 shi 0 trans 0
 MATERIAL "orange-annun.001" rgb 0.641812 0.427178 0.067142 amb 1 1 1 emis 0 0 0 spec 1 1 1 shi 32 trans 0
 MATERIAL "green-annun.002" rgb 0.162547 0.312854 0.05446 amb 1 1 1 emis 0 0 0 spec 1 1 1 shi 32 trans 0
