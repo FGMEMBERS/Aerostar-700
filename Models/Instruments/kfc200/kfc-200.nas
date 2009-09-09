@@ -72,7 +72,7 @@ var KFC200 = {
         m.vbar_pitch.setDoubleValue(0);
         m.vbar_roll=m.kfc200.getNode("command-bar-roll",1);
         m.vbar_roll.setDoubleValue(0);
-        m.GS1=props.globals.getNode("/instrumentation/nav/gs-needle-deflection",1);
+        m.GS1=props.globals.getNode("/instrumentation/nav/gs-needle-deflection-norm",1);
         m.DF=props.globals.getNode("instrumentation/nav/heading-needle-deflection",1);
         m.ROLL=props.globals.getNode("orientation/roll-deg",1);
         m.PITCH=props.globals.getNode("orientation/pitch-deg",1);
@@ -105,8 +105,10 @@ var KFC200 = {
 
             if(lnav ==5){
                 if(me.gs_arm.getValue()){
+                    # the KFC-200 manual doesn't specify the permitted
+                    # capture deviation, 20% is a guess.
                     if(me.get_nm_distance("gs") < 20000){
-                        if( GS1< 1.0 and GS1 > -1.0){
+                        if( GS1< 0.2 and GS1 > -0.2){
                             vnav = 4;
                             me.vnav.setValue(vnav);
                             me.gs_arm.setValue(0);
