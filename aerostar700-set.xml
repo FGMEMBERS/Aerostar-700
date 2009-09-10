@@ -281,6 +281,15 @@
             <serviceable type="bool">1</serviceable>
             <card-heading-deg type="double">0</card-heading-deg>
         </ki-227>
+        <kr-87>
+            <serviceable type="bool">1</serviceable>
+        </kr-87>
+        <dme>
+            <serviceable type="bool">1</serviceable>
+			<frequencies>
+				<source type="string">instrumentation/nav/frequencies/selected-mhz</source>
+			</frequencies>
+        </dme>
     </instrumentation>
 
     <nasal>

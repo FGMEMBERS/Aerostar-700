@@ -19,11 +19,10 @@
     <animation>
         <type>rotate</type>
         <object-name>EGT.LHneedle</object-name>
-        <property>engines/engine/egt-degf</property>
+        <property>engines/engine/rpm</property>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
-            <entry><ind>46</ind><dep>25</dep></entry>
-            <entry><ind>64</ind><dep>100</dep></entry>
+            <entry><ind>2700</ind><dep>100</dep></entry>
         </interpolation>
         <center>
             <x-m>0</x-m>
@@ -40,11 +39,10 @@
     <animation>
         <type>rotate</type>
         <object-name>EGT.RHneedle</object-name>
-        <property>engines/engine[1]/egt-degf</property>
+        <property>engines/engine[1]/rpm</property>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
-            <entry><ind>46</ind><dep>25</dep></entry>
-            <entry><ind>64</ind><dep>100</dep></entry>
+            <entry><ind>2700</ind><dep>100</dep></entry>
         </interpolation>
         <center>
             <x-m>0</x-m>

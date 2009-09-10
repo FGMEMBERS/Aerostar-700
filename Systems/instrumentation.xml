@@ -96,6 +96,11 @@ This file selects the instrumentation modules that should be available.
         <number>0</number>
     </KT-70>
 
+    <dme>
+        <name>dme</name>
+        <number>0</number>
+    </dme>
+
     <master-reference-gyro>
         <name>master-reference-gyro</name>
         <number>0</number>
