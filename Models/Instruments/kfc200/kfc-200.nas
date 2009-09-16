@@ -31,11 +31,20 @@ var KFC200 = {
         m.Llist=["wing-leveler","dg-heading-hold","dg-heading-hold","nav1-hold","dg-heading-hold","nav1-hold","dg-heading-hold","nav1-hold"];
         m.Vlist=["pitch-hold","alt-armed","altitude-hold","pitch-hold","gs1-hold"];
         m.Splist=["","speed-with-throttle"];
-        m.kfc200 = props.globals.initNode(prop1,1);
+		
+		m.altarmed=0;
+		m.gsarmed=0;
+		m.local_lnav=0;
+		m.local_vnav=0;
+		m.local_spd=0;
+		
+
+		m.kfc200 = props.globals.initNode(prop1,1);
         m.pwr = m.kfc200.initNode("fd-on",0,"BOOL");
         m.serviceable = m.kfc200.initNode("serviceable",1,"BOOL");
         m.armed=m.kfc200.initNode("armed",0,"BOOL");
         m.gs_arm=m.kfc200.initNode("gs-arm",0,"BOOL");
+		m.alt_armed=m.kfc200.initNode("alt-arm",m.altarmed,"BOOL");
         m.coupled=m.kfc200.initNode("cpld",0,"BOOL");
         m.alert=m.kfc200.initNode("alt-alert",0,"BOOL");
         m.alt=props.globals.initNode("autopilot/settings/target-altitude-ft",0,"DOUBLE");
@@ -43,8 +52,8 @@ var KFC200 = {
         m.DH=m.kfc200.initNode("DH",200,"DOUBLE");
         m.asel=m.kfc200.initNode("alt-preset",0,"DOUBLE");
         m.trim_fail=m.kfc200.initNode("trim-fail",0,"BOOL");
-        m.lnav=m.kfc200.initNode("lnav",0,"INT");
-        m.vnav=m.kfc200.initNode("vnav",0,"INT");
+        m.lnav=m.kfc200.initNode("lnav",m.local_lnav,"INT");
+        m.vnav=m.kfc200.initNode("vnav",m.local_vnav,"INT");
         m.spd=m.kfc200.initNode("spd",0,"INT");
         m.ap_off=props.globals.initNode("autopilot/locks/passive-mode",1,"BOOL");
         m.HDG = props.globals.initNode("autopilot/locks/heading",m.Llist[0],"STRING");
@@ -59,9 +68,9 @@ var KFC200 = {
         m.tgt_ROLL=props.globals.initNode("autopilot/internal/target-roll-deg",0,"DOUBLE");
         m.tgt_PITCH=props.globals.initNode("autopilot/settings/target-pitch-deg",0,"DOUBLE");
 		
-		m.Llnv = setlistener(m.lnav, func (ln){ var tmp = ln.getValue() ; m.HDG.setValue(m.Llist[tmp]);},1,0);
-		m.Lvnv = setlistener(m.vnav, func (vn){ var tmp = vn.getValue(); m.ALT.setValue(m.Vlist[tmp]);},1,0);
-		m.Lspd = setlistener(m.spd, func (spd){ var tmp = spd.getValue();m.SPD.setValue(m.Splist[tmp]);},1,0);
+		m.Llnv = setlistener(m.lnav, func (ln){ m.local_lnav = ln.getValue() ; m.HDG.setValue(m.Llist[m.local_lnav]);},1,0);
+		m.Lvnv = setlistener(m.vnav, func (vn){ m.local_vnav = vn.getValue(); m.ALT.setValue(m.Vlist[m.local_vnav]);},1,0);
+		m.Lspd = setlistener(m.spd, func (spd){ m.local_spd = spd.getValue();m.SPD.setValue(m.Splist[m.local_spd]);},1,0);
 		m.Lpwr = setlistener(m.pwr, func (pwr){ if(!pwr.getValue())m.kill_fd();},1,0);
 		m.Lap = setlistener(m.ap_off, func (ap){ if(!ap.getValue())m.tgt_PITCH.setValue(m.PITCH.getValue());},0,0);
 
@@ -71,10 +80,9 @@ var KFC200 = {
 #### update nav properties ####
     update_nav : func{
 		me.dh_check();
-		
-        var inrange= me.get_nm_distance("vor");
-        var lnav = me.lnav.getValue();
-        var vnav = me.vnav.getValue();
+		var inrange= me.get_nm_distance("vor");
+        var lnav = me.local_lnav;
+        var vnav = me.local_vnav;
         var GS1 = me.GS1.getValue();
         var DF = me.DF.getValue();
 
@@ -106,10 +114,12 @@ var KFC200 = {
             }
         }
 
-    if(vnav == 1){
+    if(me.altarmed!=0){
         var offset = me.alt_offset();
         if(offset > -990 and offset < 990){
-            vnav +=1;
+            me.altarmed=0;
+			me.alt_armed.setValue(me.altarmed);
+			vnav =2;
             me.vnav.setValue(vnav);
             }
         }
@@ -151,7 +161,7 @@ me.vbar_roll.setValue(vroll);
     },
 ### get Target ALT offset ###
     alt_offset : func{
-    var current_alt = getprop("/instrumentation/altimeter/pressure-alt-ft");
+    var current_alt = getprop("instrumentation/altimeter/indicated-altitude-ft");
     var offset = (current_alt - me.alt.getValue());
     var alert =0;
     if(offset > -1000 and offset < -1000){
@@ -179,9 +189,12 @@ me.vbar_roll.setValue(vroll);
         var idx = 0;
 
         if(!me.serviceable.getValue()){
-            me.lnav.setValue(0);
-            me.vnav.setValue(0);
-            me.spd.setValue(0);
+            me.local_lnav=0;
+			me.lnav.setValue(me.local_lnav);
+			me.local_vnav=0;
+            me.vnav.setValue(me.local_vnav);
+            me.local_spd=0;
+			me.spd.setValue(me.local_spd);
             return;
             }
 
@@ -191,38 +204,34 @@ me.vbar_roll.setValue(vroll);
             me.pwr.setValue(1- fdtoggle);
         }elsif(mode == "HDG"){
             idx =1;
-            if(me.lnav.getValue() == idx)idx = 0;
+            if(me.local_lnav == idx)idx = 0;
             me.lnav.setValue(idx);
         }elsif(mode == "NAV"){
             idx =2;
-            if(me.lnav.getValue() == idx)idx = 0;
+            if(me.local_lnav == idx)idx = 0;
             me.lnav.setValue(idx);
         }elsif(mode == "ALT"){
             idx =2;
-            if(me.vnav.getValue() == idx)idx = 0;
+            if(me.local_vnav == idx)idx = 0;
             if(idx ==2){
                 me.alt.setValue(getprop("instrumentation/altimeter/mode-c-alt-ft"));
             }
             me.vnav.setValue(idx);
         }elsif(mode == "ALT-ARM"){
-            idx =1;
-            if(me.vnav.getValue() == idx)idx = 0;
-            if(idx ==2){
-                me.alt.setValue(me.asel.getValue());
-            }
-            me.vnav.setValue(idx);
-        }elsif(mode == "APPR"){
+            me.altarmed=1-me.altarmed;
+			me.alt_armed.setValue(me.altarmed);
+			if(me.altarmed!=0)me.alt.setValue(me.asel.getValue());
+		}elsif(mode == "APPR"){
             idx =4;
             if(!getprop("/instrumentation/nav/nav-loc"))idx=2;
-            if(me.lnav.getValue() == idx)idx = 0;
+            if(me.local_lnav == idx)idx = 0;
             me.lnav.setValue(idx);
             if(idx==4){
                 if(getprop("/instrumentation/nav/has-gs"))me.gs_arm.setValue(1);
             }
         }elsif(mode == "BC"){
-            var tmp = me.lnav.getValue();
             setprop("instrumentation/nav/back-course-btn",1-getprop("instrumentation/nav/back-course-btn"));
-            if(tmp!=5)setprop("instrumentation/nav/back-course-btn",0);
+            if(me.local_lnav!=5)setprop("instrumentation/nav/back-course-btn",0);
             return;
         }
     },

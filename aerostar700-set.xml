@@ -317,7 +317,6 @@
             <file>Aircraft/Aerostar-700/Nasal/systems.nas</file>
             <file>Aircraft/Aerostar-700/Nasal/Electrical.nas</file>
             <file>Aircraft/Aerostar-700/Models/Instruments/kfc200/kfc-200.nas</file>
-            <file>Aircraft/Instruments-3d/ky196/KY196.nas</file>
         </aerostar>
             <radar>
                 <file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file>

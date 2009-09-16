@@ -30,7 +30,7 @@ Syd Adams
         <object-name>altmsg.004</object-name>
         <condition>
             <greater-than>
-                <property>systems/electrical/volts</property>
+                <property>systems/electrical/batt-volts</property>
                 <value>1</value>
             </greater-than>
         </condition>
@@ -44,7 +44,7 @@ Syd Adams
             <and>
                 <property>/instrumentation/kfc200/alt-alert</property>
                 <greater-than>
-                    <property>systems/electrical/volts</property>
+                    <property>systems/electrical/batt-volts</property>
                     <value>1</value>
                 </greater-than>
             </and>
@@ -56,12 +56,9 @@ Syd Adams
         <object-name>Arm.msg</object-name>
         <condition>
             <and>
-                <equals>
-                    <property>/instrumentation/kfc200/vnav</property>
-                    <value>1</value>
-                </equals>
-                <greater-than>
-                    <property>systems/electrical/volts</property>
+                <property>/instrumentation/kfc200/alt-arm</property>
+			    <greater-than>
+                    <property>systems/electrical/batt-volts</property>
                     <value>1</value>
                 </greater-than>
             </and>
@@ -277,8 +274,7 @@ Syd Adams
             <repeatable>false</repeatable>
             <binding>
             <command>nasal</command>
-            <script><script>aerostar.FD.set_mode("ALT-ARM");</script>
-            </script>
+            <script>aerostar.FD.set_mode("ALT-ARM");</script>
         </binding>
         </action>
     </animation>
