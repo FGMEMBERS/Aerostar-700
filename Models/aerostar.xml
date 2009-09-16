@@ -20,7 +20,8 @@
       <object-name>RFdoor</object-name>
       <object-name>LFdoor</object-name>
       <object-name>Frtdoor</object-name>
-      <object-name>Wings</object-name>
+      <object-name>LHWing</object-name>
+      <object-name>RHWing</object-name>
       <object-name>RightAileron</object-name>
       <object-name>RightFlap</object-name>
       <object-name>LeftFlap</object-name>
@@ -35,7 +36,9 @@
       <object-name>RRdoor</object-name>
       <object-name>LHwheeldoor</object-name>
       <object-name>RHwheeldoor</object-name>
-    </animation>
+	  <object-name>Cabin.door1</object-name>
+	  <object-name>Cabin.door2</object-name>
+	</animation>
 
     <animation>
         <type>material</type>
@@ -57,6 +60,11 @@
         <shader>chrome</shader>
         <texture>Aircraft/Aerostar-700/Models/chrome2.png</texture>
         <object-name>Spinners</object-name>
+        <object-name>NoseStrut</object-name>
+        <object-name>RightWheel</object-name>
+        <object-name>Rram</object-name>
+        <object-name>LeftWheel</object-name>
+        <object-name>Lram</object-name>
     </animation>
 
     <model>
@@ -76,6 +84,81 @@
         <min-m>0</min-m>
         <max-m>200</max-m>
     </animation>
+
+    <text>
+		<name>LHreg</name>
+		<offsets>
+			<x-m>3.573</x-m>
+			<y-m>-0.506</y-m>
+			<z-m>0.390</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>6</heading-deg>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>xz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<property type="string">sim/multiplay/generic/string[0]</property>
+		<format type="string">%.7s</format>
+		<font>arial_black.txf</font>
+		<character-size>0.8</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">128</width>
+			<height type="int">128</height>
+		</font-resolution>
+	</text>
+
+    <text>
+		<name>RHreg</name>
+		<offsets>
+			<x-m>3.573</x-m>
+			<y-m>0.506</y-m>
+			<z-m>0.390</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>-6</heading-deg>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>reversed-xz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<property type="string">sim/multiplay/generic/string[0]</property>
+		<format type="string">%.7s</format>
+		<font>arial_black.txf</font>
+		<character-size>0.8</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">128</width>
+			<height type="int">128</height>
+		</font-resolution>
+	</text>
+
+    <animation>
+        <type>material</type>
+         <object-name>LHreg</object-name>
+		 <object-name>RHreg</object-name>
+		<emission>
+			<red>0</red>
+			<green>0</green>
+			<blue>0</blue>
+		</emission>
+		<ambient>
+			<red-prop>sim/multiplay/generic/float[1]</red-prop>
+			<green-prop>sim/multiplay/generic/float[2]</green-prop>
+			<blue-prop>sim/multiplay/generic/float[3]</blue-prop>
+		</ambient>
+		<diffuse>
+			<red-prop>sim/multiplay/generic/float[1]</red-prop>
+			<green-prop>sim/multiplay/generic/float[2]</green-prop>
+			<blue-prop>sim/multiplay/generic/float[3]</blue-prop>
+		</diffuse>
+		<specular>
+			<red-prop>sim/multiplay/generic/float[1]</red-prop>
+			<green-prop>sim/multiplay/generic/float[2]</green-prop>
+			<blue-prop>sim/multiplay/generic/float[3]</blue-prop>
+		</specular>
+    </animation>
+
 
     <animation>
         <name>FrontGearGroup</name>
@@ -110,7 +193,7 @@
         <object-name>navlights</object-name>
         <condition>
             <greater-than>
-            <property>systems/electrical/outputs/nav-lights</property>
+            <property>sim/multiplay/generic/int[2]</property>
             <value>1</value> 
             </greater-than>
         </condition>
@@ -123,15 +206,11 @@
         <condition>
             <and>
                 <greater-than>
-                    <property>systems/electrical/outputs/nav-lights</property>
+                    <property>sim/multiplay/generic/int[2]</property>
                     <value>0.2</value>
                 </greater-than>
-                <greater-than>
-                    <property>sim/time/sun-angle-rad</property>
-                    <value>1.6</value>
-                </greater-than>
                 <equals>
-                    <property>systems/electrical/outputs/strobe</property>
+                    <property>sim/multiplay/generic/int[0]</property>
                     <value>0</value>
                 </equals>
             </and>
@@ -185,7 +264,7 @@
         <object-name>strobe1</object-name>
         <condition>
             <greater-than>
-            <property>systems/electrical/outputs/strobe</property>
+            <property>sim/multiplay/generic/int[0]</property>
             <value>1</value>
             </greater-than>
         </condition>
@@ -222,7 +301,7 @@
         <object-name>strobe2</object-name>
         <condition>
             <greater-than>
-            <property>systems/electrical/outputs/strobe</property>
+            <property>sim/multiplay/generic/int[0]</property>
             <value>1</value>
             </greater-than>
         </condition>
@@ -256,6 +335,19 @@
 
     <animation>
         <type>select</type>
+        <object-name>Beacon</object-name>
+        <object-name>BeaconGlow.001</object-name>
+        <object-name>BeaconGlow.002</object-name>
+        <condition>
+            <greater-than>
+            <property>sim/multiplay/generic/int[1]</property>
+            <value>1</value> 
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
         <object-name>LHprop</object-name>
         <condition>
             <less-than>
@@ -423,6 +515,51 @@
             <x>-1</x>
             <y>0</y>
             <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Cabin.door1</object-name>
+        <object-name>doorglass</object-name>
+        <property>sim/multiplay/generic/float</property>
+        <interpolation>
+            <entry>
+                <ind>0.0</ind><dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind><dep>-110.0</dep>
+            </entry>
+        </interpolation>
+        <axis>
+            <x1-m>-0.576</x1-m>
+            <y1-m>-0.459</y1-m>
+            <z1-m>0.725</z1-m>
+            <x2-m>-0.112</x2-m>
+            <y2-m>-0.459</y2-m>
+            <z2-m>0.725</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Cabin.door2</object-name>
+        <property>sim/multiplay/generic/float</property>
+        <interpolation>
+            <entry>
+                <ind>0.0</ind><dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind><dep>140.0</dep>
+            </entry>
+        </interpolation>
+        <axis>
+            <x1-m>-0.792</x1-m>
+            <y1-m>-0.598</y1-m>
+            <z1-m>-0.269</z1-m>
+            <x2-m>-0.115</x2-m>
+            <y2-m>-0.598</y2-m>
+            <z2-m>-0.269</z2-m>
         </axis>
     </animation>
 

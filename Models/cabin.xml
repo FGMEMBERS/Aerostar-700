@@ -1207,4 +1207,48 @@
         </action>
     </animation>
 
+    <animation>
+        <type>rotate</type>
+        <object-name>Cabin.innerdoor1</object-name>
+        <property>sim/multiplay/generic/float[0]</property>
+        <interpolation>
+            <entry>
+                <ind>0.0</ind><dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind><dep>-110.0</dep>
+            </entry>
+        </interpolation>
+        <axis>
+            <x1-m>-0.576</x1-m>
+            <y1-m>-0.459</y1-m>
+            <z1-m>0.725</z1-m>
+            <x2-m>-0.112</x2-m>
+            <y2-m>-0.459</y2-m>
+            <z2-m>0.725</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Cabin.innerdoor2</object-name>
+        <property>sim/multiplay/generic/float[0]</property>
+        <interpolation>
+            <entry>
+                <ind>0.0</ind><dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind><dep>140.0</dep>
+            </entry>
+        </interpolation>
+        <axis>
+            <x1-m>-0.792</x1-m>
+            <y1-m>-0.598</y1-m>
+            <z1-m>-0.269</z1-m>
+            <x2-m>-0.115</x2-m>
+            <y2-m>-0.598</y2-m>
+            <z2-m>-0.269</z2-m>
+        </axis>
+    </animation>
+
 </PropertyList>

@@ -4,6 +4,7 @@
 var ap_settings = gui.Dialog.new("/sim/gui/dialogs/kfc200/dialog",
         "Aircraft/Aerostar-700/Systems/autopilot-dlg.xml");
 aircraft.livery.init("Aircraft/Aerostar-700/Models/Liveries");
+var cabin_door = aircraft.door.new("/controls/cabin-door", 2);
 Ovolume=props.globals.getNode("/sim/sound/cabin-volume",1);
 
 #tire rotation per minute by circumference/groundspeed#
@@ -49,7 +50,6 @@ TireSpeed = {
 
 #var tire=TireSpeed.new(# of gear,diam[0],diam[1],diam[2], ...);
 var tire=TireSpeed.new(3,0.440,0.470,0.470);
-
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 FHmeter.stop();
 
@@ -142,5 +142,6 @@ setprop("/instrumentation/clock/flight-meter-hour",fhour);
 var update_systems = func {
     flight_meter();
     tire.get_rotation("yasim");
+	if(getprop("velocities/airspeed-kt") >40)cabin_door.close();
     settimer(update_systems, 0);
 }

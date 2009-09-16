@@ -109,22 +109,16 @@ Syd Adams
         <type>select</type>
         <object-name>To-flag</object-name>
         <condition>
-            <equals>
-                <property>instrumentation/nav/to-flag</property>
-                <value>true</value>
-            </equals>
-        </condition>
+			<property>instrumentation/nav/to-flag</property>
+		</condition>
     </animation>
  
     <animation>
         <type>select</type>
         <object-name>From-flag</object-name>
         <condition>
-            <equals>
-                <property>instrumentation/nav/from-flag</property>
-                <value>true</value>
-            </equals>
-        </condition>
+			<property>instrumentation/nav/from-flag</property>
+		</condition>
     </animation>
 
     <animation>

@@ -277,13 +277,7 @@ Syd Adams
             <repeatable>false</repeatable>
             <binding>
             <command>nasal</command>
-            <script>
-                if(getprop("instrumentation/kfc200/vnav")!= 1){
-                setprop("instrumentation/kfc200/vnav",1);
-                setprop("autopilot/settings/target-altitude-ft",getprop("instrumentation/kfc200/alt-preset"));
-                }else{
-                setprop("instrumentation/kfc200/vnav",0);
-                }
+            <script><script>aerostar.FD.set_mode("ALT-ARM");</script>
             </script>
         </binding>
         </action>

@@ -4,13 +4,13 @@
 <sim>
     <model>
         <livery>
-            <name type="string">Black-Gold</name>
-            <texture>paint1.png</texture>
+            <name type="string">Maroon-White</name>
+            <texture>paint3.png</texture>
         </livery>
 		<registration>
-			<red>0.7</red>
-			<green>0.7</green>
-			<blue>0.7</blue>
+			<red>0.1</red>
+			<green>0.1</green>
+			<blue>0.1</blue>
 		</registration>
     </model>
 </sim>

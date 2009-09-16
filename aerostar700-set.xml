@@ -14,6 +14,11 @@
             <livery>
                 <file type="string">Black-Gold</file>
             </livery>
+			<registration>
+				<red type="double">0.7</red>
+				<green type="double">0.7</green>
+				<blue type="double">0.7</blue>
+			</registration>
         </model>
         <startup>
             <splash-texture>Aircraft/Aerostar-700/splash.png</splash-texture>
@@ -177,6 +182,19 @@
         </default>
     </menubar>
 
+    <multiplay>
+        <generic>
+            <int n="0" alias="/systems/electrical/outputs/strobe"/>
+			<int n="1" alias="/systems/electrical/outputs/beacon"/>
+			<int n="2" alias="/systems/electrical/outputs/nav-lights"/>
+			<string  alias="/sim/multiplay/callsign"/>
+			<float  alias="/controls/cabin-door/position-norm"/>
+			<float n="1" alias="/sim/model/registration/red"/>
+			<float n="2" alias="/sim/model/registration/green"/>
+			<float n="3" alias="/sim/model/registration/blue"/>
+        </generic>
+    </multiplay>
+
     </sim>
 
     <controls>
@@ -221,6 +239,8 @@
     <autopilot>
         <locks>
             <passive-mode type="bool">true</passive-mode>
+			<pitch-active type="bool">true</pitch-active>
+			<roll-active type="bool">true</roll-active>
         </locks>
     </autopilot>
 
@@ -297,12 +317,14 @@
             <file>Aircraft/Aerostar-700/Nasal/systems.nas</file>
             <file>Aircraft/Aerostar-700/Nasal/Electrical.nas</file>
             <file>Aircraft/Aerostar-700/Models/Instruments/kfc200/kfc-200.nas</file>
-            <file>Aircraft/Instruments-3d/kns80/KNS80.nas</file>
             <file>Aircraft/Instruments-3d/ky196/KY196.nas</file>
         </aerostar>
             <radar>
                 <file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file>
             </radar>
+			<systems>
+				<file>Aircraft/Instruments-3d/kns80/KNS80.nas</file>
+			</systems>	
     </nasal>
 
     <input>
@@ -313,6 +335,20 @@
                 <binding>
                     <command>nasal</command>
                     <script>aerostar.ap_settings.toggle()</script>
+                </binding>
+            </key>
+            <key n="4">
+                <name>Ctrl-D</name>
+                <desc>Open/close door</desc>
+                <binding>
+					<condition>
+						<less-than>
+							<property>velocities/airspeed-kt</property>
+							<value>40</value>
+						</less-than>
+					</condition>
+                    <command>nasal</command>
+                    <script>aerostar.cabin_door.toggle();</script>
                 </binding>
             </key>
         </keyboard>

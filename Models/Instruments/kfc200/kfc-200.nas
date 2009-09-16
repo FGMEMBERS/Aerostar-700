@@ -31,59 +31,47 @@ var KFC200 = {
         m.Llist=["wing-leveler","dg-heading-hold","dg-heading-hold","nav1-hold","dg-heading-hold","nav1-hold","dg-heading-hold","nav1-hold"];
         m.Vlist=["pitch-hold","alt-armed","altitude-hold","pitch-hold","gs1-hold"];
         m.Splist=["","speed-with-throttle"];
-        m.kfc200 = props.globals.getNode(prop1,1);
-        m.pwr = m.kfc200.getNode("fd-on",1);
-        m.pwr.setBoolValue(0);
-        m.serviceable = m.kfc200.getNode("serviceable",1);
-        m.serviceable.setBoolValue(1);
-        m.armed=m.kfc200.getNode("armed",1);
-        m.armed.setBoolValue(0);
-        m.gs_arm=m.kfc200.getNode("gs-arm",1);
-        m.gs_arm.setBoolValue(0);
-        m.coupled=m.kfc200.getNode("cpld",1);
-        m.coupled.setBoolValue(0);
-        m.alert=m.kfc200.getNode("alt-alert",1);
-        m.alert.setBoolValue(0);
-        m.alt=props.globals.getNode("autopilot/settings/target-altitude-ft",1);
-        m.alt.setDoubleValue(0);
-        m.dhalert=m.kfc200.getNode("dh-alert",1);
-        m.dhalert.setBoolValue(0);
-        m.DH=m.kfc200.getNode("DH",1);
-        m.DH.setDoubleValue(200);
-        m.asel=m.kfc200.getNode("alt-preset",1);
-        m.asel.setDoubleValue(0);
-        m.trim_fail=m.kfc200.getNode("trim-fail",1);
-        m.trim_fail.setBoolValue(0);
-        m.lnav=m.kfc200.getNode("lnav",1);
-        m.lnav.setIntValue(0);
-        m.vnav=m.kfc200.getNode("vnav",1);
-        m.vnav.setIntValue(0);
-        m.spd=m.kfc200.getNode("spd",1);
-        m.spd.setIntValue(0);
-        m.ap_off=props.globals.getNode("autopilot/locks/passive-mode",1);
-        m.ap_off.setBoolValue(1);
-        m.HDG = props.globals.getNode("/autopilot/locks/heading",1);
-        m.HDG.setValue(m.Llist[0]);
-        m.ALT = props.globals.getNode("/autopilot/locks/altitude",1);
-        m.ALT.setValue(m.Vlist[0]);
-        m.SPD = props.globals.getNode("/autopilot/locks/speed",1);
-        m.SPD.setValue(m.Splist[0]);
-        m.vbar_pitch=m.kfc200.getNode("command-bar-pitch",1);
-        m.vbar_pitch.setDoubleValue(0);
-        m.vbar_roll=m.kfc200.getNode("command-bar-roll",1);
-        m.vbar_roll.setDoubleValue(0);
-        m.GS1=props.globals.getNode("/instrumentation/nav/gs-needle-deflection-norm",1);
-        m.DF=props.globals.getNode("instrumentation/nav/heading-needle-deflection",1);
-        m.ROLL=props.globals.getNode("orientation/roll-deg",1);
-        m.PITCH=props.globals.getNode("orientation/pitch-deg",1);
-        m.tgt_ROLL=props.globals.getNode("autopilot/internal/target-roll-deg",1);
-        m.tgt_ROLL.setDoubleValue(0);
-        m.tgt_PITCH=props.globals.getNode("autopilot/settings/target-pitch-deg",1);
-        m.tgt_PITCH.setDoubleValue(0);
-    return m;
+        m.kfc200 = props.globals.initNode(prop1,1);
+        m.pwr = m.kfc200.initNode("fd-on",0,"BOOL");
+        m.serviceable = m.kfc200.initNode("serviceable",1,"BOOL");
+        m.armed=m.kfc200.initNode("armed",0,"BOOL");
+        m.gs_arm=m.kfc200.initNode("gs-arm",0,"BOOL");
+        m.coupled=m.kfc200.initNode("cpld",0,"BOOL");
+        m.alert=m.kfc200.initNode("alt-alert",0,"BOOL");
+        m.alt=props.globals.initNode("autopilot/settings/target-altitude-ft",0,"DOUBLE");
+        m.dhalert=m.kfc200.initNode("dh-alert",0,"BOOL");
+        m.DH=m.kfc200.initNode("DH",200,"DOUBLE");
+        m.asel=m.kfc200.initNode("alt-preset",0,"DOUBLE");
+        m.trim_fail=m.kfc200.initNode("trim-fail",0,"BOOL");
+        m.lnav=m.kfc200.initNode("lnav",0,"INT");
+        m.vnav=m.kfc200.initNode("vnav",0,"INT");
+        m.spd=m.kfc200.initNode("spd",0,"INT");
+        m.ap_off=props.globals.initNode("autopilot/locks/passive-mode",1,"BOOL");
+        m.HDG = props.globals.initNode("autopilot/locks/heading",m.Llist[0],"STRING");
+        m.ALT = props.globals.initNode("/autopilot/locks/altitude",m.Vlist[0],"STRING");
+        m.SPD = props.globals.initNode("/autopilot/locks/speed",m.Splist[0],"STRING");
+        m.vbar_pitch=m.kfc200.initNode("command-bar-pitch",0,"DOUBLE");
+        m.vbar_roll=m.kfc200.initNode("command-bar-roll",0,"DOUBLE");
+        m.GS1=props.globals.initNode("/instrumentation/nav/gs-needle-deflection-norm");
+        m.DF=props.globals.initNode("instrumentation/nav/heading-needle-deflection");
+        m.ROLL=props.globals.initNode("orientation/roll-deg");
+        m.PITCH=props.globals.initNode("orientation/pitch-deg");
+        m.tgt_ROLL=props.globals.initNode("autopilot/internal/target-roll-deg",0,"DOUBLE");
+        m.tgt_PITCH=props.globals.initNode("autopilot/settings/target-pitch-deg",0,"DOUBLE");
+		
+		m.Llnv = setlistener(m.lnav, func (ln){ var tmp = ln.getValue() ; m.HDG.setValue(m.Llist[tmp]);},1,0);
+		m.Lvnv = setlistener(m.vnav, func (vn){ var tmp = vn.getValue(); m.ALT.setValue(m.Vlist[tmp]);},1,0);
+		m.Lspd = setlistener(m.spd, func (spd){ var tmp = spd.getValue();m.SPD.setValue(m.Splist[tmp]);},1,0);
+		m.Lpwr = setlistener(m.pwr, func (pwr){ if(!pwr.getValue())m.kill_fd();},1,0);
+		m.Lap = setlistener(m.ap_off, func (ap){ if(!ap.getValue())m.tgt_PITCH.setValue(m.PITCH.getValue());},0,0);
+
+
+	return m;
     },
 #### update nav properties ####
     update_nav : func{
+		me.dh_check();
+		
         var inrange= me.get_nm_distance("vor");
         var lnav = me.lnav.getValue();
         var vnav = me.vnav.getValue();
@@ -148,22 +136,12 @@ me.vbar_pitch.setValue(vpitch);
 me.vbar_roll.setValue(vroll);
     },
 
-### update AP locks ###
-    update_ap : func{
-        var tmp =me.lnav.getValue();
-        setprop("/autopilot/locks/heading",me.Llist[tmp]);
-        tmp =me.vnav.getValue();
-        setprop("/autopilot/locks/altitude",me.Vlist[tmp]);
-        tmp =me.spd.getValue();
-        setprop("/autopilot/locks/speed",me.Splist[tmp]);
-    },
 ### Decision Hold check ###
     dh_check : func{
         var tst =0;
         var myalt=getprop("position/gear-agl-ft");
-        if(myalt < me.DH)tst = 1;
-        me.dh_alert.setBoolValue(tst);
-        return(tst);
+        if(myalt < me.DH.getValue())tst = 1;
+        me.dhalert.setValue(tst);
     },
 ### FD off ###
     kill_fd : func{
@@ -209,7 +187,8 @@ me.vbar_roll.setValue(vroll);
 
         if(mode == "FD"){
             idx =1;
-            me.pwr.setValue(1-me.pwr.getValue());
+			var fdtoggle = me.pwr.getValue();
+            me.pwr.setValue(1- fdtoggle);
         }elsif(mode == "HDG"){
             idx =1;
             if(me.lnav.getValue() == idx)idx = 0;
@@ -222,7 +201,7 @@ me.vbar_roll.setValue(vroll);
             idx =2;
             if(me.vnav.getValue() == idx)idx = 0;
             if(idx ==2){
-                me.alt.setValue(getprop("position/altitude-ft"));
+                me.alt.setValue(getprop("instrumentation/altimeter/mode-c-alt-ft"));
             }
             me.vnav.setValue(idx);
         }elsif(mode == "ALT-ARM"){
@@ -243,7 +222,7 @@ me.vbar_roll.setValue(vroll);
         }elsif(mode == "BC"){
             var tmp = me.lnav.getValue();
             setprop("instrumentation/nav/back-course-btn",1-getprop("instrumentation/nav/back-course-btn"));
-            if(tmp<2)setprop("instrumentation/nav/back-course-btn",0);
+            if(tmp!=5)setprop("instrumentation/nav/back-course-btn",0);
             return;
         }
     },
@@ -269,41 +248,11 @@ me.vbar_roll.setValue(vroll);
 var FD=KFC200.new("/instrumentation/kfc200");
 
 setlistener("/sim/signals/fdm-initialized", func {
-    FD.update_ap();
     settimer(update,5);
     print("KFC-200 ... Check");
     });
 
-setlistener(FD.pwr, func(fd){
-    var fdON = fd.getBoolValue();
-    FD.kill_fd();
-    },0,0);
-
-setlistener(FD.ap_off, func(ap){
-    if(!ap.getBoolValue()){
-        FD.tgt_PITCH.setValue(FD.PITCH.getValue());
-        }
-    },0,0);
-
-setlistener("/autopilot/settings/target-altitude-ft",func(at){
-    alt_select = at.getValue();
-    },0,0);
-
-setlistener("/autopilot/route-manager/min-lock-altitude-agl-ft",func(dh){
-    DH = dh.getValue();
-    },0,0);
-
-
-setlistener(FD.vnav, func(vn){
-    FD.update_ap();
-},0,0);
-
-setlistener(FD.lnav, func(ln){
-    FD.update_ap();
-},0,0);
-
 var update = func {
-    FD.dh_check;
     FD.update_nav();
     settimer(update, 0);
     }

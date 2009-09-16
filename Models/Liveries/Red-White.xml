@@ -5,8 +5,13 @@
     <model>
         <livery>
             <name type="string">Red-White</name>
-            <texture>paint2.png</texture>
+            <texture>paint4.png</texture>
         </livery>
+		<registration>
+			<red>0.1</red>
+			<green>0.1</green>
+			<blue>0.1</blue>
+		</registration>
     </model>
 </sim>
 </PropertyList>

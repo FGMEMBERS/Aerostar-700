@@ -4,8 +4,8 @@
 <sim>
     <model>
         <livery>
-            <name type="string">Black-Gold</name>
-            <texture>paint1.png</texture>
+            <name type="string">Red-Blue</name>
+            <texture>paint2.png</texture>
         </livery>
 		<registration>
 			<red>0.7</red>

@@ -94,11 +94,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>
-                    if(getprop("/instrumentation/kfc200/fdmode") != "hdg"){
-                    setprop("/instrumentation/kfc200/fdmode","hdg");}
-                    else{setprop("/instrumentation/kfc200/fdmode","off");}
-                </script>
+                <script>aerostar.FD.set_mode("HDG");</script>
             </binding>
         </action>
     </animation>
@@ -110,8 +106,8 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>property-toggle</command>
-                <property>/instrumentation/kfc200/fd-on</property>
+                <command>nasal</command>
+                <script>aerostar.FD.set_mode("FD");</script>
             </binding>
         </action>
     </animation>
@@ -124,11 +120,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>
-                    if(getprop("/instrumentation/kfc200/fdmodeV") != "alt-arm"){
-                    setprop("/instrumentation/kfc200/fdmodeV","alt-arm");}
-                    else{setprop("/instrumentation/kfc200/fdmodeV","off");}
-                </script>
+                <script>aerostar.FD.set_mode("ALT");</script>
             </binding>
         </action>
     </animation>
@@ -140,13 +132,9 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>nasal</command>
-                <script>
-                    if(getprop("/instrumentation/kfc200/fdmode") != "nav-arm"){
-                    setprop("/instrumentation/kfc200/fdmode","nav-arm");}
-                    else{setprop("/instrumentation/kfc200/fdmode","off");}
-                </script>
-            </binding>
+				<command>nasal</command>
+				<script>aerostar.FD.set_mode("NAV");</script>
+			</binding>
         </action>
     </animation>
     
@@ -158,11 +146,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>
-                    if(getprop("/instrumentation/kfc200/fdmode") != "bc"){
-                    setprop("/instrumentation/kfc200/fdmode","bc");}
-                    else{setprop("/instrumentation/kfc200/fdmode","off");}
-                </script>
+                <script>aerostar.FD.set_mode("BC");</script>
             </binding>
         </action>
     </animation>
@@ -175,12 +159,8 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>nasal</command>
-                <script>
-                    if(getprop("/instrumentation/kfc200/fdmode") != "appr"){
-                    setprop("/instrumentation/kfc200/fdmode","appr");}
-                    else{setprop("/instrumentation/kfc200/fdmode","off");}
-                </script>
-            </binding>
+                <script>aerostar.FD.set_mode("APPR");</script>
+			</binding>
         </action>
     </animation>
 
