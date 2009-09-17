@@ -220,7 +220,12 @@ me.vbar_roll.setValue(vroll);
         }elsif(mode == "ALT-ARM"){
             me.altarmed=1-me.altarmed;
 			me.alt_armed.setValue(me.altarmed);
-			if(me.altarmed!=0)me.alt.setValue(me.asel.getValue());
+			if(me.altarmed!=0){
+                me.alt.setValue(me.asel.getValue());
+            }
+            else{
+                me.local_vnav=0;
+            }
 		}elsif(mode == "APPR"){
             idx =4;
             if(!getprop("/instrumentation/nav/nav-loc"))idx=2;

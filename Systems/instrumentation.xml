@@ -86,6 +86,11 @@ This file selects the instrumentation modules that should be available.
         <number>0</number>
     </radar>
 
+    <marker-beacon>
+        <name>marker-beacon</name>
+        <number>0</number>
+    </marker-beacon>
+
     <KR-87>
         <name>kr-87</name>
         <number>0</number>
