@@ -80,13 +80,12 @@ var KFC200 = {
 #### update nav properties ####
     update_nav : func{
 		me.dh_check();
-		var inrange= me.get_nm_distance("vor");
         var lnav = me.local_lnav;
         var vnav = me.local_vnav;
         var GS1 = me.GS1.getValue();
         var DF = me.DF.getValue();
 
-        if(inrange < 30){
+        if(getprop("/instrumentation/nav[0]/in-range")){
             if(lnav == 2 or lnav == 4){
                 me.armed.setValue(1);
                 me.coupled.setValue(0);
@@ -103,7 +102,7 @@ var KFC200 = {
                 if(me.gs_arm.getValue()){
                     # the KFC-200 manual doesn't specify the permitted
                     # capture deviation, 20% is a guess.
-                    if(me.get_nm_distance("gs") < 20000){
+                    if(getprop("/instrumentation/nav[0]/gs-in-range")){
                         if( GS1< 0.2 and GS1 > -0.2){
                             vnav = 4;
                             me.vnav.setValue(vnav);
@@ -169,19 +168,6 @@ me.vbar_roll.setValue(vroll);
     }
     me.alert.setValue(alert);
     return(offset);
-    },
-### get VOR/GS nm range ###
-    get_nm_distance : func(src){
-    var rslt =0;
-    if(src=="vor"){
-        rslt=getprop("/instrumentation/nav/nav-distance");
-        if(rslt==nil)rslt=0;
-        }elsif(src=="gs"){
-            rslt=getprop("/instrumentation/nav/gs-distance");
-            if(rslt==nil)rslt=0;
-            }
-    rslt = rslt * 0.000539956803;
-    return(rslt);
     },
 #### get button inputs ####
     set_mode : func(md){
