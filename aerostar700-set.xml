@@ -288,10 +288,15 @@
             <display-mode type="string">arc</display-mode>
             <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/RDR-160/od_wxradar.png</radar-texture-path>
             <echo-texture-path type="string" archive="y">Aircraft/Instruments/Textures/wxecho.rgb</echo-texture-path>
+            <limit-deg type="int">45</limit-deg>
             <display-controls>
                 <WX type="bool" archive="y">false</WX>
                 <data type="bool" archive="y">false</data>
                 <pos type="bool" archive="y">true</pos>
+                <symbol type="bool">false</symbol>
+                <rotate type="bool">false</rotate>
+                <tcas type="bool">false</tcas>
+                <abs-altitude type="bool">false</abs-altitude>
             </display-controls>
         </radar>
         <inst-vertical-speed-indicator>
