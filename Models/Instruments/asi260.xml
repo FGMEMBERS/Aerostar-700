@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 <!-- 
-Airspeed Indicator (300 kt)
+Airspeed Indicator (260 kt)
 Syd Adams
+texture by tigert
 -->
 <PropertyList>
 
-    <path>asi300.ac</path>
+    <path>asi260.ac</path>
     
     <animation>
         <type>material</type>
@@ -22,13 +23,14 @@ Syd Adams
     <animation>
         <type>rotate</type>
         <object-name>ASIneedle</object-name>
-        <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <property>velocities/airspeed-kt</property>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
-            <entry><ind>30</ind><dep>0</dep></entry>
-            <entry><ind>40</ind><dep>18</dep></entry>
-            <entry><ind>180</ind><dep>270</dep></entry>
-            <entry><ind>260</ind><dep>340</dep></entry>
+            <entry><ind>40</ind><dep>119</dep></entry>
+            <entry><ind>60</ind><dep>39</dep></entry>
+            <entry><ind>80</ind><dep>64</dep></entry>
+            <entry><ind>180</ind><dep>239</dep></entry>
+            <entry><ind>260</ind><dep>339</dep></entry>
         </interpolation>
         <axis>
             <x>-1.0</x>

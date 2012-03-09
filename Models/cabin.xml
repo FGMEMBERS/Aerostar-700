@@ -285,14 +285,10 @@
                     <property>systems/electrical/volts</property>
                     <value>1.0</value>
                 </greater-than>
-                <greater-than>
+                <equals>
                     <property>gear/gear[0]/position-norm</property>
                     <value>0</value>
-                </greater-than>
-                <less-than>
-                    <property>gear/gear[0]/position-norm</property>
-                    <value>1.0</value>
-                </less-than>
+                </equals>
             </and>
         </condition>
     </animation>
@@ -868,7 +864,151 @@
         </axis>
     </animation>
 
+<!--  annunciators -->
+
+    <animation>
+        <type>select</type>
+        <object-name>annun.01</object-name>
+        <condition>
+            <property>instrumentation/annunciators/indicator01</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>annun.02</object-name>
+        <condition>
+            <property>instrumentation/annunciators/indicator02</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>annun.03</object-name>
+        <condition>
+            <property>instrumentation/annunciators/indicator03</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>annun.04</object-name>
+        <condition>
+            <property>instrumentation/annunciators/indicator04</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>annun.05</object-name>
+        <condition>
+            <property>instrumentation/annunciators/indicator05</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>annun.06</object-name>
+        <condition>
+            <property>instrumentation/annunciators/indicator06</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>annun.07</object-name>
+        <condition>
+            <property>instrumentation/annunciators/indicator07</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>annun.08</object-name>
+        <condition>
+            <property>instrumentation/annunciators/indicator08</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>annun.09</object-name>
+        <condition>
+            <property>instrumentation/annunciators/indicator09</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>annun.10</object-name>
+        <condition>
+            <property>instrumentation/annunciators/indicator10</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>annun.11</object-name>
+        <condition>
+            <property>instrumentation/annunciators/indicator11</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>annun.12</object-name>
+        <condition>
+            <property>instrumentation/annunciators/indicator12</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>annun.13</object-name>
+        <condition>
+            <property>instrumentation/annunciators/indicator13</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>annun.14</object-name>
+        <condition>
+            <property>instrumentation/annunciators/indicator14</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>annun.15</object-name>
+        <condition>
+            <property>instrumentation/annunciators/indicator15</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>annun.16</object-name>
+        <condition>
+            <property>instrumentation/annunciators/indicator16</property>
+        </condition>
+    </animation>
+
+
 <!--####    OSG hotspots    ####-->
+
+    <animation>
+        <type>pick</type>
+        <object-name>annun.test</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/annunciators/test-btn</property>
+        <value>1</value>
+            </binding>
+        </action>
+    </animation>
 
     <animation>
         <type>pick</type>
@@ -1220,12 +1360,12 @@
             </entry>
         </interpolation>
         <axis>
-            <x1-m>-0.576</x1-m>
-            <y1-m>-0.459</y1-m>
-            <z1-m>0.725</z1-m>
-            <x2-m>-0.112</x2-m>
-            <y2-m>-0.459</y2-m>
-            <z2-m>0.725</z2-m>
+            <x1-m>-0.538</x1-m>
+            <y1-m>-0.530</y1-m>
+            <z1-m>0.680</z1-m>
+            <x2-m>-0.095</x2-m>
+            <y2-m>-0.530</y2-m>
+            <z2-m>0.680</z2-m>
         </axis>
     </animation>
 
@@ -1242,13 +1382,154 @@
             </entry>
         </interpolation>
         <axis>
-            <x1-m>-0.792</x1-m>
-            <y1-m>-0.598</y1-m>
-            <z1-m>-0.269</z1-m>
-            <x2-m>-0.115</x2-m>
-            <y2-m>-0.598</y2-m>
-            <z2-m>-0.269</z2-m>
+            <x1-m>-0.735</x1-m>
+            <y1-m>-0.574</y1-m>
+            <z1-m>-0.424</z1-m>
+            <x2-m>-0.096</x2-m>
+            <y2-m>-0.574</y2-m>
+            <z2-m>-0.424</z2-m>
         </axis>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>Throttle0</object-name>
+        <action>
+            <button>0</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.05</interval-sec>
+        <binding>
+                 <command>nasal</command>
+            <script>aerostar.set_levers("throttle",0,0.035,1);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Throttle0</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.05</interval-sec>
+            <binding>
+                 <command>nasal</command>
+            <script>aerostar.set_levers("throttle",0,0.035,0);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Throttle1</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.05</interval-sec>
+            <binding>
+                 <command>nasal</command>
+            <script>aerostar.set_levers("throttle",1,0.035,0);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Mix0</object-name>
+        <action>
+            <button>0</button>
+        <repeatable>true</repeatable>
+        <interval-sec>0.05</interval-sec>
+        <binding>
+                 <command>nasal</command>
+            <script>aerostar.set_levers("mixture",0,0.035,1);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Mix0</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.05</interval-sec>
+            <binding>
+                 <command>nasal</command>
+                <script>aerostar.set_levers("mixture",0,0.035,0);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Mix1</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.05</interval-sec>
+            <binding>
+                 <command>nasal</command>
+                <script>aerostar.set_levers("mixture",1,0.035,0);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Prop0</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.05</interval-sec>
+            <binding>
+                 <command>nasal</command>
+                <script>aerostar.set_levers("prop",0,0.035,1);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Prop0</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.05</interval-sec>
+            <binding>
+                <command>nasal</command>
+                <script>aerostar.set_levers("prop",0,0.035,0);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Prop1</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.05</interval-sec>
+            <binding>
+                <command>nasal</command>
+                <script>aerostar.set_levers("prop",1,0.035,0);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FlapLever</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.05</interval-sec>
+            <binding>
+                <command>nasal</command>
+                <script>aerostar.set_levers("flap",0,-0.05,0);</script>
+            </binding>
+        </action>
     </animation>
 
 </PropertyList>

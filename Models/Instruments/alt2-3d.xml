@@ -11,7 +11,6 @@
         <object-name>needle100</object-name>
         <object-name>needle1000</object-name>
         <object-name>needle10000</object-name>
-        <object-name>inhg</object-name>
         <object-name>InhgKnob</object-name>
         <emission>
             <red>0.8</red>
@@ -62,8 +61,8 @@
         <object-name>ALTinhg</object-name>
         <property>instrumentation/altimeter/setting-inhg</property>
         <interpolation>
-            <entry><ind>28.1</ind><dep>0.0</dep></entry>
-            <entry><ind>31.0</ind><dep>336.7</dep></entry>
+            <entry><ind>27.90</ind><dep>0.0</dep></entry>
+            <entry><ind>31.40</ind><dep>349.88</dep></entry>
         </interpolation>
         <axis>
             <x>1</x>
@@ -85,8 +84,8 @@
                 <command>property-adjust</command>
                 <property>instrumentation/altimeter/setting-inhg</property>
                 <step>0.01</step>
-                <min>26.0</min>
-                <max>33.0</max>
+                <min>27.9</min>
+                <max>31.40</max>
                 <wrap>false</wrap>
             </binding>
         </action>
@@ -103,8 +102,8 @@
                 <command>property-adjust</command>
                 <property>instrumentation/altimeter/setting-inhg</property>
                 <step>-0.01</step>
-                <min>26.0</min>
-                <max>33.0</max>
+                <min>27.9</min>
+                <max>31.40</max>
                 <wrap>false</wrap>
             </binding>
         </action>
@@ -119,8 +118,8 @@
                 <command>property-adjust</command>
                 <property>instrumentation/altimeter/setting-inhg</property>
                 <step>0.01</step>
-                <min>26.0</min>
-                <max>33.0</max>
+                <min>27.9</min>
+                <max>31.40</max>
                 <wrap>false</wrap>
             </binding>
         </action>
@@ -135,8 +134,8 @@
                 <command>property-adjust</command>
                 <property>instrumentation/altimeter/setting-inhg</property>
                 <step>-0.01</step>
-                <min>26.0</min>
-                <max>33.0</max>
+                <min>27.9</min>
+                <max>31.40</max>
                 <wrap>false</wrap>
             </binding>
         </action>

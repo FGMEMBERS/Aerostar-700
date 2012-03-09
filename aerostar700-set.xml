@@ -14,11 +14,11 @@
             <livery>
                 <file type="string">Black-Gold</file>
             </livery>
-			<registration>
-				<red type="double">0.7</red>
-				<green type="double">0.7</green>
-				<blue type="double">0.7</blue>
-			</registration>
+            <registration>
+                <red type="double">0.7</red>
+                <green type="double">0.7</green>
+                <blue type="double">0.7</blue>
+            </registration>
         </model>
         <startup>
             <splash-texture>Aircraft/Aerostar-700/splash.png</splash-texture>
@@ -52,20 +52,21 @@
             <type>lookfrom</type>
             <internal type="bool">true</internal>
             <config>
+            <ground-level-nearplane-m type="double">0.1f</ground-level-nearplane-m>
                 <x-offset-m type="double">-0.30</x-offset-m>
                 <y-offset-m type="double">0.6</y-offset-m>
                 <z-offset-m type="double">-0.28</z-offset-m>
-                <pitch-offset-deg>-15</pitch-offset-deg>
+                <pitch-offset-deg>-12</pitch-offset-deg>
                 <limits>
                     <enabled type="bool">true</enabled>
                     <left>
                     <heading-max-deg type="double">140</heading-max-deg>
-                    <x-offset-max-m type="double">0.15</x-offset-max-m>
+                    <x-offset-max-m type="double">0.10</x-offset-max-m>
                     <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
                     </left>
                     <right>
                         <heading-max-deg type="double">160</heading-max-deg>
-                        <x-offset-max-m type="double">0.15</x-offset-max-m>
+                        <x-offset-max-m type="double">0.10</x-offset-max-m>
                         <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
                     </right>
                 </limits>
@@ -99,6 +100,100 @@
         </view>
 
 
+
+        <view n="100">
+            <name>Pass-RR</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+        <from-model type="bool">true</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+        <ground-level-nearplane-m type="double">0.2f</ground-level-nearplane-m>
+        <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        <default-pitch-deg type="double">0</default-pitch-deg>
+        <default-heading-deg type="double">0</default-heading-deg>
+                <x-offset-m type="double">0.314</x-offset-m>
+                <y-offset-m type="double">0.536</y-offset-m>
+                <z-offset-m type="double">1.388</z-offset-m>
+                <pitch-offset-deg>0</pitch-offset-deg>
+            </config>
+        </view>
+
+        <view n="101">
+            <name>Pass-LR</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+        <from-model type="bool">true</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+        <ground-level-nearplane-m type="double">0.2f</ground-level-nearplane-m>
+        <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        <default-pitch-deg type="double">0</default-pitch-deg>
+        <default-heading-deg type="double">0</default-heading-deg>
+                <x-offset-m type="double">-0.314</x-offset-m>
+                <y-offset-m type="double">0.536</y-offset-m>
+                <z-offset-m type="double">1.388</z-offset-m>
+                <pitch-offset-deg>0</pitch-offset-deg>
+            </config>
+        </view>
+
+        <view n="102">
+            <name>Pass-RF</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+        <from-model type="bool">true</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+        <ground-level-nearplane-m type="double">0.2f</ground-level-nearplane-m>
+        <heading-offset-deg type="double">180</heading-offset-deg>
+        <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        <default-pitch-deg type="double">0</default-pitch-deg>
+        <default-heading-offset-deg>180</default-heading-offset-deg>
+                <x-offset-m type="double">0.314</x-offset-m>
+                <y-offset-m type="double">0.536</y-offset-m>
+                <z-offset-m type="double">0.20</z-offset-m>
+                <pitch-offset-deg>0</pitch-offset-deg>
+            </config>
+        </view>
+
+        <view n="103">
+            <name>Pass-LF</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+        <from-model type="bool">true</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+        <ground-level-nearplane-m type="double">0.2f</ground-level-nearplane-m>
+        <heading-offset-deg type="double">180</heading-offset-deg>
+        <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        <default-pitch-deg type="double">0</default-pitch-deg>
+        <default-heading-offset-deg>180</default-heading-offset-deg>
+                <x-offset-m type="double">-0.314</x-offset-m>
+                <y-offset-m type="double">0.536</y-offset-m>
+                <z-offset-m type="double">0.20</z-offset-m>
+                <pitch-offset-deg>0</pitch-offset-deg>
+            </config>
+        </view>
+    
+        <view n="1042">
+            <name>Copilot</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+        <from-model type="bool">true</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+        <ground-level-nearplane-m type="double">0.2f</ground-level-nearplane-m>
+        <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        <default-pitch-deg type="double">0</default-pitch-deg>
+        <default-heading-deg type="double">0</default-heading-deg>
+        <x-offset-m type="double">0.30</x-offset-m>
+                <y-offset-m type="double">0.6</y-offset-m>
+                <z-offset-m type="double">-0.28</z-offset-m>
+                <pitch-offset-deg>-12</pitch-offset-deg>
+            </config>
+        </view>
+    
+    
     <airport>
         <runways>
             <start-offset-m>20</start-offset-m>
@@ -114,14 +209,6 @@
 
         <turbulence-effect type = "bool">true</turbulence-effect>
         <allow-toggle-cockpit>true</allow-toggle-cockpit>
-
-        <flaps>
-            <setting>0.00</setting> <!-- UP -->
-            <setting>0.25</setting> <!-- 10 -->
-            <setting>0.50</setting> <!-- 20 -->
-            <setting>0.75</setting> <!-- 30 -->
-            <setting>1.0</setting> <!-- FULL -->
-        </flaps>
 
         <weight n="0">
             <name>Crew</name>
@@ -141,6 +228,14 @@
 
         <help>
             <title>Aerostar Super 700</title>
+        <key>
+            <name>q</name>
+            <desc>steer left</desc>
+        </key>
+        <key>
+            <name>e</name>
+            <desc>steer right</desc>
+        </key>
         </help>
 
     <menubar>
@@ -185,13 +280,15 @@
     <multiplay>
         <generic>
             <int n="0" alias="/systems/electrical/outputs/strobe"/>
-			<int n="1" alias="/systems/electrical/outputs/beacon"/>
-			<int n="2" alias="/systems/electrical/outputs/nav-lights"/>
-			<string  alias="/sim/multiplay/callsign"/>
-			<float  alias="/controls/cabin-door/position-norm"/>
-			<float n="1" alias="/sim/model/registration/red"/>
-			<float n="2" alias="/sim/model/registration/green"/>
-			<float n="3" alias="/sim/model/registration/blue"/>
+            <int n="1" alias="/systems/electrical/outputs/beacon"/>
+            <int n="2" alias="/systems/electrical/outputs/nav-lights"/>
+            <int n="3" alias="/systems/electrical/outputs/landing-lights"/>
+            <string  alias="/sim/multiplay/callsign"/>
+            <float  alias="/controls/cabin-door/position-norm"/>
+            <float n="1" alias="/sim/model/registration/red"/>
+            <float n="2" alias="/sim/model/registration/green"/>
+            <float n="3" alias="/sim/model/registration/blue"/>
+            <float  n="4" alias="/position/altitude-agl-ft"/>
         </generic>
     </multiplay>
 
@@ -201,6 +298,7 @@
         <electric>
             <external-power>0</external-power>
             <battery-switch>0</battery-switch>
+            <steering-toggle type="double">0</steering-toggle>
             <engine n="0">
                 <generator>0</generator>
             </engine>
@@ -220,6 +318,10 @@
                 <magnetos>0</magnetos>
             </engine>
         </engines>
+        <throttle-coupled type="bool">1</throttle-coupled>
+        <mixture-coupled type="bool">1</mixture-coupled>
+        <prop-coupled type="bool">1</prop-coupled>
+        <movement-scale type="double">0.025</movement-scale>
     </controls>
 
     <consumables>
@@ -239,8 +341,8 @@
     <autopilot>
         <locks>
             <passive-mode type="bool">true</passive-mode>
-			<pitch-active type="bool">true</pitch-active>
-			<roll-active type="bool">true</roll-active>
+            <pitch-active type="bool">true</pitch-active>
+            <roll-active type="bool">true</roll-active>
         </locks>
     </autopilot>
 
@@ -267,11 +369,12 @@
 
     <instrumentation>
         <radar>
-            <serviceable type="bool" archive="y">true</serviceable>
-            <switch type="string" archive="y">off</switch>
-            <mode-control type="int" archive="y">3</mode-control>
-            <range type="int" archive="y">20</range>
-            <mode type="string"	archive="y">WX</mode>
+            <serviceable type="bool">true</serviceable>
+            <switch type="string">off</switch>
+            <mode-control type="int">1</mode-control>
+            <range type="int">20</range>
+            <mode type="string">WX</mode>
+        <reference-range-nm type="double">180</reference-range-nm>
             <font>
                 <name type="string">typewriter.txf</name>
                 <size type="float">6</size>
@@ -283,16 +386,16 @@
                     <alpha type="float">1</alpha>
                 </color>
             </font>
-            <heading-marker type="bool"	archive="y">false</heading-marker>
-            <lightning type="bool" archive="y">false</lightning>
+            <heading-marker type="bool">false</heading-marker>
+            <lightning type="bool">false</lightning>
             <display-mode type="string">arc</display-mode>
-            <radar-texture-path type="string" archive="y">Aircraft/Instruments-3d/RDR-160/od_wxradar.png</radar-texture-path>
-            <echo-texture-path type="string" archive="y">Aircraft/Instruments/Textures/wxecho.rgb</echo-texture-path>
+            <radar-texture-path type="string">Aircraft/Instruments-3d/RDR-160/od_wxradar.png</radar-texture-path>
+            <echo-texture-path type="string">Aircraft/Instruments-3d/RDR-160/wxecho.png</echo-texture-path>
             <limit-deg type="int">45</limit-deg>
             <display-controls>
-                <WX type="bool" archive="y">false</WX>
-                <data type="bool" archive="y">false</data>
-                <pos type="bool" archive="y">true</pos>
+                <WX type="bool">false</WX>
+                <data type="bool">false</data>
+                <pos type="bool">true</pos>
                 <symbol type="bool">false</symbol>
                 <rotate type="bool">false</rotate>
                 <tcas type="bool">false</tcas>
@@ -311,9 +414,9 @@
         </kr-87>
         <dme>
             <serviceable type="bool">1</serviceable>
-			<frequencies>
-				<source type="string">instrumentation/nav/frequencies/selected-mhz</source>
-			</frequencies>
+            <frequencies>
+                <source type="string">instrumentation/nav/frequencies/selected-mhz</source>
+            </frequencies>
         </dme>
     </instrumentation>
 
@@ -326,9 +429,9 @@
             <radar>
                 <file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file>
             </radar>
-			<systems>
-				<file>Aircraft/Instruments-3d/kns80/KNS80.nas</file>
-			</systems>	
+            <systems>
+                <file>Aircraft/Instruments-3d/kns80/KNS80.nas</file>
+            </systems>
     </nasal>
 
     <input>
@@ -345,16 +448,74 @@
                 <name>Ctrl-D</name>
                 <desc>Open/close door</desc>
                 <binding>
-					<condition>
-						<less-than>
-							<property>velocities/airspeed-kt</property>
-							<value>40</value>
-						</less-than>
-					</condition>
+                    <condition>
+                        <less-than>
+                            <property>velocities/airspeed-kt</property>
+                            <value>40</value>
+                        </less-than>
+                    </condition>
                     <command>nasal</command>
                     <script>aerostar.cabin_door.toggle();</script>
                 </binding>
             </key>
+        <key n="91">
+        <repeatable type="bool">true</repeatable>
+        <interval-sec>0.05</interval-sec>
+        <name>[</name>
+        <desc>Decrease flaps</desc>
+        <binding>
+            <command>nasal</command>
+            <script>controls.flapsDown(-1)</script>
+        </binding>
+        <mod-up>
+            <binding>
+                <command>nasal</command>
+                <script>controls.flapsDown(0)</script>
+            </binding>
+        </mod-up>
+        </key>
+        <key n="93">
+            <name>]</name>
+            <repeatable type="bool">true</repeatable>
+            <interval-sec>0.05</interval-sec>
+            <desc>Increase flaps</desc>
+            <binding>
+                <command>nasal</command>
+                <script>controls.flapsDown(1)</script>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>nasal</command>
+                    <script>controls.flapsDown(0)</script>
+                </binding>
+            </mod-up>
+        </key>
+        <key n="113">
+            <name>q</name>
+            <repeatable>true</repeatable>
+            <desc>steer left</desc>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/electric/steering-toggle</property>
+                <step>-0.02</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>0</wrap>
+            </binding>
+        </key>
+        <key n="101">
+            <name>e</name>
+            <repeatable>true</repeatable>
+            <desc>steer right</desc>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/electric/steering-toggle</property>
+                <step>0.02</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>0</wrap>
+            </binding>
+        </key>
         </keyboard>
     </input>
 

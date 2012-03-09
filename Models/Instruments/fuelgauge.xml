@@ -41,7 +41,7 @@
     <animation>
         <type>rotate</type>
         <object-name>CTRfuel.needle</object-name>
-        <property>consumables/fuel/tank[2]/level-gal_us</property>
+        <property>consumables/fuel/tank[1]/level-gal_us</property>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
             <entry><ind>41.5</ind><dep>82</dep></entry>
@@ -61,7 +61,7 @@
     <animation>
         <type>rotate</type>
         <object-name>RHfuel.needle</object-name>
-        <property>consumables/fuel/tank[1]/level-gal_us</property>
+        <property>consumables/fuel/tank[2]/level-gal_us</property>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
             <entry><ind>30</ind><dep>47.5</dep></entry>
