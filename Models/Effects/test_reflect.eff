@@ -1,8 +1,13 @@
 <PropertyList>
     <name>Effects/test_reflect</name>
-    <inherits-from>Effects/reflect</inherits-from>
-
+    <inherits-from>Effects/model-combined</inherits-from>
     <parameters>
+                <normalmap-enabled type="int">0</normalmap-enabled>
+                <lightmap-enabled type="int">0</lightmap-enabled>
+                <reflection-enabled type="int">1</reflection-enabled>
+                <reflection-dynamic type="int">1</reflection-dynamic>
+                <reflect_map-enabled type="int">0</reflect_map-enabled>
+                <reflection-correction type="float">0.0</reflection-correction>
         <texture n="5">
             <type>cubemap</type>
             <images>
@@ -14,11 +19,8 @@
                 <negative-z>Aircraft/Generic/Effects/fgfs-sky2/5.png</negative-z>
             </images>
         </texture>
-        <rainbowiness type="float">0.05</rainbowiness>
-        <fresneliness>0.1</fresneliness>
-        <refl_correction>0.0</refl_correction>
+                <reflection-rainbow type="float">0.05</reflection-rainbow>
+                <reflection-fresnel type="float">0.1</reflection-fresnel>
         <ambient_correction>0.1</ambient_correction>
-        <reflect_map>0</reflect_map>
     </parameters>
-
 </PropertyList>
