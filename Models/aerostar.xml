@@ -65,7 +65,7 @@
         <texture>paint1.png</texture>
     </animation>
 
-   <!--effect>
+   <effect>
       <inherits-from>Aircraft/Aerostar-700/Models/Effects/test_reflect</inherits-from>
       <object-name>Fuselage</object-name>
       <object-name>RFdoor</object-name>
@@ -94,7 +94,7 @@
       <object-name>RHwheeldoor</object-name>
       <object-name>Cabin.door1</object-name>
       <object-name>Cabin.door2</object-name>
-    </effect-->
+    </effect>
 
     <animation>
         <type>shader</type>
