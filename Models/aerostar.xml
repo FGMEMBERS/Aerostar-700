@@ -15,7 +15,6 @@
         </offsets>
     </model>
 
-
     <nasal>
         <load>
             var livery_update = aircraft.livery_update.new("Aircraft/Aerostar-700/Models/Liveries", 10);
@@ -103,6 +102,18 @@
         <object-name>doorglass</object-name>
         <object-name>glass</object-name>
     </animation>
+
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>doorglass</object-name>
+        <object-name>glass</object-name>
+        <object-name>LHpropblur</object-name>
+        <object-name>RHpropblur</object-name>
+        <object-name>LHpropdisc</object-name>
+        <object-name>RHpropdisc</object-name>
+        <object-name>redglow</object-name>
+        <object-name>greenglow</object-name>
+    </effect>
 
     <model>
         <name>cabin</name>

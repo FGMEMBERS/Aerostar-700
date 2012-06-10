@@ -9,6 +9,9 @@
         <object-name>shadow.plane</object-name>
         <condition>
             <and>
+                <not>
+                    <property>/sim/rendering/rembrandt/enabled</property>
+                </not>
                 <less-than>
                     <property>sim/multiplay/generic/float[4]</property>
                     <value>500</value>
