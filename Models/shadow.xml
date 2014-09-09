@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>shadow.ac</path>
+    
+    <animation>
+        <type>select</type>
+        <object-name>shadow.plane</object-name>
+        <condition>
+            <and>
+                <not>
+                    <property>/sim/rendering/rembrandt/enabled</property>
+                </not>
+                <less-than>
+                    <property>sim/multiplay/generic/float[4]</property>
+                    <value>500</value>
+                </less-than>
+                <greater-than>
+                    <property>rendering/scene/ambient/blue</property>
+                <value>0.35</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>    
+
+    <animation>
+        <type>rotate</type>
+        <object-name>shadow.plane</object-name>
+        <property>orientation/pitch-deg</property>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>shadow.plane</object-name>
+        <property>orientation/roll-deg</property>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>shadow.plane</object-name>
+        <property>sim/multiplay/generic/float[4]</property>
+        <factor>0.3048</factor>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>-1</z>
+        </axis>
+    </animation>
+
+</PropertyList>

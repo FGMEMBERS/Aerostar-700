@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!--  KI 227-00 
+ADF Heading Indicator -manually rotated compass card
+Syd Adams 
+-->
+
+<PropertyList>
+
+    <path>ki227.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>KI227card</object-name>
+        <object-name>KI227.needle</object-name>
+        <object-name>KI227.knob</object-name>
+        <object-name>KI227.face</object-name>
+        <emission>
+            <red>0.8</red>
+            <green>0.4</green>
+            <blue>0.2</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>KI227card</object-name>
+        <property>instrumentation/ki-227/card-heading-deg</property>
+        <factor>-1</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+ 
+    <animation>
+        <type>rotate</type>
+        <object-name>KI227.needle</object-name>
+        <property>/instrumentation/kr-87/outputs/needle-deg</property>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <!-- Hotspots --> 
+
+    <animation>
+        <type>pick</type>
+        <object-name>KI227.knob</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/ki-227/card-heading-deg</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KI227.knob</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/ki-227/card-heading-deg</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KI227.knob</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/ki-227/card-heading-deg</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KI227.knob</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/ki-227/card-heading-deg</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+</PropertyList>
+

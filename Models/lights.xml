@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>lights.ac</path>
+
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>strobe1</object-name>
+        <object-name>strobe2</object-name>
+        <object-name>BeaconGlow</object-name>
+    </effect>
+
+    <animation>
+        <type>select</type>
+        <object-name>strobe1</object-name>
+        <condition>
+            <greater-than>
+            <property>sim/multiplay/generic/int[0]</property>
+            <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>strobe1</object-name>
+        <offset-m>5.70</offset-m>
+        <axis>
+            <x>0.195</x>
+            <y>0.980</y>
+            <z>0.038</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>billboard</type>
+        <object-name>strobe1</object-name>
+    </animation>
+
+    <animation>
+        <type>dist-scale</type>
+        <object-name>strobe1</object-name>
+        <interpolation>
+        <entry><ind>0</ind><dep>1</dep></entry>
+        <entry><ind>500</ind><dep>2.5</dep></entry>
+        <entry><ind>16000</ind><dep>10</dep></entry>
+        </interpolation>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>strobe2</object-name>
+        <condition>
+            <greater-than>
+            <property>sim/multiplay/generic/int[0]</property>
+            <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>strobe2</object-name>
+
+        <offset-m>5.70</offset-m>
+        <axis>
+            <x>0.195</x>
+            <y>-0.980</y>
+            <z>0.038</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>billboard</type>
+        <object-name>strobe2</object-name>
+    </animation>
+
+    <animation>
+        <type>dist-scale</type>
+        <object-name>strobe2</object-name>
+        <interpolation>
+        <entry><ind>0</ind><dep>1</dep></entry>
+        <entry><ind>500</ind><dep>2.5</dep></entry>
+        <entry><ind>16000</ind><dep>10</dep></entry>
+        </interpolation>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>BeaconGlow</object-name>
+        <condition>
+            <greater-than>
+            <property>sim/multiplay/generic/int[1]</property>
+            <value>1</value> 
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>BeaconGlow</object-name>
+        <offset-m>6.996</offset-m>
+        <axis>
+            <x>0.917</x>
+            <y>0.0</y>
+            <z>0.398</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>billboard</type>
+        <object-name>BeaconGlow</object-name>
+    </animation>
+
+</PropertyList>

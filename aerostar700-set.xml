@@ -1,0 +1,522 @@
+<PropertyList >
+
+    <sim>
+        <description>Aerostar Super 700</description>
+        <author>Syd Adams</author>
+        <status>development</status>
+        <flight-model>yasim</flight-model>
+        <aero>aerostar-yasim</aero>
+        <fuel-fraction>0.5</fuel-fraction>
+        <model>
+            <path>Aircraft/Aerostar-700/Models/aerostar.xml</path>
+            <start-idling type="bool">0</start-idling>
+            <variant type="int">3</variant>
+            <livery>
+                <file type="string">Black-Gold</file>
+            </livery>
+            <registration>
+                <red type="double">0.7</red>
+                <green type="double">0.7</green>
+                <blue type="double">0.7</blue>
+            </registration>
+        </model>
+        <startup>
+            <splash-texture>Aircraft/Aerostar-700/splash.png</splash-texture>
+        </startup>
+
+        <systems>
+            <electrical>
+                <path></path>
+            </electrical>
+            <autopilot>
+                <path>Aircraft/Aerostar-700/Systems/aerostar-autopilot.xml</path>
+            </autopilot>
+        </systems>
+
+        <instrumentation>
+            <path>Aircraft/Aerostar-700/Systems/instrumentation.xml</path>
+        </instrumentation>
+
+        <sound>
+            <path>Aircraft/Aerostar-700/Sounds/aerostar-sound.xml</path>
+        </sound>
+
+        <hud>
+            <enable3d>false</enable3d>
+        </hud>
+
+        <chase-distance-m>-20</chase-distance-m>
+
+        <view n="0">
+            <name>Cockpit</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+            <ground-level-nearplane-m type="double">0.1f</ground-level-nearplane-m>
+                <x-offset-m type="double">-0.30</x-offset-m>
+                <y-offset-m type="double">0.6</y-offset-m>
+                <z-offset-m type="double">-0.28</z-offset-m>
+                <pitch-offset-deg>-12</pitch-offset-deg>
+                <limits>
+                    <enabled type="bool">true</enabled>
+                    <left>
+                    <heading-max-deg type="double">140</heading-max-deg>
+                    <x-offset-max-m type="double">0.10</x-offset-max-m>
+                    <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+                    </left>
+                    <right>
+                        <heading-max-deg type="double">160</heading-max-deg>
+                        <x-offset-max-m type="double">0.10</x-offset-max-m>
+                        <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+                    </right>
+                </limits>
+            </config>
+        </view>
+
+        <view n="1">
+            <config>
+                <target-z-offset-m type="double">1</target-z-offset-m>
+            </config>
+        </view>
+        <view n="2">
+            <config>
+                <target-z-offset-m type="double">1</target-z-offset-m>
+            </config>
+        </view>
+        <view n="5">
+            <config>
+                <target-z-offset-m type="double">1</target-z-offset-m>
+            </config>
+        </view>
+        <view n="6">
+            <config>
+                <target-z-offset-m type="double">1</target-z-offset-m>
+            </config>
+        </view>
+        <view n="7">
+            <config>
+                <target-z-offset-m type="double">1</target-z-offset-m>
+            </config>
+        </view>
+
+
+
+        <view n="100">
+            <name>Pass-RR</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+        <from-model type="bool">true</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+        <ground-level-nearplane-m type="double">0.2f</ground-level-nearplane-m>
+        <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        <default-pitch-deg type="double">0</default-pitch-deg>
+        <default-heading-deg type="double">0</default-heading-deg>
+                <x-offset-m type="double">0.314</x-offset-m>
+                <y-offset-m type="double">0.536</y-offset-m>
+                <z-offset-m type="double">1.388</z-offset-m>
+                <pitch-offset-deg>0</pitch-offset-deg>
+            </config>
+        </view>
+
+        <view n="101">
+            <name>Pass-LR</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+        <from-model type="bool">true</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+        <ground-level-nearplane-m type="double">0.2f</ground-level-nearplane-m>
+        <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        <default-pitch-deg type="double">0</default-pitch-deg>
+        <default-heading-deg type="double">0</default-heading-deg>
+                <x-offset-m type="double">-0.314</x-offset-m>
+                <y-offset-m type="double">0.536</y-offset-m>
+                <z-offset-m type="double">1.388</z-offset-m>
+                <pitch-offset-deg>0</pitch-offset-deg>
+            </config>
+        </view>
+
+        <view n="102">
+            <name>Pass-RF</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+        <from-model type="bool">true</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+        <ground-level-nearplane-m type="double">0.2f</ground-level-nearplane-m>
+        <heading-offset-deg type="double">180</heading-offset-deg>
+        <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        <default-pitch-deg type="double">0</default-pitch-deg>
+        <default-heading-offset-deg>180</default-heading-offset-deg>
+                <x-offset-m type="double">0.314</x-offset-m>
+                <y-offset-m type="double">0.536</y-offset-m>
+                <z-offset-m type="double">0.20</z-offset-m>
+                <pitch-offset-deg>0</pitch-offset-deg>
+            </config>
+        </view>
+
+        <view n="103">
+            <name>Pass-LF</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+        <from-model type="bool">true</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+        <ground-level-nearplane-m type="double">0.2f</ground-level-nearplane-m>
+        <heading-offset-deg type="double">180</heading-offset-deg>
+        <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        <default-pitch-deg type="double">0</default-pitch-deg>
+        <default-heading-offset-deg>180</default-heading-offset-deg>
+                <x-offset-m type="double">-0.314</x-offset-m>
+                <y-offset-m type="double">0.536</y-offset-m>
+                <z-offset-m type="double">0.20</z-offset-m>
+                <pitch-offset-deg>0</pitch-offset-deg>
+            </config>
+        </view>
+    
+        <view n="1042">
+            <name>Copilot</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+        <from-model type="bool">true</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+        <ground-level-nearplane-m type="double">0.2f</ground-level-nearplane-m>
+        <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        <default-pitch-deg type="double">0</default-pitch-deg>
+        <default-heading-deg type="double">0</default-heading-deg>
+        <x-offset-m type="double">0.30</x-offset-m>
+                <y-offset-m type="double">0.6</y-offset-m>
+                <z-offset-m type="double">-0.28</z-offset-m>
+                <pitch-offset-deg>-12</pitch-offset-deg>
+            </config>
+        </view>
+    
+    
+    <airport>
+        <runways>
+            <start-offset-m>20</start-offset-m>
+        </runways>
+    </airport>
+
+    <input>
+            <selected>
+                <engine n="0">true</engine>
+                <engine n="1">true</engine>
+            </selected>
+        </input>
+
+        <turbulence-effect type = "bool">true</turbulence-effect>
+        <allow-toggle-cockpit>true</allow-toggle-cockpit>
+
+        <weight n="0">
+            <name>Crew</name>
+            <weight-lb>180</weight-lb> 
+            <max-lb>400</max-lb>
+            <min-lb>180</min-lb>
+        </weight>
+
+        <weight n="1">
+            <name>Pax/Baggage</name>
+            <weight-lb>800</weight-lb>
+            <max-lb>1700</max-lb>
+            <min-lb>0</min-lb>
+        </weight>
+
+        <yokes-visible type="bool">1</yokes-visible>
+
+        <help>
+            <title>Aerostar Super 700</title>
+        <key>
+            <name>q</name>
+            <desc>steer left</desc>
+        </key>
+        <key>
+            <name>e</name>
+            <desc>steer right</desc>
+        </key>
+        </help>
+
+    <menubar>
+        <default>
+            <menu n="3">
+                <item n="0">
+                <label>Autopilot Settings</label>
+                    <binding>
+                        <command>nasal</command>
+                        <script>aerostar.ap_settings.open()</script>
+                    </binding>
+                </item>
+            </menu>
+            <menu n="10">
+                <label>Aerostar-700</label>
+                <enabled type="bool">true</enabled>
+                <item>
+                    <label>Autostart</label>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>sim/model/start-idling</property>
+                    </binding>
+                </item>
+                <item>
+                    <label>Yokes On/Off</label>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>sim/yokes-visible</property>
+                    </binding>
+                </item>
+                <item>
+                    <label>Select Livery</label>
+                    <binding>
+                        <command>nasal</command>
+                        <script>aircraft.livery.dialog.toggle()</script>
+                    </binding>
+                </item>
+            </menu>
+        </default>
+    </menubar>
+
+    <multiplay>
+        <generic>
+            <int n="0" alias="/systems/electrical/outputs/strobe"/>
+            <int n="1" alias="/systems/electrical/outputs/beacon"/>
+            <int n="2" alias="/systems/electrical/outputs/nav-lights"/>
+            <int n="3" alias="/systems/electrical/outputs/landing-lights"/>
+            <string  alias="/sim/multiplay/callsign"/>
+            <float  alias="/controls/cabin-door/position-norm"/>
+            <float n="1" alias="/sim/model/registration/red"/>
+            <float n="2" alias="/sim/model/registration/green"/>
+            <float n="3" alias="/sim/model/registration/blue"/>
+            <float  n="4" alias="/position/altitude-agl-ft"/>
+        </generic>
+    </multiplay>
+
+    </sim>
+
+    <controls>
+        <electric>
+            <external-power>0</external-power>
+            <battery-switch>0</battery-switch>
+            <steering-toggle type="double">0</steering-toggle>
+            <engine n="0">
+                <generator>0</generator>
+            </engine>
+            <engine n="1">
+                <generator>0</generator>
+            </engine>
+        </electric>
+        <gear>
+            <brake-parking>1.0</brake-parking>
+            <gear-down>true</gear-down>
+        </gear>
+        <engines>
+            <engine n="0">
+                <magnetos>0</magnetos>
+            </engine>
+            <engine n="1">
+                <magnetos>0</magnetos>
+            </engine>
+        </engines>
+        <throttle-coupled type="bool">1</throttle-coupled>
+        <mixture-coupled type="bool">1</mixture-coupled>
+        <prop-coupled type="bool">1</prop-coupled>
+        <movement-scale type="double">0.025</movement-scale>
+    </controls>
+
+    <consumables>
+        <fuel>
+            <tank n="0"><!-- Max 62 US gallons-->
+                <level-gal_us archive="y">50</level-gal_us>
+            </tank>
+            <tank n="1"><!-- Max 62 US gallons-->
+                <level-gal_us archive="y">50</level-gal_us>
+            </tank>
+            <tank n="2"><!-- Max 41.5 US gallons-->
+                <level-gal_us archive="y">40</level-gal_us>
+            </tank>
+        </fuel>
+    </consumables>
+
+    <autopilot>
+        <locks>
+            <passive-mode type="bool">true</passive-mode>
+            <pitch-active type="bool">true</pitch-active>
+            <roll-active type="bool">true</roll-active>
+        </locks>
+    </autopilot>
+
+    <gear>
+        <gear n="0">
+            <position-norm>1</position-norm>
+        </gear>
+        <gear n="1">
+            <position-norm>1</position-norm>
+        </gear>
+        <gear n="2">
+            <position-norm>1</position-norm>
+        </gear>
+    </gear>
+
+        <engines>
+            <engine n="0">
+                <running>0</running>
+            </engine>
+            <engine n="1">
+                <running>0</running>
+            </engine>
+        </engines>
+
+    <instrumentation>
+        <radar>
+            <serviceable type="bool">true</serviceable>
+            <switch type="string">off</switch>
+            <mode-control type="int">1</mode-control>
+            <range type="int">20</range>
+            <mode type="string">WX</mode>
+        <reference-range-nm type="double">180</reference-range-nm>
+            <font>
+                <name type="string">typewriter.txf</name>
+                <size type="float">6</size>
+                <line-spacing type="float">0.4</line-spacing>
+                <color>
+                    <red type="float">0.7</red>
+                    <green type="float">0.7</green>
+                    <blue type="float">0.7</blue>
+                    <alpha type="float">1</alpha>
+                </color>
+            </font>
+            <heading-marker type="bool">false</heading-marker>
+            <lightning type="bool">false</lightning>
+            <display-mode type="string">arc</display-mode>
+            <radar-texture-path type="string">Aircraft/Instruments-3d/RDR-160/od_wxradar.png</radar-texture-path>
+            <echo-texture-path type="string">Aircraft/Instruments-3d/RDR-160/wxecho.png</echo-texture-path>
+            <limit-deg type="int">45</limit-deg>
+            <display-controls>
+                <WX type="bool">false</WX>
+                <data type="bool">false</data>
+                <pos type="bool">true</pos>
+                <symbol type="bool">false</symbol>
+                <rotate type="bool">false</rotate>
+                <tcas type="bool">false</tcas>
+                <abs-altitude type="bool">false</abs-altitude>
+            </display-controls>
+        </radar>
+        <inst-vertical-speed-indicator>
+            <serviceable>true</serviceable>
+        </inst-vertical-speed-indicator>
+        <ki-227>
+            <serviceable type="bool">1</serviceable>
+            <card-heading-deg type="double">0</card-heading-deg>
+        </ki-227>
+        <kr-87>
+            <serviceable type="bool">1</serviceable>
+        </kr-87>
+        <dme>
+            <serviceable type="bool">1</serviceable>
+            <frequencies>
+                <source type="string">instrumentation/nav/frequencies/selected-mhz</source>
+            </frequencies>
+        </dme>
+    </instrumentation>
+
+    <nasal>
+        <aerostar>
+            <file>Aircraft/Aerostar-700/Nasal/systems.nas</file>
+            <file>Aircraft/Aerostar-700/Nasal/Electrical.nas</file>
+            <file>Aircraft/Aerostar-700/Models/Instruments/kfc200/kfc-200.nas</file>
+        </aerostar>
+            <radar>
+                <file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file>
+            </radar>
+            <systems>
+                <file>Aircraft/Instruments-3d/kns80/KNS80.nas</file>
+            </systems>
+    </nasal>
+
+    <input>
+        <keyboard>
+            <key n="267">
+                <name>F11</name>
+                <desc>Pop up autopilot dialog</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>aerostar.ap_settings.toggle()</script>
+                </binding>
+            </key>
+            <key n="4">
+                <name>Ctrl-D</name>
+                <desc>Open/close door</desc>
+                <binding>
+                    <condition>
+                        <less-than>
+                            <property>velocities/airspeed-kt</property>
+                            <value>40</value>
+                        </less-than>
+                    </condition>
+                    <command>nasal</command>
+                    <script>aerostar.cabin_door.toggle();</script>
+                </binding>
+            </key>
+        <key n="91">
+        <repeatable type="bool">true</repeatable>
+        <interval-sec>0.05</interval-sec>
+        <name>[</name>
+        <desc>Decrease flaps</desc>
+        <binding>
+            <command>nasal</command>
+            <script>controls.flapsDown(-1)</script>
+        </binding>
+        <mod-up>
+            <binding>
+                <command>nasal</command>
+                <script>controls.flapsDown(0)</script>
+            </binding>
+        </mod-up>
+        </key>
+        <key n="93">
+            <name>]</name>
+            <repeatable type="bool">true</repeatable>
+            <interval-sec>0.05</interval-sec>
+            <desc>Increase flaps</desc>
+            <binding>
+                <command>nasal</command>
+                <script>controls.flapsDown(1)</script>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>nasal</command>
+                    <script>controls.flapsDown(0)</script>
+                </binding>
+            </mod-up>
+        </key>
+        <key n="113">
+            <name>q</name>
+            <repeatable>true</repeatable>
+            <desc>steer left</desc>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/electric/steering-toggle</property>
+                <step>-0.02</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>0</wrap>
+            </binding>
+        </key>
+        <key n="101">
+            <name>e</name>
+            <repeatable>true</repeatable>
+            <desc>steer right</desc>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/electric/steering-toggle</property>
+                <step>0.02</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>0</wrap>
+            </binding>
+        </key>
+        </keyboard>
+    </input>
+
+</PropertyList>

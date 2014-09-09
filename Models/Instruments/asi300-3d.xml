@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!-- 
+Airspeed Indicator (300 kt)
+Syd Adams
+-->
+<PropertyList>
+
+    <path>asi300.ac</path>
+    
+    <animation>
+        <type>material</type>
+        <object-name>ASIneedle</object-name>
+        <object-name>ASIface</object-name>
+        <emission>
+            <red>0.8</red>
+            <green>0.4</green>
+            <blue>0.2</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ASIneedle</object-name>
+        <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>30</ind><dep>0</dep></entry>
+            <entry><ind>40</ind><dep>18</dep></entry>
+            <entry><ind>180</ind><dep>270</dep></entry>
+            <entry><ind>260</ind><dep>340</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1.0</x>
+        </axis>
+    </animation>
+
+</PropertyList>
