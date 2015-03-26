@@ -101,7 +101,7 @@
 		<property type="string">sim/multiplay/generic/string[0]</property>
 		<format type="string">%.7s</format>
 		<font>arial_black.txf</font>
-		<character-size>0.4</character-size>
+		<character-size>0.25</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">128</width>
@@ -125,7 +125,7 @@
 		<property type="string">sim/multiplay/generic/string[0]</property>
 		<format type="string">%.7s</format>
 		<font>arial_black.txf</font>
-		<character-size>0.4</character-size>
+		<character-size>0.25</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">128</width>

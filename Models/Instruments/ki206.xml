@@ -32,14 +32,14 @@ Syd Adams
         <condition>
             <or>
                 <not>
-                    <property>instrumentation/nav/data-is-valid</property>
+                    <property>instrumentation/nav[1]/data-is-valid</property>
                 </not>
                 <less-than>
                             <property>systems/electrical/outputs/nav</property>
                     <value>0.1</value>
                 </less-than>
                 <not>
-                            <property>instrumentation/nav/in-range</property>
+                            <property>instrumentation/nav[1]/in-range</property>
                 </not>
             </or>
         </condition>
@@ -51,14 +51,14 @@ Syd Adams
         <condition>
             <or>
                 <not>
-                    <property>instrumentation/nav/has-gs</property>
+                    <property>instrumentation/nav[1]/has-gs</property>
                         </not>
                 <less-than>
                             <property>systems/electrical/outputs/nav</property>
                     <value>0.1</value>
                 </less-than>
                 <greater-than>
-                    <property>instrumentation/nav/in-range</property>
+                    <property>instrumentation/nav[1]/in-range</property>
                     <value>30000</value>
                 </greater-than>
             </or>
@@ -69,7 +69,7 @@ Syd Adams
         <type>select</type>
         <object-name>KI206.toflag</object-name>
         <condition>
-            <property>instrumentation/nav/to-flag</property>
+            <property>instrumentation/nav[1]/to-flag</property>
         </condition>
     </animation>
 
@@ -77,14 +77,14 @@ Syd Adams
         <type>select</type>
         <object-name>KI206.fromflag</object-name>
         <condition>
-            <property>instrumentation/nav/from-flag</property>
+            <property>instrumentation/nav[1]/from-flag</property>
                 </condition>
     </animation>
 
     <animation>
         <type>rotate</type>
         <object-name>KI206card</object-name>
-        <property>instrumentation/nav/radials/selected-deg</property>
+        <property>instrumentation/nav[1]/radials/selected-deg</property>
         <axis>
             <x>1</x>
             <y>0</y>
@@ -95,7 +95,7 @@ Syd Adams
     <animation>
         <type>translate</type>
         <object-name>KI206.locneedle</object-name>
-        <property>instrumentation/nav/heading-needle-deflection</property>
+        <property>instrumentation/nav[1]/heading-needle-deflection</property>
         <interpolation>
             <entry><ind>-10.0</ind><dep>-0.0113</dep></entry>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
@@ -111,7 +111,7 @@ Syd Adams
     <animation>
         <type>translate</type>
         <object-name>KI206.gsneedle</object-name>
-        <property>instrumentation/nav/gs-needle-deflection-norm</property>
+        <property>instrumentation/nav[1]/gs-needle-deflection-norm</property>
         <interpolation>
             <entry><ind>-1.0</ind><dep>-0.0113</dep></entry>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
@@ -140,7 +140,7 @@ Syd Adams
                     </not>
                 </condition>
                 <command>property-adjust</command>
-                <property>instrumentation/nav/radials/selected-deg</property>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
                 <step>1</step>
                 <min>0</min>
                 <max>360</max>
@@ -151,7 +151,7 @@ Syd Adams
                     <property>devices/status/keyboard/shift</property>
                 </condition>
                 <command>property-adjust</command>
-                <property>instrumentation/nav/radials/selected-deg</property>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
                 <step>10</step>
                 <min>0</min>
                 <max>360</max>
@@ -174,7 +174,7 @@ Syd Adams
                     </not>
                 </condition>
                 <command>property-adjust</command>
-                <property>instrumentation/nav/radials/selected-deg</property>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
                 <step>-1</step>
                 <min>0</min>
                 <max>360</max>
@@ -185,7 +185,7 @@ Syd Adams
                     <property>devices/status/keyboard/shift</property>
                 </condition>
                 <command>property-adjust</command>
-                <property>instrumentation/nav/radials/selected-deg</property>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
                 <step>-10</step>
                 <min>0</min>
                 <max>360</max>
@@ -206,7 +206,7 @@ Syd Adams
                     </not>
                 </condition>
                 <command>property-adjust</command>
-                <property>instrumentation/nav/radials/selected-deg</property>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
                 <step>1</step>
                 <min>0</min>
                 <max>360</max>
@@ -217,7 +217,7 @@ Syd Adams
                     <property>devices/status/keyboard/shift</property>
                 </condition>
                 <command>property-adjust</command>
-                <property>instrumentation/nav/radials/selected-deg</property>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
                 <step>10</step>
                 <min>0</min>
                 <max>360</max>
@@ -238,7 +238,7 @@ Syd Adams
                     </not>
                 </condition>
                 <command>property-adjust</command>
-                <property>instrumentation/nav/radials/selected-deg</property>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
                 <step>-1</step>
                 <min>0</min>
                 <max>360</max>
@@ -249,7 +249,7 @@ Syd Adams
                     <property>devices/status/keyboard/shift</property>
                 </condition>
                 <command>property-adjust</command>
-                <property>instrumentation/nav/radials/selected-deg</property>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
                 <step>-10</step>
                 <min>0</min>
                 <max>360</max>

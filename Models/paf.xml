@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">paf</name>
+            <texture>paf.png</texture>
+        </livery>
+		<registration>
+			<red>0.7</red>
+			<green>0.7</green>
+			<blue>0.7</blue>
+		</registration>
+    </model>
+</sim>
+</PropertyList>

@@ -59,6 +59,10 @@
                 <max>15.0</max>
                 <wrap>false</wrap>
             </binding>
+	<binding>
+                <command>nasal</command>
+                <script>aerostar.ptaconvert()</script>
+             </binding>
         </action>
     </animation>
     
@@ -83,6 +87,10 @@
                 <max>15.0</max>
                 <wrap>false</wrap>
             </binding>
+	<binding>
+                <command>nasal</command>
+               <script>aerostar.ptaconvert()</script>
+             </binding>
         </action>
     </animation>
     

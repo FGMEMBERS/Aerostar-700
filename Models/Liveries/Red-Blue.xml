@@ -5,7 +5,7 @@
     <model>
         <livery>
             <name type="string">Red-Blue</name>
-            <texture>paint2.png</texture>
+            <texture>Liveries/paint2.png</texture>
         </livery>
 		<registration>
 			<red>0.7</red>

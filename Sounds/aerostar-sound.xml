@@ -13,7 +13,7 @@
         <max-dist>10.0</max-dist>
         <position>
             <x>0.5</x>
-            <y>-1.8</y>
+            <y>1.8</y>
             <z>0.2</z>
         </position>
         <volume>
@@ -35,7 +35,7 @@
         <max-dist>10.0</max-dist>
         <position>
             <x>0.5</x>
-            <y>-1.8</y>
+            <y>1.8</y>
             <z>0.2</z>
         </position>
         <volume>
@@ -57,13 +57,13 @@
         <max-dist>500.0</max-dist>
         <position>
             <x>0.5</x>
-            <y>-1.8</y>
+            <y>1.8</y>
             <z>0.2</z>
         </position>
         <volume>
             <property>engines/engine[0]/mp-inhg</property>
-            <factor>0.28</factor>
-            <min>0.1</min>
+           <factor>0.023</factor>
+            <min>0.4</min>
             <max>1.0</max>
         </volume>
         <volume>
@@ -71,8 +71,8 @@
         </volume>
         <pitch>
             <property>engines/engine[0]/mp-inhg</property>
-            <factor>0.025</factor>
-            <offset>0.2</offset>
+            <factor>0.014</factor>
+            <offset>0.4</offset>
         </pitch>
     </engine>
 
@@ -86,7 +86,7 @@
         <max-dist>10.0</max-dist>
         <position>
             <x>0.5</x>
-            <y>1.8</y>
+            <y>-1.8</y>
             <z>0.2</z>
         </position>
         <volume>
@@ -108,7 +108,7 @@
         <max-dist>10.0</max-dist>
         <position>
             <x>0.5</x>
-            <y>1.8</y>
+            <y>-1.8</y>
             <z>0.2</z>
         </position>
         <volume>
@@ -130,13 +130,13 @@
         <max-dist>500.0</max-dist>
         <position>
             <x>0.5</x>
-            <y>1.8</y>
+            <y>-1.8</y>
             <z>0.2</z>
         </position>
         <volume>
             <property>engines/engine[1]/mp-inhg</property>
-            <factor>0.28</factor>
-            <min>0.1</min>
+            <factor>0.023</factor>
+            <min>0.4</min>
             <max>1.0</max>
         </volume>
         <volume>
@@ -144,8 +144,8 @@
         </volume>
         <pitch>
             <property>engines/engine[1]/mp-inhg</property>
-            <factor>0.025</factor>
-            <offset>0.2</offset>
+            <factor>0.014</factor>
+            <offset>0.4</offset>
         </pitch>
     </engine>
 
@@ -177,7 +177,7 @@
     <gear>
         <name>gear</name>
         <mode>in-transit</mode>
-        <path>Sounds/gear.wav</path>
+        <path>Aircraft/Aerostar-700/Sounds/gear.wav</path>
         <property>gear/gear[0]/position-norm</property>
         <position>
             <x>0.0</x>
@@ -213,15 +213,15 @@
         <volume>
             <property>sim/sound/cabin-volume</property>
         </volume>
-        <reference-dist>2.0</reference-dist>
-        <max-dist>4.0</max-dist>
+        <reference-dist>5.0</reference-dist>
+        <max-dist>10.0</max-dist>
     </gear>
 
     <squeal>
         <name>squeal</name>
-        <path>Sounds/squeal.wav</path>
-        <reference-dist>20.0</reference-dist>
-        <max-dist>50</max-dist>
+        <path>Aircraft/Aerostar-700/Sounds/chirp.wav</path>
+        <reference-dist>10.0</reference-dist>
+        <max-dist>20</max-dist>
         <condition>
             <or>
                 <property>gear/gear[0]/wow</property>
@@ -234,9 +234,6 @@
             <y>0.0</y>
             <z>-0.5</z>
         </position>
-        <volume>
-            <property>sim/sound/cabin-volume</property>
-        </volume>
         <volume>
             <property>velocities/airspeed-kt</property>
             <factor>0.01</factor>
@@ -266,54 +263,9 @@
         <volume>
             <factor>0.45</factor>
         </volume>
-        <reference-dist>1.0</reference-dist>
+        <reference-dist>2.0</reference-dist>
         <max-dist>2.0</max-dist>
     </flap>
-
-
-    <stall>
-        <name>stall</name>
-        <path>Sounds/stall.wav</path>
-        <property>sim/alarms/stall-warning</property>
-        <volume>
-            <property>velocities/airspeed-kt</property>
-            <min>30.0</min>
-        </volume>
-        <reference-dist>2.0</reference-dist>
-        <max-dist>4.0</max-dist>
-    </stall>
- 
-    <wind>
-        <name>wind</name>
-        <mode>looped</mode>
-        <path>Sounds/wind.wav</path>
-        <reference-dist>1.0</reference-dist>
-        <max-dist>2.0</max-dist>
-        <property>/velocities/airspeed-kt</property>
-        <position>
-            <x>-0.8</x>
-            <y>0.0</y>
-            <z>0.5</z>
-        </position>
-        <volume>
-            <property>/position/altitude-ft</property>
-            <factor>-0.000015</factor>
-            <offset>1.0</offset>
-            <min>0.1</min>
-            <max>0.5</max>
-        </volume>
-        <volume>
-            <property>/velocities/airspeed-kt</property>
-            <factor>0.0015</factor>
-            <min>0.03</min>
-            <max>0.5</max>
-        </volume>
-        <pitch>
-            <property>/velocities/airspeed-kt</property>
-            <factor>0.01</factor>
-            <offset>0.8</offset>
-        </pitch>
-    </wind>
 
     </fx>
  

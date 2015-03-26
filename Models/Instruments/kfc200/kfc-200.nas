@@ -123,7 +123,7 @@ var KFC200 = {
             }
         }
 var agl=getprop("position/altitude-agl-ft");
-if(agl<150)me.ap_off.setValue(1);
+if(agl<150)me.ap_off.setValue(1);					#coupe AP si AGL<150
 
 var Aroll = me.ROLL.getValue();
 if(Aroll==nil)Aroll=0;

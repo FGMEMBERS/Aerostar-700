@@ -4,6 +4,7 @@
 
     <path>cabin.ac</path>
 
+<!--TranponderKT70-->
     <model>
         <path>Aircraft/Instruments-3d/kt70/kt70.xml</path>
         <offsets>
@@ -13,8 +14,9 @@
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
-
-    <model>
+    
+<!--FDcontrol-->
+    <!--<model>
         <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/fd-control.xml</path>
         <offsets>
             <x-m>-0.668</x-m>
@@ -22,78 +24,200 @@
             <z-m>-0.075</z-m>
             <pitch-deg>-55.0</pitch-deg>
         </offsets>
-    </model>
-
-    <model>
-        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/ki256.xml</path>
+    </model>-->
+    
+     <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/fd-control.xml</path>
         <offsets>
-            <x-m>-0.937</x-m>
-            <y-m>-0.336</y-m>
-            <z-m>0.343</z-m>
-            <pitch-deg>-10.0</pitch-deg>
+            <x-m>-0.945</x-m>
+            <y-m>-0.021</y-m>
+            <z-m>0.408</z-m>
+            <pitch-deg>-10</pitch-deg>
         </offsets>
     </model>
-
-    <model>
-        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/ki252a.xml</path>
-        <offsets>
-            <x-m>-0.920</x-m>
-            <y-m>-0.336</y-m>
-            <z-m>0.244</z-m>
-            <pitch-deg>-10.0</pitch-deg>
-        </offsets>
-    </model>
-
+    
+    <!--FD-annun-->
     <model>
         <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/fd-annun.xml</path>
         <offsets>
             <x-m>-0.949</x-m>
-            <y-m>-0.336</y-m>
-            <z-m>0.407</z-m>
+            <y-m>-0.316</y-m>
+            <z-m>0.414</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+<!--AI-Ki256-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/ki256.xml</path>
+        <offsets>
+            <x-m>-0.940</x-m>
+            <y-m>-0.316</y-m>
+            <z-m>0.345</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+
+<!--HSI-Ki252a-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/ki252a.xml</path>
+        <offsets>
+            <x-m>-0.920</x-m>
+            <y-m>-0.316</y-m>
+            <z-m>0.247</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+
+<!--HDG CRS display-->
+
+ <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Displays/HdgCrsDsp.xml</path>
+        <offsets>
+            <x-m>-0.910</x-m>
+            <y-m>-0.309</y-m>
+            <z-m>0.186</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
+    
+<!--ASI-->
     <model>
         <path>Aircraft/Aerostar-700/Models/Instruments/asi300-3d.xml</path>
         <offsets>
             <x-m>-0.937</x-m>
-            <y-m>-0.434</y-m>
-            <z-m>0.342</z-m>
+            <y-m>-0.414</y-m>
+            <z-m>0.345</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
-
+    
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/asi300-3d.xml</path>
+        <offsets>
+            <x-m>-0.937</x-m>
+            <y-m>0.414</y-m>
+            <z-m>0.345</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+<!--RMI-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/rmi.xml</path>
+        <offsets>
+            <x-m>-0.920</x-m>
+            <y-m>-0.414</y-m>
+            <z-m>0.255</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/rmi.xml</path>
+        <offsets>
+            <x-m>-0.920</x-m>
+            <y-m>0.414</y-m>
+            <z-m>0.255</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+ 
+    
+<!--VSI-->
     <model>
         <path>Aircraft/Aerostar-700/Models/Instruments/vsi-3d.xml</path>
         <offsets>
             <x-m>-0.920</x-m>
-            <y-m>-0.237</y-m>
-            <z-m>0.244</z-m>
+            <y-m>-0.222</y-m>
+            <z-m>0.262</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
-
+    
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/vsi-3d.xml</path>
+        <offsets>
+            <x-m>-0.920</x-m>
+            <y-m>0.222</y-m>
+            <z-m>0.262</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+<!--ALT-->
     <model>
         <path>Aircraft/Aerostar-700/Models/Instruments/alt2-3d.xml</path>
         <offsets>
             <x-m>-0.937</x-m>
-            <y-m>-0.237</y-m>
-            <z-m>0.342</z-m>
+            <y-m>-0.222</y-m>
+            <z-m>0.345</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/alt2-3d.xml</path>
+        <offsets>
+            <x-m>-0.937</x-m>
+            <y-m>0.222</y-m>
+            <z-m>0.345</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
+<!--ALT-select-->
     <model>
         <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/kas297.xml</path>
         <offsets>
-            <x-m>-0.952</x-m>
-            <y-m>-0.20</y-m>
-            <z-m>0.421</z-m>
+            <x-m>-0.949</x-m>
+            <y-m>-0.222</y-m>
+            <z-m>0.414</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
+    
+     <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/kas297.xml</path>
+        <offsets>
+            <x-m>-0.949</x-m>
+            <y-m>0.222</y-m>
+            <z-m>0.414</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+	
+<!--  VS Display  -->
+<model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Displays/VsDsp.xml</path>
+        <offsets>
+            <x-m>-0.891</x-m>
+            <y-m>-0.055</y-m>
+            <z-m>0.432</z-m>
+            <pitch-deg>5.0</pitch-deg>
+        </offsets>
+    </model>
+	
+    
+ <!--DME-indic-->
 
+<!--
+   <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Dme/dme.xml</path>
+        <offsets>
+            <x-m>-0.953</x-m>
+            <y-m>-0.222</y-m>
+            <z-m>0.437</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+ -->   
+    
+<!--ADF-indic.-Ki227-->
+<!--
     <model>
         <path>Aircraft/Aerostar-700/Models/Instruments/ki227-00.xml</path>
         <offsets>
@@ -104,56 +228,82 @@
         </offsets>
     </model>
 
+-->
+
+<!--COMM-Ki196b-->
     <model>
-        <path>Aircraft/Instruments-3d/ky196/ky196-comm1.xml</path>
+    <!--<path>Aircraft/Instruments-3d/ky196/ky196-comm1.xml</path>-->
+       <path>Aircraft/Aerostar-700/Models/Instruments/comm/ky196-comm1.xml</path>
+    
         <offsets>
-            <x-m>-0.940</x-m>
+            <x-m>-0.941</x-m>
             <y-m>-0.021</y-m>
-            <z-m>0.362</z-m>
+            <z-m>0.368</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
     <model>
-        <path>Aircraft/Instruments-3d/ky196/ky196-comm2.xml</path>
-        <offsets>
-            <x-m>-0.934</x-m>
+        <!--<path>Aircraft/Instruments-3d/ky196/ky196-comm2.xml</path>-->
+            <path>Aircraft/Aerostar-700/Models/Instruments/comm/ky196-comm2.xml</path>
+               <offsets>
+            <x-m>-0.935</x-m>
             <y-m>-0.021</y-m>
-            <z-m>0.328</z-m>
+            <z-m>0.334</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
+
+<!--VOR-rec.-Kns80-->
     <model>
-        <path>Aircraft/Instruments-3d/kns80/kns80.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kns80/kns80.xml</path>
         <offsets>
-            <x-m>-0.924</x-m>
+            <x-m>-0.920</x-m>
             <y-m>-0.021</y-m>
-            <z-m>0.273</z-m>
+            <z-m>0.252</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
+    
+<!--VOR-rec-Kn53-->
 
+ <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kn53-nav1.xml</path>
+        <offsets>
+            <x-m>-0.9275</x-m>
+            <y-m>-0.021</y-m>
+            <z-m>0.303</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+
+<!--VOR-indic-Ki206-->
     <model>
         <path>Aircraft/Aerostar-700/Models/Instruments/ki206.xml</path>
         <offsets>
-            <x-m>-0.920</x-m>
-            <y-m>-0.147</y-m>
-            <z-m>0.244</z-m>
+            <x-m>-0.922</x-m>
+            <y-m>-0.499</y-m>
+            <z-m>0.262</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
+
+<!--ADF-rec.-Kr87-->
     <model>
-        <path>Aircraft/Instruments-3d/kr87-adf/kr87.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kr87.xml</path>
         <offsets>
-            <x-m>-0.914</x-m>
+            <x-m>-0.9155</x-m>
             <y-m>-0.021</y-m>
-            <z-m>0.214</z-m>
+            <z-m>0.197</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
+
+<!--Radar-RDR160-->
     <model>
         <path>Aircraft/Instruments-3d/RDR-160/RDR-160.xml</path>
         <offsets>
@@ -164,52 +314,137 @@
         </offsets>
     </model>
 
+
+<!--FuelGauge-->
     <model>
         <path>Aircraft/Aerostar-700/Models/Instruments/fuelgauge.xml</path>
         <offsets>
             <x-m>-0.891</x-m>
-            <y-m>-0.022</y-m>
+            <y-m>-0.0xxx</y-m>
             <z-m>0.469</z-m>
             <pitch-deg>0.0</pitch-deg>
         </offsets>
     </model>
 
+
+<!--Manifold P.-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Manifold.xml</path>
+        <offsets>
+            <x-m>-0.947</x-m>
+            <y-m>0.147</y-m>
+            <z-m>0.412</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+     <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Manifold.xml</path>
+        <offsets>
+            <x-m>-0.947</x-m>
+            <y-m>-0.147</y-m>
+            <z-m>0.412</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+
+<!--Eng.-RPM-->
     <model>
         <path>Aircraft/Aerostar-700/Models/Instruments/RPM.xml</path>
         <offsets>
             <x-m>-0.937</x-m>
-            <y-m>0.213</y-m>
-            <z-m>0.342</z-m>
+            <y-m>0.147</y-m>
+            <z-m>0.350</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
-
-    <model>
-        <path>Aircraft/Aerostar-700/Models/Instruments/Manifold.xml</path>
+    
+     <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/RPM.xml</path>
         <offsets>
             <x-m>-0.937</x-m>
-            <y-m>0.123</y-m>
-            <z-m>0.342</z-m>
+            <y-m>-0.147</y-m>
+            <z-m>0.350</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
+
+<!--EGT-->
     <model>
         <path>Aircraft/Aerostar-700/Models/Instruments/EGT.xml</path>
         <offsets>
-            <x-m>-0.937</x-m>
-            <y-m>0.303</y-m>
-            <z-m>0.342</z-m>
+            <x-m>-0.927</x-m>
+            <y-m>0.147</y-m>
+            <z-m>0.288</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
-
+    
+     <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/EGT.xml</path>
+        <offsets>
+            <x-m>-0.927</x-m>
+            <y-m>-0.147</y-m>
+            <z-m>0.288</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+<!--FuelFlow-->
     <model>
         <path>Aircraft/Aerostar-700/Models/Instruments/FuelGPH.xml</path>
         <offsets>
-            <x-m>-0.937</x-m>
-            <y-m>0.393</y-m>
-            <z-m>0.342</z-m>
+            <x-m>-0.917</x-m>
+            <y-m>0.147</y-m>
+            <z-m>0.226</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/FuelGPH.xml</path>
+        <offsets>
+            <x-m>-0.917</x-m>
+            <y-m>-0.147</y-m>
+            <z-m>0.226</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+    <!--Côté COPILOTE-->
+   
+    <!--FD-annun-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/fd-annun.xml</path>
+        <offsets>
+            <x-m>-0.949</x-m>
+            <y-m>0.316</y-m>
+            <z-m>0.414</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+<!--AI-Ki256-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/ki256.xml</path>
+        <offsets>
+            <x-m>-0.940</x-m>
+            <y-m>0.316</y-m>
+            <z-m>0.345</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+
+<!--HSI-Ki252a-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/ki252a.xml</path>
+        <offsets>
+            <x-m>-0.920</x-m>
+            <y-m>0.316</y-m>
+            <z-m>0.247</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>

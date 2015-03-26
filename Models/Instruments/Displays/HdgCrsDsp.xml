@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!--
+Hdg +Crs  Display 
+Ernest Teuscher
+24/02/2011
+
+
+-->
+<PropertyList>
+
+    <path>HdgCrsDsp.ac</path>
+    
+<!-- <animation>
+        <type>material</type>
+        <object-name>Arm.btn</object-name>
+        <object-name>Set.knob</object-name>
+        <emission>
+            <red>0.8</red>
+            <green>0.4</green>
+            <blue>0.2</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+    
+-->
+    <animation>
+        <type>select</type>
+        <object-name>crs100</object-name>
+        <object-name>crs10</object-name>
+        <object-name>crs1</object-name>
+        <object-name>hdg100</object-name>
+        <object-name>hdg10</object-name>
+        <object-name>hdg1</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/batt-volts</property>
+                <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+<!--   CRS display    -->
+   
+ 
+     <animation>
+        <type>textranslate</type>
+        <object-name>crs100</object-name>
+        <property>instrumentation/nav/radials/selected-deg</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+ 
+    <animation>
+        <type>textranslate</type>
+        <object-name>crs10</object-name>
+        <property>instrumentation/nav/radials/selected-deg</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+ 
+    <animation>
+        <type>textranslate</type>
+        <object-name>crs1</object-name>
+        <property>instrumentation/nav/radials/selected-deg</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <!--  HDG display  -->
+    
+     <animation>
+        <type>textranslate</type>
+        <object-name>hdg100</object-name>
+        <property>autopilot/settings/heading-bug-deg</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+ 
+    <animation>
+        <type>textranslate</type>
+        <object-name>hdg10</object-name>
+        <property>autopilot/settings/heading-bug-deg</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+ 
+    <animation>
+        <type>textranslate</type>
+        <object-name>hdg1</object-name>
+        <property>autopilot/settings/heading-bug-deg</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+  
+
+</PropertyList>
