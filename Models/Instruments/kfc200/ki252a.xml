@@ -21,7 +21,7 @@ Syd Adams
         <object-name>GSneedle</object-name>
         <object-name>KI252A.back</object-name>
         <object-name>CRSknob</object-name>
-        <object-name>HDGknob</object-name>
+        <object-name>HDGknob</object-name>                
         <emission>
             <red>0.8</red>
             <green>0.4</green>
@@ -164,268 +164,172 @@ Syd Adams
 
 <!-- Hotspots-->
 
+<!--  HDG -->
     <animation>
         <type>pick</type>
-        <object-name>HDGknob</object-name>
+        <object-name>hdg.inc</object-name>
         <action>
             <button>0</button>
             <repeatable>true</repeatable>
             <interval-sec>0.1</interval-sec>
-            <binding>
-                <condition>
-                    <not>
-                        <property>devices/status/keyboard/shift</property>
-                    </not>
-                </condition>
+            <binding>               
                 <command>property-adjust</command>
                 <property>autopilot/settings/heading-bug-deg</property>
                 <step>1</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>1</wrap>
-            </binding>
-            <binding>
-                <condition>
-                    <property>devices/status/keyboard/shift</property>
-                </condition>
-                <command>property-adjust</command>
-                <property>autopilot/settings/heading-bug-deg</property>
-                <step>10</step>
-                <min>0</min>
-                <max>360</max>
-                <wrap>1</wrap>
-            </binding>
+            </binding>            
         </action>
     </animation>
-
-    <animation>
+    
+     <animation>
         <type>pick</type>
-        <object-name>HDGknob</object-name>
+        <object-name>hdg.inc</object-name>
         <action>
             <button>1</button>
             <repeatable>true</repeatable>
             <interval-sec>0.1</interval-sec>
-            <binding>
-                <condition>
-                    <not>
-                        <property>devices/status/keyboard/shift</property>
-                    </not>
-                </condition>
-                <command>property-adjust</command>
-                <property>autopilot/settings/heading-bug-deg</property>
-                <step>-1</step>
-                <min>0</min>
-                <max>360</max>
-                <wrap>1</wrap>
-            </binding>
-            <binding>
-                <condition>
-                    <property>devices/status/keyboard/shift</property>
-                </condition>
-                <command>property-adjust</command>
-                <property>autopilot/settings/heading-bug-deg</property>
-                <step>-10</step>
-                <min>0</min>
-                <max>360</max>
-                <wrap>1</wrap>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>HDGknob</object-name>
-        <action>
-            <button>3</button>
-            <binding>
-                <condition>
-                    <not>
-                        <property>devices/status/keyboard/shift</property>
-                    </not>
-                </condition>
-                <command>property-adjust</command>
-                <property>autopilot/settings/heading-bug-deg</property>
-                <step>1</step>
-                <min>0</min>
-                <max>360</max>
-                <wrap>1</wrap>
-            </binding>
-            <binding>
-                <condition>
-                    <property>devices/status/keyboard/shift</property>
-                </condition>
+            <binding>               
                 <command>property-adjust</command>
                 <property>autopilot/settings/heading-bug-deg</property>
                 <step>10</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>1</wrap>
-            </binding>
+            </binding>            
         </action>
     </animation>
 
     <animation>
         <type>pick</type>
-        <object-name>HDGknob</object-name>
-        <action>
-            <button>4</button>
-            <binding>
-                <condition>
-                    <not>
-                        <property>devices/status/keyboard/shift</property>
-                    </not>
-                </condition>
-                <command>property-adjust</command>
-                <property>autopilot/settings/heading-bug-deg</property>
-                <step>-1</step>
-                <min>0</min>
-                <max>360</max>
-                <wrap>1</wrap>
-            </binding>
-            <binding>
-                <condition>
-                    <property>devices/status/keyboard/shift</property>
-                </condition>
-                <command>property-adjust</command>
-                <property>autopilot/settings/heading-bug-deg</property>
-                <step>-10</step>
-                <min>0</min>
-                <max>360</max>
-                <wrap>1</wrap>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>CRSknob</object-name>
+        <object-name>hdg.dec</object-name>
         <action>
             <button>0</button>
             <repeatable>true</repeatable>
             <interval-sec>0.1</interval-sec>
-            <binding>
-                <condition>
-                    <not>
-                        <property>devices/status/keyboard/shift</property>
-                    </not>
-                </condition>
+            <binding>               
                 <command>property-adjust</command>
-                <property>instrumentation/nav/radials/selected-deg</property>
-                <step>1</step>
+                <property>autopilot/settings/heading-bug-deg</property>
+                <step>-1</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>1</wrap>
-            </binding>
-            <binding>
-                <condition>
-                    <property>devices/status/keyboard/shift</property>
-                </condition>
-                <command>property-adjust</command>
-                <property>instrumentation/nav/radials/selected-deg</property>
-                <step>10</step>
-                <min>0</min>
-                <max>360</max>
-                <wrap>1</wrap>
-            </binding>
+            </binding>           
         </action>
     </animation>
-
+    
     <animation>
         <type>pick</type>
-        <object-name>CRSknob</object-name>
+        <object-name>hdg.dec</object-name>
         <action>
             <button>1</button>
             <repeatable>true</repeatable>
             <interval-sec>0.1</interval-sec>
-            <binding>
-                <condition>
-                    <not>
-                        <property>devices/status/keyboard/shift</property>
-                    </not>
-                </condition>
+            <binding>               
                 <command>property-adjust</command>
-                <property>instrumentation/nav/radials/selected-deg</property>
-                <step>-1</step>
-                <min>0</min>
-                <max>360</max>
-                <wrap>1</wrap>
-            </binding>
-            <binding>
-                <condition>
-                    <property>devices/status/keyboard/shift</property>
-                </condition>
-                <command>property-adjust</command>
-                <property>instrumentation/nav/radials/selected-deg</property>
+                <property>autopilot/settings/heading-bug-deg</property>
                 <step>-10</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>1</wrap>
-            </binding>
+            </binding>           
         </action>
     </animation>
+  
 
+<!-- CRS -->
     <animation>
         <type>pick</type>
-        <object-name>CRSknob</object-name>
+        <object-name>crs.inc</object-name>
         <action>
-            <button>3</button>
-            <binding>
-                <condition>
-                    <not>
-                        <property>devices/status/keyboard/shift</property>
-                    </not>
-                </condition>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>                
                 <command>property-adjust</command>
                 <property>instrumentation/nav/radials/selected-deg</property>
                 <step>1</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>1</wrap>
-            </binding>
-            <binding>
-                <condition>
-                    <property>devices/status/keyboard/shift</property>
-                </condition>
+            </binding>           
+        </action>
+    </animation>
+
+ <animation>
+        <type>pick</type>
+        <object-name>crs.inc</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>                
                 <command>property-adjust</command>
                 <property>instrumentation/nav/radials/selected-deg</property>
                 <step>10</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>1</wrap>
-            </binding>
+            </binding>           
         </action>
     </animation>
 
+    
     <animation>
         <type>pick</type>
-        <object-name>CRSknob</object-name>
+        <object-name>crs.dec</object-name>
         <action>
-            <button>4</button>
-            <binding>
-                <condition>
-                    <not>
-                        <property>devices/status/keyboard/shift</property>
-                    </not>
-                </condition>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>                
                 <command>property-adjust</command>
                 <property>instrumentation/nav/radials/selected-deg</property>
                 <step>-1</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>1</wrap>
-            </binding>
-            <binding>
-                <condition>
-                    <property>devices/status/keyboard/shift</property>
-                </condition>
+            </binding>           
+        </action>
+    </animation>
+
+ <animation>
+        <type>pick</type>
+        <object-name>crs.dec</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>                
                 <command>property-adjust</command>
                 <property>instrumentation/nav/radials/selected-deg</property>
                 <step>-10</step>
                 <min>0</min>
                 <max>360</max>
                 <wrap>1</wrap>
-            </binding>
+            </binding>           
         </action>
     </animation>
+
+
+<!--
+<animation>
+<type>rotate</type>
+<object-name>CRSknob</object-name>
+<property>instrumentation/nav/radials/selected-deg</property>
+  <center>
+    <x-m>0</x-m>
+    <y-m>-0.0399626</y-m>
+    <z-m>-0.0292571</z-m>
+  </center>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+   
+-->
 
 </PropertyList>

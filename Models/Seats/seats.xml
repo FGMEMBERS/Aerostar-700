@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>seats.ac</path>
+
+  <animation>
+    <object-name>Seats</object-name>
+    <object-name>dossier-table</object-name>
+    <object-name>Tablette1</object-name>
+    <object-name>Support-tablette1</object-name> 
+    <object-name>Tablette2</object-name>
+    <object-name>Support-tablette2</object-name>         
+  </animation>
+
+</PropertyList>

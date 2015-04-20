@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- ########################################
+
+ # Aerostar super 700 by PAF team
+ # December 2014 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList>
+
+    <path>circuitbreaker.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>Emerg</object-name>
+        <object-name>support</object-name>
+        <object-name>fuse</object-name>
+        <emission>
+            <red>0.1</red>
+            <green>0.1</green>
+            <blue>0.1</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+    
+</PropertyList>

@@ -67,6 +67,7 @@ var KFC200 = {
         m.PITCH=props.globals.initNode("orientation/pitch-deg");
         m.tgt_ROLL=props.globals.initNode("autopilot/internal/target-roll-deg",0,"DOUBLE");
         m.tgt_PITCH=props.globals.initNode("autopilot/settings/target-pitch-deg",0,"DOUBLE");
+		m.vsfpm = props.globals.initNode("autopilot/settings/vertical-speed-fpm",0,"DOUBLE");
 		
 		m.Llnv = setlistener(m.lnav, func (ln){ m.local_lnav = ln.getValue() ; m.HDG.setValue(m.Llist[m.local_lnav]);},1,0);
 		m.Lvnv = setlistener(m.vnav, func (vn){ m.local_vnav = vn.getValue(); m.ALT.setValue(m.Vlist[m.local_vnav]);},1,0);
@@ -173,7 +174,8 @@ me.vbar_roll.setValue(vroll);
     set_mode : func(md){
         var mode = md;
         var idx = 0;
-
+	
+	
         if(!me.serviceable.getValue()){
             me.local_lnav=0;
 			me.lnav.setValue(me.local_lnav);
@@ -183,7 +185,7 @@ me.vbar_roll.setValue(vroll);
 			me.spd.setValue(me.local_spd);
             return;
             }
-
+		
         if(mode == "FD"){
             idx =1;
 			var fdtoggle = me.pwr.getValue();
@@ -226,6 +228,8 @@ me.vbar_roll.setValue(vroll);
             return;
         }
     },
+
+
 #### pitch wheel input ####
     pitch_wheel : func(dir){
         var dr = dir;
@@ -240,7 +244,9 @@ me.vbar_roll.setValue(vroll);
                    var trim = (scnd * 10) * dr;
                 setprop("autopilot/settings/target-altitude-ft",temp_alt + trim);
             }
+
     }
+
 };
 
 #####################################

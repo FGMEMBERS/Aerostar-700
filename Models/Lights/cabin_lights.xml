@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--2015 -->
+
+<PropertyList>
+	<path>cabin_lights.ac</path>
+
+	<animation>
+		<type>select</type>
+		<condition>
+			<and>
+				<greater-than>
+					<property>systems/electrical/volts</property>			
+					<value>12</value>
+				</greater-than>
+				<property>/sim/rendering/rembrandt/enabled</property>
+				<property>/controls/lighting/cabin-lights</property>	
+			</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>light</type>
+		<light-type>spot</light-type>
+		<object-name>Cone_L</object-name>
+		<nopreview/>
+		<position>
+			<x>-0.26</x>
+			<y>-0.3</y>
+			<z>0.1</z>
+		</position>
+		<direction>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</direction>
+		<ambient>
+			<r>0.8</r>
+			<g>0.8</g>
+			<b>0.8</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>0.8</r>
+			<g>0.8</g>
+			<b>0.8</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>0.8</r>
+			<g>0.8</g>
+			<b>0.8</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1</c>
+			<l>0.002</l>
+			<q>0.00005</q>
+		</attenuation>
+		<exponent>8</exponent>
+		<near-m>0</near-m>
+		<far-m>1.2</far-m>
+		<cutoff>15.5</cutoff>	
+	</animation>
+	
+	<animation>
+		<type>light</type>
+		<light-type>spot</light-type>
+		<object-name>Cone_R</object-name>
+		<nopreview/>
+		<position>
+			<x>-0.26</x>
+			<y>0.3</y>
+			<z>0.1</z>
+		</position>
+		<direction>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</direction>
+		<ambient>
+			<r>0.8</r>
+			<g>0.8</g>
+			<b>0.8</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>0.8</r>
+			<g>0.8</g>
+			<b>0.8</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>0.8</r>
+			<g>0.8</g>
+			<b>0.8</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1</c>
+			<l>0.002</l>
+			<q>0.00005</q>
+		</attenuation>
+		<exponent>8</exponent>
+		<near-m>0</near-m>
+		<far-m>1.2</far-m>
+		<cutoff>15.5</cutoff>	
+	</animation>
+	
+	<effect>
+		<name>REMBRANDT transparency</name>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>Light_L</object-name>
+		<object-name>Light_R</object-name>
+	</effect>
+
+</PropertyList>

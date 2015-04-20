@@ -86,7 +86,7 @@
         </config>
     </pid-controller>
 
-<!-- VOR / Loca;izer hold-->
+<!-- VOR / Localizer hold-->
 
     <pid-controller>
         <name>Nav1 Hold Stage 1</name>
@@ -133,12 +133,12 @@
             <prop>autopilot/internal/aileron-filter</prop>
         </output>
         <config>
-            <Kp>0.25</Kp>
+            <Kp>0.1</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
             <Ti>10.0</Ti>
-            <Td>0.02</Td>
+            <Td>0.2</Td>
             <u_min>-1.0</u_min>
             <u_max>1.0</u_max>
         </config> 
@@ -157,6 +157,9 @@
     <output>controls/flight/aileron</output>
     <max-rate-of-change>2.0</max-rate-of-change>
 </filter>
+
+
+
 
 <!-- ================================ -->
 <!-- ======= Pitch Axis Modes ======= -->
@@ -178,18 +181,17 @@
         <reference>
             <prop>autopilot/settings/target-pitch-deg</prop>
         </reference>
-        <output>
-            <prop>autopilot/internal/elevator-filter</prop>
-        </output>
-        <config>
+    		<output>controls/flight/elevator</output>
+    		<output>controls/flight/elevator-trim</output>
+       	<config>
             <Kp>-0.15</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
             <Ti>10.0</Ti>
             <Td>0.02</Td>
-            <u_min>-1.0</u_min>
-            <u_max>1.0</u_max>
+            <u_min>-0.25</u_min>
+            <u_max>0.25</u_max>
         </config>
     </pid-controller>
 
@@ -236,12 +238,12 @@
             <prop>autopilot/settings/target-pitch-deg</prop>
         </output>
         <config>
-            <Kp>0.5</Kp>
+            <Kp>0.05</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
-            <Ti>10.0</Ti>
-            <Td>0.00001</Td>
+            <Ti>30.0</Ti>
+            <Td>0.01</Td>
             <u_min>-5.0</u_min>
             <u_max>5.0</u_max>
         </config>
@@ -260,16 +262,16 @@
         <reference>
             <prop>autopilot/settings/target-pitch-deg</prop>
         </reference>
-        <output>
+       <output>
             <prop>autopilot/internal/elevator-filter</prop>
         </output>
         <config>
-            <Kp>-0.05</Kp>
+            <Kp>-0.015</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
-            <Ti>20.0</Ti>
-            <Td>0.02</Td>
+            <Ti>30.0</Ti>
+            <Td>0.1</Td>
             <u_min>-0.5</u_min>
             <u_max>0.5</u_max>
         </config>
@@ -305,6 +307,41 @@
       <u_max>1.0</u_max>
     </config>
 </pid-controller>
+
+<!-- Vertical Speed Hold -->
+
+  <pid-controller>
+    <name>Vertical Speed Hold</name>
+    <debug>false</debug>
+    <enable>
+      <prop>autopilot/locks/altitude</prop>
+      <value>vertical-speed-hold</value>
+      <honor-passive>true</honor-passive>
+    </enable>
+    <input>
+      <prop>velocities/vertical-speed-fps</prop>
+    </input>
+    <reference>
+      <prop>autopilot/settings/vertical-speed-fpm</prop>
+      <scale>0.01667</scale>
+    </reference>
+    <output>
+      <prop>controls/flight/elevator</prop>
+    </output>
+    <output>
+      <prop>controls/flight/elevator-trim</prop>
+    </output>
+    <config>
+       <Kp>-0.005</Kp>
+      <beta>1.0</beta>
+      <alpha>0.1</alpha>
+      <gamma>0.0</gamma>
+      <Ti>5.0</Ti>
+      <Td>0.00001</Td>
+      <u_min>-0.25</u_min>
+      <u_max>0.25</u_max> 
+    </config>
+  </pid-controller>
 
 <!-- elevator control -->
 

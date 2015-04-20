@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!--
+VS  Display 
+Ernest Teuscher
+24/02/2011
+
+
+-->
+<PropertyList>
+
+    <path>VsDsp.ac</path>
+	
+     <animation>
+        <type>material</type>
+        <object-name>box</object-name>
+		<object-name>rect</object-name>
+        <emission>
+            <red>0.8</red>
+            <green>0.4</green>
+            <blue>0.2</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>select</type>
+		<object-name>vs.minus</object-name>
+        <object-name>vs.1000</object-name>
+        <object-name>vs.100</object-name>
+        <object-name>vs.10</object-name>
+        <object-name>vs.1</object-name>       
+		<condition>		
+            <greater-than>
+                <property>systems/electrical/volts</property>
+                <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+	<!--   Pitch Display   -->	
+	<animation>
+        <type>select</type>
+        <object-name>vs.minus</object-name>
+        <condition>            
+            <less-than>
+                <property>autopilot/settings/vertical-speed-fpm</property>
+                <value>0.0</value>
+            </less-than>           
+        </condition>
+    </animation>
+  
+    <animation>
+        <type>textranslate</type>
+        <object-name>vs.1000</object-name>
+        <property>autopilot/settings/vs-display</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>vs.100</object-name>
+        <property>autopilot/settings/vs-display</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>vs.10</object-name>
+        <property>autopilot/settings/vs-display</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>vs.1</object-name>
+        <property>autopilot/settings/vs-display</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

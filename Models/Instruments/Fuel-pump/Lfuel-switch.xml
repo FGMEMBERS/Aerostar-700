@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>fuel-select.ac</path>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>fuel.button</object-name>
+        <property>controls/engines/engine[0]/feed_tank</property>
+        <factor>-55</factor>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>select_right</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/feed_tank</property>
+                <step>1</step>
+                <min>-1</min>
+                <max>1</max>
+            </binding>
+			<binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+         <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>Tank-select</tooltip-id>
+                <label>Tank-select: %s</label>
+                <property>controls/engines/engine[0]/feed_tank</property>
+				<mapping>nasal</mapping>
+				<script>
+					var modes = ['On','Xfeed','Off'];
+					return modes[arg[0]];
+				</script>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>select_left</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/feed_tank</property>
+                <step>-1</step>
+                <min>-1</min>
+                <max>1</max>
+           </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    </animation>
+
+</PropertyList>

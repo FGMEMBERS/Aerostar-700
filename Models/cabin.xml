@@ -4,6 +4,125 @@
 
     <path>cabin.ac</path>
 
+<!--Fuel switch-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Fuel-pump/Lfuel-switch.xml</path>
+        <offsets>
+            <x-m>-0.881</x-m>
+            <y-m>-0.218 </y-m>
+            <z-m>0.047</z-m>
+            <pitch-deg>-10</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Fuel-pump/Rfuel-switch.xml</path>
+        <offsets>
+            <x-m>-0.881</x-m>
+            <y-m>0.176 </y-m>
+            <z-m>0.047</z-m>
+            <pitch-deg>-10</pitch-deg>
+        </offsets>
+    </model>
+
+<!--Voltmeter-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Voltmeter/Voltmeter.xml</path>
+        <offsets>
+            <x-m>-0.897</x-m>
+            <y-m>-0.244 </y-m>
+            <z-m>0.100</z-m>
+            <pitch-deg>-10</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Voltmeter/Voltamp_switch.xml</path>
+        <offsets>
+            <x-m>-0.889</x-m>
+            <y-m>-0.244 </y-m>
+            <z-m>0.098</z-m>
+            <pitch-deg>-10</pitch-deg>
+        </offsets>
+    </model>
+
+<!--Cabin Lights-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Lights/cabin_lights.xml</path>
+        <offsets>
+            <x-m>0</x-m>
+            <y-m>0 </y-m>
+            <z-m>0</z-m>
+            <pitch-deg> 0.0 </pitch-deg>
+        </offsets>
+    </model>
+
+<!--Panel Light-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Lights/panellight.xml</path>
+        <offsets>
+            <x-m>0</x-m>
+            <y-m>0 </y-m>
+            <z-m>0</z-m>
+            <pitch-deg> 0.0 </pitch-deg>
+        </offsets>
+    </model>
+
+<!-- Poignées -->
+     <animation> 
+       <type>material</type>
+      <object-name>Poignée-int</object-name>
+      <object-name>Axe-poignée</object-name>
+      <object-name>Poignée-ext</object-name>
+    </animation>
+
+<!-- Cendrier -->
+     <animation> 
+       <type>material</type>
+     <object-name>Cendrier</object-name> 
+    </animation>
+
+    <effect>
+      <inherits-from>Aircraft/Aerostar-700/Models/Effects/test_reflect</inherits-from>
+      <object-name>Cendrier</object-name>
+      <object-name>Poignée</object-name>
+      <object-name>Axe-poignée</object-name>
+    </effect>
+
+<!--Seats-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Seats/seats.xml</path>
+        <offsets>
+            <x-m> 0.000 </x-m>
+            <y-m>-0.000 </y-m>
+            <z-m> 0.000 </z-m>
+            <pitch-deg> 0.0 </pitch-deg>
+        </offsets>
+    </model>
+
+<!--Compass-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Compass/compass.xml</path>
+        <offsets>
+            <x-m>-0.92811 </x-m>
+            <y-m>-0.00016 </y-m>
+            <z-m> 0.54812 </z-m>
+            <pitch-deg> 0.0 </pitch-deg>
+        </offsets>
+    </model>
+
+<!--Alarms-->
+	<model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Alarms/Al-annun.xml</path>
+        <offsets>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+            <pitch-deg> 0.0 </pitch-deg>
+        </offsets>
+    </model>
+
+<!--TransponderKT70-->
     <model>
         <path>Aircraft/Instruments-3d/kt70/kt70.xml</path>
         <offsets>
@@ -13,149 +132,237 @@
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
-
-    <model>
+    
+<!--FDcontrol-->
+	<model>
         <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/fd-control.xml</path>
         <offsets>
-            <x-m>-0.668</x-m>
+            <x-m>-0.945</x-m>
             <y-m>-0.021</y-m>
-            <z-m>-0.075</z-m>
-            <pitch-deg>-55.0</pitch-deg>
+            <z-m>0.408</z-m>
+            <pitch-deg>-10</pitch-deg>
         </offsets>
     </model>
-
-    <model>
-        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/ki256.xml</path>
-        <offsets>
-            <x-m>-0.937</x-m>
-            <y-m>-0.336</y-m>
-            <z-m>0.343</z-m>
-            <pitch-deg>-10.0</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/ki252a.xml</path>
-        <offsets>
-            <x-m>-0.920</x-m>
-            <y-m>-0.336</y-m>
-            <z-m>0.244</z-m>
-            <pitch-deg>-10.0</pitch-deg>
-        </offsets>
-    </model>
-
+    
+<!--FD-annun-->
     <model>
         <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/fd-annun.xml</path>
         <offsets>
             <x-m>-0.949</x-m>
-            <y-m>-0.336</y-m>
-            <z-m>0.407</z-m>
+            <y-m>-0.316</y-m>
+            <z-m>0.414</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
-
+    
+<!--AI-Ki256-->
     <model>
-        <path>Aircraft/Aerostar-700/Models/Instruments/asi300-3d.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/ki256.xml</path>
         <offsets>
-            <x-m>-0.937</x-m>
-            <y-m>-0.434</y-m>
-            <z-m>0.342</z-m>
+            <x-m>-0.940</x-m>
+            <y-m>-0.316</y-m>
+            <z-m>0.345</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
-
+    
+<!--HSI-Ki252a-->
     <model>
-        <path>Aircraft/Aerostar-700/Models/Instruments/vsi-3d.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/ki252a.xml</path>
         <offsets>
             <x-m>-0.920</x-m>
-            <y-m>-0.237</y-m>
-            <z-m>0.244</z-m>
+            <y-m>-0.316</y-m>
+            <z-m>0.247</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
-
+    
+<!--HDG CRS display-->
+ 	<model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Displays/HdgCrsDsp.xml</path>
+        <offsets>
+            <x-m>-0.910</x-m>
+            <y-m>-0.309</y-m>
+            <z-m>0.186</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+   
+<!--ASI-->
     <model>
-        <path>Aircraft/Aerostar-700/Models/Instruments/alt2-3d.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Asi/asi300-3d.xml</path>
         <offsets>
             <x-m>-0.937</x-m>
-            <y-m>-0.237</y-m>
-            <z-m>0.342</z-m>
+            <y-m>-0.414</y-m>
+            <z-m>0.345</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Asi/asi300-3d.xml</path>
+        <offsets>
+            <x-m>-0.937</x-m>
+            <y-m>0.414</y-m>
+            <z-m>0.345</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+<!--RMI-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Rmi/rmi.xml</path>
+        <offsets>
+            <x-m>-0.920</x-m>
+            <y-m>-0.414</y-m>
+            <z-m>0.255</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Rmi/rmi.xml</path>
+        <offsets>
+            <x-m>-0.920</x-m>
+            <y-m>0.414</y-m>
+            <z-m>0.255</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+   
+<!--VSI-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Vsi/vsi-3d.xml</path>
+        <offsets>
+            <x-m>-0.920</x-m>
+            <y-m>-0.222</y-m>
+            <z-m>0.262</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Vsi/vsi-3d.xml</path>
+        <offsets>
+            <x-m>-0.920</x-m>
+            <y-m>0.222</y-m>
+            <z-m>0.262</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+<!--ALT-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Alt/alt2-3d.xml</path>
+        <offsets>
+            <x-m>-0.937</x-m>
+            <y-m>-0.222</y-m>
+            <z-m>0.345</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Alt/alt2-3d.xml</path>
+        <offsets>
+            <x-m>-0.937</x-m>
+            <y-m>0.222</y-m>
+            <z-m>0.345</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
+<!--ALT-select-->
     <model>
         <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/kas297.xml</path>
         <offsets>
-            <x-m>-0.952</x-m>
-            <y-m>-0.20</y-m>
-            <z-m>0.421</z-m>
+            <x-m>-0.949</x-m>
+            <y-m>-0.222</y-m>
+            <z-m>0.414</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
-
-    <model>
-        <path>Aircraft/Aerostar-700/Models/Instruments/ki227-00.xml</path>
+    
+     <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/kas297.xml</path>
         <offsets>
-            <x-m>-0.937</x-m>
-            <y-m>-0.147</y-m>
-            <z-m>0.342</z-m>
+
+            <x-m>-0.949</x-m>
+            <y-m>0.222</y-m>
+            <z-m>0.414</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
-
-    <model>
-        <path>Aircraft/Instruments-3d/ky196/ky196-comm1.xml</path>
+	
+<!--  VS Display  -->
+	<model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Displays/VsDsp.xml</path>
         <offsets>
-            <x-m>-0.940</x-m>
+            <x-m>-0.891</x-m>
+            <y-m>-0.055</y-m>
+            <z-m>0.432</z-m>
+            <pitch-deg>5.0</pitch-deg>
+        </offsets>
+    </model>
+
+<!--COMM-Ki196b-->
+    <model>
+       <path>Aircraft/Aerostar-700/Models/Instruments/Comm/ky196-comm1.xml</path>
+            <offsets>
+            <x-m>-0.941</x-m>
             <y-m>-0.021</y-m>
-            <z-m>0.362</z-m>
+            <z-m>0.368</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
     <model>
-        <path>Aircraft/Instruments-3d/ky196/ky196-comm2.xml</path>
-        <offsets>
-            <x-m>-0.934</x-m>
+            <path>Aircraft/Aerostar-700/Models/Instruments/Comm/ky196-comm2.xml</path>
+               <offsets>
+            <x-m>-0.935</x-m>
             <y-m>-0.021</y-m>
-            <z-m>0.328</z-m>
+            <z-m>0.334</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
+<!--VOR-rec.-Kns80-->
     <model>
-        <path>Aircraft/Instruments-3d/kns80/kns80.xml</path>
-        <offsets>
-            <x-m>-0.924</x-m>
-            <y-m>-0.021</y-m>
-            <z-m>0.273</z-m>
-            <pitch-deg>-10.0</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-        <path>Aircraft/Aerostar-700/Models/Instruments/ki206.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kns80/kns80.xml</path>
         <offsets>
             <x-m>-0.920</x-m>
-            <y-m>-0.147</y-m>
-            <z-m>0.244</z-m>
-            <pitch-deg>-10.0</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-        <path>Aircraft/Instruments-3d/kr87-adf/kr87.xml</path>
-        <offsets>
-            <x-m>-0.914</x-m>
             <y-m>-0.021</y-m>
-            <z-m>0.214</z-m>
+            <z-m>0.252</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+<!--VOR-rec-Kn53-->
+	<model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Kn53/kn53-nav1.xml</path>
+        <offsets>
+            <x-m>-0.9275</x-m>
+            <y-m>-0.021</y-m>
+            <z-m>0.303</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
+<!--ADF-rec.-Kr87-->
     <model>
-        <path>Aircraft/Instruments-3d/RDR-160/RDR-160.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Kr87/kr87.xml</path>
+        <offsets>
+            <x-m>-0.9155</x-m>
+            <y-m>-0.021</y-m>
+            <z-m>0.197</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+
+<!--Radar-RDR160-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Rdr160/RDR160.xml</path>
         <offsets>
             <x-m>-0.902</x-m>
             <y-m>-0.022</y-m>
@@ -164,58 +371,213 @@
         </offsets>
     </model>
 
+<!--FuelGauge-->
     <model>
-        <path>Aircraft/Aerostar-700/Models/Instruments/fuelgauge.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Gauges/fuelgauge.xml</path>
         <offsets>
             <x-m>-0.891</x-m>
-            <y-m>-0.022</y-m>
+            <y-m>-0.0xxx</y-m>
             <z-m>0.469</z-m>
+
             <pitch-deg>0.0</pitch-deg>
         </offsets>
     </model>
 
+<!--Manifold P.-->
     <model>
-        <path>Aircraft/Aerostar-700/Models/Instruments/RPM.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Gauges/Manifold.xml</path>
         <offsets>
-            <x-m>-0.937</x-m>
-            <y-m>0.213</y-m>
-            <z-m>0.342</z-m>
+            <x-m>-0.947</x-m>
+            <y-m>0.147</y-m>
+            <z-m>0.412</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+     <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Gauges/Manifold.xml</path>
+        <offsets>
+            <x-m>-0.947</x-m>
+            <y-m>-0.147</y-m>
+            <z-m>0.412</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
+<!--Eng.-RPM-->
     <model>
-        <path>Aircraft/Aerostar-700/Models/Instruments/Manifold.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Gauges/RPM.xml</path>
         <offsets>
             <x-m>-0.937</x-m>
-            <y-m>0.123</y-m>
-            <z-m>0.342</z-m>
+            <y-m>0.147</y-m>
+            <z-m>0.350</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+     <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Gauges/RPM.xml</path>
+        <offsets>
+            <x-m>-0.937</x-m>
+            <y-m>-0.147</y-m>
+            <z-m>0.350</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
+<!--EGT-->
     <model>
-        <path>Aircraft/Aerostar-700/Models/Instruments/EGT.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Gauges/EGT.xml</path>
         <offsets>
-            <x-m>-0.937</x-m>
-            <y-m>0.303</y-m>
-            <z-m>0.342</z-m>
+            <x-m>-0.927</x-m>
+            <y-m>0.147</y-m>
+            <z-m>0.288</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+     <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Gauges/EGT.xml</path>
+        <offsets>
+            <x-m>-0.927</x-m>
+            <y-m>-0.147</y-m>
+            <z-m>0.288</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+<!--FuelFlow-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Gauges/FuelGPH.xml</path>
+        <offsets>
+            <x-m>-0.917</x-m>
+            <y-m>0.147</y-m>
+            <z-m>0.226</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Gauges/FuelGPH.xml</path>
+        <offsets>
+            <x-m>-0.917</x-m>
+            <y-m>-0.147</y-m>
+            <z-m>0.226</z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
+<!-- Fuel pump -->
     <model>
-        <path>Aircraft/Aerostar-700/Models/Instruments/FuelGPH.xml</path>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Fuel-pump/LHfuel-pump.xml</path>
         <offsets>
-            <x-m>-0.937</x-m>
-            <y-m>0.393</y-m>
-            <z-m>0.342</z-m>
+            <x-m>-0.88636 </x-m>
+            <y-m>-0.18616 </y-m>
+            <z-m> 0.05455 </z-m>
             <pitch-deg>-10.0</pitch-deg>
         </offsets>
     </model>
 
+<!-- Temp/Press Oil -->
+	<model>		
+		<path>Aircraft/Aerostar-700/Models/Instruments/Gauges/Oil-L.xml</path>
+   		<offsets>
+   			<x-m>-0.735</x-m>
+   			<y-m>-0.055</y-m>
+   			<z-m>-0.041</z-m>
+			<pitch-deg>-45</pitch-deg>
+		</offsets>
+  	</model>
+
+	<model>	
+		<path>Aircraft/Aerostar-700/Models/Instruments/Gauges/Oil-R.xml</path>
+   		<offsets>
+   			<x-m>-0.735</x-m>
+   			<y-m>0.010</y-m>
+   			<z-m>-0.041</z-m>
+			<pitch-deg>-45</pitch-deg>
+		</offsets>
+  	</model>
+ 
+	<model>	
+		<path>Aircraft/Aerostar-700/Models/Instruments/Gauges/Oil-Mark-L.xml</path>
+   		<offsets>
+   			<x-m>-0.710</x-m>
+   			<y-m>-0.055</y-m>
+   			<z-m>-0.065</z-m>
+			<pitch-deg>-50</pitch-deg>
+		</offsets>
+  	</model>   
+
+	<model>	
+		<path>Aircraft/Aerostar-700/Models/Instruments/Gauges/Oil-Mark-R.xml</path>
+   		<offsets>
+   			<x-m>-0.710</x-m>
+   			<y-m>0.010</y-m>
+   			<z-m>-0.065</z-m>
+			<pitch-deg>-50</pitch-deg>
+		</offsets>
+  	</model>   
+    
+<!--Côté COPILOTE-->
+
+<!-- Circuit breaker -->
     <model>
-        <name>Pilot</name>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Circuit-breaker/circuitbreaker.xml</path>
+        <offsets>
+            <x-m>-0.89294 </x-m>
+            <y-m> 0.42000 </y-m>
+            <z-m> 0.08776 </z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+<!-- Fuel pump -->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/Fuel-pump/RHfuel-pump.xml</path>
+        <offsets>
+            <x-m>-0.88636 </x-m>
+            <y-m> 0.14481 </y-m>
+            <z-m> 0.05455 </z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+   
+<!--FD-annun-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/fd-annun.xml</path>
+        <offsets>
+            <x-m>-0.949</x-m>
+            <y-m>0.316</y-m>
+            <z-m>0.414</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+<!--AI-Ki256-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/ki256.xml</path>
+        <offsets>
+            <x-m>-0.940</x-m>
+            <y-m>0.316</y-m>
+            <z-m>0.345</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+    
+<!--HSI-Ki252a-->
+    <model>
+        <path>Aircraft/Aerostar-700/Models/Instruments/kfc200/ki252a.xml</path>
+        <offsets>
+            <x-m>-0.920</x-m>
+            <y-m>0.316</y-m>
+            <z-m>0.247</z-m>
+            <pitch-deg>-10.0</pitch-deg>
+        </offsets>
+    </model>
+
+<!-- Test Pilot -->
+   <model>
         <path>Models/Aircraft/testpilot.xml</path>
         <offsets>
             <x-m>-0.389</x-m>
@@ -225,6 +587,7 @@
         </offsets>
     </model>
 
+<!-- Gears -->
     <animation>
         <type>select</type>
         <object-name>gearon.1</object-name>
@@ -285,15 +648,19 @@
                     <property>systems/electrical/volts</property>
                     <value>1.0</value>
                 </greater-than>
-                <equals>
+                <greater-than>
                     <property>gear/gear[0]/position-norm</property>
                     <value>0</value>
-                </equals>
+                </greater-than>
+                <less-than>
+                    <property>gear/gear[0]/position-norm</property>
+                    <value>1.0</value>
+                </less-than>
             </and>
         </condition>
     </animation>
 
-    <animation>
+    <!--animation>
         <type>select</type>
         <object-name>pilot</object-name>
         <condition>
@@ -302,25 +669,43 @@
                 <value>0</value>
             </not-equals>
         </condition>
-    </animation>
+    </animation-->
 
-    <animation>
+<!--    <animation>
         <type>select</type>
         <object-name>Yoke1</object-name>
         <object-name>Yoke2</object-name>
-        <object-name>YokeBase</object-name>
-        <object-name>RHpedal</object-name>
-        <object-name>LHpedal</object-name>
+        <object-name>L-ptt</object-name>
+        <object-name>R-ptt</object-name>
         <condition>
             <property>sim/yokes-visible</property>
         </condition>
     </animation>
+-->
+    <animation>
+        <type>select</type>
+        <object-name>Yoke1</object-name>
+        <object-name>L-ptt</object-name>
+        <condition>
+            <property>sim/yoke1-visible</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Yoke2</object-name>
+        <object-name>R-ptt</object-name>
+        <condition>
+            <property>sim/yoke2-visible</property>
+        </condition>
+    </animation>
+
 
 <!-- Yokes / Pedals -->
-
     <animation>
         <type>rotate</type>
         <object-name>Yoke1</object-name>
+        <object-name>L-ptt</object-name>
         <property>controls/flight/aileron</property>
         <factor>-50</factor>
         <center>
@@ -338,6 +723,7 @@
     <animation>
         <type>translate</type>
         <object-name>Yoke1</object-name>
+        <object-name>L-ptt</object-name>
         <property>controls/flight/elevator</property>
         <factor>-0.05</factor>
         <center>
@@ -355,6 +741,7 @@
     <animation>
         <type>rotate</type>
         <object-name>Yoke2</object-name>
+        <object-name>R-ptt</object-name>
         <property>controls/flight/aileron</property>
         <factor>-50</factor>
         <center>
@@ -372,6 +759,7 @@
     <animation>
         <type>translate</type>
         <object-name>Yoke2</object-name>
+        <object-name>R-ptt</object-name>
         <property>controls/flight/elevator</property>
         <factor>-0.05</factor>
         <center>
@@ -384,6 +772,7 @@
             <y>0</y>
             <z>0.174</z>
         </axis>
+
     </animation>
 
     <animation>
@@ -549,7 +938,7 @@
         <center>
             <x-m>-0.969</x-m>
             <y-m>-0.145</y-m>
-            <z-m>0.117</z-m>
+            <z-m>0.090</z-m>
         </center>
         <axis>
             <x>0.0</x>
@@ -558,73 +947,7 @@
         </axis>
     </animation>
 
-    <animation>
-        <type>rotate</type>
-        <object-name>L-magneto</object-name>
-        <property>controls/engines/engine[0]/magnetos</property>
-        <factor>-30</factor>
-        <center>
-            <x-m>-0.889</x-m>
-            <y-m>-0.152</y-m>
-            <z-m>0.054</z-m>
-        </center>
-        <axis>
-            <x>0.985</x>
-            <y>0.0</y>
-            <z>0.174</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>L-magneto</object-name>
-        <property>controls/engines/engine[0]/starter</property>
-        <factor>-30</factor>
-        <center>
-            <x-m>-0.889</x-m>
-            <y-m>-0.152</y-m>
-            <z-m>0.054</z-m>
-        </center>
-        <axis>
-            <x>0.985</x>
-            <y>0.0</y>
-            <z>0.174</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>R-magneto</object-name>
-        <property>controls/engines/engine[1]/magnetos</property>
-        <factor>-30</factor>
-        <center>
-            <x-m>-0.889</x-m>
-            <y-m>0.105</y-m>
-            <z-m>0.054</z-m>
-        </center>
-        <axis>
-            <x>0.985</x>
-            <y>0.0</y>
-            <z>0.174</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>R-magneto</object-name>
-        <property>controls/engines/engine[1]/starter</property>
-        <factor>-30</factor>
-        <center>
-            <x-m>-0.889</x-m>
-            <y-m>0.105</y-m>
-            <z-m>0.054</z-m>
-        </center>
-        <axis>
-            <x>0.985</x>
-            <y>0.0</y>
-            <z>0.174</z>
-        </axis>
-    </animation>
+<!-- Battery Switch -->
 
     <animation>
         <type>rotate</type>
@@ -642,6 +965,32 @@
             <z>0.0</z>
         </axis>
     </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>Batt.toggle</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electric/battery-switch</property>
+            </binding>
+			<binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>master-switch</tooltip-id>
+                <label>Electric master: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/electric/battery-switch</property>
+            </binding>
+        </hovered>
+    </animation>
+
+<!-- Alternators switches -->
 
     <animation>
         <type>rotate</type>
@@ -658,6 +1007,30 @@
             <y>-1.0</y>
             <z>0.0</z>
         </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>LAlt.toggle</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electric/engine[0]/generator</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>alt-switch</tooltip-id>
+        <label>Electric alternatorL: %s</label>
+        <mapping>on-off</mapping>
+        <property>controls/electric/engine[0]/generator</property>
+      </binding>
+    </hovered>
     </animation>
 
     <animation>
@@ -676,6 +1049,32 @@
             <z>0.0</z>
         </axis>
     </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>RAlt.toggle</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electric/engine[1]/generator</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>alt-switch</tooltip-id>
+        <label>Electric alternatorR: %s</label>
+        <mapping>on-off</mapping>
+        <property>controls/electric/engine[0]/generator</property>
+      </binding>
+    </hovered>
+    </animation>
+
+<!-- DeIce switch -->
 
     <animation>
         <type>rotate</type>
@@ -693,6 +1092,32 @@
             <z>0.0</z>
         </axis>
     </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>Deice.toggle</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/anti-ice/prop-heat</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>De-ice-switch</tooltip-id>
+        <label>Prop De-Ice: %s</label>
+        <mapping>on-off</mapping>
+        <property>controls/anti-ice/prop-heat</property>
+      </binding>
+    </hovered>
+    </animation>
+
+<!-- Pitot switch -->
 
     <animation>
         <type>rotate</type>
@@ -710,23 +1135,32 @@
             <z>0.0</z>
         </axis>
     </animation>
-
     <animation>
-        <type>rotate</type>
-        <object-name>Strobe.toggle</object-name>
-        <property>controls/lighting/strobe</property>
-        <factor>30</factor>
-        <center>
-            <x-m>-0.886</x-m>
-            <y-m>-0.339</y-m>
-            <z-m>0.048</z-m>
-        </center>
-        <axis>
-            <x>0.0</x>
-            <y>-1.0</y>
-            <z>0.0</z>
-        </axis>
+        <type>pick</type>
+        <object-name>Pitot.toggle</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/anti-ice/pitot-heat</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>Pitot heat</tooltip-id>
+        <label>Pitot heat: %s</label>
+        <mapping>on-off</mapping>
+        <property>controls/anti-ice/pitot-heat</property>
+      </binding>
+    </hovered>
     </animation>
+
+<!-- Cabin Fan switch -->
 
     <animation>
         <type>rotate</type>
@@ -744,6 +1178,32 @@
             <z>0.0</z>
         </axis>
     </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>FAn.toggle</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/cabin/fan</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>Cabin fan</tooltip-id>
+        <label>Cabin Fan: %s</label>
+        <mapping>on-off</mapping>
+        <property>controls/cabin/fan</property>
+      </binding>
+    </hovered>
+    </animation>
+
+<!-- Cabin Heat switch -->
 
     <animation>
         <type>rotate</type>
@@ -761,6 +1221,80 @@
             <z>0.0</z>
         </axis>
     </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>C-heat.toggle</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/cabin/heat</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>Cabin Heat</tooltip-id>
+        <label>Cabin Heat: %s</label>
+        <mapping>on-off</mapping>
+        <property>controls/cabin/heat</property>
+      </binding>
+    </hovered>
+    </animation>
+
+<!-- Strobe switch -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Strobe.toggle</object-name>
+        <property>controls/lighting/strobe</property>
+        <factor>30</factor>
+        <center>
+            <x-m>-0.886</x-m>
+            <y-m>-0.339</y-m>
+            <z-m>0.048</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>Strobe.toggle</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/strobe</property>
+
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/beacon</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>STB/BCN</tooltip-id>
+        <label>Stobe/Beacon: %s</label>
+        <mapping>on-off</mapping>
+        <property>controls/lighting/strobe</property>
+      </binding>
+    </hovered>
+    </animation>
+
+<!-- Nav switch -->
 
     <animation>
         <type>rotate</type>
@@ -778,6 +1312,32 @@
             <z>0.0</z>
         </axis>
     </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>Nav.toggle</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/nav-lights</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>Nav Light</tooltip-id>
+        <label>Nav Light: %s</label>
+        <mapping>on-off</mapping>
+        <property>controls/lighting/nav-lights</property>
+      </binding>
+    </hovered>
+    </animation>
+
+<!-- Cabin Light switch -->
 
     <animation>
         <type>rotate</type>
@@ -795,11 +1355,37 @@
             <z>0.0</z>
         </axis>
     </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>Cabin.toggle</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/cabin-lights</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>Cabin Light</tooltip-id>
+        <label>Cabin Light: %s</label>
+        <mapping>on-off</mapping>
+        <property>controls/lighting/cabin-lights</property>
+      </binding>
+    </hovered>
+    </animation>
+
+<!-- Landing Lights switches -->
 
     <animation>
         <type>rotate</type>
         <object-name>Llanding.toggle</object-name>
-        <property>controls/lighting/landing-lights[0]</property>
+        <property>controls/lighting/landing-lights</property>
         <factor>30</factor>
         <center>
             <x-m>-0.886</x-m>
@@ -811,12 +1397,36 @@
             <y>-1.0</y>
             <z>0.0</z>
         </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>Llanding.toggle</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/landing-lights</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>L-Landing Light</tooltip-id>
+        <label>L-Landing Light: %s</label>
+        <mapping>on-off</mapping>
+        <property>controls/lighting/landing-lights</property>
+      </binding>
+    </hovered>
     </animation>
 
     <animation>
         <type>rotate</type>
         <object-name>Rlanding.toggle</object-name>
-        <property>controls/lighting/landing-lights[1]</property>
+        <property>controls/lighting/taxi-lights</property>
         <factor>30</factor>
         <center>
             <x-m>-0.886</x-m>
@@ -829,6 +1439,32 @@
             <z>0.0</z>
         </axis>
     </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>Rlanding.toggle</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/taxi-lights</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>Taxi Light</tooltip-id>
+        <label>Taxi Light: %s</label>
+        <mapping>on-off</mapping>
+        <property>controls/lighting/taxi-lights</property>
+      </binding>
+    </hovered>
+    </animation>
+
+<!-- Wings Lights switch -->
 
     <animation>
         <type>rotate</type>
@@ -846,6 +1482,32 @@
             <z>0.0</z>
         </axis>
     </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>Wing.toggle</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/wing-lights</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>Wings Lights</tooltip-id>
+        <label>Wings Lights: %s</label>
+        <mapping>on-off</mapping>
+        <property>controls/lighting/wing-lights</property>
+      </binding>
+    </hovered>
+    </animation>
+
+<!-- Instruments Light Knob -->
 
     <animation>
         <type>rotate</type>
@@ -864,312 +1526,6 @@
         </axis>
     </animation>
 
-<!--  annunciators -->
-
-    <animation>
-        <type>select</type>
-        <object-name>annun.01</object-name>
-        <condition>
-            <property>instrumentation/annunciators/indicator01</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>annun.02</object-name>
-        <condition>
-            <property>instrumentation/annunciators/indicator02</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>annun.03</object-name>
-        <condition>
-            <property>instrumentation/annunciators/indicator03</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>annun.04</object-name>
-        <condition>
-            <property>instrumentation/annunciators/indicator04</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>annun.05</object-name>
-        <condition>
-            <property>instrumentation/annunciators/indicator05</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>annun.06</object-name>
-        <condition>
-            <property>instrumentation/annunciators/indicator06</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>annun.07</object-name>
-        <condition>
-            <property>instrumentation/annunciators/indicator07</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>annun.08</object-name>
-        <condition>
-            <property>instrumentation/annunciators/indicator08</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>annun.09</object-name>
-        <condition>
-            <property>instrumentation/annunciators/indicator09</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>annun.10</object-name>
-        <condition>
-            <property>instrumentation/annunciators/indicator10</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>annun.11</object-name>
-        <condition>
-            <property>instrumentation/annunciators/indicator11</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>annun.12</object-name>
-        <condition>
-            <property>instrumentation/annunciators/indicator12</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>annun.13</object-name>
-        <condition>
-            <property>instrumentation/annunciators/indicator13</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>annun.14</object-name>
-        <condition>
-            <property>instrumentation/annunciators/indicator14</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>annun.15</object-name>
-        <condition>
-            <property>instrumentation/annunciators/indicator15</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>annun.16</object-name>
-        <condition>
-            <property>instrumentation/annunciators/indicator16</property>
-        </condition>
-    </animation>
-
-
-<!--####    OSG hotspots    ####-->
-
-    <animation>
-        <type>pick</type>
-        <object-name>annun.test</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-assign</command>
-                <property>instrumentation/annunciators/test-btn</property>
-        <value>1</value>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Batt.toggle</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/electric/battery-switch</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>LAlt.toggle</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/electric/engine[0]/generator</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>RAlt.toggle</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/electric/engine[1]/generator</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Deice.toggle</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/anti-ice/prop-heat</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Pitot.toggle</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/anti-ice/pitot-heat</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>FAn.toggle</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/cabin/fan</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>C-heat.toggle</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/cabin/heat</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Strobe.toggle</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/lighting/strobe</property>
-            </binding>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/lighting/beacon</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Nav.toggle</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/lighting/nav-lights</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Cabin.toggle</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/lighting/cabin-lights</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Llanding.toggle</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/lighting/landing-lights[0]</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Rlanding.toggle</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/lighting/landing-lights[1]</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Wing.toggle</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/lighting/wing-lights</property>
-            </binding>
-        </action>
-    </animation>
-
     <animation>
         <type>pick</type>
         <object-name>Instr-light.knob</object-name>
@@ -1186,6 +1542,15 @@
                 <wrap>false</wrap>
             </binding>
         </action>
+  			<hovered>
+    			<binding>
+      			<command>set-tooltip</command>
+      			<tooltip-id>lighting1-brightness</tooltip-id>
+      			<label>Instrument Lighting: %3d%%</label>
+      			<property>controls/lighting/instruments-norm</property>
+      			<mapping>percent</mapping>
+    			</binding>
+  			</hovered>
     </animation>
 
     <animation>
@@ -1242,54 +1607,67 @@
         </action>
     </animation>
 
+<!-- Red Panel Light -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ColorKnob</object-name>
+        <property>controls/lighting/panel-red</property>
+        <factor>-180</factor>
+        <center>
+            <x-m>-0.893</x-m>
+            <y-m>-0.532</y-m>
+            <z-m>0.1548</z-m>
+        </center>
+        <axis>
+            <x>0.985</x>
+            <y>0</y>
+            <z>0.174</z>
+        </axis>
+    </animation>
+
+	<!-- Red Panel light -->
+
     <animation>
         <type>pick</type>
-        <object-name>L-magneto</object-name>
+        <object-name>ColorKnob</object-name>
         <action>
             <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
             <binding>
-                <condition>
-                    <less-than>
-                        <property>controls/engines/engine[0]/magnetos</property>
-                        <value>3</value>
-                    </less-than>
-                </condition>
                 <command>property-adjust</command>
-                <property>controls/engines/engine[0]/magnetos</property>
-                <step>1</step>
+                <property>controls/lighting/panel-red</property>
+                <step>0.05</step>
+                <min>0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
             </binding>
-            <binding>
-                <condition>
-                    <equals>
-                        <property>controls/engines/engine[0]/magnetos</property>
-                        <value>3</value>
-                    </equals>
-                </condition>
-                <command>property-assign</command>
-                <property>controls/engines/engine[0]/starter</property>
-                <value>1</value>
-            </binding>
-            <mod-up>
-                <binding>
-                    <command>property-assign</command>
-                    <property>controls/engines/engine[0]/starter</property>
-                    <value>0</value>
-                </binding>
-            </mod-up>
         </action>
+  <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>red-panel-light</tooltip-id>
+      <label>Red Light: %3d%%</label>
+      <property>controls/lighting/panel-red</property>
+      <mapping>percent</mapping>
+    </binding>
+  </hovered>
     </animation>
 
     <animation>
         <type>pick</type>
-        <object-name>L-magneto</object-name>
+        <object-name>ColorKnob</object-name>
         <action>
             <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
             <binding>
                 <command>property-adjust</command>
-                <property>controls/engines/engine[0]/magnetos</property>
-                <step>-1</step>
+                <property>controls/lighting/panel-red</property>
+                <step>-0.05</step>
                 <min>0</min>
-                <max>4</max>
+                <max>1.0</max>
                 <wrap>false</wrap>
             </binding>
         </action>
@@ -1297,14 +1675,310 @@
 
     <animation>
         <type>pick</type>
-        <object-name>R-magneto</object-name>
+        <object-name>ColorKnob</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/panel-red</property>
+                <step>0.05</step>
+                <min>0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ColorKnob</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/panel-red</property>
+                <step>-0.05</step>
+                <min>0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+<!-- White Panel Light -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>White.knob</object-name>
+        <property>controls/lighting/panel-white</property>
+        <factor>-180</factor>
+        <center>
+            <x-m>-0.893</x-m>
+            <y-m>-0.532</y-m>
+            <z-m>0.110</z-m>
+        </center>
+        <axis>
+            <x>0.985</x>
+            <y>0</y>
+            <z>0.174</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>White.knob</object-name>
         <action>
             <button>0</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/panel-white</property>
+                <step>0.05</step>
+                <min>0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+  <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>white-panel-light</tooltip-id>
+      <label>White Light: %3d%%</label>
+      <property>controls/lighting/panel-white</property>
+      <mapping>percent</mapping>
+    </binding>
+  </hovered>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>White.knob</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/panel-white</property>
+                <step>-0.05</step>
+                <min>0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>White.knob</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/panel-white</property>
+                <step>0.05</step>
+                <min>0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>White.knob</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.1</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/lighting/panel-white</property>
+                <step>-0.05</step>
+                <min>0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+<!-- Left Magneto Switch -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>L-switch</object-name>
+        <property>controls/engines/engine[0]/magnetos-cmd</property>
+        <factor>-30</factor>
+        <center>
+            <x-m>-0.889</x-m>
+            <y-m>-0.152</y-m>
+            <z-m>0.054</z-m>
+        </center>
+        <axis>
+            <x>0.985</x>
+            <y>0.0</y>
+            <z>0.174</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>L-mag-up</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/magnetos-cmd</property>
+                <step>1</step>
+                <min>0</min>
+                <max>4</max>
+                <wrap>false</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <less-than>
+                        <property>controls/engines/engine[0]/magnetos</property>
+                        <value>4</value>
+                    </less-than>
+                </condition>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/magnetos</property>
+                <step>1</step>
+            </binding>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>controls/engines/engine[0]/magnetos-cmd</property>
+                        <value>4</value>
+                    </equals>
+                </condition>
+                <command>property-assign</command>
+                <property>controls/engines/engine[0]/starter_cmd</property>
+                <value>1</value>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/engines/engine[0]/starter_cmd</property>
+                    <value>0</value>
+                </binding>
+                <binding>
+                	<condition>
+                    <equals>
+                        <property>controls/engines/engine[0]/magnetos-cmd</property>
+                        <value>4</value>
+                    </equals>
+                	</condition>
+                  <command>property-assign</command>
+                    <property>controls/engines/engine[0]/magnetos-cmd</property>
+                    <value>3</value>
+                </binding>
+            </mod-up>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>L-mag-up</tooltip-id>
+                <label>L-magneto: %s</label>
+                <property>controls/engines/engine[0]/magnetos-cmd</property>
+								<mapping>nasal</mapping>
+								<script>
+									var modes = ['0','1','2','BOTH','START'];
+									return modes[arg[0]];
+								</script>
+            </binding>
+        </hovered>
+  </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>L-mag-dwn</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/magnetos-cmd</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>3</max>
+                <wrap>false</wrap>
+            </binding>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/magnetos</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>3</max>
+                <wrap>false</wrap>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>L-mag-dwn</tooltip-id>
+                <label>L-Magneto: %s</label>
+                <property>controls/engines/engine[0]/magnetos-cmd</property>
+								<mapping>nasal</mapping>
+								<script>
+									var modes = ['0','1','2','BOTH','START'];
+									return modes[arg[0]];
+								</script>
+            </binding>
+        </hovered>
+    </animation>
+
+<!-- Right Magneto Switch -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>R-switch</object-name>
+        <property>controls/engines/engine[1]/magnetos-cmd</property>
+        <factor>-30</factor>
+        <center>
+            <x-m>-0.889</x-m>
+            <y-m>0.105</y-m>
+            <z-m>0.054</z-m>
+        </center>
+        <axis>
+            <x>0.985</x>
+            <y>0.0</y>
+            <z>0.174</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>R-mag-up</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[1]/magnetos-cmd</property>
+                <step>1</step>
+                <min>0</min>
+                <max>4</max>
+                <wrap>false</wrap>
+            </binding>
             <binding>
                 <condition>
                     <less-than>
                         <property>controls/engines/engine[1]/magnetos</property>
-                        <value>3</value>
+                        <value>4</value>
                     </less-than>
                 </condition>
                 <command>property-adjust</command>
@@ -1314,43 +1988,726 @@
             <binding>
                 <condition>
                     <equals>
-                        <property>controls/engines/engine[1]/magnetos</property>
-                        <value>3</value>
+                        <property>controls/engines/engine[1]/magnetos-cmd</property>
+                        <value>4</value>
                     </equals>
                 </condition>
                 <command>property-assign</command>
-                <property>controls/engines/engine[1]/starter</property>
+                <property>controls/engines/engine[1]/starter_cmd</property>
                 <value>1</value>
             </binding>
             <mod-up>
                 <binding>
                     <command>property-assign</command>
-                    <property>controls/engines/engine[1]/starter</property>
+                    <property>controls/engines/engine[1]/starter_cmd</property>
                     <value>0</value>
                 </binding>
+                <binding>
+                	<condition>
+                    <equals>
+                        <property>controls/engines/engine[1]/magnetos-cmd</property>
+                        <value>4</value>
+                    </equals>
+                	</condition>
+                  <command>property-assign</command>
+                    <property>controls/engines/engine[1]/magnetos-cmd</property>
+                    <value>3</value>
+                </binding>
             </mod-up>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
         </action>
-    </animation>
+         <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>R-mag-up</tooltip-id>
+                <label>R-Magneto: %s</label>
+                <property>controls/engines/engine[1]/magnetos-cmd</property>
+								<mapping>nasal</mapping>
+								<script>
+									var modes = ['0','1','2','BOTH','START'];
+									return modes[arg[0]];
+								</script>
+            </binding>
+        </hovered>
+   </animation>
 
     <animation>
         <type>pick</type>
-        <object-name>R-magneto</object-name>
+        <object-name>R-mag-dwn</object-name>
         <action>
-            <button>1</button>
+            <button>0</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[1]/magnetos-cmd</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>3</max>
+                <wrap>false</wrap>
+            </binding>
             <binding>
                 <command>property-adjust</command>
                 <property>controls/engines/engine[1]/magnetos</property>
                 <step>-1</step>
                 <min>0</min>
                 <max>3</max>
+                <wrap>false</wrap>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
             </binding>
         </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>R-mag-dwn</tooltip-id>
+                <label>R-Magneto: %s</label>
+                <property>controls/engines/engine[1]/magnetos-cmd</property>
+								<mapping>nasal</mapping>
+								<script>
+									var modes = ['0','1','2','BOTH','START'];
+									return modes[arg[0]];
+								</script>
+            </binding>
+        </hovered>
+    </animation>
+
+<!-- PTT -->
+
+  <animation>
+    <type>translate</type>
+    <object-name>L-ptt</object-name>
+    <property>/instrumentation/comm/ptt</property>
+    <factor> 0.0055 </factor>
+    <center>
+      <x-m> -0.8090 </x-m>
+      <y-m> -0.4076 </y-m>
+      <z-m>  0.3015 </z-m>
+    </center>
+    <axis>
+      <x> 0.0 </x>
+      <y> 0.0 </y>
+      <z>-1.0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>R-ptt</object-name>
+    <property>/instrumentation/comm/ptt</property>
+    <factor> 0.0055 </factor>
+    <center>
+      <x-m> -0.80897</x-m>
+      <y-m> -0.12379 </y-m>
+      <z-m>  0.30147 </z-m>
+    </center>
+    <axis>
+      <x> 0.0 </x>
+      <y> 0.0 </y>
+      <z>-1.0 </z>
+    </axis>
+  </animation>
+
+<!-- Annun. test -->
+
+	<animation>
+        <type>pick</type>
+        <object-name>annun.test</object-name>
+        <visible>true</visible>
+        <action>
+          <button>0</button>
+          <repeatable>false</repeatable>
+          <binding>
+            <command>property-assign</command>
+            <property>/instrumentation/annunciators/test-btn</property>
+            <value>1</value>
+          </binding>
+          <mod-up>
+            <binding>
+              <command>property-assign</command>
+              <property>/instrumentation/annunciators/test-btn</property>
+              <value>0</value>
+            </binding>
+          </mod-up>
+          <binding>
+						<condition>
+	        		<greater-than>
+	          		<property>systems/electrical/volts</property>
+	          		<value>20</value>
+	        		</greater-than>
+						</condition>	
+            <command>property-assign</command>
+            <property>/instrumentation/annunciators/test-btn_ok</property>
+            <value>1</value>
+          </binding>
+          <binding>
+						<command>property-toggle</command>
+							<property>sim/sound/click</property>
+          </binding>
+        </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>annun.test</tooltip-id>
+        <label>Annun-test: %s</label>
+        <mapping>on-off</mapping>
+        <property>/instrumentation/annunciators/test-btn</property>
+      </binding>
+    </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>annun.test</object-name>
+        <property>/instrumentation/annunciators/test-btn</property>
+        <factor>-0.0025</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+<!-- Annun. ack -->
+
+	<animation>
+        <type>pick</type>
+        <object-name>annun.ack</object-name>
+        <visible>true</visible>
+        <action>
+          <button>0</button>
+          <repeatable>true</repeatable>
+          <binding>
+            <command>property-assign</command>
+            <property>instrumentation/annunciators/alarm-ack</property>
+            <value>1</value>
+          </binding>
+          <mod-up>
+            <binding>
+              <command>property-assign</command>
+              <property>instrumentation/annunciators/alarm-ack</property>
+              <value>0</value>
+            </binding>
+          </mod-up>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>annun.ack</tooltip-id>
+        <label>Annun-ack: %s</label>
+        <mapping>on-off</mapping>
+        <property>instrumentation/annunciators/alarm-ack</property>
+      </binding>
+    </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>annun.ack</object-name>
+        <property>instrumentation/annunciators/alarm-ack</property>
+        <factor>-0.0025</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+<!-- Gears -->
+
+	 <animation>
+        <type>pick</type>
+        <object-name>GearLever</object-name> 		
+        <action>
+            <button>0</button>
+            <binding>
+	 	       	<condition>
+					<not>
+	                	<property>gear/gear[1]/wow</property>
+					</not>		
+				</condition>
+				<command>property-toggle</command>
+	            <property>controls/gear/gear-down</property>				
+           </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>landing gear</tooltip-id>
+                <label>Landing Gear: %s</label>
+                <mapping>down-up</mapping>
+                <property>controls/gear/gear-down</property>
+            </binding>
+        </hovered>
+    </animation>
+
+<!-- Yokes -->
+
+	 <animation>
+        <type>pick</type>
+        <object-name>Yoke1</object-name> 		
+        <action>
+            <button>0</button>
+            <binding>
+				<command>property-assign</command>
+	            <property>sim/yoke1-visible</property>
+					<value>0</value>				
+           </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>yoke1</tooltip-id>
+                <label>Yoke : Hide</label>
+                <mapping>on-off</mapping>
+                <property>sim/yoke1-visible</property>
+            </binding>
+        </hovered>
+    </animation>
+
+	 <animation>
+        <type>pick</type>
+        <object-name>YokeBase1</object-name> 		
+        <action>
+            <button>0</button>
+            <binding>
+				<command>property-assign</command>
+	            <property>sim/yoke1-visible</property>
+					<value>1</value>				
+           </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>yoke1</tooltip-id>
+                <label>Yoke : Visible</label>
+                <mapping>on-off</mapping>
+                <property>sim/yoke1-visible</property>
+            </binding>
+        </hovered>
+	 </animation> 
+
+	 <animation>
+        <type>pick</type>
+        <object-name>Yoke2</object-name> 		
+        <action>
+            <button>0</button>
+            <binding>
+				<command>property-assign</command>
+	            <property>sim/yoke2-visible</property>
+					<value>0</value>				
+           </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>yoke2</tooltip-id>
+                <label>Yoke : Hide</label>
+                <mapping>on-off</mapping>
+                <property>sim/yoke2-visible</property>
+            </binding>
+        </hovered>
+    </animation>
+
+	 <animation>
+        <type>pick</type>
+        <object-name>YokeBase2</object-name> 		
+        <action>
+            <button>0</button>
+            <binding>
+				<command>property-assign</command>
+	            <property>sim/yoke2-visible</property>
+					<value>1</value>				
+           </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>yoke2</tooltip-id>
+                <label>Yoke : Visible</label>
+                <mapping>on-off</mapping>
+                <property>sim/yoke2-visible</property>
+            </binding>
+        </hovered>
+    </animation>
+
+<!-- Flaps -->
+
+	 <animation>
+        <type>slider</type>
+        <object-name>FlapLever</object-name>
+        <drag-direction>vertical</drag-direction> 
+       <decrease>
+            <binding>
+                <command>nasal</command>
+                <script>controls.flapsDown(-1)</script>
+          </binding>
+      </decrease>
+			<increase>
+            <binding>
+                <command>nasal</command>
+                <script>controls.flapsDown(1)</script>
+            </binding>
+       </increase>
+    </animation>
+
+<!-- Throttles -->
+
+    <animation>
+        <type>slider</type>
+        <object-name>Throttle0</object-name>
+        <drag-direction>vertical</drag-direction>
+		<action>
+			<binding>
+				<condition>
+					<not>
+						<property>devices/status/keyboard/ctrl</property>
+					</not>
+				</condition>
+            	<command>property-adjust</command>
+            	<property>controls/engines/engine[0]/throttle</property>
+            	<factor>-0.1</factor>
+            	<min>-1</min>
+            	<max>1</max>
+				<wrap>0</wrap>
+          	</binding>
+            <binding>
+				<condition>
+					<property>devices/status/keyboard/ctrl</property>
+				</condition>
+              <command>property-adjust</command>
+              <property>controls/engines/engine[0]/throttle</property>
+            	<factor>-0.1</factor>
+            	<min>-1</min>
+            	<max>1</max>
+				<wrap>0</wrap>
+            </binding>
+            <binding>
+				<condition>
+					<property>devices/status/keyboard/ctrl</property>
+				</condition>
+              <command>property-adjust</command>
+              <property>controls/engines/engine[1]/throttle</property>
+            	<factor>-0.1</factor>
+            	<min>-1</min>
+            	<max>1</max>
+				<wrap>0</wrap>
+            </binding>
+        </action>
+        <hovered>
+          <binding>
+            <command>set-tooltip</command>
+            <label>L Throttle: %3d%%</label>
+            <measure-text>L Throttle: 100%</measure-text>
+            <tooltip-id>l-throttle</tooltip-id>
+            <mapping>percent</mapping>
+            <property>controls/engines/engine[0]/throttle</property>
+          </binding>
+        </hovered>
     </animation>
 
     <animation>
-        <type>rotate</type>
-        <object-name>Cabin.innerdoor1</object-name>
-        <property>sim/multiplay/generic/float[0]</property>
+        <type>slider</type>
+        <object-name>Throttle1</object-name>
+        <drag-direction>vertical</drag-direction>
+		<action>
+			<binding>
+				<condition>
+					<not>
+						<property>devices/status/keyboard/ctrl</property>
+					</not>
+				</condition>
+            	<command>property-adjust</command>
+            	<property>controls/engines/engine[1]/throttle</property>
+            	<factor>-0.1</factor>
+            	<min>-1</min>
+            	<max>1</max>
+				<wrap>0</wrap>
+          	</binding>
+            <binding>
+				<condition>
+					<property>devices/status/keyboard/ctrl</property>
+				</condition>
+              <command>property-adjust</command>
+              <property>controls/engines/engine[0]/throttle</property>
+            	<factor>-0.1</factor>
+            	<min>-1</min>
+            	<max>1</max>
+				<wrap>0</wrap>
+            </binding>
+            <binding>
+				<condition>
+					<property>devices/status/keyboard/ctrl</property>
+				</condition>
+              <command>property-adjust</command>
+              <property>controls/engines/engine[1]/throttle</property>
+            	<factor>-0.1</factor>
+            	<min>-1</min>
+            	<max>1</max>
+				<wrap>0</wrap>
+            </binding>
+        </action>
+        <hovered>
+          <binding>
+            <command>set-tooltip</command>
+            <label>R Throttle: %3d%%</label>
+            <measure-text>R Throttle: 100%</measure-text>
+            <tooltip-id>r-throttle</tooltip-id>
+            <mapping>percent</mapping>
+            <property>controls/engines/engine[1]/throttle</property>
+          </binding>
+        </hovered>
+    </animation>
+
+<!-- Propellers -->
+
+    <animation>
+        <type>slider</type>
+        <object-name>Prop0</object-name>
+        <drag-direction>vertical</drag-direction>
+        <action>
+          <binding>
+			<condition>
+				<not>
+					<property>devices/status/keyboard/ctrl</property>
+				</not>
+			</condition>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[0]/propeller-pitch</property>
+            <factor>-0.1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding>
+          <binding>
+			<condition>
+				<property>devices/status/keyboard/ctrl</property>
+			</condition>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[0]/propeller-pitch</property>
+            <factor>-0.1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding>
+          <binding>
+			<condition>
+				<property>devices/status/keyboard/ctrl</property>
+			</condition>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[1]/propeller-pitch</property>
+            <factor>-0.1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding>
+        </action>
+        <hovered>
+          <binding>
+            <command>set-tooltip</command>
+            <label>L Pitch: %3d%%</label>
+            <measure-text>L Pitch: 100%</measure-text>
+            <tooltip-id>l-pitch</tooltip-id>
+            <mapping>percent</mapping>
+            <property>controls/engines/engine[0]/propeller-pitch</property>
+          </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>slider</type>
+        <object-name>Prop1</object-name>
+        <drag-direction>vertical</drag-direction>
+        <action>
+          <binding>
+			<condition>
+				<not>
+					<property>devices/status/keyboard/ctrl</property>
+				</not>
+			</condition>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[1]/propeller-pitch</property>
+            <factor>-0.1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding>
+          <binding>
+			<condition>
+				<property>devices/status/keyboard/ctrl</property>
+			</condition>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[0]/propeller-pitch</property>
+            <factor>-0.1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding>
+          <binding>
+			<condition>
+				<property>devices/status/keyboard/ctrl</property>
+			</condition>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[1]/propeller-pitch</property>
+            <factor>-0.1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding>
+        </action>
+        <hovered>
+          <binding>
+            <command>set-tooltip</command>
+            <label>R Pitch: %3d%%</label>
+            <measure-text>R Pitch: 100%</measure-text>
+            <tooltip-id>r-pitch</tooltip-id>
+            <mapping>percent</mapping>
+            <property>controls/engines/engine[1]/propeller-pitch</property>
+          </binding>
+        </hovered>
+    </animation>
+
+<!-- Mixtures -->
+  
+    <animation>
+        <type>slider</type>
+        <object-name>Mix0</object-name>
+        <drag-direction>vertical</drag-direction>
+        <action>
+          <binding>
+			<condition>
+				<not>
+					<property>devices/status/keyboard/ctrl</property>
+				</not>
+			</condition>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[0]/mixture</property>
+            <factor>-0.1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding>
+          <binding>
+			<condition>
+				<property>devices/status/keyboard/ctrl</property>
+			</condition>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[0]/mixture</property>
+            <factor>-0.1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+		  </binding>
+          <binding>
+			<condition>
+				<property>devices/status/keyboard/ctrl</property>
+			</condition>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[1]/mixture</property>
+            <factor>-0.1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding> 
+       </action>
+        <hovered>
+          <binding>
+            <command>set-tooltip</command>
+            <label>L Mixture: %3d%%</label>
+            <measure-text>L Mixture: 100%</measure-text>
+            <tooltip-id>l-mixture</tooltip-id>
+            <mapping>percent</mapping>
+            <property>controls/engines/engine[0]/mixture</property>
+          </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>slider</type>
+        <object-name>Mix1</object-name>
+        <drag-direction>vertical</drag-direction>
+        <action>
+          <binding>
+			<condition>
+				<not>
+					<property>devices/status/keyboard/ctrl</property>
+				</not>
+			</condition>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[1]/mixture</property>
+            <factor>-0.1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding>
+          <binding>
+			<condition>
+				<property>devices/status/keyboard/ctrl</property>
+			</condition>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[0]/mixture</property>
+            <factor>-0.1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+		  </binding>
+          <binding>
+			<condition>
+				<property>devices/status/keyboard/ctrl</property>
+			</condition>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[1]/mixture</property>
+            <factor>-0.1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding> 
+       </action>
+        <hovered>
+          <binding>
+            <command>set-tooltip</command>
+            <label>R Mixture: %3d%%</label>
+            <measure-text>R Mixture: 100%</measure-text>
+            <tooltip-id>r-mixture</tooltip-id>
+            <mapping>percent</mapping>
+            <property>controls/engines/engine[1]/mixture</property>
+          </binding>
+        </hovered>
+    </animation>
+
+<!-- Cabin door -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>Poignée-int</object-name>
+      	<object-name>Axe-poignée</object-name>
+        <action>
+            <button>0</button>
+        	<binding>
+          		<command>property-toggle</command>
+          		<property>controls/cabin-door/int-handle</property>
+        	</binding>
+		</action>
+       	<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>cabin-door</tooltip-id>
+				<label>Cabin door : %s</label>
+                <mapping>open-close</mapping>
+                <property>controls/cabin-door/int-handle</property>
+			</binding>
+        </hovered>
+    </animation>
+
+	<animation>
+		<type>rotate</type>
+        <object-name>Cabin.innerdoor1</object-name>	
+		<property>sim/multiplay/generic/float[0]</property>
         <interpolation>
             <entry>
                 <ind>0.0</ind><dep>0.0</dep>
@@ -1372,7 +2729,9 @@
     <animation>
         <type>rotate</type>
         <object-name>Cabin.innerdoor2</object-name>
-        <property>sim/multiplay/generic/float[0]</property>
+      	<object-name>Poignée-int</object-name>
+      	<object-name>Axe-poignée</object-name>
+       <property>sim/multiplay/generic/float[0]</property>
         <interpolation>
             <entry>
                 <ind>0.0</ind><dep>0.0</dep>
@@ -1391,145 +2750,204 @@
         </axis>
     </animation>
 
+	<animation>
+        <type>rotate</type>
+        <object-name>Poignée-int</object-name>	
+        <property>controls/cabin-door/handle2/position-norm</property>
+        <factor>90</factor>
+        <center>
+            <x-m>-0.406</x-m>
+            <y-m>-0.606</y-m>
+            <z-m>0.020</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+   </animation>
+
+	<animation>
+        <type>rotate</type>
+        <object-name>Poignée-int</object-name>	
+        <property>controls/cabin-door/handle1/position-norm</property>
+        <factor>90</factor>
+        <center>
+            <x-m>-0.406</x-m>
+            <y-m>-0.606</y-m>
+            <z-m>0.020</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+   </animation>
+
+<!-- Parking Brake -->
 
     <animation>
-        <type>pick</type>
-        <object-name>Throttle0</object-name>
-        <action>
-            <button>0</button>
-        <repeatable>true</repeatable>
-        <interval-sec>0.05</interval-sec>
+      <type>pick</type>
+      <object-name>Manette</object-name>
+      <visible>true</visible>
+      <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
         <binding>
-                 <command>nasal</command>
-            <script>aerostar.set_levers("throttle",0,0.035,1);</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Throttle0</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <interval-sec>0.05</interval-sec>
+          <command>property-toggle</command>
+          <property>controls/gear/brake-parking</property>
+        </binding>
+      </action>
+       <hovered>
             <binding>
-                 <command>nasal</command>
-            <script>aerostar.set_levers("throttle",0,0.035,0);</script>
+                <command>set-tooltip</command>
+                <tooltip-id>Manette</tooltip-id>
+                <label>Parking Brake: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/gear/brake-parking</property>
             </binding>
-        </action>
+        </hovered>
     </animation>
 
     <animation>
-        <type>pick</type>
-        <object-name>Throttle1</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <interval-sec>0.05</interval-sec>
-            <binding>
-                 <command>nasal</command>
-            <script>aerostar.set_levers("throttle",1,0.035,0);</script>
-            </binding>
-        </action>
+        <type>translate</type>
+        <object-name>Manette</object-name>	
+        <property>controls/gear/brake-parking</property>
+				<factor>0.03</factor>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+	<animation>
+        <type>rotate</type>
+        <object-name>Manette</object-name>	
+				<property>controls/gear/brake-parking</property>
+        <factor>-90</factor>
+        <center>
+            <x-m>-0.857</x-m>
+            <y-m>-0.560</y-m>
+            <z-m>-0.076</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+   </animation>
+
+<!-- Dosier-table -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>dossier-table</object-name>	
+        <property>controls/cabin/table</property>
+    <interpolation>
+      <entry><ind>  0.00 </ind><dep>  0.000 </dep></entry>
+      <entry><ind>  0.50 </ind><dep>  45.00 </dep></entry>
+      <entry><ind>  1.00 </ind><dep>  -90.00 </dep></entry>
+    </interpolation>
+    <axis>
+      <x>  0 </x>
+      <y>  1 </y>
+      <z>  0 </z>
+    </axis>
+    <center>
+      <x-m> 1.4748 </x-m>
+      <y-m> 0.0001 </y-m>
+      <z-m>-0.1515 </z-m>
+    </center>
     </animation>
 
     <animation>
-        <type>pick</type>
-        <object-name>Mix0</object-name>
-        <action>
-            <button>0</button>
-        <repeatable>true</repeatable>
-        <interval-sec>0.05</interval-sec>
+      <type>pick</type>
+      <object-name>dossier-table</object-name>
+      <visible>true</visible>
+      <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
         <binding>
-                 <command>nasal</command>
-            <script>aerostar.set_levers("mixture",0,0.035,1);</script>
-            </binding>
-        </action>
+          <command>property-toggle</command>
+          <property>controls/cabin/table</property>
+        </binding>
+      </action>
+
+    </animation>
+
+<!-- Tablette 1 -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Tablette1</object-name>	
+        <property>controls/cabin/tablette1</property>
+    <interpolation>
+      <entry><ind>  0.00 </ind><dep>  0.000 </dep></entry>
+      <entry><ind>  0.12 </ind><dep>  45.00 </dep></entry>
+      <entry><ind>  1.00 </ind><dep>  -85.00 </dep></entry>
+    </interpolation>
+    <axis>
+      <x>  1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+    <center>
+      <x-m> 0.7876 </x-m>
+      <y-m>-0.5810 </y-m>
+      <z-m> 0.0761 </z-m>
+    </center>
     </animation>
 
     <animation>
-        <type>pick</type>
-        <object-name>Mix0</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <interval-sec>0.05</interval-sec>
-            <binding>
-                 <command>nasal</command>
-                <script>aerostar.set_levers("mixture",0,0.035,0);</script>
-            </binding>
-        </action>
+      <type>pick</type>
+      <object-name>Tablette1</object-name>
+      <visible>true</visible>
+      <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/cabin/tablette1</property>
+        </binding>
+      </action>
+    </animation>
+
+<!-- Tablette 2 -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Tablette2</object-name>	
+        <property>controls/cabin/tablette2</property>
+    <interpolation>
+      <entry><ind>  0.00 </ind><dep>  0.000 </dep></entry>
+      <entry><ind>  0.12 </ind><dep>  45.00 </dep></entry>
+      <entry><ind>  1.00 </ind><dep> -85.00 </dep></entry>
+    </interpolation>
+    <axis>
+      <x>  1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+    <center>
+      <x-m> 0.7876 </x-m>
+      <y-m> 0.5807 </y-m>
+      <z-m> 0.0761 </z-m>
+    </center>
     </animation>
 
     <animation>
-        <type>pick</type>
-        <object-name>Mix1</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <interval-sec>0.05</interval-sec>
-            <binding>
-                 <command>nasal</command>
-                <script>aerostar.set_levers("mixture",1,0.035,0);</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Prop0</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <interval-sec>0.05</interval-sec>
-            <binding>
-                 <command>nasal</command>
-                <script>aerostar.set_levers("prop",0,0.035,1);</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Prop0</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <interval-sec>0.05</interval-sec>
-            <binding>
-                <command>nasal</command>
-                <script>aerostar.set_levers("prop",0,0.035,0);</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Prop1</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <interval-sec>0.05</interval-sec>
-            <binding>
-                <command>nasal</command>
-                <script>aerostar.set_levers("prop",1,0.035,0);</script>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>FlapLever</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <interval-sec>0.05</interval-sec>
-            <binding>
-                <command>nasal</command>
-                <script>aerostar.set_levers("flap",0,-0.05,0);</script>
-            </binding>
-        </action>
+      <type>pick</type>
+      <object-name>Tablette2</object-name>
+      <visible>true</visible>
+      <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/cabin/tablette2</property>
+        </binding>
+      </action>
     </animation>
 
 </PropertyList>

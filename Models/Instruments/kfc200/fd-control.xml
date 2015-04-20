@@ -39,26 +39,31 @@
 <!-- Hotspots -->
 
     <animation>
-        <type>pick</type>
-        <object-name>Pitch.down</object-name>
-        <condition>
-            <not-equals>
-                <property>/autopilot/locks/altitude</property>
-                <value></value>
-            </not-equals>
-        </condition>
+		<type>pick</type>
+			<object-name>Pitch.down</object-name>
+      <condition>
+      	<not-equals>
+        	<property>/autopilot/locks/altitude</property>
+         	<value></value>
+        </not-equals>
+			</condition>
         <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <interval-sec>0.1</interval-sec>
-            <binding>
-                <command>property-adjust</command>
-                <property>/autopilot/settings/target-pitch-deg</property>
-                <step>-0.05</step>
-                <min>-15.0</min>
-                <max>15.0</max>
+        	<button>0</button>
+          <repeatable>true</repeatable>
+          <interval-sec>0.1</interval-sec>
+          <binding>
+          	<command>property-adjust</command>
+            	<property>/autopilot/settings/vertical-speed-fpm</property>
+              	<step>-100</step>
+                <min>-2000</min>
+                <max>2000</max>
                 <wrap>false</wrap>
-            </binding>
+					</binding>					
+					<binding>
+          	<command>property-assign</command>
+	    			<property>autopilot/locks/altitude</property>
+	    			<value type="string">vertical-speed-hold</value>
+          </binding>
         </action>
     </animation>
     
@@ -77,24 +82,35 @@
             <interval-sec>0.1</interval-sec>
             <binding>
                 <command>property-adjust</command>
-                <property>/autopilot/settings/target-pitch-deg</property>
-                <step>0.05</step>
-                <min>-15.0</min>
-                <max>15.0</max>
+                <property>/autopilot/settings/vertical-speed-fpm</property>
+                <step>100</step>
+                <min>-2000</min>
+                <max>2000</max>
                 <wrap>false</wrap>
             </binding>
-        </action>
+					<binding>
+          	<command>property-assign</command>
+	    			<property>autopilot/locks/altitude</property>
+	    			<value type="string">vertical-speed-hold</value>
+          </binding>
+         </action>
     </animation>
-    
+  
     <animation>
         <type>pick</type>
         <object-name>HDG.btn</object-name>
-        <action>
+		<action>
             <button>0</button>
             <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>aerostar.FD.set_mode("HDG");</script>
+			<binding>
+				<condition>
+					<equals>
+						<property>autopilot/locks/passive-mode</property>
+						<value>0</value>
+					</equals>
+				</condition>
+                	<command>nasal</command>
+                	<script>aerostar.FD.set_mode("HDG");</script>
             </binding>
         </action>
     </animation>
@@ -106,22 +122,33 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>nasal</command>
+              <command>nasal</command>
                 <script>aerostar.FD.set_mode("FD");</script>
             </binding>
         </action>
     </animation>
     
     <animation>
-        <type>pick</type>
+    	<type>pick</type>
         <object-name>ALT.btn</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>aerostar.FD.set_mode("ALT");</script>
-            </binding>
+      <action>
+      	<button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+					<condition>
+						<equals>
+							<property>autopilot/locks/passive-mode</property>
+							<value>0</value>
+						</equals>
+					</condition>
+          <command>nasal</command>
+          	<script>aerostar.FD.set_mode("ALT");</script>
+				</binding>
+				<binding>
+          	<command>property-assign</command>
+	    			<property>autopilot/locks/altitude</property>
+	    			<value type="string">altitude-hold</value>
+          </binding>
         </action>
     </animation>
     
@@ -132,6 +159,12 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
+				<condition>
+					<equals>
+						<property>autopilot/locks/passive-mode</property>
+						<value>0</value>
+					</equals>
+				</condition>
 				<command>nasal</command>
 				<script>aerostar.FD.set_mode("NAV");</script>
 			</binding>
@@ -145,6 +178,12 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
+				<condition>
+					<equals>
+						<property>autopilot/locks/passive-mode</property>
+						<value>0</value>
+					</equals>
+				</condition>
                 <command>nasal</command>
                 <script>aerostar.FD.set_mode("BC");</script>
             </binding>
@@ -158,6 +197,12 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
+				<condition>
+					<equals>
+						<property>autopilot/locks/passive-mode</property>
+						<value>0</value>
+					</equals>
+				</condition>
                 <command>nasal</command>
                 <script>aerostar.FD.set_mode("APPR");</script>
 			</binding>
@@ -173,6 +218,16 @@
             <binding>
                 <command>property-toggle</command>
                 <property>/autopilot/locks/passive-mode</property>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+               		<property>instrumentation/kfc200/vnav</property>
+						<value>0</value>
+            </binding>
+            <binding>			
+                <command>property-assign</command>
+                	<property>instrumentation/kfc200/lnav</property>
+						<value>0</value>
             </binding>
         </action>
     </animation>
