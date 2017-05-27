@@ -6,6 +6,17 @@
         <status>development</status>
         <flight-model>yasim</flight-model>
         <aero>aerostar-yasim</aero>
+        <tags>
+            <tag>mid-wing</tag>
+            <tag>tricycle</tag>
+            <tag>retractable-gear</tag>
+            <tag>twin-engine</tag>
+            <tag>piston</tag>
+            <tag>fixed-pitch</tag>
+            <tag>transport</tag>
+            <tag>1970s</tag>
+            <tag>1980s</tag>
+        </tags>
         <fuel-fraction>0.5</fuel-fraction>
         <model>
             <path>Aircraft/Aerostar-700/Models/aerostar.xml</path>
