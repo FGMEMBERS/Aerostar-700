@@ -137,7 +137,9 @@ setlistener("/sim/signals/fdm-initialized", func {
 
 init_switches = func() {
     var tprop=props.globals.getNode("controls/electric/ammeter-switch",1);
-    tprop.setBoolValue(1);
+    tprop.setBoolValue(0);
+    tprop=props.globals.getNode("controls/electric/ammeter-value",1);
+    tprop.setDoubleValue(0.0);
     tprop=props.globals.getNode("controls/cabin/fan",1);
     tprop.setBoolValue(0);
     tprop=props.globals.getNode("controls/cabin/heat",1);
@@ -148,7 +150,9 @@ init_switches = func() {
     setprop("controls/lighting/instruments-norm",0.8);
     setprop("controls/lighting/engines-norm",0.8);
     setprop("controls/lighting/efis-norm",0.8);
-    setprop("controls/lighting/panel-norm",0.8);
+		setprop("controls/lighting/panel-norm",0.8);
+    setprop("controls/lighting/panel-red",0);
+    setprop("controls/lighting/panel-white",0);
 
     append(switch_list,"controls/anti-ice/prop-heat");
     append(output_list,"prop-heat");
@@ -199,6 +203,9 @@ init_switches = func() {
     append(servout_list,"nav[1]");
     append(serv_list,"instrumentation/kns-80/serviceable");
     append(servout_list,"KNS80");
+    append(serv_list,"instrumentation/kfc200/fd-annun/serviceable");
+    append(servout_list,"fd-annun");
+
 
     for(var i=0; i<size(serv_list); i+=1) {
         var tmp = props.globals.getNode(serv_list[i],1);
@@ -274,18 +281,51 @@ electrical_bus = func(bv) {
     var load = 0.0;
     var srvc = 0.0;
     var starter_volts = 0.0;
+	
+	var starter_switch = getprop("controls/engines/engine[0]/starter_cmd");
+    var starter_switch1 = getprop("controls/engines/engine[1]/starter_cmd");
 
-    var starter_switch = getprop("controls/engines/engine[0]/starter");
-    var starter_switch1 = getprop("controls/engines/engine[1]/starter"); 
+	var voltmeter = getprop("systems/electrical/volts");
+	var ammeter_val = getprop("systems/electrical/amps");
 
     starter_volts = bus_volts * starter_switch;
-    load += starter_switch *5;
+ 	load += starter_switch *5;
     starter_volts = bus_volts * starter_switch1;
-    load += starter_switch *5;
+  	load += starter_switch *5;
 
-    setprop(outPut~"starter",starter_volts); 
+   	setprop(outPut~"starter",bus_volts); 
 
-    for(var i=0; i<size(switch_list); i+=1) {
+	if (getprop("systems/electrical/outputs/starter") > 12 and
+		getprop("controls/engines/engine[0]/starter_cmd") == 1 and
+		getprop("controls/engines/engine[0]/magnetos") > 0)	{	
+		setprop("controls/engines/engine[0]/starter",1);
+	}else{setprop("controls/engines/engine[0]/starter",0);
+	}    
+
+	if (getprop("systems/electrical/outputs/starter") > 12 and
+		getprop("controls/engines/engine[1]/starter_cmd") == 1 and
+		getprop("controls/engines/engine[1]/magnetos") > 0)	{	
+		setprop("controls/engines/engine[1]/starter",1);
+	}else{setprop("controls/engines/engine[1]/starter",0);
+	}    
+
+	### réinitialisation PA sur coupure tension ###
+	if (getprop("systems/electrical/volts") < 12) {
+		setprop("instrumentation/kfc200/fd-on",0);
+		setprop("instrumentation/kfc200/lnav",0);
+		setprop("instrumentation/kfc200/vnav",0);
+	}	
+
+	### Volt/Amp meter ###
+
+	if (getprop("controls/electric/ammeter-switch")) {
+		setprop("controls/electric/ammeter-value",ammeter_val * 3.8);
+	} else {
+		setprop("controls/electric/ammeter-value",voltmeter);
+	}	
+
+	#########
+	for(var i=0; i<size(switch_list); i+=1) {
         var srvc = getprop(switch_list[i]);
         load +=srvc;
         setprop(outPut~output_list[i],bus_volts * srvc);

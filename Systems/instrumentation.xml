@@ -53,9 +53,24 @@ This file selects the instrumentation modules that should be available.
         <number>0</number>
     </magnetic-compass>
 
+    <comm-radio>
+        <name>comm</name>
+        <number>0</number>
+    </comm-radio>
+    
+    <comm-radio>
+        <name>comm</name>
+        <number>1</number>
+    </comm-radio>
+ 
     <nav-radio>
         <name>nav</name>
         <number>0</number>
+    </nav-radio>
+    
+     <nav-radio>
+        <name>nav</name>
+        <number>1</number>
     </nav-radio>
 
     <slip-skid-ball>
@@ -74,12 +89,12 @@ This file selects the instrumentation modules that should be available.
         <number>0</number>
     </turn-indicator>
 
-    <vertical-speed-indicator>
-        <name>vertical-speed-indicator</name>
+    <inst-vertical-speed-indicator>
+        <name>inst-vertical-speed-indicator</name>
         <number>0</number>
         <static-pressure>/systems/static/pressure-inhg</static-pressure>
         <serviceable>true</serviceable>
-    </vertical-speed-indicator>
+    </inst-vertical-speed-indicator>
 
     <radar>
         <name>radar</name>
@@ -90,11 +105,6 @@ This file selects the instrumentation modules that should be available.
         <name>marker-beacon</name>
         <number>0</number>
     </marker-beacon>
-
-    <KR-87>
-        <name>kr-87</name>
-        <number>0</number>
-    </KR-87>
 
     <KT-70>
         <name>kt-70</name>

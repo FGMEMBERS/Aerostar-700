@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<!--
+KA 285 Mode Annunciator Panel
+Syd Adams
+
+-->
+
+<PropertyList>
+
+    <path>Al-annun.ac</path>
+   
+    <animation>
+        <type>material</type>
+        <object-name>Annunciators</object-name>
+        <emission>
+            <red>0.8</red>
+            <green>0.4</green>
+            <blue>0.2</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+    </animation>
+    
+    <animation>
+        <type>select</type>
+        <object-name>annun.01</object-name>           
+				<property>instrumentation/annunciators/indicator01</property>	
+    </animation>
+
+	<animation>
+        <type>select</type>
+        <object-name>annun.02</object-name>           
+				<property>instrumentation/annunciators/indicator02</property>	
+    </animation>
+
+<!-- Acquit -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>annun.ack</object-name>
+		<action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+					<property>instrumentation/annunciators/alarm-ack</property>			
+						<value>1</value>				
+            </binding>
+        </action>
+    </animation>
+
+
+<!--Right Generator-->
+
+	<animation>
+        <type>select</type>
+        <object-name>annun.03</object-name>
+        <condition>
+			<and>
+				<greater-than>
+					<property>systems/electrical/volts</property>			
+					<value>12</value>
+				</greater-than>
+					<property>instrumentation/annunciators/al03</property>
+			</and>     
+        </condition>
+    </animation>
+	
+<!--Left Generator-->
+	
+	<animation>
+        <type>select</type>
+        <object-name>annun.04</object-name>
+        <condition>
+			<and>
+				<greater-than>
+					<property>systems/electrical/volts</property>			
+					<value>12</value>
+				</greater-than>          
+					<property>instrumentation/annunciators/al04</property>
+			</and>     
+		</condition>
+    </animation>
+
+<!-- Right Engine Oil  -->
+
+	<animation>
+        <type>select</type>
+        <object-name>annun.05</object-name>
+        <condition>          
+			<and>
+				<greater-than>
+					<property>systems/electrical/volts</property>			
+					<value>12</value>
+				</greater-than>           
+					<property>instrumentation/annunciators/al05</property>
+			</and>     
+        </condition>
+    </animation>
+
+<!-- Left Engine Oil  -->
+
+	<animation>
+        <type>select</type>
+        <object-name>annun.06</object-name>
+        <condition>       
+			<and>
+				<greater-than>
+					<property>systems/electrical/volts</property>			
+					<value>12</value>
+				</greater-than>           
+					<property>instrumentation/annunciators/al06</property>
+			</and>     
+        </condition>
+    </animation>
+
+<!-- R X-Feed  -->
+
+	<animation>
+        <type>select</type>
+        <object-name>annun.09</object-name>
+        <condition>       
+			<and>
+				<greater-than>
+					<property>systems/electrical/volts</property>			
+					<value>12</value>
+				</greater-than>           
+					<property>instrumentation/annunciators/al09</property>
+			</and>     
+        </condition>
+    </animation>
+
+<!-- L X-Feed  -->
+
+	<animation>
+        <type>select</type>
+        <object-name>annun.10</object-name>
+        <condition>       
+			<and>
+				<greater-than>
+					<property>systems/electrical/volts</property>			
+					<value>12</value>
+				</greater-than>           
+					<property>instrumentation/annunciators/al10</property>
+			</and>     
+        </condition>
+    </animation>
+
+<!--Low fuel-->
+
+	 <animation>
+        <type>select</type>
+        <object-name>annun.15</object-name>
+        <condition>
+			<and>
+				<greater-than>
+					<property>systems/electrical/volts</property>			
+					<value>12</value>
+				</greater-than>
+				<property>instrumentation/annunciators/al15</property>
+			</and>
+        </condition>
+    </animation>
+	
+<!--Cabin door open-->
+
+	 <animation>
+        <type>select</type>
+        <object-name>annun.16</object-name>
+        <condition>
+			<and>
+				<greater-than>
+					<property>systems/electrical/volts</property>			
+					<value>12</value>
+				</greater-than>
+				<property>instrumentation/annunciators/al16</property>
+			</and>
+        </condition>
+    </animation>
+
+</PropertyList>

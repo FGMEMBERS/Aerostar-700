@@ -1,162 +1,182 @@
 <?xml version="1.0"?>
 <!-- Aerostar 700 autopilot-->
+<!-- Révision Christian Le Moigne (clm76) - Avril 2016 -->
+
+
 <PropertyList>
 <!-- =============================== -->
 <!-- ======  Roll Axis Modes  ====== -->
 <!-- =============================== -->
 
-<!-- Wing leveler -->
     <pid-controller>
-        <name>Wing Leveler (Turn Coordinator based)</name>
+        <name>ROLL hold</name>
         <debug>false</debug>
         <enable>
-            <prop>autopilot/locks/heading</prop>
-            <value>wing-leveler</value>
+					<condition>
+						<equals>
+		          <property>autopilot/locks/heading</property>
+		          <value>dg-heading-hold</value>
+						</equals>
+					</condition>
         </enable>
         <input>
-            <prop>orientation/roll-deg</prop>
+            <property>orientation/roll-deg</property>
         </input>
         <reference>
             <value>0.0</value>
         </reference>
         <output>
-            <prop>autopilot/internal/aileron-filter</prop>
+            <property>autopilot/internal/roll-filter</property>
         </output>
         <config>
-            <Kp>0.15</Kp>
+            <Kp>0.5</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
-            <Ti>20.0</Ti>
+            <Ti>1.0</Ti>
             <Td>0.0001</Td>
-            <u_min>-1.0</u_min>
-            <u_max>1.0</u_max>
+            <min>-30</min>
+            <max>30</max>
         </config>
     </pid-controller>
 
     <pi-simple-controller>
-        <name>Heading Bug Hold (DG based) Stage 1</name>
+        <name>Heading Bug Hold</name>
         <debug>false</debug>
         <enable>
-            <prop>autopilot/locks/heading</prop>
-            <value>dg-heading-hold</value>
+					<condition>
+						<equals>
+		          <property>autopilot/locks/heading</property>
+		          <value>dg-heading-hold</value>
+						</equals>
+					</condition>
         </enable>
         <input>
-            <prop>autopilot/internal/fdm-heading-bug-error-deg</prop>
+            <property>autopilot/internal/heading-bug-error-deg</property>
         </input>
         <reference>
             <value>0.0</value>
         </reference>
         <output>
-            <prop>autopilot/internal/target-roll-deg</prop>
+            <property>autopilot/internal/roll-filter</property>
         </output>
         <config>
             <Kp>-1.5</Kp>
             <Ki>0.0</Ki>
-            <u_min>-30.0</u_min>
-            <u_max>30.0</u_max>
+            <min>-30.0</min>
+            <max>30.0</max>
         </config>
     </pi-simple-controller>
 
     <pid-controller>
-        <name>Heading Bug Hold (DG based) Stage 2</name>
+        <name>Nav1</name>
         <debug>false</debug>
         <enable>
-            <prop>autopilot/locks/heading</prop>
-            <value>dg-heading-hold</value>
+					<condition>
+						<equals>
+		          <property>autopilot/locks/heading</property>
+		          <value>nav1-hold</value>
+						</equals>
+					</condition>
         </enable>
         <input>
-            <prop>orientation/roll-deg</prop>
-        </input>
-        <reference>
-            <prop>autopilot/internal/target-roll-deg</prop>
-        </reference>
-        <output>
-            <prop>autopilot/internal/aileron-filter</prop>
-        </output>
-        <config>
-            <Kp>0.1</Kp>
-            <beta>1.0</beta>
-            <alpha>0.1</alpha>
-            <gamma>0.0</gamma>
-            <Ti>10.0</Ti>
-            <Td>0.01</Td>
-            <u_min>-1.0</u_min>
-            <u_max>1.0</u_max>
-        </config>
-    </pid-controller>
-
-<!-- VOR / Loca;izer hold-->
-
-    <pid-controller>
-        <name>Nav1 Hold Stage 1</name>
-        <debug>false</debug>
-        <enable>
-            <prop>autopilot/locks/heading</prop>
-            <value>nav1-hold</value>
-        </enable>
-        <input>
-            <prop>autopilot/internal/nav1-heading-error-deg</prop>
+            <property>orientation/roll-deg</property>
         </input>
         <reference>
             <value>0.0</value>
         </reference>
         <output>
-            <prop>autopilot/internal/target-roll-deg</prop>
+            <property>autopilot/internal/roll-filter</property>
         </output>
         <config>
-            <Kp>-1.5</Kp>
+            <Kp>-20</Kp> <!--old -20 -->
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
             <Ti>10</Ti>
             <Td>0.00001</Td>
-            <u_min>-30.0</u_min>
-            <u_max>30.0</u_max>
+            <min>-30</min>
+            <max>30</max>
         </config>
     </pid-controller>
 
-    <pid-controller>
-        <name>Nav1 Hold Stage 2</name>
+    <pi-simple-controller>
+        <name>LOC</name>
         <debug>false</debug>
         <enable>
-            <prop>autopilot/locks/heading</prop>
-            <value>nav1-hold</value>
+					<condition>
+						<equals>
+		          <property>autopilot/locks/heading</property>
+		          <value>nav1-hold</value>
+						</equals>
+					</condition>
         </enable>
         <input>
-            <prop>orientation/roll-deg</prop>
+            <property>autopilot/internal/nav1-heading-error-deg</property>
         </input>
         <reference>
-            <prop>autopilot/internal/target-roll-deg</prop>
+            <value>0.0</value>
         </reference>
         <output>
-            <prop>autopilot/internal/aileron-filter</prop>
+            <property>autopilot/internal/roll-filter</property>
         </output>
         <config>
-            <Kp>0.25</Kp>
+            <Kp>-1.5</Kp> <!--old -1.5 -->
+            <Ki>0</Ki>
+            <min>-30.0</min>
+            <max>30.0</max>
+        </config>
+    </pi-simple-controller>
+
+    <filter>
+        <name>roll command</name>
+        <debug>false</debug>
+        <feedback-if-disabled>true</feedback-if-disabled>
+        <initialize-to>output</initialize-to>
+        <enable>
+					<condition>
+            <property>autopilot/locks/roll-active</property>
+					</condition>
+        </enable>
+        <input>
+            <property>autopilot/internal/roll-filter</property>
+        </input>
+        <output>autopilot/internal/roll-bars</output>
+        <type>noise-spike</type>
+        <max-rate-of-change>7</max-rate-of-change>
+    </filter>
+
+    <pid-controller>
+        <name>Aileron Control</name>
+        <debug>false</debug>
+        <enable>
+					<condition>
+						<equals>
+		          <property>autopilot/locks/passive-mode</property>
+		          <value>0</value>
+						</equals>
+					</condition>
+        </enable>
+       <input>
+            <property>orientation/roll-deg</property>
+        </input>
+        <reference>
+            <property>autopilot/internal/roll-bars</property>
+        </reference>
+        <output>
+            <property>controls/flight/aileron</property>
+        </output>
+        <config>
+            <Kp>0.05</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
             <Ti>10.0</Ti>
-            <Td>0.02</Td>
-            <u_min>-1.0</u_min>
-            <u_max>1.0</u_max>
-        </config> 
+            <Td>0.00001</Td>
+            <min>-1.0</min>
+            <max>1.0</max>
+        </config>
     </pid-controller>
-
-<filter>
-    <name>aileron</name>
-	<enable>
-		<property>autopilot/locks/roll-active</property>
-		<value>true</value>
-		<honor-passive>true</honor-passive>
-	</enable>
-    <debug>false</debug>
-    <type>noise-spike</type>
-    <input>autopilot/internal/aileron-filter</input>
-    <output>controls/flight/aileron</output>
-    <max-rate-of-change>2.0</max-rate-of-change>
-</filter>
 
 <!-- ================================ -->
 <!-- ======= Pitch Axis Modes ======= -->
@@ -168,108 +188,119 @@
         <name>Pitch hold</name>
         <debug>false</debug>
         <enable>
-            <prop>autopilot/locks/altitude</prop>
-            <value>pitch-hold</value>
-            <honor-passive>true</honor-passive>
+          <property>autopilot/locks/altitude</property>
+          <value>pitch-hold</value>
+          <honor-passive>true</honor-passive>
         </enable>
         <input>
-            <prop>orientation/pitch-deg</prop>
+            <property>orientation/pitch-deg</property>
         </input>
         <reference>
-            <prop>autopilot/settings/target-pitch-deg</prop>
+            <property>autopilot/settings/target-pitch-deg</property>
         </reference>
-        <output>
-            <prop>autopilot/internal/elevator-filter</prop>
-        </output>
-        <config>
+    		<output>controls/flight/elevator</output>
+    		<output>controls/flight/elevator-trim</output>
+       	<config>
             <Kp>-0.15</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
             <Ti>10.0</Ti>
             <Td>0.02</Td>
-            <u_min>-1.0</u_min>
-            <u_max>1.0</u_max>
+            <u_min>-0.25</u_min>
+            <u_max>0.25</u_max>
         </config>
     </pid-controller>
 
 <!-- Altitude hold -->
 
-    <pi-simple-controller>
+    <pid-controller>
         <name>Altitude Hold (Altimeter based) Stage 1</name>
         <debug>false</debug>
         <enable>
-            <prop>autopilot/locks/altitude</prop>
-            <value>altitude-hold</value>
+					<condition>
+						<equals>
+		          <property>autopilot/locks/altitude</property>
+		          <value>altitude-hold</value>
+						</equals>
+					</condition>
         </enable>
         <input>
-            <prop>instrumentation/altimeter/pressure-alt-ft</prop>
+            <property>instrumentation/altimeter/pressure-alt-ft</property>
         </input>
         <reference>
-            <prop>autopilot/settings/target-altitude-ft</prop>
+            <property>autopilot/settings/target-altitude-ft</property>
         </reference>
         <output>
-            <prop>autopilot/internal/target-climb-rate-fps</prop>
+            <property>autopilot/internal/target-climb-rate-fps</property>
         </output>
         <config>
-            <Kp>1.5</Kp>
-            <Ki>0.0</Ki>
-            <u_min>-30.0</u_min>
-            <u_max>50.0</u_max>
-        </config>
-    </pi-simple-controller>
-
-    <pid-controller>
-        <name>Altitude Hold (Altimeter based) Stage 2</name>
-        <debug>false</debug>
-        <enable>
-            <prop>autopilot/locks/altitude</prop>
-            <value>altitude-hold</value>
-        </enable>
-        <input>
-            <prop>velocities/vertical-speed-fps</prop>
-        </input>
-        <reference>
-            <prop>autopilot/internal/target-climb-rate-fps</prop>
-        </reference>
-        <output>
-            <prop>autopilot/settings/target-pitch-deg</prop>
-        </output>
-        <config>
-            <Kp>0.5</Kp>
+            <Kp>0.25</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
-            <Ti>10.0</Ti>
-            <Td>0.00001</Td>
-            <u_min>-5.0</u_min>
-            <u_max>5.0</u_max>
+            <Ti>15.0</Ti>
+            <Td>0.000001</Td>
+            <min>-40</min>
+            <max>66</max>
         </config>
     </pid-controller>
+
+    <pi-simple-controller>
+        <name>Altitude Hold (Altimeter based) Stage 2</name>
+        <debug>false</debug>
+        <enable>
+					<condition>
+						<equals>
+		          <property>autopilot/locks/altitude</property>
+		          <value>altitude-hold</value>
+						</equals>
+					</condition>
+        </enable>
+        <input>
+            <property>velocities/vertical-speed-fps</property>
+        </input>
+        <reference>
+            <property>autopilot/internal/target-climb-rate-fps</property>
+        </reference>
+        <output>
+            <property>autopilot/settings/target-pitch-deg</property>
+        </output>
+        <config>
+            <Kp>0.20</Kp>
+            <Ki>0.0</Ki>
+            <min>-5</min>
+            <max>5</max>
+        </config>
+    </pi-simple-controller>
 
     <pid-controller>
         <name>Pitch hold</name>
         <debug>false</debug>
         <enable>
-            <prop>autopilot/locks/altitude</prop>
-            <value>altitude-hold</value>
+					<condition>
+						<equals>
+		          <property>autopilot/locks/altitude</property>
+		          <value>altitude-hold</value>
+						</equals>
+					</condition>
         </enable>
         <input>
-            <prop>orientation/pitch-deg</prop>
+            <property>orientation/pitch-deg</property>
         </input>
         <reference>
-            <prop>autopilot/settings/target-pitch-deg</prop>
+            <property>autopilot/settings/target-pitch-deg</property>
         </reference>
-        <output>
-            <prop>autopilot/internal/elevator-filter</prop>
+       <output>
+            <property>autopilot/internal/elevator-filter</property>
         </output>
         <config>
-            <Kp>-0.05</Kp>
+            <Kp>-0.10</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
-            <Ti>20.0</Ti>
-            <Td>0.02</Td>
+            <Ti>30.0</Ti>
+            <Td>0.1</Td>
             <u_min>-0.5</u_min>
             <u_max>0.5</u_max>
         </config>
@@ -277,44 +308,78 @@
 
 <!-- Glideslope -->
 
-<pid-controller>
-	<name>Glideslop Hold</name>
-	<debug>false</debug>
-	<enable>
-		<prop>/autopilot/locks/altitude</prop>
-		<value>gs1-hold</value>
-		<honor-passive>true</honor-passive>
-	</enable>
+		<pid-controller>
+			<name>Glideslop Hold</name>
+			<debug>false</debug>
+			<enable>
+				<property>/autopilot/locks/altitude</property>
+				<value>gs1-hold</value>
+				<honor-passive>true</honor-passive>
+			</enable>
+				<input>
+				  <property>/velocities/vertical-speed-fps</property>
+				</input>
+				<reference>
+				  <property>/instrumentation/nav[0]/gs-rate-of-climb</property>
+				</reference>
+				 <output>
+				  <property>autopilot/internal/elevator-filter</property>
+				</output>
+				<config>
+				  <Kp>-0.01</Kp>
+				  <beta>1.0</beta>
+				  <alpha>0.1</alpha>
+				  <gamma>0.0</gamma>
+				  <Ti>20.0</Ti>
+				  <Td>0.0</Td>
+				  <u_min>-1.0</u_min>
+				  <u_max>1.0</u_max>
+				</config>
+		</pid-controller>
+
+<!-- Vertical Speed Hold -->
+
+  <pid-controller>
+    <name>Vertical Speed Hold</name>
+    <debug>false</debug>
+    <enable>
+			<property>/autopilot/locks/altitude</property>
+      <value>vertical-speed-hold</value>
+      <honor-passive>true</honor-passive>
+    </enable>
     <input>
-      <prop>/velocities/vertical-speed-fps</prop>
+      <property>velocities/vertical-speed-fps</property>
     </input>
     <reference>
-      <prop>/instrumentation/nav[0]/gs-rate-of-climb</prop>
+      <property>autopilot/settings/vertical-speed-fpm</property>
+      <scale>0.01667</scale>
     </reference>
-     <output>
-      <prop>autopilot/internal/elevator-filter</prop>
+    <output>
+      <property>controls/flight/elevator</property>
+    </output>
+    <output>
+      <property>controls/flight/elevator-trim</property>
     </output>
     <config>
-      <Kp>-0.01</Kp>
+       <Kp>-0.005</Kp>
       <beta>1.0</beta>
       <alpha>0.1</alpha>
       <gamma>0.0</gamma>
-      <Ti>20.0</Ti>
-      <Td>0.0</Td>
-      <u_min>-1.0</u_min>
-      <u_max>1.0</u_max>
+      <Ti>5.0</Ti>
+      <Td>0.00001</Td>
+      <u_min>-0.25</u_min>
+      <u_max>0.25</u_max> 
     </config>
-</pid-controller>
+  </pid-controller>
 
 <!-- elevator control -->
 
 <filter>
     <name>elevator</name>
-	<enable>
-		<property>autopilot/locks/pitch-active</property>
-		<value>true</value>
-		<honor-passive>true</honor-passive>
-	</enable>
+		<enable>
+			<property>autopilot/locks/pitch-active</property>
+			<honor-passive>true</honor-passive>
+		</enable>
     <debug>false</debug>
     <type>noise-spike</type>
     <input>autopilot/internal/elevator-filter</input>

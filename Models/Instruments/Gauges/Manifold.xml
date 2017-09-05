@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>ManifoldGauge.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>MP.face</object-name>
+        <object-name>MP.RHneedle</object-name>
+        <object-name>MP.LHneedle</object-name>
+        <emission>
+            <red>0.8</red>
+            <green>0.4</green>
+            <blue>0.2</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+    <effect>
+      <inherits-from>Aircraft/Aerostar-700/Models/Effects/test_reflect</inherits-from>
+      <object-name>MP.bezel</object-name>
+    </effect>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>MP.LHneedle</object-name>
+        <property>engines/engine/mp-inhg</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>50</ind><dep>275</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>0</x-m>
+            <y-m>-0.0</y-m>
+            <z-m>0.0</z-m>
+        </center>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>MP.RHneedle</object-name>
+        <property>engines/engine[1]/mp-inhg</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>50</ind><dep>275</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>0</x-m>
+            <y-m>-0.0</y-m>
+            <z-m>0.0</z-m>
+        </center>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+</PropertyList>

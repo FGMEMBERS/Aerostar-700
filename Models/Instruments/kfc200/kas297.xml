@@ -30,7 +30,7 @@ Syd Adams
         <object-name>altmsg.004</object-name>
         <condition>
             <greater-than>
-                <property>systems/electrical/batt-volts</property>
+                <property>systems/electrical/volts</property>
                 <value>1</value>
             </greater-than>
         </condition>
@@ -44,7 +44,7 @@ Syd Adams
             <and>
                 <property>/instrumentation/kfc200/alt-alert</property>
                 <greater-than>
-                    <property>systems/electrical/batt-volts</property>
+                    <property>systems/electrical/volts</property>
                     <value>1</value>
                 </greater-than>
             </and>
@@ -58,7 +58,7 @@ Syd Adams
             <and>
                 <property>/instrumentation/kfc200/alt-arm</property>
 			    <greater-than>
-                    <property>systems/electrical/batt-volts</property>
+                    <property>systems/electrical/volts</property>
                     <value>1</value>
                 </greater-than>
             </and>

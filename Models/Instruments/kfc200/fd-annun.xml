@@ -12,14 +12,39 @@ Syd Adams
     <animation>
         <type>material</type>
         <object-name>FD-annun</object-name>
-        <emission>
-            <red>0.8</red>
-            <green>0.4</green>
-            <blue>0.2</blue>
-            <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
-        </emission>
+        	<emission>
+            	<red>0.8</red>
+            	<green>0.4</green>
+            	<blue>0.2</blue>
+            	<factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+        	</emission>
     </animation>
     
+	<animation>
+        <type>select</type>
+		<object-name>FD-ON</object-name>
+        <object-name>NAV-ON</object-name>
+        <object-name>ARM-ON</object-name>
+        <object-name>CPLD-ON</object-name>
+        <object-name>HDG-ON</object-name>       
+        <object-name>APPR.ON</object-name> 
+        <object-name>GS-ON</object-name>
+        <object-name>GA-ON</object-name>
+        <object-name>ALT-ON</object-name>
+        <object-name>AP-ON</object-name>
+        <object-name>BC-ON</object-name>
+        <object-name>O-ON</object-name>
+        <object-name>M-ON</object-name>
+        <object-name>A-ON</object-name>
+        <object-name>TRIM-ON</object-name>
+		<condition>		
+            <greater-than>
+                <property>systems/electrical/volts</property>
+                <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
     <animation>
         <type>select</type>
         <object-name>FD-ON</object-name>

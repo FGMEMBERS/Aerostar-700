@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>compass.ac</path>
+
+<!--Compass-->
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Compass.Ring</object-name>
+        <property>instrumentation/magnetic-compass/indicated-heading-deg</property>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+        <center>
+            <x-m> 0.00786 </x-m>
+            <y-m>-0.00022 </y-m>
+            <z-m> 0.00320 </z-m>
+        </center>
+    </animation>
+
+   <animation>
+            <type>pick</type>
+               <object-name>Compass.Ring</object-name> 
+               <object-name>Compass.Chassis</object-name>           
+              <visible>true</visible>
+      <hovered>
+            <binding>
+              <command>set-tooltip</command>
+                <tooltip-id>Heading-deg</tooltip-id>
+                  <label>Magnetic heading-deg: %3d deg</label>
+                  <mapping>heading</mapping>
+                    <property>instrumentation/magnetic-compass/indicated-heading-deg</property>
+            </binding>
+      </hovered>
+   </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>Compass.Ring</object-name>
+        <emission>
+            <red>0.8</red>
+            <green>0.4</green>
+            <blue>0.2</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+</PropertyList>

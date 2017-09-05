@@ -1,23 +1,23 @@
-<PropertyList >
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+************************************************************************
+Aerostar super 700
+Syd Adams
+Fec 2011 PAF Team:http://equipe-flightgear.forumactif.com/t382-aerostar-700#4831
+************************************************************************
+-->
+
+<PropertyList>
 
     <sim>
-        <description>Aerostar Super 700</description>
-        <author>Syd Adams</author>
-        <status>development</status>
+        <description>Aerostar Super 700 (YASIM)</description>
+        <author>Syd Adams, Christian Thiriot (Patten), Christian Le Moigne (clm76), PAF Team</author>
+        <status>Alpha</status>
         <flight-model>yasim</flight-model>
         <aero>aerostar-yasim</aero>
-        <tags>
-            <tag>mid-wing</tag>
-            <tag>tricycle</tag>
-            <tag>retractable-gear</tag>
-            <tag>twin-engine</tag>
-            <tag>piston</tag>
-            <tag>fixed-pitch</tag>
-            <tag>transport</tag>
-            <tag>1970s</tag>
-            <tag>1980s</tag>
-        </tags>
-        <fuel-fraction>0.5</fuel-fraction>
+	    <fuel-fraction>1</fuel-fraction>           
+
         <model>
             <path>Aircraft/Aerostar-700/Models/aerostar.xml</path>
             <start-idling type="bool">0</start-idling>
@@ -35,7 +35,7 @@
             <splash-texture>Aircraft/Aerostar-700/splash.png</splash-texture>
         </startup>
 
-        <systems>
+	<systems>
             <electrical>
                 <path></path>
             </electrical>
@@ -186,7 +186,7 @@
             </config>
         </view>
     
-        <view n="1042">
+        <view n="104">
             <name>Copilot</name>
             <type>lookfrom</type>
             <internal type="bool">true</internal>
@@ -235,17 +235,31 @@
             <min-lb>0</min-lb>
         </weight>
 
-        <yokes-visible type="bool">1</yokes-visible>
+<!--<yokes-visible type="bool">1</yokes-visible> -->
+		<yoke1-visible type="bool">1</yoke1-visible>
+		<yoke2-visible type="bool">1</yoke2-visible>
 
         <help>
             <title>Aerostar Super 700</title>
         <key>
             <name>q</name>
-            <desc>steer left</desc>
+            <desc>Steer left</desc>
         </key>
         <key>
             <name>e</name>
-            <desc>steer right</desc>
+            <desc>Steer right</desc>
+        </key>
+        <key>
+            <name>CTRL-D</name>
+            <desc>Left Door (or Click the Cabin door handle)</desc>
+        </key>
+        <key>
+            <name>CTRL + MMB</name>
+            <desc>Both levers of Throttle, Pitch or Mixture</desc>
+        </key>
+        <key>
+            <name></name>
+            <desc>Yoke ON / OFF by clicking the yoke</desc>
         </key>
         </help>
 
@@ -270,14 +284,14 @@
                         <property>sim/model/start-idling</property>
                     </binding>
                 </item>
-                <item>
+<!--                <item>
                     <label>Yokes On/Off</label>
                     <binding>
                         <command>property-toggle</command>
                         <property>sim/yokes-visible</property>
                     </binding>
-                </item>
-                <item>
+               </item>
+-->            <item>
                     <label>Select Livery</label>
                     <binding>
                         <command>nasal</command>
@@ -287,6 +301,7 @@
             </menu>
         </default>
     </menubar>
+	<checklists include="Dialogs/checklists.xml"/>
 
     <multiplay>
         <generic>
@@ -294,6 +309,8 @@
             <int n="1" alias="/systems/electrical/outputs/beacon"/>
             <int n="2" alias="/systems/electrical/outputs/nav-lights"/>
             <int n="3" alias="/systems/electrical/outputs/landing-lights"/>
+	    <int n="4" alias="/systems/electrical/outputs/taxi-lights"/>
+	    <int n="5" alias="/systems/electrical/outputs/wing-lights"/>
             <string  alias="/sim/multiplay/callsign"/>
             <float  alias="/controls/cabin-door/position-norm"/>
             <float n="1" alias="/sim/model/registration/red"/>
@@ -302,6 +319,25 @@
             <float  n="4" alias="/position/altitude-agl-ft"/>
         </generic>
     </multiplay>
+
+       <flight-recorder>
+         <replay-config type="int">0</replay-config>
+         <config n="0"
+           include="/Aircraft/Generic/flightrecorder/generic-piston-propeller-4.xml">
+          <name type="string">My Aircraft's Flight Recorder</name>  
+    
+           <signal>
+              <type>float</type>
+              <property type="string">/engines/engine/mp-inhg</property>        
+            </signal>
+      
+            <signal>
+                <type>float</type>
+                <property type="string">/engines/engine[1]/mp-inhg</property>        
+             </signal>
+ 
+          </config>
+       </flight-recorder>  
 
     </sim>
 
@@ -321,11 +357,18 @@
             <brake-parking>1.0</brake-parking>
             <gear-down>true</gear-down>
         </gear>
+				<cabin>
+						<tablette1 type="double">0</tablette1>
+						<tablette2 type="double">0</tablette2>
+						<table type="double">0</table>
+				</cabin>
         <engines>
             <engine n="0">
+        		<starter_cmd type="bool">0</starter_cmd>
                 <magnetos>0</magnetos>
             </engine>
             <engine n="1">
+        		<starter_cmd type="bool">0</starter_cmd>
                 <magnetos>0</magnetos>
             </engine>
         </engines>
@@ -338,13 +381,13 @@
     <consumables>
         <fuel>
             <tank n="0"><!-- Max 62 US gallons-->
-                <level-gal_us archive="y">50</level-gal_us>
-            </tank>
+                <level-gal_us archive="y">62</level-gal_us>
+            </tank>          
             <tank n="1"><!-- Max 62 US gallons-->
-                <level-gal_us archive="y">50</level-gal_us>
-            </tank>
-            <tank n="2"><!-- Max 41.5 US gallons-->
-                <level-gal_us archive="y">40</level-gal_us>
+                <level-gal_us archive="y">62</level-gal_us>           
+			</tank>
+			<tank n="2"><!-- Max 41.5 US gallons-->
+                <level-gal_us archive="y">41</level-gal_us>
             </tank>
         </fuel>
     </consumables>
@@ -372,9 +415,11 @@
         <engines>
             <engine n="0">
                 <running>0</running>
+				<oil-pressure-psi type="double">0.0</oil-pressure-psi>
             </engine>
             <engine n="1">
                 <running>0</running>
+				<oil-pressure-psi type="double">0.0</oil-pressure-psi>
             </engine>
         </engines>
 
@@ -400,8 +445,8 @@
             <heading-marker type="bool">false</heading-marker>
             <lightning type="bool">false</lightning>
             <display-mode type="string">arc</display-mode>
-            <radar-texture-path type="string">Aircraft/Instruments-3d/RDR-160/od_wxradar.png</radar-texture-path>
-            <echo-texture-path type="string">Aircraft/Instruments-3d/RDR-160/wxecho.png</echo-texture-path>
+            <radar-texture-path type="string">Aircraft/Aerostar-700/Models/Instruments/Rdr160/od_wxradar.png</radar-texture-path>
+            <echo-texture-path type="string">Aircraft/Aerostar-700/Models/Instruments/Rdr160/wxecho.png</echo-texture-path>
             <limit-deg type="int">45</limit-deg>
             <display-controls>
                 <WX type="bool">false</WX>
@@ -416,33 +461,33 @@
         <inst-vertical-speed-indicator>
             <serviceable>true</serviceable>
         </inst-vertical-speed-indicator>
-        <ki-227>
-            <serviceable type="bool">1</serviceable>
-            <card-heading-deg type="double">0</card-heading-deg>
-        </ki-227>
-        <kr-87>
-            <serviceable type="bool">1</serviceable>
-        </kr-87>
         <dme>
             <serviceable type="bool">1</serviceable>
             <frequencies>
                 <source type="string">instrumentation/nav/frequencies/selected-mhz</source>
             </frequencies>
         </dme>
-    </instrumentation>
+		<magnetic-compass>
+      		<pitch-offset-deg type="double">-0.64</pitch-offset-deg>
+    	</magnetic-compass>
+   </instrumentation>
 
     <nasal>
-        <aerostar>
-            <file>Aircraft/Aerostar-700/Nasal/systems.nas</file>
-            <file>Aircraft/Aerostar-700/Nasal/Electrical.nas</file>
-            <file>Aircraft/Aerostar-700/Models/Instruments/kfc200/kfc-200.nas</file>
+        <aerostar>                  
+    			<file>Aircraft/Aerostar-700/Nasal/systems.nas</file>
+          <file>Aircraft/Aerostar-700/Nasal/Electrical.nas</file>
+          <file>Aircraft/Aerostar-700/Nasal/fuel_system.nas</file>
+          <file>Aircraft/Aerostar-700/Models/Instruments/kfc200/kfc-200.nas</file>
         </aerostar>
-            <radar>
-                <file>Aircraft/Instruments-3d/RDR-160/RDR160.nas</file>
-            </radar>
-            <systems>
-                <file>Aircraft/Instruments-3d/kns80/KNS80.nas</file>
-            </systems>
+        <radar>
+          <file>Aircraft/Aerostar-700/Models/Instruments/Rdr160/RDR160.nas</file>
+        </radar>
+				<kr87>
+					<file>Aircraft/Aerostar-700/Nasal/kr87.nas</file>
+				</kr87>
+        <systems>
+          <file>Aircraft/Aerostar-700/Models/Instruments/kns80/KNS80.nas</file>
+        </systems>
     </nasal>
 
     <input>
@@ -465,8 +510,8 @@
                             <value>40</value>
                         </less-than>
                     </condition>
-                    <command>nasal</command>
-                    <script>aerostar.cabin_door.toggle();</script>
+                    <command>property-toggle</command>
+          			<property>controls/cabin-door/int-handle</property>
                 </binding>
             </key>
         <key n="91">

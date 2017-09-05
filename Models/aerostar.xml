@@ -4,13 +4,63 @@
 
     <path>aerostar700.ac</path>
 
+  <!-- Tutorial marker -->
+  <model>
+    <path>Aircraft/Generic/marker.xml</path>
+  </model>
+
+  <!-- Lights -->
     <model>
         <name>strobes</name>
-        <path>Aircraft/Aerostar-700/Models/lights.xml</path>
+        <path>Models/Lights/lights.xml</path>
         <offsets>
             <x-m>0</x-m>
             <y-m>0</y-m>
             <z-m>0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+	<model>
+        <name>LandingLight</name>
+        <path>Models/Lights/landinglight.xml</path>
+        <offsets>
+            <x-m>-2.70</x-m>
+            <y-m>-0.05</y-m>
+            <z-m>-0.25</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+	<model>
+        <name>TaxiLight</name>
+        <path>Models/Lights/taxilight.xml</path>
+        <offsets>
+            <x-m>-2.70</x-m>
+            <y-m>0.05</y-m>
+            <z-m>-0.25</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+	<model>
+        <name>LWingLight</name>
+        <path>Models/Lights/wingslights.xml</path>
+        <offsets>
+            <x-m>0.940</x-m>
+            <y-m>-3.3</y-m>
+            <z-m>0.15</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+	<model>
+        <name>RWingLight</name>
+        <path>Models/Lights/wingslights.xml</path>
+        <offsets>
+            <x-m>0.940</x-m>
+            <y-m>3.3</y-m>
+            <z-m>0.15</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -54,6 +104,7 @@
       <object-name>RHwheeldoor</object-name>
       <object-name>Cabin.door1</object-name>
       <object-name>Cabin.door2</object-name>
+      <object-name>Vstab</object-name>
     </animation>
 
     <animation>
@@ -93,6 +144,7 @@
       <object-name>RHwheeldoor</object-name>
       <object-name>Cabin.door1</object-name>
       <object-name>Cabin.door2</object-name>
+      <object-name>Vstab</object-name>
     </effect>
 
     <animation>
@@ -107,6 +159,7 @@
         <inherits-from>Effects/model-transparent</inherits-from>
         <object-name>doorglass</object-name>
         <object-name>glass</object-name>
+		<object-name>Plexi</object-name>
         <object-name>LHpropblur</object-name>
         <object-name>RHpropblur</object-name>
         <object-name>LHpropdisc</object-name>
@@ -149,7 +202,7 @@
         <property type="string">sim/multiplay/generic/string[0]</property>
         <format type="string">%.7s</format>
         <font>arial_black.txf</font>
-        <character-size>0.4</character-size>
+        <character-size>0.15</character-size>
         <character-aspect-ratio type="double">1.5</character-aspect-ratio>
         <font-resolution>
             <width type="int">128</width>
@@ -173,7 +226,7 @@
         <property type="string">sim/multiplay/generic/string[0]</property>
         <format type="string">%.7s</format>
         <font>arial_black.txf</font>
-        <character-size>0.4</character-size>
+        <character-size>0.15</character-size>
         <character-aspect-ratio type="double">1.5</character-aspect-ratio>
         <font-resolution>
             <width type="int">128</width>
@@ -248,23 +301,14 @@
         <object-name>RightTire</object-name>
     </animation>
 
-    <animation>
+<!--####    Lights   ####-->
+ 
+	<animation>
         <type>select</type>
         <object-name>navlights</object-name>
         <condition>
             <greater-than>
             <property>sim/multiplay/generic/int[2]</property>
-            <value>1</value> 
-            </greater-than>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>Llight.on</object-name>
-        <condition>
-            <greater-than>
-            <property>sim/multiplay/generic/int[3]</property>
             <value>1</value> 
             </greater-than>
         </condition>
@@ -341,6 +385,42 @@
         </condition>
     </animation>
 
+	<animation>
+        <type>select</type>
+        <object-name>LandingLight</object-name>
+        <condition>
+            <greater-than>
+            <property>sim/multiplay/generic/int[3]</property>
+            <value>1</value> 
+            </greater-than>
+        </condition>
+    </animation>
+
+	<animation>
+        <type>select</type>
+        <object-name>TaxiLight</object-name>
+        <condition>
+            <greater-than>
+            <property>sim/multiplay/generic/int[4]</property>
+            <value>1</value> 
+            </greater-than>
+        </condition>
+    </animation>
+
+	<animation>
+        <type>select</type>
+        <object-name>LWingLight</object-name>
+	    <object-name>RWingLight</object-name>   
+		<condition>
+            <greater-than>
+            <property>sim/multiplay/generic/int[5]</property>
+            <value>1</value> 
+            </greater-than>
+        </condition>
+    </animation>
+
+<!--####    Propellers   ####-->
+
     <animation>
         <type>select</type>
         <object-name>LHprop</object-name>
@@ -511,13 +591,38 @@
             <y>0</y>
             <z>0</z>
         </axis>
+    </animation>
+
+<!-- Cabin door -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>Poignée-ext</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/cabin-door/int-handle</property>
+            </binding>
+        </action>
+       	<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>cabin-door</tooltip-id>
+				<label>Cabin door : %s</label>
+                <mapping>open-close</mapping>
+                <property>controls/cabin-door/int-handle</property>
+			</binding>
+        </hovered>
+
     </animation>
 
     <animation>
         <type>rotate</type>
-        <object-name>Cabin.door1</object-name>
+        <object-name>Cabin.door1</object-name>	
         <object-name>doorglass</object-name>
-        <property>sim/multiplay/generic/float</property>
+       <object-name>Poignée-ext</object-name>
+       <property>sim/multiplay/generic/float</property>
         <interpolation>
             <entry>
                 <ind>0.0</ind><dep>0.0</dep>
@@ -535,6 +640,23 @@
             <z2-m>0.680</z2-m>
         </axis>
     </animation>
+
+	<animation>
+        <type>rotate</type>
+        <object-name>Poignée-ext</object-name>	
+		<property>controls/cabin-door/handle1/position-norm</property>
+        <factor>90</factor>
+        <center>
+            <x-m>-0.417</x-m>
+            <y-m>0.626</y-m>
+            <z-m>0.180</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+   </animation>
 
     <animation>
         <type>rotate</type>
@@ -557,7 +679,7 @@
             <z2-m>-0.424</z2-m>
         </axis>
     </animation>
-
+-->
     <animation>
         <type>rotate</type>
         <object-name>Rudder</object-name>
